@@ -2,7 +2,7 @@
 .portfolio-header {
   position: relative;
   background-color: #D8D8D8;
-  background-image: url(images/header-bg.jpg);
+  background-image: url(../images/header-bg.jpg);
 }
 
 .portfolio-header .mdl-layout__header-row {
