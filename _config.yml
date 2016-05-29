@@ -11,4 +11,4 @@ twitter_username: garciaericn
 github_username:  eng618
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
