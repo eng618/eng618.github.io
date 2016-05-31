@@ -26,17 +26,20 @@
   </div>
 
 </header>
- -->
+-->
 
 <!-- From: https://getmdl.io/templates/portfolio/ -->
 <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
-  <div class="mdl-layout__header-row">
-    <span class="mdl-layout__title">Eric Garcia's Portfolio</span>
+  <div class="mdl-layout__header-row portfolio-logo-row">
+    <span class="mdl-layout__title">
+      <div class="portfolio-logo"></div>
+      <span class="mdl-layout__title">Eric Garcia's Portfolio</span>
+    </span>
   </div>
-  <div class="mdl-layout__header-row portfolio-navigation-row">
+  <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
     <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-      <a class="mdl-navigation__link" href="/">Portfolio</a>
-      <a class="mdl-navigation__link" href="/blog/">Blog</a>
+      <a class="mdl-navigation__link is-active" href="/">Portfolio</a>
+      <a class="mdl-navigation__link" href="{{ site.url }}/blog/">Blog</a>
       <a class="mdl-navigation__link" href="/about/">About</a>
       <a class="mdl-navigation__link" href="/contact/">Contact</a>
     </nav>

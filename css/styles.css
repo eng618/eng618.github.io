@@ -1,7 +1,5 @@
-
 .portfolio-header {
   position: relative;
-  background-color: #D8D8D8;
   background-image: url(../images/header-bg.jpg);
 }
 
@@ -10,6 +8,38 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.mdl-layout__title {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.is-compact .mdl-layout__title span {
+  display: none;
+}
+
+.portfolio-logo-row {
+  min-height: 200px;
+}
+
+.is-compact .portfolio-logo-row {
+  min-height: auto;
+}
+
+.portfolio-logo {
+  background: url(images/logo.png) 50% no-repeat;
+  background-size: cover;
+  height: 150px;
+  width: 150px;
+  margin: auto auto 10px;
+}
+
+.is-compact .portfolio-logo {
+  height: 50px;
+  width: 50px;
+  margin-top: 7px;
 }
 
 .portfolio-navigation-row {
@@ -52,6 +82,31 @@
   left: 15%;
 }
 
+.portfolio-card .mdl-card__title {
+  padding-bottom: 0;
+}
+
+.portfolio-blog-card-full-bg {
+  background: url(../images/example-blog03.jpg) center / cover;
+}
+
+.portfolio-blog-card-event-bg {
+  background: url(../images/example-blog05.jpg) center / cover;
+}
+
+.portfolio-blog-card-strip-bg {
+  background: url(../images/example-blog06.jpg) center / cover;
+}
+
+.portfolio-blog-card-compact .mdl-card__title {
+  padding-bottom: 0;
+}
+
+.portfolio-blog-card-bg > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
 
 img.article-image {
   width: 100%;
@@ -65,10 +120,6 @@ img.article-image {
 
 .portfolio-copy {
   max-width: 700px;
-}
-
-.portfolio-card .mdl-card__title {
-  padding-bottom: 0;
 }
 
 .no-padding {
@@ -108,6 +159,12 @@ img.article-image {
 }
 
 .portfolio-contact form {
-  max-width: 700px;
+  max-width: 550px;
   margin: auto;
 }
+
+footer {
+  background-image: url(images/footer-background.png);
+  background-size: cover;
+}
+
