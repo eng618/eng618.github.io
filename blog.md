@@ -24,7 +24,7 @@ layout: default
 -->
 
 {% for post in site.posts %}
-<div class="mdl-grid mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-card mdl-shadow--4dp">
+<div class="mdl-cell mdl-cell--5-col mdl-cell--4-col-tablet mdl-card  mdl-card mdl-shadow--4dp">
   <div class="mdl-card__title mdl-card--expand portfolio-blog-card-strip-bg mdl-color-text--white">
     <h2 class="mdl-card__title-text">{{ post.title }}</h2>
   </div>
@@ -63,4 +63,4 @@ layout: default
 </div>
 {% endfor %}
 
-<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<p class="rss-subscribe mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
