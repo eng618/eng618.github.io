@@ -12,3 +12,5 @@ github_username:  eng618
 
 # Build settings
 markdown: redcarpet
+show_drafts: true
+incremental: true
