@@ -1,6 +1,7 @@
 ---
 layout: post
-author: Eric N. Garcia
+title: "Drafts"
+author: "Eric N. Garcia"
 ---
 
 # This is a daft post to demonstrate how it is used.
