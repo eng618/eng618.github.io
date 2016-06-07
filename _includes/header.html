@@ -17,15 +17,16 @@
 			<a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
 			{% endif %}
 			{% endfor %}
-		</div>
-	</header>
-
-	<div class="mdl-layout__drawer mdl-layout--small-screen-only">
-		<nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-			{% for my_page in pages %}
-			{% if my_page.title %}
-			<a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-			{% endif %}
-			{% endfor %}
 		</nav>
 	</div>
+</header>
+
+<div class="mdl-layout__drawer mdl-layout--small-screen-only">
+	<nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+		{% for my_page in pages %}
+		{% if my_page.title %}
+		<a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+		{% endif %}
+		{% endfor %}
+	</nav>
+</div>
