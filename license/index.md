@@ -1,6 +1,7 @@
 ---
 layout: page
 title: License
+weight: 5
 ---
 
 Below are links to license or where images can be found.
