@@ -121,7 +121,9 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll
   jekyll-sitemap
+  jekyll-watch
   redcarpet
 
 BUNDLED WITH
