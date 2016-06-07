@@ -3,8 +3,6 @@ layout: page
 title: License
 ---
 
-# License
-
 Below are links to license or where images can be found.
 
 * [**images/site-header**](https://unsplash.com/photos/zEJIuKZcD8c)
