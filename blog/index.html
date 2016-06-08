@@ -1,0 +1,27 @@
+---
+layout: default
+title: Blog
+weight: 2
+nav: true
+---
+
+{% for post in site.posts %}
+<div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+  <div class="mdl-card__media">
+    <img class="article-image" src="/images/example-work01.jpg" border="0" alt="">
+  </div>
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">{{ post.title }}</h2>
+  </div>
+  <div class="mdl-card__supporting-text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenan convallis.
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ post.url | prepend: site.baseurl }}">
+      READ MORE
+    </a>
+  </div>
+</div>
+{% endfor %}
+
+<p class="rss-subscribe mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

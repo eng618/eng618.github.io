@@ -1,14 +1,21 @@
 ---
 layout: default
 ---
-<article class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-  </header>
+<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+	{% if page.title %}
+	<div class="mdl-card__title">
+		<h2 class="mdl-card__title-text">{{page.title}}</h2>
+	</div>
+	{% endif %}
 
-</article>
+	{% if page.article-image %}
+	<div class="mdl-card__media">
+		<img class="article-image" src="{{page.article-image}}" border="0" alt="">
+	</div>
+	{% endif %}
+
+	{{ content }}
+	
+</div>
