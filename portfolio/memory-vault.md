@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: basic-page
 title: Memory Vault
 ---
 
