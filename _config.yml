@@ -13,6 +13,6 @@ twitter_username: garciaericn
 github_username:  eng618
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 show_drafts: true
 incremental: true
