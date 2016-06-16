@@ -1,7 +1,8 @@
+# Site version
 version: 0.2
 
 # Site settings
-title: Eric Garcia's Portfolio
+title: Eric Garcia
 email: eng618@garciaericn.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
