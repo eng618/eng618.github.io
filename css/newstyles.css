@@ -373,7 +373,7 @@ a img{
   }
 
 .android-customized-section-image {
-  background: url('/images/mdl/devices.jpg') center top no-repeat;
+  background: url('/images/mdl/about-header.jpg') center top no-repeat;
   background-size: cover;
   height: 400px;
 }
