@@ -189,17 +189,6 @@ a img{
   text-decoration: none;
 }
 
-.android-wear {
-  display: inline-block;
-  width: 160px;
-  margin-right: 32px;
-}
-
-  .android-wear .android-screen-image {
-    width: 40%;
-    z-index: 1;
-  }
-
 
 .android-phone {
   display: inline-block;
@@ -252,34 +241,6 @@ a img{
     display: block;
     height: 300px;
     z-index: 1;
-  }
-
-
-.android-wear-section {
-  position: relative;
-  background: url('/images/mdl/wear.png') center top no-repeat;
-  background-size: cover;
-  height: 800px;
-}
-
-.android-wear-band {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  background-color: #37474f;
-}
-
-.android-wear-band-text {
-  max-width: 800px;
-  margin-left: 25%;
-  padding: 24px;
-  text-align: left;
-  color: white;
-}
-
-  .android-wear-band-text p {
-    padding-top: 8px;
   }
 
 .android-link {
@@ -468,11 +429,6 @@ a img{
 
   .android-fab {
     display: none;
-  }
-
-  .android-wear-band-text {
-    margin-left: 0;
-    padding: 16px;
   }
 
   .android-footer .mdl-mega-footer--bottom-section {
