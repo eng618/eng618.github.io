@@ -32,10 +32,12 @@
 	</div>
 </div>
 
-<div class="android-drawer mdl-layout__drawer">
+<div class="mdl-layout__drawer">
+	<!--  Drawer logo
 	<span class="mdl-layout-title">
 		<img class="android-logo-image" src="/images/mdl/android-logo-white.png">
-	</span>
+	</span> 
+	-->
 	<nav class="mdl-navigation">
 		{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
 	</nav>
