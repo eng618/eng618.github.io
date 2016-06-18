@@ -33,11 +33,10 @@
 	</div>
 </div>
 
-<div class="mdl-layout__drawer">
+<div class="android-drawer mdl-layout__drawer">
 	<span class="mdl-layout-title">
-			<!-- <a href="/"><img class="android-logo-image" src="/images/mdl/android-logo.png"></a> -->
-			<a class="eng-title-a" href="/">Eric Garcia</a>
-		</span>
+		<img class="android-logo-image" src="/images/mdl/android-logo-white.png">
+	</span>
 	<nav class="mdl-navigation">
 		{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
 	</nav>
