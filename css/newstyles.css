@@ -125,19 +125,19 @@ a img{
       bottom: 16px;
     }
 
-.android-be-together-section {
+.eng-site-header {
   position: relative;
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
-  background: url('/images/mdl/slide01.jpg') center 30% no-repeat;
+  background: url('/images/site-header.jpeg') center 20% no-repeat;
   background-size: cover;
 }
 
 .logo-font {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   line-height: 1;
-  color: #767777;
+  color: #ffffff
   font-weight: 500;
 }
 
@@ -344,11 +344,6 @@ a img{
     font-size: 16px;
   }
 
-.android-footer {
-  background-color: #fafafa;
-  position: relative;
-}
-
   .android-footer a:hover {
     color: #8bc34a;
   }
@@ -402,7 +397,7 @@ a img{
     display: none;
   }
 
-  .android-be-together-section {
+  .eng-site-header {
     height: 350px;
   }
 
@@ -425,10 +420,6 @@ a img{
 
   .android-create-character img {
     height: 12px;
-  }
-
-  .android-fab {
-    display: none;
   }
 
   .android-footer .mdl-mega-footer--bottom-section {

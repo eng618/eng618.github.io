@@ -166,6 +166,7 @@ img.article-image {
 footer {
   background-image: url(../images/mdl/footer-background.png);
   background-size: cover;
+  position: relative;
 }
 
 /* My Custom styles */
