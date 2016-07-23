@@ -20,12 +20,6 @@
 		<!-- Navigation -->
 		<nav class="mdl-navigation">
 			{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
-			<ul class="mdl-navigation mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
-				<li class="mdl-menu__item">5.0 Lollipop</li>
-				<li class="mdl-menu__item">4.4 KitKat</li>
-				<li class="mdl-menu__item">4.3 Jelly Bean</li>
-				<li class="mdl-menu__item">Android History</li>
-			</ul>
 		</nav>
 		<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
 			{% for page in pages %}{% if page.nav == nil %}<li class="mdl-menu_item"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>{% endif %}{% endfor %}
