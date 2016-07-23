@@ -113,11 +113,6 @@ img.article-image {
   height: auto;
 }
 
-.portfolio-max-width {
-  max-width: 900px;
-  margin: auto;
-}
-
 .portfolio-copy {
   max-width: 700px;
 }
@@ -189,7 +184,7 @@ html {
 }
 
   .eng-site-header {
-    height: 350px;
+    height: 550px;
   }
 
   .eng-slogan {
@@ -215,3 +210,8 @@ html {
     padding-top: 8px;
     color: white;
   }
+
+  .eng-max-width {
+  max-width: 900px;
+  margin: auto;
+}
