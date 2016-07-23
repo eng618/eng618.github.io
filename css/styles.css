@@ -179,3 +179,39 @@ html {
   text-decoration: inherit;
 }
 
+.eng-site-header {
+  position: relative;
+  height: 800px;
+  width: auto;
+  background-color: #f3f3f3;
+  background: url('/images/site-header.jpeg') center 20% no-repeat;
+  background-size: cover;
+}
+
+  .eng-site-header {
+    height: 350px;
+  }
+
+  .eng-slogan {
+  font-size: 60px;
+  padding-top: 160px;
+}
+
+.eng-sub-slogan {
+  font-size: 21px;
+  padding-top: 24px;
+}
+
+  .eng-slogan {
+    font-size: 26px;
+    margin: 0 16px;
+    padding-top: 24px;
+    color: white;
+  }
+
+  .eng-sub-slogan {
+    font-size: 16px;
+    margin: 0 16px;
+    padding-top: 8px;
+    color: white;
+  }

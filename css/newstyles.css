@@ -125,30 +125,13 @@ a img{
       bottom: 16px;
     }
 
-.eng-site-header {
-  position: relative;
-  height: 800px;
-  width: auto;
-  background-color: #f3f3f3;
-  background: url('/images/site-header.jpeg') center 20% no-repeat;
-  background-size: cover;
-}
+
 
 .logo-font {
   font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   line-height: 1;
   color: #ffffff
   font-weight: 500;
-}
-
-.android-slogan {
-  font-size: 60px;
-  padding-top: 160px;
-}
-
-.android-sub-slogan {
-  font-size: 21px;
-  padding-top: 24px;
 }
 
 .android-create-character {
