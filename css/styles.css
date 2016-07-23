@@ -170,6 +170,9 @@ footer {
 }*/
 
 /* My Custom styles */
+html {
+  height: auto;
+}
 
 .eng-title-a{
   color: inherit; 

@@ -1,39 +1,37 @@
 <!-- Variable pages to sort pages for navigation -->
 {% assign pages = site.pages | sort:"weight"  %}
 
-<div class="mdl-layout__drawer mdl-layout--small-screen-only">
-	<nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+<header class="mdl-layout__header mdl-layout__header--waterfall">
+	<!-- Top row, always visible -->
+	<div class="mdl-layout__header-row">
+		<!-- Title -->
+		<span class="mdl-layout-title"><a class="eng-title-a" href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a></span>
+		<div class="mdl-layout-spacer"></div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+		mdl-textfield--floating-label mdl-textfield--align-right">
+		<label class="mdl-button mdl-js-button mdl-button--icon"
+		for="waterfall-exp">
+		<i class="material-icons">search</i>
+	</label>
+	<div class="mdl-textfield__expandable-holder">
+		<input class="mdl-textfield__input" type="text" name="sample"
+		id="waterfall-exp">
+	</div>
+</div>
+</div>
+<!-- Bottom row, not visible on scroll -->
+<div class="mdl-layout__header-row">
+	<div class="mdl-layout-spacer"></div>
+	<!-- Navigation -->
+	<nav class="mdl-navigation">
 		{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
 	</nav>
 </div>
-
-
-
-<div class="mdl-layout__header mdl-layout__header--waterfall">
-	<div class="mdl-layout__header-row">
-		<span class="mdl-layout-title">
-			<a class="eng-title-a" href="/">Eric Garcia</a>
-		</span>
-		<!-- Add spacer, to align navigation to the right in desktop -->
-		<div class="mdl-layout-spacer"></div>
-
-		<!-- Navigation -->
-		<nav class="mdl-navigation">
-			{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
-		</nav>
-		<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-			{% for page in pages %}{% if page.nav == nil %}<li class="mdl-menu_item"><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>{% endif %}{% endfor %}
-		</ul>
-	</div>
-</div>
-
-
+</header>
 <div class="mdl-layout__drawer">
-	<span class="mdl-layout-title">
-		<a class="eng-title-a" href="/">Eric Garcia</a>
-	</span> 
+	<span class="mdl-layout-title"><a class="eng-title-a" href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a></span>
 	<nav class="mdl-navigation">
-		{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link mdl-typography--text-uppercase" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
+		{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
 	</nav>
 </div>
 
