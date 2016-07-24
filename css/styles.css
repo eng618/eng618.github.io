@@ -224,3 +224,21 @@ html {
 .color-accent {
   color: #673AB7;
 }
+
+.mdl-navigation-row .is-active {
+  position: relative;
+  font-weight: bold;
+}
+
+.mdl-navigation-row .is-active:after {
+  content: "";
+  width: 70%;
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(103, 58, 183);
+  left: 15%;
+}
+

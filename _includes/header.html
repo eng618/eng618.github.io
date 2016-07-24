@@ -1,5 +1,5 @@
 <!-- Variable pages to sort pages for navigation -->
-{% assign pages = site.pages | sort:"weight"  %}
+{% assign pages = site.pages | sort: "weight"  %}
 
 <header class="mdl-layout__header mdl-layout__header--waterfall">
 	<!-- Top row, always visible -->
@@ -24,7 +24,11 @@
 	<div class="mdl-layout-spacer"></div>
 	<!-- Navigation -->
 	<nav class="mdl-navigation">
-		{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
+		{% for p in pages %}
+			{% if p.nav %}
+				<a class="mdl-navigation__link {% if p.url == page.url %}is-active{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+			{% endif %}
+		{% endfor %}
 	</nav>
 </div>
 </header>
