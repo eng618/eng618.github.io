@@ -17,3 +17,11 @@ github_username:  eng618
 markdown: kramdown
 show_drafts: true
 incremental: true
+
+collections:
+  android-apps:
+    output: true
+    permalink: /apps/android/:path/
+  ios-apps:
+    output: true
+    permalink: /apps/ios/:path/
