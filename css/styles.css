@@ -2,6 +2,10 @@ html {
   height: auto;
 }
 
+.mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+  padding-right: 0;
+}
+
 .eng-title-a{
   color: inherit; 
   text-decoration: inherit;
@@ -58,12 +62,12 @@ html {
   color: #673AB7;
 }
 
-.mdl-navigation-row .is-active {
+.eng-navigation-row .is-active {
   position: relative;
   font-weight: bold;
 }
 
-.mdl-navigation-row .is-active:after {
+.eng-navigation-row .is-active:after {
   content: "";
   width: 70%;
   height: 2px;
