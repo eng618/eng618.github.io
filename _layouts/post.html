@@ -1,11 +1,7 @@
 ---
-layout: default
+layout: page
 ---
 
-
-<div class="mdl-card__title">
-	<h2 class="mdl-card__title-text">{{page.title}}</h2><br/>
-</div>
 {% if page.image %}
 <div class="mdl-card__media">
 	<img class="article-image" src="{{page.image}}" border="0" alt="">
@@ -17,7 +13,7 @@ layout: default
 	<span>Design, UX and Frontend Development</span>
 	<p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
 </div>
-<div class="mdl-grid portfolio-copy">
+<div class="mdl-grid">
 
 	{{ content }}
 

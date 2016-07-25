@@ -2,12 +2,11 @@
 layout: default
 ---
 
-<div class="mdl-grid portfolio-max-width">
-	<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
-
+<div class="mdl-grid eng-max-width">
+	<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 		{% if page.title %}
 		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">{{page.title}}</h2>
+			<h3 class="mdl-card__title-text">{{page.title}}</h3>
 		</div>
 		{% endif %}
 
@@ -17,7 +16,8 @@ layout: default
 		</div>
 		{% endif %}
 
-		{{ content }}
-		
+		<div class="mdl-card__supporting-text">
+			{{ content }}
+		</div>
 	</div>
 </div>
