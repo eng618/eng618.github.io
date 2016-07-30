@@ -3,7 +3,7 @@
 
 <header class="mdl-layout__header mdl-layout__header--waterfall">
 	<!-- Top row, always visible -->
-	<div class="mdl-layout__header-row">
+	<div class="mdl-layout__header-row eng-navigation-row">
 		<!-- Title -->
 		<span class="mdl-layout-title"><a class="eng-title-a" href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a></span>
 		<div class="mdl-layout-spacer"></div>
@@ -20,7 +20,7 @@
 </div>
 </div>
 <!-- Bottom row, not visible on scroll -->
-<div class="mdl-layout__header-row">
+<div class="mdl-layout__header-row eng-navigation-row">
 	<div class="mdl-layout-spacer"></div>
 	<!-- Navigation -->
 	<nav class="mdl-navigation">
@@ -32,7 +32,7 @@
 	</nav>
 </div>
 </header>
-<div class="mdl-layout__drawer">
+<div class="mdl-layout__drawer eng-navigation-row">
 	<span class="mdl-layout-title"><a class="eng-title-a" href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a></span>
 	<nav class="mdl-navigation">
 		{% for p in pages %}
