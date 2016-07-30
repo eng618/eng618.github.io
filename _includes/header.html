@@ -35,7 +35,11 @@
 <div class="mdl-layout__drawer">
 	<span class="mdl-layout-title"><a class="eng-title-a" href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a></span>
 	<nav class="mdl-navigation">
-		{% for page in pages %}{% if page.nav %}<a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>{% endif %}{% endfor %}
+		{% for p in pages %}
+			{% if p.nav %}
+				<a class="mdl-navigation__link {% if p.url == page.url %}is-active{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+			{% endif %}
+		{% endfor %}
 	</nav>
 </div>
 

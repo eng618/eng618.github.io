@@ -225,12 +225,12 @@ html {
   color: #673AB7;
 }
 
-.mdl-navigation-row .is-active {
+.mdl-navigation_link .is-active {
   position: relative;
   font-weight: bold;
 }
 
-.mdl-navigation-row .is-active:after {
+.mdl-navigation_link .is-active:after {
   content: "";
   width: 70%;
   height: 2px;
