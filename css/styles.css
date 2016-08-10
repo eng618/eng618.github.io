@@ -20,11 +20,11 @@ html {
   background-size: cover;
 }
 
-  .eng-site-header {
-    height: 550px;
-  }
+.eng-site-header {
+  height: 550px;
+}
 
-  .eng-slogan {
+.eng-slogan {
   font-size: 60px;
   padding-top: 160px;
 }
@@ -34,21 +34,21 @@ html {
   padding-top: 24px;
 }
 
-  .eng-slogan {
-    font-size: 26px;
-    margin: 0 16px;
-    padding-top: 24px;
-    color: white;
-  }
+.eng-slogan {
+  font-size: 26px;
+  margin: 0 16px;
+  padding-top: 24px;
+  color: white;
+}
 
-  .eng-sub-slogan {
-    font-size: 16px;
-    margin: 0 16px;
-    padding-top: 8px;
-    color: white;
-  }
+.eng-sub-slogan {
+  font-size: 16px;
+  margin: 0 16px;
+  padding-top: 8px;
+  color: white;
+}
 
-  .eng-max-width {
+.eng-max-width {
   max-width: 1100px;
   margin: auto;
 }
@@ -64,26 +64,26 @@ html {
 
 <<<<<<< HEAD
 .mdl-navigation_link .is-active {
-=======
-.eng-navigation-row .is-active {
->>>>>>> origin/1.0/main-layout-update
-  position: relative;
-  font-weight: bold;
-}
+  =======
+  .eng-navigation-row .is-active {
+    >>>>>>> origin/1.0/main-layout-update
+    position: relative;
+    font-weight: bold;
+  }
 
-<<<<<<< HEAD
-.mdl-navigation_link .is-active:after {
-=======
-.eng-navigation-row .is-active:after {
->>>>>>> origin/1.0/main-layout-update
-  content: "";
-  width: 70%;
-  height: 2px;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: rgb(103, 58, 183);
-  left: 15%;
-}
+  <<<<<<< HEAD
+  .mdl-navigation_link .is-active:after {
+    =======
+    .eng-navigation-row .is-active:after {
+      >>>>>>> origin/1.0/main-layout-update
+      content: "";
+      width: 70%;
+      height: 2px;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(103, 58, 183);
+      left: 15%;
+    }
 
