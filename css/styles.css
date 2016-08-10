@@ -12,7 +12,7 @@ html {
 }
 
 .eng-site-header {
-  position: relative;
+  position: center, center;
   height: 800px;
   width: auto;
   background-color: #f3f3f3;
@@ -68,7 +68,6 @@ html {
 }
 
 .eng-navigation-row .is-active:after {
-
   content: "";
   width: 70%;
   height: 2px;
