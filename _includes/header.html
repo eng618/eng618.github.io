@@ -1,34 +1,48 @@
-
 <!-- Variable pages to sort pages for navigation -->
-{% assign pages = site.pages | sort:"weight"  %}
+{% assign pages = site.pages | sort: "weight"  %}
 
-<!-- From: https://getmdl.io/templates/portfolio/ -->
-<header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
-	<div class="mdl-layout__header-row portfolio-logo-row">
-		<span class="mdl-layout__title">
-			<div class="portfolio-logo"></div>
-			<span class="mdl-layout__title">Eric Garcia's Portfolio</span>
-		</span>
+<header class="mdl-layout__header mdl-layout__header--waterfall">
+	<!-- Top row, always visible -->
+	<div class="mdl-layout__header-row eng-navigation-row">
+		<!-- Title -->
+		<span class="mdl-layout-title"><a class="eng-title-a" href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a></span>
+		<div class="mdl-layout-spacer"></div>
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+		mdl-textfield--floating-label mdl-textfield--align-right">
+		<label class="mdl-button mdl-js-button mdl-button--icon"
+		for="waterfall-exp">
+		<i class="material-icons">search</i>
+	</label>
+	<div class="mdl-textfield__expandable-holder">
+		<input class="mdl-textfield__input" type="text" name="sample"
+		id="waterfall-exp">
 	</div>
-	<div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
-		<nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-			{% for page in pages %}
-			{% if page.nav %}
-			{% if page.title %}
-			<a class="mdl-navigation__link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</div>
+</div>
+<!-- Bottom row, not visible on scroll -->
+<div class="mdl-layout__header-row eng-navigation-row">
+	<div class="mdl-layout-spacer"></div>
+	<!-- Navigation -->
+	<nav class="mdl-navigation">
+		{% for p in pages %}
+			{% if p.nav %}
+				<a class="mdl-navigation__link {% if p.url == page.url %}is-active{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
 			{% endif %}
-			{% endif %}
-			{% endfor %}
-		</nav>
-	</div>
-</header>
-
-<div class="mdl-layout__drawer mdl-layout--small-screen-only">
-	<nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-		{% for my_page in pages %}
-		{% if my_page.title %}
-		<a class="mdl-navigation__link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-		{% endif %}
 		{% endfor %}
 	</nav>
 </div>
+</header>
+<div class="mdl-layout__drawer eng-navigation-row">
+	<span class="mdl-layout-title"><a class="eng-title-a" href="{{ "/" | prepend: site.baseurl }}">{{ site.title }}</a></span>
+	<nav class="mdl-navigation">
+		{% for p in pages %}
+			{% if p.nav %}
+				<a class="mdl-navigation__link {% if p.url == page.url %}is-active{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+			{% endif %}
+		{% endfor %}
+	</nav>
+</div>
+
+
+
+
