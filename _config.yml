@@ -1,7 +1,8 @@
+# Site version
 version: 0.2
 
 # Site settings
-title: Eric Garcia's Portfolio
+title: Eric Garcia
 email: eng618@garciaericn.com
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -14,5 +15,13 @@ github_username:  eng618
 
 # Build settings
 markdown: kramdown
-show_drafts: true
+# show_drafts: true
 incremental: true
+
+collections:
+  android-apps:
+    output: true
+    permalink: /apps/android/:path/
+  ios-apps:
+    output: true
+    permalink: /apps/ios/:path/

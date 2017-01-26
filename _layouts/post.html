@@ -1,25 +1,25 @@
 ---
-layout: default
+layout: page
 ---
 
-<div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
-	<div class="mdl-card__title">
-		<h2 class="mdl-card__title-text">{{page.title}}</h2><br/>
-	</div>
-	{% if page.image %}
-	<div class="mdl-card__media">
-		<img class="article-image" src="{{page.image}}" border="0" alt="">
-	</div>
+{% if page.image %}
+<div class="mdl-card__media">
+	<img class="article-image" src="{{page.image}}" border="0" alt="">
+</div>
+{% endif %}
+
+<div class="mdl-card__supporting-text">
+	<!-- Insert a variable for tags post is related to using the below format -->
+	{% if page.tags %}
+	<strong>Includes</strong>
+	<span>{{ page.tags }}</span>
 	{% endif %}
-	<div class="mdl-card__supporting-text">
-		<!-- Insert a variable for tags post is related to using the below format -->
-		<strong>Includes</strong>
-		<span>Design, UX and Frontend Development</span>
-		<p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-	</div>
-	<div class="mdl-grid portfolio-copy">
 
-		{{ content }}
+	<p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+</div>
 
-	</div>
+<div class="mdl-grid">
+
+	{{ content }}
+
 </div>
