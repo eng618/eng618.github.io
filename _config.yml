@@ -15,7 +15,7 @@ github_username:  eng618
 
 # Build settings
 markdown: kramdown
-show_drafts: true
+# show_drafts: true
 incremental: true
 
 collections:
