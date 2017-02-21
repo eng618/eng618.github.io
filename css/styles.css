@@ -13,8 +13,6 @@ html {
 
 .eng-site-header {
   position: center, center;
-  height: 800px;
-  width: auto;
   background-color: #f3f3f3;
   background: url('/images/site-header.jpeg') no-repeat center center fixed;
   background-size: cover;
