@@ -1,19 +1,3 @@
-- course: "Up and Running with AngularJS 1"
-  url:
-  completed: 2016-08
-  authority: Lynda.com
-  certificateNumber: 8C74862D9EED4119961BE05F732F305A
-  length: 1h 20m
-  category: Web
-
-- course: "Docker: The Basics"
-  url: https://www.lynda.com/Docker-tutorials/Docker-Basics/485649-2.html?utm_source=linkedin&utm_medium=sharing&utm_campaign=certificate
-  completed: 2017-02
-  authority: Lynda.com
-  certificateNumber:
-  length: 2h 19m
-  category: Developer
-
 # - course:
 #   url:
 #   completed:
@@ -21,3 +5,203 @@
 #   certificateNumber:
 #   length:
 #   category:
+
+- course: "Docker: The Basics"
+  url: "https://www.lynda.com/Docker-tutorials/Docker-Basics/485649-2.html?utm_source=linkedin&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2017-02
+  authority: Lynda.com
+  certificateNumber:
+  length: 2h 19m
+  category: Developer
+
+- course: "Computer Science Principles: Programming"
+  url: "https://www.lynda.com/ViewCertificate/4D2F91302BB04E1B86CB6BB39D7CA791?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2017-01
+  authority: Lynda.com
+  certificateNumber: 4D2F91302BB04E1B86CB6BB39D7CA791
+  length: 1h 25m
+  category: Programming
+
+- course: "Building a Mobile App with AngularJS 1 and Ionic"
+  url: "https://www.lynda.com/ViewCertificate/2D5E69C89D94417D9DE8A08E544E0074?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2016-09
+  authority: Lynda.com
+  certificateNumber: 2D5E69C89D94417D9DE8A08E544E0074
+  length: 3h 31m
+  category: Mobile
+
+- course: "Up and Running with Node.js"
+  url: "https://www.lynda.com/ViewCertificate/570144E439FB4406B8FE8131D994BDBF?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2016-09
+  authority: Lynda.com
+  certificateNumber: 570144E439FB4406B8FE8131D994BDBF
+  length: 57m 40s
+  category: Web
+
+- course: "Up and Running with AngularJS 1"
+  url: "https://www.lynda.com/ViewCertificate/8C74862D9EED4119961BE05F732F305A?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2016-08
+  authority: Lynda.com
+  certificateNumber: 8C74862D9EED4119961BE05F732F305A
+  length: 1h 20m
+  category: Web
+
+- course: "Jekyll for Web Designers"
+  url: "https://www.lynda.com/ViewCertificate/41E568CDCD3B48E9BF8D323D04E76B65?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2016-05
+  authority: Lynda.com
+  certificateNumber: 41E568CDCD3B48E9BF8D323D04E76B65
+  length: 4h 27m
+  category: Web
+
+- course: "Comparing Swift and Objective-C"
+  url: "https://www.lynda.com/ViewCertificate/23A244139E9740F58EAA3C1A32866EB4?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2015-04
+  authority: Lynda.com
+  certificateNumber: 23A244139E9740F58EAA3C1A32866EB4
+  length: 1h 30m
+  category: iOS
+
+- course: "iOS Game Development with Sprite Kit"
+  url: "https://www.lynda.com/ViewCertificate/6BAB011EED0B4E0CB9193362E2A6F4D7?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2015-04
+  authority: Lynda.com
+  certificateNumber: 6BAB011EED0B4E0CB9193362E2A6F4D7
+  length:
+  category: iOS
+
+- course: "iOS 8 App Development with Swift 1 Essential Training"
+  url: "https://www.lynda.com/ViewCertificate/BD743650193545F7BAE369E4F23D528E?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2015-04
+  authority: Lynda.com
+  certificateNumber: BD743650193545F7BAE369E4F23D528E
+  length: 5h 48m
+  category: iOS
+
+- course: "Swift Essential Training"
+  url: "https://www.lynda.com/ViewCertificate/592039F285AF4F7F919B3AFB44C3424C?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2015-02
+  authority: Lynda.com
+  certificateNumber: 592039F285AF4F7F919B3AFB44C3424C
+  length:
+  category: iOS
+
+- course: "Building Adaptive Android Apps with Fragments"
+  url: "https://www.lynda.com/ViewCertificate/18574CC82526417996A09C09934D1273?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2014-09
+  authority: Lynda.com
+  certificateNumber: 18574CC82526417996A09C09934D1273
+  length: 2h 8m
+  category: Android
+
+- course: "Foundations of Programming: Object-Oriented Design"
+  url: "https://www.lynda.com/ViewCertificate/9613AAE8699C43BBA3B4CA4394DA6D23?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2014-06
+  authority: Lynda.com
+  certificateNumber: 9613AAE8699C43BBA3B4CA4394DA6D23
+  length: 3h 1m
+  category: Programming
+
+- course: "Android Studio First Look"
+  url: "https://www.lynda.com/ViewCertificate/322144B3357641608DA61B1DD3646719?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2014-05
+  authority: Lynda.com
+  certificateNumber: 322144B3357641608DA61B1DD3646719
+  length: 2h 22m
+  category: Android
+
+- course: "Android SDK Essential Training"
+  url: "https://www.lynda.com/ViewCertificate/8D5EDF97406043BC8E590B74CD03A5C9?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2014-05
+  authority: Lynda.com
+  certificateNumber: 8D5EDF97406043BC8E590B74CD03A5C9
+  length: 5h 10m
+  category: Android
+
+- course: "iOS App Development Essential Training"
+  url: "https://www.lynda.com/ViewCertificate/E2F940CE043743BCAD6D6185BF608C5B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2014-03
+  authority: Lynda.com
+  certificateNumber: E2F940CE043743BCAD6D6185BF608C5B
+  length: 6h 16m
+  category: iOS
+
+- course: "Objective-C Essential Training"
+  url: "https://www.lynda.com/ViewCertificate/9EFE4322BAF84413A27A2A0FAEEE38B5?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-12
+  authority: Lynda.com
+  certificateNumber: 9EFE4322BAF84413A27A2A0FAEEE38B5
+  length: 6h 2m
+  category: iOS
+
+- course: "UX Design Techniques: Overview (2013)"
+  url: "https://www.lynda.com/ViewCertificate/776F7A713AB4417F963E769E97283D5E?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-12
+  authority: Lynda.com
+  certificateNumber: 776F7A713AB4417F963E769E97283D5E
+  length: 13m 53s
+  category: "UI/UX"
+
+- course: "Objective-C Essential Training (2011)"
+  url: "https://www.lynda.com/ViewCertificate/E3770FA28D474D50A21CCD68075DE7A5?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-12
+  authority: Lynda.com
+  certificateNumber: E3770FA28D474D50A21CCD68075DE7A5
+  length:
+  category: iOS
+
+- course: "Foundations of Programming: Software Quality Assurance"
+  url: "https://www.lynda.com/ViewCertificate/44DE18E59DA34ECDA70379B5F6C5F46B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-11
+  authority: Lynda.com
+  certificateNumber: 44DE18E59DA34ECDA70379B5F6C5F46B
+  length: 1h 24m
+  category: Programming
+
+- course: "Bridge CC for Photographers"
+  url: "https://www.lynda.com/ViewCertificate/0D6BE191DBB84A8F962133538D29D836?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-10
+  authority: Lynda.com
+  certificateNumber: 0D6BE191DBB84A8F962133538D29D836
+  length: 1h 50m
+  category: Design
+
+- course: "Creating a Responsive Web Design (2012)"
+  url: "https://www.lynda.com/ViewCertificate/D3620AEDF1174E568B9DB4F4CE3B208B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-09
+  authority: Lynda.com
+  certificateNumber: D3620AEDF1174E568B9DB4F4CE3B208B
+  length:
+  category: Web
+
+- course: "Managing Your Time"
+  url: "https://www.lynda.com/ViewCertificate/B3B5D2B336794B55B6BA6135583ED077?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-08
+  authority: Lynda.com
+  certificateNumber: B3B5D2B336794B55B6BA6135583ED077
+  length: 11m 11s
+  category: Personal
+
+- course: "JavaScript Essential Training"
+  url: "https://www.lynda.com/ViewCertificate/859995B908B04B29B288E9001F4FA911?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-05
+  authority: Lynda.com
+  certificateNumber: 859995B908B04B29B288E9001F4FA911
+  length: 5h 31m
+  category: Web
+
+- course: "jQuery Mobile Essential Training"
+  url: "https://www.lynda.com/ViewCertificate/914B153E40894F7697874B3490765F6D?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2013-05
+  authority: Lynda.com
+  certificateNumber: 914B153E40894F7697874B3490765F6D
+  length:
+  category: Web
+
+- course: "Photoshop CS6 One-on-One: Fundamentals"
+  url: "https://www.lynda.com/ViewCertificate/3B9BEF1B14B146AE889032A008217EB6?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2012-10
+  authority: Lynda.com
+  certificateNumber: 3B9BEF1B14B146AE889032A008217EB6
+  length: 6h 39m
+  category: Design
