@@ -1,4 +1,4 @@
-- course: Up and Running with AngularJS 1
+- course: "Up and Running with AngularJS 1"
   url:
   completed: 2016-08
   authority: Lynda.com
@@ -6,7 +6,7 @@
   length: 1h 20m
   category: Web
 
-- course: Docker: The Basics
+- course: "Docker: The Basics"
   url: https://www.lynda.com/Docker-tutorials/Docker-Basics/485649-2.html?utm_source=linkedin&utm_medium=sharing&utm_campaign=certificate
   completed: 2017-02
   authority: Lynda.com
@@ -15,7 +15,7 @@
   category: Developer
 
 # - course:
-#   url: 
+#   url:
 #   completed:
 #   authority: Lynda.com
 #   certificateNumber:
