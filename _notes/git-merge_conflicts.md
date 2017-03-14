@@ -39,6 +39,3 @@ To show what is in your stash use show
 ```bash
 git stash show
 ```
-
-
-

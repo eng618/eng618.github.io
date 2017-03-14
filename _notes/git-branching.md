@@ -17,7 +17,7 @@ git branch -a
 ### Resetting local branch to match remote
 
 Setting your branch to exactly match the remote branch can be done in two steps:
-	
+
 ``` bash
 git fetch origin
 git reset --hard origin/master
@@ -126,9 +126,3 @@ $ for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show
 ```
 
 This list should be reviewed more thoroughly to avoid losing important commits.
-
-
-
-
-
-

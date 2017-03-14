@@ -13,7 +13,7 @@ category: git
 git update-index --skip-worktree SOME_FILE
 ```
 
-or 
+or
 
 ```bash
 git update-index --assume-unchanged SOME_FILE
@@ -52,4 +52,3 @@ Then you can execute:
 ```bash
 git exclude SOME_FILE
 ```
-

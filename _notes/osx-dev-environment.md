@@ -44,7 +44,7 @@ This software is available through Homebrew.  It is well documented on it's <a h
 
 ### Using .bash_profile
 
-<a href="http://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions/26252993#26252993">See this StackOverflow post</a> for simple java version management using your `.bash_profile` 
+<a href="http://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions/26252993#26252993">See this StackOverflow post</a> for simple java version management using your `.bash_profile`
 
 ## Text Editors
 

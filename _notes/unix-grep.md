@@ -38,5 +38,3 @@ ls | grep -v ".log" | xargs rm
 	```bash
 	grep -v "SEARCH_TERM" FILE.log
 	```
-
-

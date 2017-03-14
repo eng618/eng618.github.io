@@ -50,6 +50,3 @@ If you later decide you hate it, run this command to go back:
 ```bash
 git config --global --unset diff.external
 ```
-
-
-

@@ -7,7 +7,7 @@ category: osx
 tags: [osx, homebrew, brew]
 ---
 
-## When trying to install using homebrew 
+## When trying to install using homebrew
 
 User does not have permission to write to **/usr/local/Cellar** and throws following error.
 
@@ -34,7 +34,3 @@ Cowardly refusing to `sudo brew install'
 	```bash
 	sudo chmod a+w /usr/local/Cellar
 	```
-
-
-
-
