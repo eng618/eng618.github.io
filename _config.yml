@@ -15,6 +15,7 @@ github_username:  eng618
 
 # Build settings
 markdown: kramdown
+permalink: pretty
 # show_drafts: true
 incremental: true
 
@@ -25,3 +26,15 @@ collections:
   ios-apps:
     output: true
     permalink: /apps/ios/:path/
+  notes:
+    output: true
+    permalink: /notes/:path/
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "notes"
+    values:
+      layouts: "basic-page"
