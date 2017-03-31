@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "Drafts"
+title: "Test Draft"
 author: "Eric N. Garcia"
 ---
 
-# This is a daft post to demonstrate how it is used.
+This is a simple test draft to show that drafts are working when serving jekyll locally.
 
 [Source](https://jekyllrb.com/docs/drafts/)
 
