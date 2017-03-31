@@ -7,17 +7,18 @@ html {
 }
 
 .eng-title-a{
-  color: inherit; 
+  color: inherit;
   text-decoration: inherit;
 }
 
 .eng-site-header {
   position: center, center;
-  height: 800px;
-  width: auto;
   background-color: #f3f3f3;
-  background: url('/images/site-header.jpeg') center 20% no-repeat;
+  background: url('/images/site-header.jpeg') no-repeat center center fixed;
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 }
 
 .eng-site-header {
@@ -78,4 +79,3 @@ html {
   background-color: rgb(103, 58, 183);
   left: 15%;
 }
-
