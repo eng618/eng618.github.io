@@ -2,7 +2,7 @@
 layout: page
 title: Portfolio
 weight: 1
-nav: ture
+nav: true
 ---
 
 <h4>Published Applications</h4>
@@ -32,82 +32,44 @@ nav: ture
 
 <h4>Lynda.com Certificates of Completion</h4>
 
+<!-- Setup for category cards -->
+
+{% assign certCategories = site.data.lyndaCoC | group_by: "category" | sort: "name"  %}
+
+
 <div class="mdl-grid">
 
-	<!-- Add this block per item in portfolio -->
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">iOS</h2>
-		</div>
-		<div class="mdl-card__supporting-text">
-			<ul>
-				<li>Objective-C Essential Training</li>
-				<li>iOS  App Development Essential Training</li>
-			</ul>
-		</div>
-	</div>
+	{% for certCategory in certCategories %}
+		<!--
+			# - course:
+			#   url:
+			#   completed:
+			#   authority: Lynda.com
+			#   certificateNumber:
+			#   length:
+			#   category:
+		-->
 
-	<!-- Add this block per item in portfolio -->
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">Android</h2>
-		</div>
-		<div class="mdl-card__supporting-text">
-			<ul>
-				<li>Android Studio First Look</li>
-				<li>Android SDK Essential Training</li>
-			</ul>
-		</div>
-	</div>
 
-	<!-- Add this block per item in portfolio -->
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">UI / UX</h2>
-		</div>
-		<div class="mdl-card__supporting-text">
-			<ul>
-				<li>UX Design Techniques: Overview</li>
-			</ul>
-		</div>
-	</div>
+		<!-- Add this block per item in portfolio -->
+		<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+			<div class="mdl-card__title">
+				<h2 class="mdl-card__title-text">{{ certCategory.name }}</h2>
+			</div>
+			<div class="mdl-card__supporting-text">
+				<ul>
 
-	<!-- Add this block per item in portfolio -->
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">Programing</h2>
-		</div>
-		<div class="mdl-card__supporting-text">
-			<ul>
-				<li>Foundations of Programming: Software Quality Assurance</li>
-				<li>Foundations of Programming: Object-Oriented Design</li>
-			</ul>
-		</div>
-	</div>
+					{% for cert in certCategory.items %}
+					<li><a href="{{ cert.url }}" target="_blank">{{ cert.course }}</a></li>
+					{% endfor %}
 
-	<!-- Add this block per item in portfolio -->
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">Web</h2>
+				</ul>
+			</div>
 		</div>
-		<div class="mdl-card__supporting-text">
-			<ul>
-				<li>jQuery Mobile Essential Training</li>
-				<li>JavaScript Essential Training</li>
-				<li>Creating a Responsive Web Design</li>
-			</ul>
-		</div>
-	</div>
 
-	<!-- Add this block per item in portfolio -->
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">Design</h2>
-		</div>
-		<div class="mdl-card__supporting-text">
-			<ul>
-				<li>Photoshop CS6 One-on-One: Fundamentals</li>
-			</ul>
-		</div>
-	</div>
+
+
+
+
+	{% endfor %}
 </div>
