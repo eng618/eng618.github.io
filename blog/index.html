@@ -7,23 +7,25 @@ nav: true
 
 <div class="android-card-container mdl-grid">
 	{% for post in site.posts %}
-	<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
-		<div class="mdl-card__media">
-			<img class="article-image" src="/images/mdl/example-work01.jpg" border="0" alt="">
+		<div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+			<div class="mdl-card__media">
+				<img class="article-image" src="/images/mdl/example-work01.jpg" border="0" alt="">
+			</div>
+			<div class="mdl-card__title">
+				<h2 class="mdl-card__title-text">{{ post.title }}</h2>
+			</div>
+			<div class="mdl-card__supporting-text">
+				{{ post.excerpt | truncatewords:25 }}
+			</div>
+			<!-- Add spacer, to align action to the bottom -->
+      <div class="mdl-layout-spacer"></div>
+			<div class="mdl-card__actions mdl-card--border">
+				<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ post.url | prepend: site.baseurl }}">
+						READ MORE
+				</a>
+			</div>
 		</div>
-		<div class="mdl-card__title">
-			<h2 class="mdl-card__title-text">{{ post.title }}</h2>
-		</div>
-		<div class="mdl-card__supporting-text">
-			{{ post.excerpt | truncatewords:25 }}
-		</div>
-		<div class="mdl-card__actions mdl-card--border">
-			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{{ post.url | prepend: site.baseurl }}">
-				READ MORE
-			</a>
-		</div>
-	</div>
 	{% endfor %}
 </div>
 
-<p class="rss-subscribe mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<p class="rss-subscribe mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding">subscribe <a href="{{ " /feed.xml " | prepend: site.baseurl }}">via RSS</a></p>
