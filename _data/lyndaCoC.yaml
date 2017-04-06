@@ -6,11 +6,19 @@
 #   length:
 #   category:
 
+- course: "AngularJS 1: Adding Registration to Your Application"
+  url: "https://www.lynda.com/ViewCertificate/84D90C33E84441B1BB9B0EAD19DE47B4?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2017-04
+  authority: Lynda.com
+  certificateNumber: 84D90C33E84441B1BB9B0EAD19DE47B4
+  length: 2h 19m
+  category: Developer
+
 - course: "Docker: The Basics"
   url: "https://www.lynda.com/Docker-tutorials/Docker-Basics/485649-2.html?utm_source=linkedin&utm_medium=sharing&utm_campaign=certificate"
   completed: 2017-02
   authority: Lynda.com
-  certificateNumber:
+  certificateNumber: 8D428010F0BA4B9EBA85402CE6A5E5C6
   length: 2h 19m
   category: Developer
 
