@@ -1,15 +1,6 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "name": "Eric Garcia",
     "short_name": "ENG618",
-=======
-    "name": "",
->>>>>>> 2dd4773... Added varius favicons, and app manifest.
-=======
-    "name": "Eric Garcia",
-    "short_name": "ENG618",
->>>>>>> 9caf7fe... Updated name of manifets
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -25,12 +16,4 @@
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
     "display": "standalone"
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 2dd4773... Added varius favicons, and app manifest.
-=======
-}
->>>>>>> 9caf7fe... Updated name of manifets
