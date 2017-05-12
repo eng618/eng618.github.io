@@ -3,24 +3,20 @@ layout: default
 ---
 
 <div class="mdl-grid eng-max-width">
-	<div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-		{% if page.title %}
-		<div class="mdl-card__title">
-			<h3 class="mdl-card__title-text">{{page.title}}</h3>
-		</div>
-		{% endif %}
+	{% if page.title %}
+	<div class="mdl-card__title">
+		<h3 class="mdl-card__title-text">{{page.title}}</h3>
+	</div>
+	{% endif %}
 
-		{% if page.article-image %}
-		<div class="mdl-card__media">
-			<img class="article-image" src="{{page.article-image}}" border="0" alt="">
-		</div>
-		{% endif %}
+	{% if page.article-image %}
+	<div class="mdl-card__media eng-page-header">
+		<img class="article-image" src="{{page.article-image}}" border="0" alt="">
+	</div>
+	{% endif %}
 
-		<div class="mdl-card__supporting-text">
-
-		 	{{ content }}
-		 	
-		</div>
+	<div class="mdl-card__supporting-text">
+		{{ content }}
 	</div>
 </div>
