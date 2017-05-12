@@ -3,30 +3,27 @@ layout: basic-page
 ---
 
 <div class="eng-back">
-	<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{ "/notes/" | prepend: site.baseurl }}" title="go back" role="button">
-		<i class="material-icons nav" role="presentation">arrow_back</i>
-	</a>
+  <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="{{ " /notes/ " | prepend: site.baseurl }}" title="go back" role="button">
+    <i class="material-icons nav" role="presentation">arrow_back</i>
+  </a>
 </div>
 
 {% if page.title %}
 <div class="mdl-card__title">
-	<h2>{{page.title}}</h2><br>
+  <h2>{{page.title}}</h2><br>
 </div>
 <div class="mdl-card__supporting-text">
 
-	{% if page.tags %}
-	<span itemprop="tags"><b>Tags</b>: {{ page.tags | array_to_sentence_string }}</span>
-	{% endif %}
+  {% if page.tags %}
+  <span itemprop="tags"><b>Tags</b>: {{ page.tags | array_to_sentence_string }}</span> {% endif %}
 
 </div>
-{% endif %}
-
-{% if page.note-image %}
+{% endif %} {% if page.note-image %}
 <div class="mdl-card__media">
-	<img src="{{ page.note-header }}" border="0" alt="">
+  <img src="{{ page.note-header }}" border="0" alt="">
 </div>
 {% endif %}
 
 <div class="mdl-card__supporting-text">
-	{{ content }}
+  {{ content }}
 </div>

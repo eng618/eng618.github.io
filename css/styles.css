@@ -2,11 +2,11 @@ html {
   height: auto;
 }
 
-.mdl-layout__header-row .mdl-navigation__link:last-of-type  {
+.mdl-layout__header-row .mdl-navigation__link:last-of-type {
   padding-right: 0;
 }
 
-.eng-title-a{
+.eng-title-a {
   color: inherit;
   text-decoration: inherit;
 }
