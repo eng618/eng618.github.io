@@ -1,14 +1,14 @@
 <footer class="mdl-mini-footer">
-	<div class="mdl-mini-footer__left-section">
-		<div class="mdl-logo">{{ site.title }}</div>
-		<ul class="mdl-mini-footer__link-list">
-			<li><a href="#">Help</a></li>
-			<li><a href="#">Privacy & Terms</a></li>
-		</ul>
-	</div>
-	<div class="mdl-mini-footer--right-section">
-		<a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#top" title="back to top" role="button">
-			<i class="material-icons md-48" role="presentation">arrow_upward</i>
-		</a>
-	</div>
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">{{ site.title }}</div>
+    <ul class="mdl-mini-footer__link-list">
+      <li><a href={{ "/info/help" | prepend: site.baseurl }}>Help</a></li>
+      <li><a href={{ "/info/privacy_and_terms" | prepend: site.baseurl }}>Privacy & Terms</a></li>
+    </ul>
+  </div>
+  <div class="mdl-mini-footer--right-section">
+    <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="#top" title="back to top" role="button">
+      <i class="material-icons md-48" role="presentation">arrow_upward</i>
+    </a>
+  </div>
 </footer>
