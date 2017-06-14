@@ -1,0 +1,31 @@
+---
+layout: post
+title: Jekyll
+author: "Eric Garcia"
+last_updated: 2016-07-25
+category: android
+tags: [jekyll, gem]
+---
+
+
+[source](https://stackoverflow.com/a/14636783/2218959)
+
+
+### Specifying a `:path` attribute will install the gem from that path on your local machine.
+
+    gem "<gem-name>", :path => "<full-local-path>"
+
+### Alternately, specifying a `:git` attribute will install the gem from a remote git repository.
+
+```ruby
+"git://github.com/<github-username>/<github-repo>.git"
+
+# ...or at a specific SHA-1 ref
+gem "<gem-name>", :git => "git://github.com/<github-username>/<github-repo>.git", :ref => "bf648a070c"
+
+# ...or branch
+gem "<gem-name>", :git => "git://github.com/<github-username>/<github-repo>.git", :branch => "jruby"
+
+# ...or tag
+gem "<gem-name>", :git => "git://github.com/<github-username>/<github-repo>.git", :tag => "v0.45.0"
+```
