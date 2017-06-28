@@ -44,7 +44,18 @@ This software is available through Homebrew.  It is well documented on it's <a h
 
 ### Using .bash_profile
 
-<a href="http://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions/26252993#26252993">See this StackOverflow post</a> for simple java version management using your `.bash_profile`
+<a href="http://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions/26252993#26252993" target="blank">See this StackOverflow post</a> for simple java version management using your `.bash_profile`
+
+## Ruby Management
+
+rbenv is awesome!!  `brew install rbenv`
+
+Plugins to consider
+* `git clone https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems`
+* `git clone https://github.com/mislav/rbenv-user-gems.git "$(rbenv root)/plugins/rbenv-user-gems"`
+* `git clone https://github.com/rkh/rbenv-update.git "$(rbenv root)/plugins/rbenv-update"`
+* `git clone https://github.com/rkh/rbenv-whatis.git $(rbenv root)/plugins/rbenv-whatis`
+* `git clone https://github.com/rkh/rbenv-use.git $(rbenv root)/plugins/rbenv-use`
 
 ## Text Editors
 
