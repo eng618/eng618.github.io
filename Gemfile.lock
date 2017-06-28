@@ -197,10 +197,9 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll
   jekyll-archives
   jekyll-sitemap
   jekyll-watch
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
