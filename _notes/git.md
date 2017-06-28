@@ -3,8 +3,9 @@ layout: note
 title: git
 author: "Eric Garcia"
 updateBy: Eric Garcia
-last_updated: 2016-10-05
+last_updated: 2017-06-09
 category: git
+tags: [git]
 ---
 
 **Jump to**:
@@ -57,6 +58,23 @@ Or
 git push <remote> <branch> -f
 ```
 **Warning:** force-pushing will overwrite the remote branch with the state of your local one. If there are commits on the remote branch that you don't have in your local branch, you will lose those commits.
+
+## Past Commits
+[source](https://stackoverflow.com/a/1186549/2218959)
+
+You can use rebase to edit a past commit by passing the commit hash, with the following:
+
+```bash
+git rebase -i '<commit-hash>^'
+```
+
+Once your editor is opened with the rebase dialog, put edit as the action word for that commit.  Save and close.  Open the project and make the changes you wanted to update to that commit.  To keep the same commit message you have previously use:
+
+```bash
+git commit --all --amend --no-edit
+```
+
+Now you can use `git rebase --continue` and go a `git push -f` to force push your changes to the remote repo.
 
 
 # Git Branching
