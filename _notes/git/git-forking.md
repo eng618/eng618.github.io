@@ -52,4 +52,4 @@ git merge upstream/GA
 
 Once you are ready to submit your changes back to upstream you can create a pull request via [*github.com*](github.ibm.com).  Ensuring that your base branch is `GA` and the head branch is `ENG-GA`.  See image for details.
 
-[[images/git-pull-request.png]]
+![](./git-forking/git-pull-request.png)
