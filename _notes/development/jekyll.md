@@ -1,9 +1,9 @@
 ---
-layout: post
+layout: note
 title: Jekyll
 author: "Eric Garcia"
 last_updated: 2016-07-25
-category: android
+category: Development
 tags: [jekyll, gem]
 ---
 
