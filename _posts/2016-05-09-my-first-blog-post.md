@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "My First Blog"
-date:   2016-05-29
+title: "My First Blog"
+date: 2016-05-29
 author: "Eric N. Garcia"
 image: '/assets/images/mdl/default-blog-image.jpg'
 ---

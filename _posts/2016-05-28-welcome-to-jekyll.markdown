@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2016-05-28
+title: "Welcome to Jekyll!"
+date: 2016-05-28
 categories: jekyll update
 image: '/assets/images/mdl/default-blog-image.jpg'
 tags: jekyll, default
