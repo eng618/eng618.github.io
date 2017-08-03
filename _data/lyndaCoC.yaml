@@ -6,6 +6,14 @@
 #   length:
 #   category:
 
+- course: "iOS App development: Test-Driven Development"
+  url: "https://www.lynda.com/ViewCertificate/E9C05DEACF60498799FA4794D18565E3?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2017-08
+  authority: Lynda.com
+  certificateNumber: E9C05DEACF60498799FA4794D18565E3
+  length: 2h 14m
+  category: iOS
+
 - course: "AngularJS 1: Adding Registration to Your Application"
   url: "https://www.lynda.com/ViewCertificate/84D90C33E84441B1BB9B0EAD19DE47B4?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
   completed: 2017-04
