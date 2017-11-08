@@ -33,7 +33,7 @@ For trouble shooting brew issues see [Homebrew](./homebrew)
 
 ### Updating bash and bash-completion
 
-[source](bash_completion_source)
+[source][bash_completion_source]
 
 You can update bash using homebrew. With `homebrew install bash`.  It is also important to note that you will have to insure you **bash_profile** or **bash_rc** is updated to have the brew path first in your systems path.  Once you have the updated bash installed you can install the latest bash-completion with `brew install bash-completion2`
 
