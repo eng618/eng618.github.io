@@ -31,6 +31,33 @@ Some very useful tools that can be installed with **Home Brew** `brew install CO
 
 For trouble shooting brew issues see [Homebrew](./homebrew)
 
+### Updating bash and bash-completion
+
+[source](bash_completion_source)
+
+You can update bash using homebrew. With `homebrew install bash`.  It is also important to note that you will have to insure you **bash_profile** or **bash_rc** is updated to have the brew path first in your systems path.  Once you have the updated bash installed you can install the latest bash-completion with `brew install bash-completion2`
+
+You will need to update how you load the bash completion in your **[bash/bash_rc]profile** as follows.
+
+```shell
+####### Verify is bash_completon is installed #######
+
+ # Add tab completion for bash completion 2
+if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
+  source "$(brew --prefix)/share/bash-completion/bash_completion";
+  export PS1='\W$(__git_ps1) \$ '
+
+# Fallback to bash completion
+elif [ -f /etc/bash_completion ]; then
+  source /etc/bash_completion;
+  export PS1='\W$(__git_ps1) \$ '
+fi;
+```
+
+**Note**: you can leave out the `export` of `PS1` if you choose.  I just prefer a simple concise command prompt.
+
+[bash_completion_source]: https://troymccall.com/better-bash-4--completions-on-osx/
+
 ## Java Version Management
 
 When it comes to Java management on a Mac there are several option in which you can chose.  Below I will detail a few of them to chose from.  First I will mention my favorite jenv
