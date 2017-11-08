@@ -29,7 +29,7 @@ Some very useful tools that can be installed with **Home Brew** `brew install CO
 * `rbenc`
 * `wget`
 
-For trouble shooting brew issues see [Homebrew](../osx-homebrew)
+For trouble shooting brew issues see [Homebrew](./homebrew)
 
 ## Java Version Management
 
