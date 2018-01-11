@@ -6,6 +6,14 @@
 #   length:
 #   category:
 
+- course: "Angular: Progressive Web Apps"
+  url: "https://www.lynda.com/ViewCertificate/14C929D8194E45959D590EBD9095225C?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+  completed: 2018-01
+  authority: Lynda.com
+  certificateNumber: 14C929D8194E45959D590EBD9095225C
+  length: 4h 40m
+  category: Web
+
 - course: "iOS App development: Test-Driven Development"
   url: "https://www.lynda.com/ViewCertificate/E9C05DEACF60498799FA4794D18565E3?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
   completed: 2017-08
