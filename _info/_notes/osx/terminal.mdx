@@ -1,0 +1,92 @@
+---
+title: Terminal Setup
+---
+
+# Setting up your Terminal with zsh and iTerm2
+
+I'll be combining a couple different tutorials that I will like to in the footnotes.  As well as some minor differences that I have updated for my personal use.
+
+## Installing Xcode
+
+Ensure Xcode developer tools are installed with:
+
+```zsh
+xcode-select —-install
+```
+
+## Install Homebrew
+
+If homebrew is not installed do so now with:
+
+```zsh
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+[source](https://brew.sh)
+
+## Install iTerm2 via Homebrew
+
+```zsh
+brew cask install iterm2
+```
+
+## Install zsh
+
+Make sure you have the latest zsh installed
+
+```zsh
+brew install zsh
+```
+
+## Install Oh My Zsh
+
+```zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+Once installed install your various plugins, by adding them to the plugins array in your `~/.zshrc`.
+
+Here are the [list of plugins](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins) or check out the [wiki](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins)
+
+Keep you upgrade oh my zsh with:
+
+```zsh
+upgrade_oh_my_zsh
+```
+
+## Change the default theme
+
+## Install fonts for Powerlines
+
+[Powerline fonts](https://github.com/powerline/fonts) allows to use some really helpful additions to the command prompt that make it easier to read.
+
+It can be installed with the following:
+
+```zsh
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+```
+
+## Add Aliases
+
+
+
+
+
+
+
+
+
+
+---
+
+## Links
+
+- [How to Configure your macOs Terminal with Zsh like a Pro](https://www.freecodecamp.org/news/how-to-configure-your-macos-terminal-with-zsh-like-a-pro-c0ab3f3c1156/)
+- [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
