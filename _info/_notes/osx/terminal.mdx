@@ -54,24 +54,30 @@ Keep you upgrade oh my zsh with:
 upgrade_oh_my_zsh
 ```
 
-## Change the default theme
+## Powerlevel9k
 
-## Install fonts for Powerlines
-
-[Powerline fonts](https://github.com/powerline/fonts) allows to use some really helpful additions to the command prompt that make it easier to read.
-
-It can be installed with the following:
+Install [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k) theme.  Since we are using Oh My Zsh, we can install it in the **~/.oh-my-zsh/custom/themes/** directory with the following.
 
 ```zsh
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
+
+then simply add the theme to you **~/.zsh** file.
+
+```zsh
+ZSH_THEME="powerlevel9k/powerlevel9k"
+```
+
+To include syntax highlighting of your shell install the [zsh-syntax-highlighting plugins](https://github.com/zsh-users/zsh-syntax-highlighting) with the following:
+```zsh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+## Install fonts with gliphs
+
+
+
+
 
 ## Add Aliases
 
