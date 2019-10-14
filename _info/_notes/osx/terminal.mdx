@@ -59,7 +59,7 @@ upgrade_oh_my_zsh
 Install [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh) theme. Since we are using Oh My Zsh, we can install it in the **~/.oh-my-zsh/custom/themes/** directory with the following.
 
 ```zsh
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
 ```
 
 then simply add the theme to you **~/.zsh** file.
