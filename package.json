@@ -31,11 +31,17 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "postbuild": "rsync -av public/ ../docs/",
+    "clean": "gatsby clean",
+    "dev": "gatsby develop",
+    "dev:clean": "gatsby clean && gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.{scss,css,js,md,mdx}\"",
+    "format:diff": "prettier --check \"src/**/*.{scss,css,js,md,mdx}\"",
+    "lint": "eslint .",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "start": "yarn dev",
+    "test": "yarn format:diff"
   },
   "repository": {
     "type": "git",
