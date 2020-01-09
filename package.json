@@ -1,26 +1,17 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "garciaericn",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A Personal portfolio",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Eric N. Garcia <engarcia618@gmail.com>",
   "dependencies": {
-    "@material-ui/core": "^4.8.3",
-    "@material-ui/styles": "^4.8.2",
+    "@narative/gatsby-theme-novela": "^0.12.2",
     "gatsby": "^2.18.18",
-    "gatsby-image": "^2.2.37",
     "gatsby-plugin-manifest": "^2.2.34",
-    "gatsby-plugin-material-ui": "^2.1.6",
     "gatsby-plugin-offline": "^3.0.30",
-    "gatsby-plugin-react-helmet": "^3.1.18",
-    "gatsby-plugin-sharp": "^2.3.10",
-    "gatsby-source-filesystem": "^2.1.43",
     "gatsby-theme-notes": "^1.0.41",
-    "gatsby-transformer-sharp": "^2.3.9",
-    "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
     "prettier": "prettier/prettier"
@@ -31,11 +22,9 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "postbuild": "rsync -av public/ ../docs/",
     "clean": "gatsby clean",
     "dev": "gatsby develop",
     "dev:clean": "gatsby clean && gatsby develop",
-    "develop": "gatsby develop",
     "format": "prettier --write \"src/**/*.{scss,css,js,md,mdx}\"",
     "format:diff": "prettier --check \"src/**/*.{scss,css,js,md,mdx}\"",
     "lint": "eslint .",

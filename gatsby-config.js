@@ -1,37 +1,53 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `GarciaEricN`,
+    name: `Eric N. Garcia`,
+    siteUrl: `https://garciaericn.com`,
+    description: `IBM Software Engineer. Husband to Lindsay, dad of Noah, Eric, and Luke. Outdoor adventurer.`,
+    hero: {
+      heading: `Personal perspectives.`,
+      maxWidth: 652,
+    },
+    social: [
+      {
+        name: `twitter`,
+        url: `https://twitter.com/garciaericn`,
+      },
+      {
+        name: `github`,
+        url: `https://github.com/eng618`,
+      },
+    ],
   },
   plugins: [
     {
       resolve: `gatsby-theme-notes`,
       options: {
-        // basePath defaults to `/`
         basePath: `/notes`,
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "@narative/gatsby-theme-novela",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        contentPosts: "content/posts",
+        contentAuthors: "content/authors",
+        basePath: "/",
+        authorsPage: true,
+        sources: {
+          local: true,
+        },
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Eric N. Garcia`,
         short_name: `ENG618`,
         start_url: `/`,
-        background_color: `#303F9F`,
-        theme_color: `#303F9F`,
+        background_color: `#fff`,
+        theme_color: `#c0b3ff`,
         display: `standalone`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/favicon.png`,
       },
     },
     `gatsby-plugin-offline`,
