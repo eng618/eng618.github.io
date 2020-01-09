@@ -41,7 +41,7 @@ git push origin :<branch-name>
 
 
 ## Local branches
-**Sourced From:** [Git housekeeping tutorial](http://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/)
+**Sourced From:** [Git housekeeping tutorial](https://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/)
 
 At first, list all local branches:
 

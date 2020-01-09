@@ -7,7 +7,7 @@ email: eng618@garciaericn.com
 description: > # this means to ignore newlines until "baseurl:"
   Welcome to my professional portfolio!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://eng618.github.io" # the base hostname & protocol for your site
+url: "https://eng618.github.io" # the base hostname & protocol for your site
 
 # Site variables
 color_primary: red
