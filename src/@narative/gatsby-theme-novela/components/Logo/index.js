@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 /**
  * Paste in your SVG logo and return it from this component.
  * Make sure you have a height set for your logo.
@@ -19,5 +19,5 @@ export default function Logo() {
         fill="#9C8BFF"
       />
     </svg>
-  )
+  );
 }
