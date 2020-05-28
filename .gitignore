@@ -3,8 +3,6 @@ _site/
 .jekyll-metadata
 npm-debug.log
 
-
-
 # Created by https://www.gitignore.io/api/osx
 
 ### OSX ###
@@ -14,7 +12,6 @@ npm-debug.log
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
@@ -34,3 +31,4 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+node_modules
