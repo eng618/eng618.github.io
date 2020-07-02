@@ -38,10 +38,9 @@ git clean -xf
 
 ## Example
 
-
-* Edit some existing files
-* Add some new files
-* Realize you have no idea what you're doing
+- Edit some existing files
+- Add some new files
+- Realize you have no idea what you're doing
 
 Undo changes in tracked files
 

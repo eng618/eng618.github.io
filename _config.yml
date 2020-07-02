@@ -14,7 +14,7 @@ color_primary: red
 color_accent: deep_purple
 google_analytics: UA-64261422-5
 twitter_username: garciaericn
-github_username:  eng618
+github_username: eng618
 
 # Build settings
 markdown: kramdown
@@ -35,8 +35,7 @@ collections:
 
 # Defaults
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "notes"
     values:

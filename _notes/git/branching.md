@@ -10,7 +10,7 @@ category: git
 
 List all branches including remotes
 
-``` bash
+```bash
 git branch -a
 ```
 
@@ -18,20 +18,19 @@ git branch -a
 
 Setting your branch to exactly match the remote branch can be done in two steps:
 
-``` bash
+```bash
 git fetch origin
 git reset --hard origin/master
 ```
 
 If you want to save your current branch's state before doing this (just in case), you can do:
 
-``` bash
+```bash
 git commit -a -m "Saving my work, just in case"
 git branch my-saved-work
 ```
 
 > Tip: Also see git clean
-
 
 ### Deleting a remote branch
 
@@ -39,8 +38,8 @@ git branch my-saved-work
 git push origin :<branch-name>
 ```
 
-
 ## Local branches
+
 **Sourced From:** [Git housekeeping tutorial](https://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/)
 
 At first, list all local branches:

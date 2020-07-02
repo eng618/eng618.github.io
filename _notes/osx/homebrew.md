@@ -21,16 +21,16 @@ Attempting to `sudo` it refuses with following error.
 Cowardly refusing to `sudo brew install'
 ```
 
- You somehow have limited permissions to **/usr/local/Cellar**. Brew doesn't like to install with sudo which is why it refuses.  Correct the issue with the following commands:
+You somehow have limited permissions to **/usr/local/Cellar**. Brew doesn't like to install with sudo which is why it refuses. Correct the issue with the following commands:
 
 1. Check the permissions:
 
-	```bash
-	ls -ld /usr/local/Cellar
-	```
+   ```bash
+   ls -ld /usr/local/Cellar
+   ```
 
 2. Open them up for writing:
 
-	```bash
-	sudo chmod a+w /usr/local/Cellar
-	```
+   ```bash
+   sudo chmod a+w /usr/local/Cellar
+   ```

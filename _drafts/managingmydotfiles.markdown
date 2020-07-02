@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 'Managing My Dotfiles'
-date: '2017-08-11 16:58:34 -0400'
+title: "Managing My Dotfiles"
+date: "2017-08-11 16:58:34 -0400"
 tags: bash, dotfiles, osx, git, gitconfig
 ---
 

@@ -28,6 +28,7 @@ touch ~/bin/git-diff.sh
 ```
 
 The contents of the file will look like this:
+
 ```bash
 #!/bin/sh
 /usr/bin/opendiff "$2" "$5" -merge "$1"
