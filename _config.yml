@@ -40,3 +40,6 @@ defaults:
       type: "notes"
     values:
       layouts: "basic-page"
+
+include:
+  - .well-known
