@@ -1,0 +1,14 @@
+description = "This is my personal dev portfolio created with Hugo."
+favicon = "/favicon.ico"
+logo = "/images/profile_new.png"  # Replace with logo
+
+[hero]
+  textColor = "" # Empty for default color
+
+[copy] # Copyright
+  copy = "© 2021 Garcia Enterprise"
+
+[social]
+  twitter = "https://twitter.com/garciaericn"
+  github = "https://github.com/ENG618"
+  linkedin = "https://www.linkedin.com/in/garciaericn"
