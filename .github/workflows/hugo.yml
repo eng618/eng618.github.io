@@ -4,10 +4,12 @@ on:
   push:
     branches:
       - hugo-convert
+      - develop
       # Update to master, once this is merged in.
   pull_request:
     branches:
       - master
+      - develop
 
 jobs:
   deploy:
