@@ -1,11 +1,13 @@
 ---
 title: "About"
 description: ""
-images: ["./garcia_family.jpg"]
+images: []
 draft: false
 menu: main
 weight: 3
 ---
+
+![Garcia Family Photo](garcia_family.jpg)
 
 ## Introduction
 
