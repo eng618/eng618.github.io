@@ -1,6 +1,6 @@
-baseurl = "https://eng618.github.io"           # The base URL of your Hugo site
-title = "Eric Garcia"     # The title of your Hugo site
-author = "Eric Garcia"   # The author name
+baseurl = "https://eng618.github.io"
+title = "Eric Garcia"
+author = "Eric Garcia"
 googleAnalytics = ""    # Your Google Analytics tracking ID
 enableRobotsTXT = true
 language = "en-US"

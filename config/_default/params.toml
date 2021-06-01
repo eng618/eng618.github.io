@@ -27,3 +27,9 @@ logo = "/images/profile_new.png"  # Replace with logo
     inputMsgLabel = "Write something"
     inputMsgLength = 750
     inputSubmitValue = "Send"
+
+[posts]
+    showAuthor = false
+    showDate = true
+    showTags = true
+    dateFormat = "Jan 2, 2006"
