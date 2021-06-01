@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: garciaericn.com
+Token: 9db24197be863b30b4ceec174b5935ae05a3715d964544751b1e82c832b5e83f

@@ -1,0 +1,33 @@
+---
+layout: page
+title: "Notes"
+nav: false
+---
+
+{% assign categories = site.notes | group_by: "category" | sort: "name" %}
+
+<div class="mdl-grid">
+  {% for category in categories %}
+  <div class="mdl-cell mdl-cell--6-col mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">
+        {% if category.name != "" %} {{ category.name | upcase }} {% else %} {{
+        "UN-Categorized" | upcase }} {% endif %}
+      </h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <ul class="mdl-list">
+        {% for post in category.items %}
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <a href="{{ post.url | prepend: site.baseurl }}"
+              >{{ post.title }}</a
+            >
+          </span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endfor %}
+</div>

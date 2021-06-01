@@ -1,0 +1,8 @@
+baseurl = "https://eng618.github.io"
+title = "Eric Garcia"
+author = "Eric Garcia"
+googleAnalytics = ""    # Your Google Analytics tracking ID
+enableRobotsTXT = true
+language = "en-US"
+paginate = 7            # The numbers of posts per page
+theme = "hugo-terressa-theme"
