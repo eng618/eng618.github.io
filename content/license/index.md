@@ -1,7 +1,6 @@
 ---
-layout: basic-page
-title: License
-weight: 5
+title: "License"
+draft: false
 ---
 
 Below are links to license or where images can be found.

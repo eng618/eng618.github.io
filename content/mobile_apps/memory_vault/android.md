@@ -1,10 +1,8 @@
 ---
-layout: page
+title: "Memory Vault on Android"
+draft: false
 ---
 
-# Memory Vault on Android
-
-
-#### Download
+## Download
 
 [Memory Vault](https://play.google.com/store/apps/details?id=com.garciaericn.memoryvault)

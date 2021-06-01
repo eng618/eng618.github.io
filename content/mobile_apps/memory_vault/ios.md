@@ -1,8 +1,6 @@
 ---
-layout: page
+title: "Memory Vault on iOS"
 ---
-
-# Memory Vault on iOS
 
 #### Download
 
