@@ -12,3 +12,18 @@ logo = "/images/profile_new.png"  # Replace with logo
   twitter = "https://twitter.com/garciaericn"
   github = "https://github.com/ENG618"
   linkedin = "https://www.linkedin.com/in/garciaericn"
+
+[form] # Contact form
+    netlify = true
+    action = "https://formspree.io/your@email.com"
+    method = "POST"
+    inputNameName = "name"
+    inputNameLabel = "Name"
+    inputNamePlaceholder = "Your name"
+    inputEmailName = "email"
+    inputEmailLabel = "Email"
+    inputEmailPlaceholder = "Your email"
+    inputMsgName = "message"
+    inputMsgLabel = "Write something"
+    inputMsgLength = 750
+    inputSubmitValue = "Send"

@@ -1,7 +1,7 @@
 ---
 title: "About"
 description: ""
-images: ["/images/site-header.jpeg"]
+images: ["./garcia_family.jpg"]
 draft: false
 menu: main
 weight: 3
@@ -28,7 +28,7 @@ skills taught. <a href="https://www.fullsail.edu/degrees/mobile-development-bach
 
 <!-- MDVBS Video -->
 
-[![MDVBS Video](/images/mdvbs-video-thumb.png)](https://youtu.be/5FohgYaD9OU)
+[![MDVBS Video](./mdvbs-video-thumb.png)](https://youtu.be/5FohgYaD9OU)
 
 <!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5FohgYaD9OU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
