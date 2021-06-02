@@ -1,5 +1,11 @@
-# eng618.github.io
+<h1 align="center">
+  GarciaEricN
+</h1>
 
-![Jekyll site CI](https://github.com/ENG618/eng618.github.io/workflows/Jekyll%20site%20CI/badge.svg)
+This is my personal portfolio site source code.
 
-Personal portfolio and blog site.
+[![CircleCI](https://circleci.com/gh/ENG618/eng618.github.io.svg?style=svg)](https://circleci.com/gh/ENG618/eng618.github.io)
+
+### Attributions
+
+- [Hugo Theme Terrassa](https://themes.gohugo.io/hugo-terrassa-theme/)

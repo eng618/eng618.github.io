@@ -1,17 +1,27 @@
-_site/
-.sass-cache/
-.jekyll-metadata
-npm-debug.log
 
-# Created by https://www.gitignore.io/api/osx
+# Created by https://www.toptal.com/developers/gitignore/api/hugo,osx
+# Edit at https://www.toptal.com/developers/gitignore?templates=hugo,osx
+
+### Hugo ###
+# Generated files by hugo
+/public/
+/resources/_gen/
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
 
 ### OSX ###
-*.DS_Store
+# General
+.DS_Store
 .AppleDouble
 .LSOverride
 
 # Icon must end with two \r
 Icon
+
 
 # Thumbnails
 ._*
@@ -31,4 +41,5 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-node_modules
+
+# End of https://www.toptal.com/developers/gitignore/api/hugo,osx
