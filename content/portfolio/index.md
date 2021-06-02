@@ -1,10 +1,15 @@
 ---
-layout: page
-title: Portfolio
+title: "Portfolio"
 weight: 1
-nav: true
+menu: main
+draft: true
 ---
 
+This page is under construction
+
+![under construction](/images/uc1.png)
+
+```html
 <h4>Published Applications</h4>
 
 <div class="mdl-grid">
@@ -84,3 +89,4 @@ nav: true
 
   {% endfor %}
 </div>
+```
