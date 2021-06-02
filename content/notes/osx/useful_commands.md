@@ -9,8 +9,8 @@ category: osx
 
 **Jump to**:
 
-* TOC
-{:toc}
+- TOC
+  {:toc}
 
 # Bash Profile
 
@@ -21,7 +21,8 @@ source ~/.bash_profile
 ```
 
 # Open with application
-* Can also be used with `.` for the file path to open current directory*
+
+- Can also be used with `.` for the file path to open current directory\*
 
 ```bash
 open -a "PROVIDED_APPLICATION" FILE/PATH
@@ -43,9 +44,10 @@ Set the permissions for the user and the group to read and execute only (no writ
 
 `chmod ug=rx script.sh`
 
-
 ## Unzip
+
 Unzip all files in directory
+
 ```bash
 for i in *.zip ; do
 	mkdir $i.d

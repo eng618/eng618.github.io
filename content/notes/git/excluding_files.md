@@ -6,7 +6,6 @@ last_updated: 2016-07-14
 category: git
 ---
 
-
 ## Ignoring tracked files in your local repo
 
 ```bash
@@ -34,10 +33,9 @@ This will allow you to use the alias `git ignored` to list all excluded files
 	ignored = !git ls-files -v | grep "^[[:lower:]]"
 ```
 
-
 ## Ignoring un-tracked files in your local repo
-> Untested
 
+> Untested
 
 If you ever want to ignore a file from git, but don't want to add it to the **.gitignore** file, you can do it on your local copy by adding it to the file **.git/info/exclude**
 

@@ -7,9 +7,7 @@ category: Development
 tags: [jekyll, gem]
 ---
 
-
 [source](https://stackoverflow.com/a/14636783/2218959)
-
 
 ### Specifying a `:path` attribute will install the gem from that path on your local machine.
 

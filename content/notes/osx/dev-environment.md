@@ -10,24 +10,24 @@ tags: [jenv, java, osx, brew]
 
 **Table of Contents:**
 
-* TOC
-{:toc}
+- TOC
+  {:toc}
 
 # Overview
 
-In this document we will explore different aspects of setting up your Macbook for for development purposes.  This includes but is not limited to setting up some essential software that will enable you to install some core aspects of MobileFirst.
+In this document we will explore different aspects of setting up your Macbook for for development purposes. This includes but is not limited to setting up some essential software that will enable you to install some core aspects of MobileFirst.
 
 ## Homebrew
 
-I like to use `sudu` as little as possible especially when installing software.  To avoid this I use **Home Brew** for as much software installation as possible.
+I like to use `sudu` as little as possible especially when installing software. To avoid this I use **Home Brew** for as much software installation as possible.
 
 Some very useful tools that can be installed with **Home Brew** `brew install COMAND`:
 
-* `bash-completion`
-* `node`
-* `nvm`
-* `rbenc`
-* `wget`
+- `bash-completion`
+- `node`
+- `nvm`
+- `rbenc`
+- `wget`
 
 For trouble shooting brew issues see [Homebrew](./homebrew)
 
@@ -35,7 +35,7 @@ For trouble shooting brew issues see [Homebrew](./homebrew)
 
 [source][bash_completion_source]
 
-You can update bash using homebrew. With `homebrew install bash`.  It is also important to note that you will have to insure you **bash_profile** or **bash_rc** is updated to have the brew path first in your systems path.  Once you have the updated bash installed you can install the latest bash-completion with `brew install bash-completion2`
+You can update bash using homebrew. With `homebrew install bash`. It is also important to note that you will have to insure you **bash_profile** or **bash_rc** is updated to have the brew path first in your systems path. Once you have the updated bash installed you can install the latest bash-completion with `brew install bash-completion2`
 
 You will need to update how you load the bash completion in your **[bash/bash_rc]profile** as follows.
 
@@ -54,20 +54,19 @@ elif [ -f /etc/bash_completion ]; then
 fi;
 ```
 
-**Note**: you can leave out the `export` of `PS1` if you choose.  I just prefer a simple concise command prompt.
+**Note**: you can leave out the `export` of `PS1` if you choose. I just prefer a simple concise command prompt.
 
 [bash_completion_source]: https://troymccall.com/better-bash-4--completions-on-osx/
 
 ## Java Version Management
 
-When it comes to Java management on a Mac there are several option in which you can chose.  Below I will detail a few of them to chose from.  First I will mention my favorite jenv
+When it comes to Java management on a Mac there are several option in which you can chose. Below I will detail a few of them to chose from. First I will mention my favorite jenv
 
 ### jenv
 
-This software is available through Homebrew.  It is well documented on it's <a href="https://github.com/gcuisinier/jenv" target="blank">github page</a>, .  Let us discus a few caveats here.  First and foremost you must add any installed versions of Java installed for jenv to be able to manage it.  You can see a list of install by running the command `/usr/libexec/java_home -V`.  
+This software is available through Homebrew. It is well documented on it's <a href="https://github.com/gcuisinier/jenv" target="blank">github page</a>, . Let us discus a few caveats here. First and foremost you must add any installed versions of Java installed for jenv to be able to manage it. You can see a list of install by running the command `/usr/libexec/java_home -V`.
 
-* <a href="http://www.jenv.be/" target="blank">jenv</a> - use jenv to manage Java versions
-
+- <a href="http://www.jenv.be/" target="blank">jenv</a> - use jenv to manage Java versions
 
 ### Using .bash_profile
 
@@ -75,26 +74,27 @@ This software is available through Homebrew.  It is well documented on it's <a h
 
 ## Ruby Management
 
-rbenv is awesome!!  `brew install rbenv`
+rbenv is awesome!! `brew install rbenv`
 
 Plugins to consider
-* `git clone https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems`
-* `git clone https://github.com/mislav/rbenv-user-gems.git "$(rbenv root)/plugins/rbenv-user-gems"`
-* `git clone https://github.com/rkh/rbenv-update.git "$(rbenv root)/plugins/rbenv-update"`
-* `git clone https://github.com/rkh/rbenv-whatis.git $(rbenv root)/plugins/rbenv-whatis`
-* `git clone https://github.com/rkh/rbenv-use.git $(rbenv root)/plugins/rbenv-use`
+
+- `git clone https://github.com/rbenv/rbenv-default-gems.git $(rbenv root)/plugins/rbenv-default-gems`
+- `git clone https://github.com/mislav/rbenv-user-gems.git "$(rbenv root)/plugins/rbenv-user-gems"`
+- `git clone https://github.com/rkh/rbenv-update.git "$(rbenv root)/plugins/rbenv-update"`
+- `git clone https://github.com/rkh/rbenv-whatis.git $(rbenv root)/plugins/rbenv-whatis`
+- `git clone https://github.com/rkh/rbenv-use.git $(rbenv root)/plugins/rbenv-use`
 
 ## Text Editors
 
 This is a very personal choice, and I can only detail the ones I'm familiar with.
 
-* Sublime Text 3: is a very customizable text editor with a largely supported development community.
-	* For usage details see the internal [Sublime Text 3](../osx-sublime_text) notes page.
-	* <a href="https://www.sublimetext.com/" target="blank" >Sublime Homepage<i class="material-icons">open_in_new</i></a>
+- Sublime Text 3: is a very customizable text editor with a largely supported development community.
+  _ For usage details see the internal [Sublime Text 3](../osx-sublime_text) notes page.
+  _ <a href="https://www.sublimetext.com/" target="blank" >Sublime Homepage<i class="material-icons">open_in_new</i></a>
 
-* Atom
+- Atom
 
-*If you would like to share your favorite please update this page.*
+_If you would like to share your favorite please update this page._
 
 ## Other
 

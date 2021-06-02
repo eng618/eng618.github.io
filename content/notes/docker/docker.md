@@ -10,8 +10,8 @@ tags: [docker]
 
 **Jump to**:
 
-* TOC
-{:toc}
+- TOC
+  {:toc}
 
 # Overview
 

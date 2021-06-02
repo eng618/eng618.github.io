@@ -10,17 +10,16 @@ tags: [git]
 
 **Jump to**:
 
-* TOC
-{:toc}
+- TOC
+  {:toc}
 
 # Overview
 
-This page is designed to unify all the tips and tricks associated with using git.  Please feel free to modify and update as needed.
-
+This page is designed to unify all the tips and tricks associated with using git. Please feel free to modify and update as needed.
 
 # Amending a Commit Message
 
-Changing a commit message can cause lots of problems if not handled correctly.  Only use the following if **absolutely** necessary.
+Changing a commit message can cause lots of problems if not handled correctly. Only use the following if **absolutely** necessary.
 
 ## Local commits
 
@@ -57,9 +56,11 @@ Or
 ```bash
 git push <remote> <branch> -f
 ```
+
 **Warning:** force-pushing will overwrite the remote branch with the state of your local one. If there are commits on the remote branch that you don't have in your local branch, you will lose those commits.
 
 ## Past Commits
+
 [source](https://stackoverflow.com/a/1186549/2218959)
 
 You can use rebase to edit a past commit by passing the commit hash, with the following:
@@ -68,7 +69,7 @@ You can use rebase to edit a past commit by passing the commit hash, with the fo
 git rebase -i '<commit-hash>^'
 ```
 
-Once your editor is opened with the rebase dialog, put edit as the action word for that commit.  Save and close.  Open the project and make the changes you wanted to update to that commit.  To keep the same commit message you have previously use:
+Once your editor is opened with the rebase dialog, put edit as the action word for that commit. Save and close. Open the project and make the changes you wanted to update to that commit. To keep the same commit message you have previously use:
 
 ```bash
 git commit --all --amend --no-edit
@@ -76,15 +77,13 @@ git commit --all --amend --no-edit
 
 Now you can use `git rebase --continue` and go a `git push -f` to force push your changes to the remote repo.
 
-
 # Git Branching
-
 
 > I follow git branching naming convention outline in this [gist](https://gist.github.com/digitaljhelms/4287848)
 
 List all branches including remotes
 
-``` bash
+```bash
 git branch -a
 ```
 
@@ -92,20 +91,19 @@ git branch -a
 
 Setting your branch to exactly match the remote branch can be done in two steps:
 
-``` bash
+```bash
 git fetch origin
 git reset --hard origin/master
 ```
 
 If you want to save your current branch's state before doing this (just in case), you can do:
 
-``` bash
+```bash
 git commit -a -m "Saving my work, just in case"
 git branch my-saved-work
 ```
 
 > Tip: Also see git clean
-
 
 ### Deleting a remote branch
 
@@ -113,8 +111,8 @@ git branch my-saved-work
 git push origin :<branch-name>
 ```
 
-
 ## Local branches
+
 **Sourced From:** [Git housekeeping tutorial](http://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/)
 
 At first, list all local branches:
@@ -201,7 +199,6 @@ $ for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show
 
 This list should be reviewed more thoroughly to avoid losing important commits.
 
-
 # Clean
 
 Perform a “dry run” of `git clean`. This will show you which files are going to be removed without actually doing it.
@@ -236,10 +233,9 @@ git clean -xf
 
 ## Example
 
-
-* Edit some existing files
-* Add some new files
-* Realize you have no idea what you're doing
+- Edit some existing files
+- Add some new files
+- Realize you have no idea what you're doing
 
 Undo changes in tracked files
 
@@ -277,6 +273,7 @@ touch ~/bin/git-diff.sh
 ```
 
 The contents of the file will look like this:
+
 ```bash
 #!/bin/sh
 /usr/bin/opendiff "$2" "$5" -merge "$1"
@@ -329,10 +326,9 @@ This will allow you to use the alias `git ignored` to list all excluded files
 	ignored = !git ls-files -v | grep "^[[:lower:]]"
 ```
 
-
 ## Ignoring un-tracked files in your local repo
-> Untested
 
+> Untested
 
 If you ever want to ignore a file from git, but don't want to add it to the **.gitignore** file, you can do it on your local copy by adding it to the file **.git/info/exclude**
 
@@ -352,7 +348,7 @@ git exclude SOME_FILE
 
 [Source](http://stackoverflow.com/questions/9153598/how-do-i-fetch-a-branch-on-someone-elses-fork-on-github)
 
-When needing to work with a new branch on a forked repo you have to create a new branch in your local fork that references that branch.  This can be accomplished by:
+When needing to work with a new branch on a forked repo you have to create a new branch in your local fork that references that branch. This can be accomplished by:
 
 ```bash
 git remote add theirUsername git@github.com:theirUsername/repoName.git
@@ -364,7 +360,7 @@ git checkout -b my_name_for_their_branch theirUsername/theirBranch
 
 Following directions for [Keeping your fork in sync](https://github.ibm.com/MFPSamples/DevCenter/wiki/Keep-fork-in-sync) for the DevCetner.
 
-In this example I will be demonstrating creating a `GA` branch from `upstream`, in my local environment.  I will be prefixing the remote `GA` branch with my initials to have a differentiation between the `upstream` branch and my local (forked) copy.
+In this example I will be demonstrating creating a `GA` branch from `upstream`, in my local environment. I will be prefixing the remote `GA` branch with my initials to have a differentiation between the `upstream` branch and my local (forked) copy.
 
 You can set `upstream` as the repo to follow (**userName**)
 
@@ -379,7 +375,7 @@ git fetch upstream
 git merge upstream/master
 ```
 
-**Note:**  This is assuming you are trying to merge to you local (forked) `master` branch
+**Note:** This is assuming you are trying to merge to you local (forked) `master` branch
 
 If you need to work off a branch that is in the `upstream` but not in your local repository (forked) you can create it with a link to upstream as follows:
 
@@ -387,17 +383,16 @@ If you need to work off a branch that is in the `upstream` but not in your local
 git checkout -b ENG-GA upstream/GA
 ```
 
-This line creates a local branch `ENG-GA` based on `upstream/GA`.  So now you can make updates to your local repo `ENG-GA` and then push it back to `upstream/GA` which should help reduce merge conflicts.  You still want to be sure to keep your local (forked) branch up to date if your changes will happen over time.  Periodically you will need to merge `upstream/GA` with the following:
+This line creates a local branch `ENG-GA` based on `upstream/GA`. So now you can make updates to your local repo `ENG-GA` and then push it back to `upstream/GA` which should help reduce merge conflicts. You still want to be sure to keep your local (forked) branch up to date if your changes will happen over time. Periodically you will need to merge `upstream/GA` with the following:
 
 ```sh
 git fetch upstream
 git merge upstream/GA
 ```
 
-Once you are ready to submit your changes back to upstream you can create a pull request via [*github.com*](github.ibm.com).  Ensuring that your base branch is `GA` and the head branch is `ENG-GA`.  See image for details.
+Once you are ready to submit your changes back to upstream you can create a pull request via [_github.com_](github.ibm.com). Ensuring that your base branch is `GA` and the head branch is `ENG-GA`. See image for details.
 
 ![Pull Request](../forking/git-pull-request.png)
-
 
 # .gitignore
 
@@ -409,35 +404,33 @@ To untrack a single file that has already been added/initialized to your reposit
 git rm --cached filename
 ```
 
-
 ## Untracking all files
 
 To untrack every file that is now in your **.gitignore**:
 
 1. Commit any outstanding code changes, and then, run this command:
 
-	```bash
-	git commit -m "Commit message"
-	```
+   ```bash
+   git commit -m "Commit message"
+   ```
 
 2. This removes any changed files from the index(staging area), then just run:
 
-	```bash
-	git rm -r --cached .
-	```
+   ```bash
+   git rm -r --cached .
+   ```
 
 3. Add all tracked changes
 
-	```bash
-	git add .
-	```
+   ```bash
+   git add .
+   ```
 
 4. Commit it:
 
-	```bash
-	git commit -m ".gitignore is now working"
-	```
-
+   ```bash
+   git commit -m ".gitignore is now working"
+   ```
 
 # Merge conflicts
 
@@ -497,3 +490,11 @@ Delete the most recent commit, keeping the work you've done:
 Delete the most recent commit, destroying the work you've done:
 
 `git reset --hard HEAD~1`
+
+# Other Configurations
+
+```bash
+git config --global core.trustctime false
+```
+
+[source](https://stackoverflow.com/a/21891017/2218959)

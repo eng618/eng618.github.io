@@ -6,7 +6,6 @@ last_updated: 2016-07-14
 category: osx
 ---
 
-
 ## Running processes in the background
 
 When running a command add `&` at the end and this will cause that process to run in the background
@@ -33,7 +32,7 @@ fg  %<job number>
 
 If a MFPF server fails to start (due to process already running)
 
-You can use `lsof -i:<port>` to list processes on a specific `port`.  If you want to kill all java processes in the background run:
+You can use `lsof -i:<port>` to list processes on a specific `port`. If you want to kill all java processes in the background run:
 
 ```bash
 killall -9 java
