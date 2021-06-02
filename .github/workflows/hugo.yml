@@ -3,17 +3,16 @@ name: Hugo Deploy (GH Pages)
 on:
   push:
     branches:
-      - hugo-convert
+      - main
       - develop
-      # Update to master, once this is merged in.
   pull_request:
     branches:
-      - master
+      - main
       - develop
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
         with:
