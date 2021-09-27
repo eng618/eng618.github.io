@@ -1,0 +1,36 @@
+---
+title: Elasticsearch
+description: Elasticsearch cheatsheet
+tabs: ['vi', 'grep', 'Markdown', 'Kubernetes', 'Elasticsearch']
+keywords: 'dev,apic,apim,development,setup'
+---
+
+<PageDescription>
+
+This page outlines some basic but common queries used when working with elasticsearch data.
+
+</PageDescription>
+
+# Common Queries
+
+## Checking status
+
+- `curl -XGET 'localhost:9200/_cat/indices?v&pretty'`
+- `curl -XGET 'localhost:9200/_cat/health?v&pretty'`
+- `curl -XGET 'localhost:9200/_cat/nodes?v&pretty'`
+
+## Searching
+
+- `curl -XGET 'localhost:9200/.kibana/_search/?pretty'`
+- `curl -XGET 'localhost:9200/.kibana/_mappings/?pretty'`
+  - This will git you the mappings, you can pipe it to the clipboard, and past in text editor for easy consumption by adding `| pbcopy` to the end.
+- `curl -XGET 'localhost:9200/_template?pretty'`
+
+## Adding data
+
+- `curl -XPUT 'localhost:9200/.kibana/doc/1' -d '{"type": "apic", "apic" : {"title": "eng"}}' -H 'Content-Type:application/json'`
+
+## Removing data
+
+- `curl -XDELETE 'localhost:9200/.kibana_1'`
+- `curl -XDELETE 'localhost:9200/_template/kibana_index_template:.kibana'`
