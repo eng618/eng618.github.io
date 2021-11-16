@@ -1,0 +1,35 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Launch16 as Launch } from '@carbon/icons-react';
+import styled from 'styled-components';
+
+const StyledLaunch = styled(Launch)`
+  width: 16px;
+  object-fit: contain;
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  vertical-align: text-bottom;
+  margin-left: 5px;
+  fill: #0062ff;
+`;
+
+const ExternalLink = ({ children, href, target }) => (
+  <a href={href} aria-label={children} target={target}>
+    {children}
+    <StyledLaunch />
+  </a>
+);
+
+ExternalLink.propTypes = {
+  children: PropTypes.string,
+  href: PropTypes.string.isRequired,
+  target: PropTypes.string,
+};
+
+ExternalLink.defaultProps = {
+  children: 'link',
+  target: 'blank',
+};
+
+export default ExternalLink;

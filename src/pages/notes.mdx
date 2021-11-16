@@ -1,0 +1,82 @@
+---
+title: Notes
+description: A hidden page for all my development notes
+keywords: 'notes'
+---
+
+import { Link, graphql } from 'gatsby';
+
+<PageDescription>
+
+This is my ~~**Hidden**~~ notes landing page.
+
+</PageDescription>
+
+<>
+  {props.data.allMdx.group.map((group) => (
+    <>
+      <Title>{group.edges[0].node.frontmatter.category.toUpperCase()}</Title>
+      <CardGroup>
+        {group.edges.map((edge) => (
+          <MiniCard
+            title={edge.node.frontmatter.title}
+            href={edge.node.path}
+            actionIcon="arrowRight"
+          />
+        ))}
+      </CardGroup>
+    </>
+  ))}
+</>
+
+## TODO
+
+Need to create a query that accepts un-categorized notes.
+
+```js
+// old query
+export const pageQuery = graphql`
+  query {
+    allFile(filter: { sourceInstanceName: { eq: "notes" } }) {
+      edges {
+        node {
+          id
+          childMdx {
+            frontmatter {
+              author
+              category
+              date
+              description
+              keywords
+              title
+              tags
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+```
+
+export const pageQuery = graphql`
+  {
+    allMdx {
+      group(field: frontmatter___category) {
+        edges {
+          node {
+            frontmatter {
+              category
+              description
+              title
+            }
+            id
+            slug
+            timeToRead
+            excerpt
+          }
+        }
+      }
+    }
+  }
+`;

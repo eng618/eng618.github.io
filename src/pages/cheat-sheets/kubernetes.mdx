@@ -1,0 +1,82 @@
+---
+title: Kubernetes
+description: Kubernetes cheatsheet
+tabs: ['vi', 'grep', 'Markdown', 'Kubernetes', 'Elasticsearch']
+keywords: 'Elasticsearch,Kubernetes,vi'
+---
+
+<PageDescription>
+
+Kubernetes notes and cheatsheet
+
+</PageDescription>
+
+<AnchorLinks>
+  <AnchorLink>Special use Cases</AnchorLink>
+  <AnchorLink>General Troubleshooting</AnchorLink>
+  <AnchorLink>Deleting A Namespace</AnchorLink>
+</AnchorLinks>
+
+## Special Use Cases
+
+If you need too delete a pod, and can not wait for it to stop and terminate, you can force the delettions with the following:
+
+```shell
+kubectl delete pods -n <namespace> --grace-period=0 --force
+```
+
+**Flags**
+
+- `--grace-period`: Period of time in seconds given to the resource to terminate gracefully. Ignored if negative. Set to 1 for immediate shutdown. Can only be set to 0 when --force is true (force deletion).
+- `--force`: Only used when grace-period=0. If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation.
+
+## General Troubleshooting
+
+Below are a few basic general areas to look into when trying to debug a issues depending on what the problem is.
+
+- Describe pod
+- logs pod
+- exec into pod to see whats going on
+
+## Deleting A Namespace
+
+```shell path=delete_namespace.sh src=https://github.ibm.com/engarcia/engarcia.github.ibm.com/blob/develop/bin/delete_namespace.sh
+#!/bin/bash
+
+# ./delete_namespace.sh <namespace>
+
+export k8s_namespace=$1
+
+echo "~~ Removing deployments ~~"
+kubectl get deployment -n "$k8s_namespace" | grep -v NAME | awk '{print $1}' | xargs -I arg kubectl delete deployment -n "$k8s_namespace" arg
+echo ""
+
+echo "~~ Removing statefulsets ~~"
+kubectl get statefulsets -n "$k8s_namespace" | grep -v NAME | awk '{print $1}' | xargs -I arg kubectl delete statefulsets -n "$k8s_namespace" arg
+echo ""
+
+echo "~~ Removing jobs ~~"
+kubectl get jobs -n "$k8s_namespace" | grep -v NAME | awk '{print $1}' | xargs -I arg kubectl delete job -n "$k8s_namespace" arg
+echo ""
+
+echo "~~ Removing pods ~~"
+kubectl get pods -n "$k8s_namespace" | grep -v NAME | awk '{print $1}' | xargs -I arg kubectl delete pod -n "$k8s_namespace" arg --force --grace-period=0
+echo ""
+
+echo "~~ Removing secrets ~~"
+kubectl get secrets -n "$k8s_namespace" | grep -v NAME | awk '{print $1}' | xargs -I arg kubectl delete secret -n "$k8s_namespace" arg
+echo ""
+
+echo "~~ Removing PVC's ~~"
+kubectl -n "$k8s_namespace" get pvc | grep -v NAME | awk '{print $1}' | xargs -I arg kubectl delete pvc -n "$k8s_namespace" arg
+echo ""
+
+echo "~~ Removing namespace ${k8s_namespace}  ~~"
+kubectl delete namespace "$k8s_namespace"
+echo ""
+
+echo "~~ Removing helm releases ~~"
+helm ls --namespace "$k8s_namespace" | grep -v NAME | awk '{print $1}' | xargs -I arg helm delete --purge arg
+echo ""
+
+```

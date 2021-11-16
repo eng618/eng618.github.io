@@ -1,17 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/hugo,osx
-# Edit at https://www.toptal.com/developers/gitignore?templates=hugo,osx
-
-### Hugo ###
-# Generated files by hugo
-/public/
-/resources/_gen/
-hugo_stats.json
-
-# Executable may be added to repository
-hugo.exe
-hugo.darwin
-hugo.linux
+# Created by https://www.toptal.com/developers/gitignore/api/osx,react,yarn
+# Edit at https://www.toptal.com/developers/gitignore?templates=osx,react,yarn
 
 ### OSX ###
 # General
@@ -42,4 +31,39 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# End of https://www.toptal.com/developers/gitignore/api/hugo,osx
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+### yarn ###
+# https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+
+# if you are NOT using Zero-installs, then:
+# comment the following lines
+# !.yarn/cache
+
+# and uncomment the following lines
+.pnp.*
+
+# End of https://www.toptal.com/developers/gitignore/api/osx,react,yarn
+
+.cache
+public/
