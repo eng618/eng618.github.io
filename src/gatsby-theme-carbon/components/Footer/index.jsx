@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from 'gatsby-theme-carbon/src/components/Footer';
+import PropTypes from 'prop-types';
 
 const Content = ({ buildTime }) => (
   <>
@@ -10,10 +11,9 @@ const Content = ({ buildTime }) => (
       {buildTime}
     </p>
     <p>
-      {/* TODO: update these links once the builds are running...through github actions */}
-      <a href="https://travis.ibm.com/engarcia/engarcia.github.ibm.com">
+      <a href="https://github.com/eng618/eng618.github.io/actions/workflows/build-and-deploy.yml">
         <img
-          src="https://travis.ibm.com/engarcia/engarcia.github.ibm.com.svg?token=zWxLzHi3q4qbgWK8ZRwm&branch=develop"
+          src="https://github.com/eng618/eng618.github.io/actions/workflows/build-and-deploy.yml/badge.svg"
           alt="Build Status"
         />
       </a>
@@ -36,5 +36,9 @@ const links = {
 };
 
 const CustomFooter = () => <Footer links={links} Content={Content} />;
+
+Content.propTypes = {
+  buildTime: PropTypes.string.isRequired,
+};
 
 export default CustomFooter;
