@@ -7506,6 +7506,7 @@ __metadata:
     gh-pages: ^3.2.3
     husky: ^7.0.4
     lint-staged: ^12.0.2
+    lmdb-store: ^1.6.13
     mkdirp: ^1.0.4
     prettier: ~2.4.1
     pretty-quick: ^3.1.2
@@ -12442,6 +12443,23 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"lmdb-store@npm:^1.6.13":
+  version: 1.6.13
+  resolution: "lmdb-store@npm:1.6.13"
+  dependencies:
+    msgpackr: ^1.4.7
+    nan: ^2.14.2
+    node-gyp: latest
+    node-gyp-build: ^4.2.3
+    ordered-binary: ^1.0.0
+    weak-lru-cache: ^1.0.0
+  dependenciesMeta:
+    msgpackr:
+      optional: true
+  checksum: 19d942704708e5175df816ffe9728f607094f22860d80345a089febca8f1bd24d0c6ec1fad43eb7667c446462f6546f1bd22a32161be523e4aff925227d3827f
+  languageName: node
+  linkType: hard
+
 "load-bmfont@npm:^1.3.1, load-bmfont@npm:^1.4.0":
   version: 1.4.1
   resolution: "load-bmfont@npm:1.4.1"
@@ -14119,6 +14137,29 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"msgpackr-extract@npm:^1.0.14":
+  version: 1.0.15
+  resolution: "msgpackr-extract@npm:1.0.15"
+  dependencies:
+    nan: ^2.14.2
+    node-gyp: latest
+    node-gyp-build: ^4.2.3
+  checksum: bcf8c742cb705eaf574c6a9991e57eaa505b038964e05293bf284246dc9a2005c4a56ac7cdb72021df60dc3fd750cf314bbdc34016f2ab115a96818ded139981
+  languageName: node
+  linkType: hard
+
+"msgpackr@npm:^1.4.7":
+  version: 1.5.0
+  resolution: "msgpackr@npm:1.5.0"
+  dependencies:
+    msgpackr-extract: ^1.0.14
+  dependenciesMeta:
+    msgpackr-extract:
+      optional: true
+  checksum: 21da36a2cc0ee2d2cacf15f7196449916c98d290fc2f6f135c2b0558caac3f8751197bcb929ddccb749a90e810590b544997d090bb441fca809ed293a7f6b02f
+  languageName: node
+  linkType: hard
+
 "multer@npm:^1.4.2":
   version: 1.4.3
   resolution: "multer@npm:1.4.3"
@@ -14155,7 +14196,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"nan@npm:^2.12.1, nan@npm:^2.13.2":
+"nan@npm:^2.12.1, nan@npm:^2.13.2, nan@npm:^2.14.2":
   version: 2.15.0
   resolution: "nan@npm:2.15.0"
   dependencies:
@@ -14353,6 +14394,17 @@ fsevents@~2.3.2:
   dependencies:
     whatwg-url: ^5.0.0
   checksum: ee8290626bdb73629c59722b75dcf4b9b6a67c1ed7eb9102e368479c4a13b56a48c2bb3ad71571e378e98c8b2c64c820e11f9cd39e4b8557dd138ad571ef9a42
+  languageName: node
+  linkType: hard
+
+"node-gyp-build@npm:^4.2.3":
+  version: 4.3.0
+  resolution: "node-gyp-build@npm:4.3.0"
+  bin:
+    node-gyp-build: bin.js
+    node-gyp-build-optional: optional.js
+    node-gyp-build-test: build-test.js
+  checksum: 1ecab16d9f275174d516e223f60f65ebe07540347d5c04a6a7d6921060b7f2e3af4f19463d9d1dcedc452e275c2ae71354a99405e55ebd5b655bb2f38025c728
   languageName: node
   linkType: hard
 
@@ -14846,6 +14898,13 @@ fsevents@~2.3.2:
     type-check: ^0.4.0
     word-wrap: ^1.2.3
   checksum: dbc6fa065604b24ea57d734261914e697bd73b69eff7f18e967e8912aa2a40a19a9f599a507fa805be6c13c24c4eae8c71306c239d517d42d4c041c942f508a0
+  languageName: node
+  linkType: hard
+
+"ordered-binary@npm:^1.0.0":
+  version: 1.1.3
+  resolution: "ordered-binary@npm:1.1.3"
+  checksum: 0e56b067919a60d1178c31da2844c8f76e5e854883a7ff0362a72a8a69eaed32c6af9ab5312faafef60dfb0317c478df776d1929e9f9982f7460d1bff87849f7
   languageName: node
   linkType: hard
 
@@ -20563,6 +20622,13 @@ typescript@^4.4.4:
     glob-to-regexp: ^0.4.1
     graceful-fs: ^4.1.2
   checksum: e275f48fae29edee3195c51a8312b609581b9be5ce323d3102ffd082cb124f48d7a393ce05e4110239e4354379e04d78a97ceb26ae367746e7e218bf258135c8
+  languageName: node
+  linkType: hard
+
+"weak-lru-cache@npm:^1.0.0":
+  version: 1.1.3
+  resolution: "weak-lru-cache@npm:1.1.3"
+  checksum: bc1572721f4fdef536dbeda6c753c8d5879e6f4aed62dc757cc3a438d0f28056345ffa9605c148f8c532862fb0366fed41dc1035adf963497cd51d8001232331
   languageName: node
   linkType: hard
 

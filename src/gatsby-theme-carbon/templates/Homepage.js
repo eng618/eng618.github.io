@@ -5,7 +5,7 @@ import HomepageTemplate from 'gatsby-theme-carbon/src/templates/Homepage';
 import styled from 'styled-components';
 import { calloutLink } from './Homepage.module.scss';
 
-import SiteHeader from '../../../static/images/site-header.jpeg';
+import HeroImage from '../../images/site-header.jpeg';
 
 const HeroText = styled.h1`
   color: #505050;
@@ -37,7 +37,7 @@ const FirstRightText = () => (
 const BannerText = () => <HeroText>Eric N. Garcia</HeroText>;
 
 const customProps = {
-  Banner: <HomepageBanner renderText={BannerText} image={SiteHeader} />,
+  Banner: <HomepageBanner renderText={BannerText} image={HeroImage} />,
   FirstCallout: null,
   // FirstCallout: (
   //   <HomepageCallout
