@@ -1,6 +1,5 @@
 ---
-title: "Memory Vault on Android"
-draft: false
+title: 'Memory Vault on Android'
 ---
 
 ## Download

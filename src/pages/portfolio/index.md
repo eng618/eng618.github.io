@@ -1,8 +1,5 @@
 ---
-title: "Portfolio"
-weight: 1
-menu: main
-draft: true
+title: 'Portfolio'
 ---
 
 This page is under construction

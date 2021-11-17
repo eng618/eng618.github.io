@@ -18,6 +18,7 @@ const Content = ({ buildTime }) => (
         />
       </a>
     </p>
+    <p>© 2021 Garcia Enterprise</p>
   </>
 );
 

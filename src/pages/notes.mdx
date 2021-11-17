@@ -14,18 +14,19 @@ This is my ~~**Hidden**~~ notes landing page.
 
 <>
   {props.data.allMdx.group.map((group) => (
-    <>
+    <div key={group.edges[0].node.id}>
       <Title>{group.edges[0].node.frontmatter.category.toUpperCase()}</Title>
       <CardGroup>
         {group.edges.map((edge) => (
           <MiniCard
+            key={edge.node.frontmatter.title}
             title={edge.node.frontmatter.title}
             href={edge.node.path}
             actionIcon="arrowRight"
           />
         ))}
       </CardGroup>
-    </>
+    </div>
   ))}
 </>
 
