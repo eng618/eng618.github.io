@@ -1,8 +1,8 @@
 - title: About
-  hasDivider: true
   pages:
     - path: /about
 - title: Contact
+  hasDivider: true
   pages:
     - path: /contact
 - title: Cheat Sheets
