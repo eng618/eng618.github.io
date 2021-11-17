@@ -2,6 +2,9 @@
   hasDivider: true
   pages:
     - path: /about
+- title: Contact
+  pages:
+    - path: /contact
 - title: Cheat Sheets
   pages:
     - title:
