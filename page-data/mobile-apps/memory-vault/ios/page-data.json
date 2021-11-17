@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-mobile-apps-memory-vault-ios-md",
+    "path": "/mobile-apps/memory-vault/ios/",
+    "result": {"pageContext":{"frontmatter":{"title":"Memory Vault on iOS"},"relativePagePath":"/mobile-apps/memory-vault/ios.md","titleType":"prepend","MdxNode":{"id":"439d38fa-72a5-53ed-bd80-973c0a9cc26e","children":[],"parent":"a6b5133e-0840-5b9f-857f-52d3e3d8749f","internal":{"content":"---\ntitle: 'Memory Vault on iOS'\n---\n\n#### Download\n\n[Memory Vault](https://itunes.apple.com/us/app/memory-vault-keep-your-memories-safe/id982428248?mt=8)\n","type":"Mdx","contentDigest":"769e06b127839de6564e86dce9c69589","owner":"gatsby-plugin-mdx","counter":159},"frontmatter":{"title":"Memory Vault on iOS"},"exports":{},"rawBody":"---\ntitle: 'Memory Vault on iOS'\n---\n\n#### Download\n\n[Memory Vault](https://itunes.apple.com/us/app/memory-vault-keep-your-memories-safe/id982428248?mt=8)\n","fileAbsolutePath":"/home/runner/work/eng618.github.io/eng618.github.io/src/pages/mobile-apps/memory-vault/ios.md"}}},
+    "staticQueryHashes": ["1364590287","137577622","2102389209","2456312558","2746626797","3018647132","3037994772","768070550"]}
