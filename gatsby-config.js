@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Eric N. Garcia',
-    description: 'A Gatsby theme for the carbon design system',
+    description: 'A personal website',
     keywords: 'gatsby,theme,carbon',
   },
   plugins: [
