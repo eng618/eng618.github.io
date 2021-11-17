@@ -1,4 +1,4 @@
-name: Gatsby Deploy (GH Pages)
+name: Build
 
 on:
   push:
@@ -43,7 +43,7 @@ jobs:
       - name: Build
         run: yarn build:prod
 
-      - name: Deploy
+      - name: Gatsby Deploy (GH Pages)
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/develop' }}
         with:
