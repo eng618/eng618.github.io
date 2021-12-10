@@ -14,27 +14,33 @@ const HeroText = styled.h1`
 `;
 
 // eslint-disable-next-line no-unused-vars
-const FirstLeftText = () => <p>Callout component</p>;
+const FirstLeftText = function FirstLeftText() {
+  return <p>Callout component</p>;
+};
 
 // eslint-disable-next-line no-unused-vars
-const FirstRightText = () => (
-  <p>
-    This is a callout component. You can edit the contents by updating the{' '}
-    <a href="https://github.com/carbon-design-system/gatsby-theme-carbon/blob/5fe12de31bb19fbfa2cab7c69cd942f55aa06f79/packages/example/src/gatsby-theme-carbon/templates/Homepage.js">
-      pre-shadowed homepage template
-    </a>
-    . You can also provide <code>color</code> and <code>backgroundColor</code>{' '}
-    props to suit your theme.
-    <a
-      className={calloutLink}
-      href="https://github.com/carbon-design-system/gatsby-theme-carbon/blob/main/packages/example/src/gatsby-theme-carbon/templates/Homepage.js"
-    >
-      Homepage source →
-    </a>
-  </p>
-);
+const FirstRightText = function FirstRightText() {
+  return (
+    <p>
+      This is a callout component. You can edit the contents by updating the{' '}
+      <a href="https://github.com/carbon-design-system/gatsby-theme-carbon/blob/5fe12de31bb19fbfa2cab7c69cd942f55aa06f79/packages/example/src/gatsby-theme-carbon/templates/Homepage.js">
+        pre-shadowed homepage template
+      </a>
+      . You can also provide <code>color</code> and <code>backgroundColor</code>{' '}
+      props to suit your theme.
+      <a
+        className={calloutLink}
+        href="https://github.com/carbon-design-system/gatsby-theme-carbon/blob/main/packages/example/src/gatsby-theme-carbon/templates/Homepage.js"
+      >
+        Homepage source →
+      </a>
+    </p>
+  );
+};
 
-const BannerText = () => <HeroText>Eric N. Garcia</HeroText>;
+const BannerText = function BannerText() {
+  return <HeroText>Eric N. Garcia</HeroText>;
+};
 
 const customProps = {
   Banner: <HomepageBanner renderText={BannerText} image={HeroImage} />,
@@ -59,8 +65,8 @@ const customProps = {
 };
 
 // spreading the original props gives us props.children (mdx content)
-function ShadowedHomepage(props) {
+const ShadowedHomepage = function ShadowedHomepage(props) {
   return <HomepageTemplate {...props} {...customProps} />;
-}
+};
 
 export default ShadowedHomepage;
