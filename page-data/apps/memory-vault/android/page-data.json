@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-pages-apps-memory-vault-android-md",
-    "path": "/apps/memory-vault/android/",
-    "result": {"pageContext":{"frontmatter":{"title":"Memory Vault on Android"},"relativePagePath":"/apps/memory-vault/android.md","titleType":"prepend","MdxNode":{"id":"258925cf-8417-532d-9ef9-4e942e8d0576","children":[],"parent":"c9a99f25-0499-5640-b8b0-684a44d11376","internal":{"content":"---\ntitle: 'Memory Vault on Android'\n---\n\n## Download\n\n[Memory Vault](https://play.google.com/store/apps/details?id=com.garciaericn.memoryvault)\n","type":"Mdx","contentDigest":"d2e6cb17a7cea07258ea12c308348ad5","owner":"gatsby-plugin-mdx","counter":165},"frontmatter":{"title":"Memory Vault on Android"},"exports":{},"rawBody":"---\ntitle: 'Memory Vault on Android'\n---\n\n## Download\n\n[Memory Vault](https://play.google.com/store/apps/details?id=com.garciaericn.memoryvault)\n","fileAbsolutePath":"/home/runner/work/eng618.github.io/eng618.github.io/src/pages/apps/memory-vault/android.md"}}},
-    "staticQueryHashes": ["1364590287","137577622","2102389209","2456312558","2746626797","3018647132","3037994772","768070550"]}
