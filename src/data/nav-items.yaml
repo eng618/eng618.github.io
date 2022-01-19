@@ -2,9 +2,13 @@
   pages:
     - path: /about
 - title: Contact
-  hasDivider: true
   pages:
     - path: /contact
+- title: Apps
+  pages:
+    - path: /apps
+  hasDivider: true
+
 - title: Cheat Sheets
   pages:
     - title:

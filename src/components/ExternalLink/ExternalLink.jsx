@@ -14,12 +14,14 @@ const StyledLaunch = styled(Launch)`
   fill: #0062ff;
 `;
 
-const ExternalLink = ({ children, href, target }) => (
-  <a href={href} aria-label={children} target={target}>
-    {children}
-    <StyledLaunch />
-  </a>
-);
+function ExternalLink({ children, href, target }) {
+  return (
+    <a href={href} aria-label={children} target={target}>
+      {children}
+      <StyledLaunch />
+    </a>
+  );
+}
 
 ExternalLink.propTypes = {
   children: PropTypes.string,

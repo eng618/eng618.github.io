@@ -20,12 +20,14 @@ const StyledBack = styled(Catalog32)`
   /* fill: #0062ff; */
 `;
 
-const NotesNav = () => (
-  <StyledDiv>
-    <StyledLink to="/notes">
-      <StyledBack /> Notes Home
-    </StyledLink>
-  </StyledDiv>
-);
+function NotesNav() {
+  return (
+    <StyledDiv>
+      <StyledLink to="/notes">
+        <StyledBack /> Notes Home
+      </StyledLink>
+    </StyledDiv>
+  );
+}
 
 export default NotesNav;
