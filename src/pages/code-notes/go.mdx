@@ -1,0 +1,49 @@
+---
+title: Go
+description: Go coding notes and reference materials
+---
+
+<PageDescription>
+
+This page is a collection of tips and tricks I've come to learn about the Go programing language.
+
+</PageDescription>
+
+<AnchorLinks>
+  <AnchorLink>Slice: Append & Prepend</AnchorLink>
+</AnchorLinks>
+
+## Slice: Append & Prepend
+
+To append and prepend you would use the same build in `append` go method. The only difference is the oder in which you supply the
+
+```go
+xi := []int{2,3,4}
+
+// append the number 5
+xi = append(xi, 5)
+fmt.Println(xi)
+// [2 3 4 5]
+
+// prepend the number 1
+xi = append([]int{1}, xi...)
+fmt.Println(xi)
+// [1 2 3 4 5]
+```
+
+- [Go Playground](https://go.dev/play/p/P-InPKinGob)
+- [Go docs](https://pkg.go.dev/builtin?utm_source=gopls#append)
+
+Explanation:
+
+The arguments for append are a slice (first argument), and the 2nd and further
+arguments are elements you are looking to append to the slice.
+
+So for a standard append you pass it your starting slice, and then any number
+of elements you wish to append.
+
+For the prepend, you have to pass that starting element in as a slice, you you
+have to define the slice and type with its literal value. Then for the second
+argument you unfirl (not sure the proper term here) the slice with `...`. This
+tells go to pass in the individual values help by that slice rather than the
+slice itself.
