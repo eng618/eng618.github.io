@@ -1,0 +1,29 @@
+---
+title: Bash
+description: Cheatsheet and snippet for bash coding.
+---
+
+<PageDescription>
+
+This page hosts snippets and resources for bash scripting
+
+</PageDescription>
+
+## Snippets
+
+Snippet to check all required environment variable are present before executing a script.
+
+```bash
+ReqVars=("EX_VAR_1" "EX_VAR_2" "EX_VAR_3")
+
+for i in "${ReqVars[@]}"; do
+  if [[ -z ${!i} ]]; then
+    echo "$i is a required environment variable, please ensure it is set correctly. Then re-run this script."
+    exit 1
+  fi
+done
+```
+
+## Other resources
+
+- [DevHints bash cheatsheet](https://devhints.io/bash#conditionals)
