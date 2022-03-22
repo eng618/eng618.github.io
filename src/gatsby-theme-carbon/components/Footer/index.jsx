@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function Content({ buildTime }) {
   return (
     <>
-      <p>Personal site for work related notes and documentation.</p>
+      <p>Personal site to host my notes and documentation.</p>
       <p>
         This site was last updated on:
         <br />
