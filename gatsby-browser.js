@@ -3,12 +3,10 @@ import './src/styles/index.scss';
 // eslint-disable-next-line import/prefer-default-export
 export const onServiceWorkerUpdateReady = () => {
   // eslint-disable-next-line no-alert
-  const answer = window.confirm(
+  window.alert(
     'This application has been updated. ' +
-      'Reload to display the latest version?'
+      'The page will automatically refresh to pull in the latest data.'
   );
 
-  if (answer === true) {
-    window.location.reload();
-  }
+  window.location.reload();
 };
