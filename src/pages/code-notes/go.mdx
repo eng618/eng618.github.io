@@ -11,6 +11,7 @@ This page is a collection of tips and tricks I've come to learn about the Go pro
 
 <AnchorLinks>
   <AnchorLink>Slice: Append & Prepend</AnchorLink>
+  <AnchorLink>Tools as dependencies</AnchorLink>
   <AnchorLink>Additional References</AnchorLink>
 </AnchorLinks>
 
@@ -48,6 +49,32 @@ have to define the slice and type with its literal value. Then for the second
 argument you unfirl (not sure the proper term here) the slice with `...`. This
 tells go to pass in the individual values help by that slice rather than the
 slice itself.
+
+## Tools as dependencies
+
+There is a pattern to track tools as dependencies in Go. This is used when you need tools to build your project or generate code for protos, mocks, or any other tools. This pattern is used when those tools are not imported in any files but used by the developer to build the project.
+
+The simplest way to achieve this is to add a **tools.go** file to the root of your project. This will serve as an individual package. While the name of this package and file are not important, using a descriptive name is always helpful.
+
+In this file you must add the go directive `// +build tools`, and then make sure all tools are listed, in the `import` section. All the tools should be prefixed with `_`, which shows that it is not explicitly imported anywhere else, but is required for the package.
+
+A simple example:
+
+```go path=path/to/project/tools.go
+// +build tools
+
+package tools
+
+import (
+	_ "github.com/path/to/some/tool"
+)
+```
+
+<Title>Sources</Title>
+
+- [wiki walk through](https://github.com/go-modules-by-example/index/blob/master/010_tools/README.md)
+- [example project](https://github.com/go-modules-by-example/tools)
+- [How can I track tool dependencies for a module?](https://github.com/golang/go/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module)
 
 ## Additional References
 
