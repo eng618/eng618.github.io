@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkengarcia=self.webpackChunkengarcia||[]).push([[256],{7291:function(e,t,n){n.r(t);var a=n(7294),r=n(9435),u=[{href:"/",text:"Home"},{href:"/about",text:"About"}];t.default=function(){return a.createElement(r.e9,{links:u})}}}]);
+//# sourceMappingURL=component---src-pages-404-jsx-468b4a452f3913b81155.js.map
