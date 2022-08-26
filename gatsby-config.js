@@ -5,9 +5,9 @@ module.exports = {
     keywords: 'gatsby,theme,carbon',
   },
   flags: {
+    // DETECT_NODE_MUTATIONS: true,
     DEV_SSR: true,
     FAST_DEV: true,
-    LMDB_STORE: true,
     PARALLEL_QUERY_RUNNING: true,
     PARALLEL_SOURCING: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
