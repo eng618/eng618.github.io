@@ -66,6 +66,7 @@
   },
   "resolutions": {
     "node-fetch": "^2.6.7",
+    "nth-check": "^2.0.1",
     "ansi-html": "^0.0.8"
   },
   "lint-staged": {
