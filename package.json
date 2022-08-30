@@ -65,7 +65,8 @@
     "webpack": "^5.74.0"
   },
   "resolutions": {
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "ansi-html": "^0.0.8"
   },
   "lint-staged": {
     "src/**/*.(js|ts)?(x)": "eslint . --fix",
