@@ -64,6 +64,9 @@
     "typescript": "^4.8.2",
     "webpack": "^5.74.0"
   },
+  "resolutions": {
+    "node-fetch": "^2.6.7"
+  },
   "lint-staged": {
     "src/**/*.(js|ts)?(x)": "eslint . --fix",
     "*.(js|md|ts)?(x)": "prettier --write",
