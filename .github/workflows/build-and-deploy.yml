@@ -43,10 +43,10 @@ jobs:
       - name: Build
         run: yarn build:prod
 
-      - name: Gatsby Deploy (GH Pages)
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/develop' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: main
+      # - name: Gatsby Deploy (GH Pages)
+      #   uses: enriikke/gatsby-gh-pages-action@v2
+      #   if: ${{ github.ref == 'refs/heads/develop' }}
+      #   with:
+      #     access-token: ${{ secrets.GITHUB_TOKEN }}
+      #     deploy-branch: main
+      #     gatsby-args: --prefix-paths
