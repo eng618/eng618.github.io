@@ -5,7 +5,7 @@ import HomepageTemplate from 'gatsby-theme-carbon/src/templates/Homepage';
 import styled from 'styled-components';
 import { calloutLink } from './Homepage.module.scss';
 
-import HeroImage from '../../images/site-header.jpeg';
+import HeroTechVector from '../../images/hero-vector.svg';
 
 const HeroText = styled.h1`
   color: #505050;
@@ -43,7 +43,7 @@ const BannerText = function BannerText() {
 };
 
 const customProps = {
-  Banner: <HomepageBanner renderText={BannerText} image={HeroImage} />,
+  Banner: <HomepageBanner renderText={BannerText} image={HeroTechVector} />,
   FirstCallout: null,
   // FirstCallout: (
   //   <HomepageCallout
