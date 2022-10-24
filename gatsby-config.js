@@ -13,6 +13,9 @@ module.exports = {
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
