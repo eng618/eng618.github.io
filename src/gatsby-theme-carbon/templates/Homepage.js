@@ -72,7 +72,7 @@ const BadgesRightText = function BadgesRightText() {
           actionIcon="Launch"
         >
           <StaticImage
-            src="./credly/ibm-carbon-design-system-developer-essentials-react.png"
+            src="./credly/enterprise-design-thinking-practitioner.png"
             alt="Enterprise Design Thinking Practitioner"
           />
         </ImageCard>
