@@ -7,6 +7,9 @@
 - title: Apps
   pages:
     - path: /apps
+- title: Go projects
+  pages:
+    - path: /go-projects
   hasDivider: true
 
 - title: Code Notes

@@ -106,7 +106,7 @@ const customProps = {
   Banner: <HomepageBanner renderText={BannerText} image={HeroTechVector} />,
   FirstCallout: (
     <HomepageCallout
-      backgroundColor="#061f80"
+      backgroundColor="#262626"
       color="white"
       leftText={BadgesLeftText}
       rightText={BadgesRight}
@@ -114,7 +114,7 @@ const customProps = {
   ),
   SecondCallout: (
     <HomepageCallout
-      backgroundColor="#061f80"
+      backgroundColor="#262626"
       color="white"
       leftText={CertsLeftText}
       rightText={CertsRight}
