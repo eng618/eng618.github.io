@@ -20,13 +20,11 @@ const HeroText = styled.h1`
   font-weight: bold;
 `;
 
-// eslint-disable-next-line no-unused-vars
 const BadgesLeftText = function BadgesLeftText() {
   return <p>Badges earned</p>;
 };
 
-// eslint-disable-next-line no-unused-vars
-const BadgesRightText = function BadgesRightText() {
+const BadgesRight = function BadgesRightText() {
   return (
     // Max badges per row is 4
     <Row className={badgesRow}>
@@ -36,7 +34,7 @@ const BadgesRightText = function BadgesRightText() {
           actionIcon="Launch"
         >
           <StaticImage
-            src="./credly/ibm-agile-explorer.png"
+            src="../../images/credly/ibm-agile-explorer.png"
             alt="Agile explorer"
           />
         </ImageCard>
@@ -48,7 +46,7 @@ const BadgesRightText = function BadgesRightText() {
           actionIcon="Launch"
         >
           <StaticImage
-            src="./credly/ibm-cloud-kubernetes-service.png"
+            src="../../images/credly/ibm-cloud-kubernetes-service.png"
             alt="IBM Cloud Kubernetes Service"
           />
         </ImageCard>
@@ -60,7 +58,7 @@ const BadgesRightText = function BadgesRightText() {
           actionIcon="Launch"
         >
           <StaticImage
-            src="./credly/ibm-carbon-design-system-developer-essentials-react.png"
+            src="../../images/credly/ibm-carbon-design-system-developer-essentials-react.png"
             alt="IBM Carbon Design System Developer Essentials - React"
           />
         </ImageCard>
@@ -72,8 +70,27 @@ const BadgesRightText = function BadgesRightText() {
           actionIcon="Launch"
         >
           <StaticImage
-            src="./credly/enterprise-design-thinking-practitioner.png"
+            src="../../images/credly/enterprise-design-thinking-practitioner.png"
             alt="Enterprise Design Thinking Practitioner"
+          />
+        </ImageCard>
+      </Column>
+    </Row>
+  );
+};
+
+const CertsLeftText = function CertsLeftText() {
+  return <p>Certificates</p>;
+};
+
+const CertsRight = function CertsRight() {
+  return (
+    <Row className={badgesRow}>
+      <Column colMd={1} colLg={1} noGutterMdLeft>
+        <ImageCard aspectRatio="4:3">
+          <StaticImage
+            src="../../images/2022-CIOHackathon-certificate.png"
+            alt="CIO Hackathon 2022"
           />
         </ImageCard>
       </Column>
@@ -87,21 +104,20 @@ const BannerText = function BannerText() {
 
 const customProps = {
   Banner: <HomepageBanner renderText={BannerText} image={HeroTechVector} />,
-  FirstCallout: null,
-  // FirstCallout: (
-  //   <HomepageCallout
-  //     backgroundColor="#030303"
-  //     color="white"
-  //     leftText={FirstLeftText}
-  //     rightText={FirstRightText}
-  //   />
-  // ),
-  SecondCallout: (
+  FirstCallout: (
     <HomepageCallout
       backgroundColor="#061f80"
       color="white"
       leftText={BadgesLeftText}
-      rightText={BadgesRightText}
+      rightText={BadgesRight}
+    />
+  ),
+  SecondCallout: (
+    <HomepageCallout
+      backgroundColor="#061f80"
+      color="white"
+      leftText={CertsLeftText}
+      rightText={CertsRight}
     />
   ),
 };

@@ -5,7 +5,7 @@ module.exports = {
     keywords: 'gatsby,theme,carbon',
   },
   flags: {
-    // DETECT_NODE_MUTATIONS: true,
+    DETECT_NODE_MUTATIONS: true,
     DEV_SSR: true,
     FAST_DEV: true,
     PARALLEL_QUERY_RUNNING: true,
