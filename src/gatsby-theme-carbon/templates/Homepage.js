@@ -21,7 +21,7 @@ const HeroText = styled.h1`
 `;
 
 const BadgesLeftText = function BadgesLeftText() {
-  return <p>Badges earned</p>;
+  return <p>Digital badges</p>;
 };
 
 const BadgesRight = function BadgesRightText() {
