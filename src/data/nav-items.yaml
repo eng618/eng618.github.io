@@ -22,3 +22,5 @@
       path: /code-notes/git
     - title: Bash
       path: /code-notes/bash
+    - title: homebrew
+      path: /code-notes/homebrew

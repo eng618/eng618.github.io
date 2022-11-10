@@ -1,19 +1,21 @@
 ---
 layout: note
 title: Jekyll
-author: "Eric Garcia"
+author: 'Eric Garcia'
 last_updated: 2016-07-25
 category: Development
-tags: [jekyll, gem]
+keywords: 'jekyll,gem'
 ---
 
 [source](https://stackoverflow.com/a/14636783/2218959)
 
-### Specifying a `:path` attribute will install the gem from that path on your local machine.
+### Specifying a `:path` attribute will install the gem from that path on your local machine
 
-    gem "<gem-name>", :path => "<full-local-path>"
+```ruby
+gem "<gem-name>", :path => "<full-local-path>"
+```
 
-### Alternately, specifying a `:git` attribute will install the gem from a remote git repository.
+### Alternately, specifying a `:git` attribute will install the gem from a remote git repository
 
 ```ruby
 "git://github.com/<github-username>/<github-repo>.git"

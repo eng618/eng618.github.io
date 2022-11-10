@@ -1,0 +1,105 @@
+---
+title: Homebrew
+author: Eric Garcia
+last_updated: 2016-07-14
+category: osx
+keywords: 'osx,homebrew,brew'
+---
+
+<PageDescription>
+
+Helpful commands while working with brew.
+
+</PageDescription>
+
+<AnchorLinks>
+  <AnchorLink>When trying to install using homebrew</AnchorLink>
+  <AnchorLink>Bundle</AnchorLink>
+  <AnchorLink>Useful taps and packages</AnchorLink>
+</AnchorLinks>
+
+## When trying to install using homebrew
+
+User does not have permission to write to **/usr/local/Cellar** and throws following error.
+
+```bash
+Error: Cannot write to /usr/local/Cellar
+```
+
+Attempting to `sudo` it refuses with following error.
+
+```bash
+Cowardly refusing to `sudo brew install'
+```
+
+You somehow have limited permissions to **/usr/local/Cellar**. Brew doesn't like to install with sudo which is why it refuses. Correct the issue with the following commands:
+
+1. Check the permissions:
+
+   ```bash
+   ls -ld /usr/local/Cellar
+   ```
+
+2. Open them up for writing:
+
+   ```bash
+   sudo chmod a+w /usr/local/Cellar
+   ```
+
+## Bundle
+
+Bundle is a very useful command. This command will allow you to keep a backup of all installed packages from brew into a file. That can be backed up and reinstalled on different machines, or to clean up and reset your environments.
+
+<AnchorLinks small>
+  <AnchorLink>Creating Brewfile</AnchorLink>
+  <AnchorLink>Installing from Brewfile</AnchorLink>
+  <AnchorLink>Resetting local environment</AnchorLink>
+</AnchorLinks>
+
+### Creating Brewfile
+
+To create the the **Brewfile** run the following command:
+
+```shell
+# To write to specific file
+brew bundle dump --file=~/.eng/Brewfile
+
+# To write to current working directory
+brew bundle dump
+```
+
+### Installing from Brewfile
+
+If you want to ensure you have all packages listed in your Brewfile installed, you can reinstall or do a fresh install (on a new machine) with the following command:
+
+```shell
+# Install from specific file
+brew bundle --file=~/.eng/Brewfile
+
+# Install with Brewfile in current working directory
+brew bundle
+```
+
+<InlineNotification>
+
+**TIP**: if you want to overwrite an existing brew file add the `--force` flag to the above command.
+
+</InlineNotification>
+
+### Resetting local environment
+
+If your machine has gotten out of hand and you want to forcefully go back to only having packages listed in your **Brewfile**, you can run the following:
+
+```shell
+# Pointing to specific Brewfile
+brew bundle --force cleanup --file=~/.eng/Brewfile
+
+# Pointing to Brewfile in current working directory
+brew bundle --force cleanup
+```
+
+## Useful taps and packages
+
+- [homebrew-cask-fonts](https://github.com/Homebrew/homebrew-cask-fonts)
+  - `brew install font-blex-mono-nerd-font` recommended font using [IBM Plex](https://www.ibm.com/plex/), packaged by [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) to add glyphs for use in terminal settings.
+- [homebrew-graph](https://github.com/martido/homebrew-graph)
