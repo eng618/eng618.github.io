@@ -1,7 +1,7 @@
 ---
-title: "Managing My Dotfiles"
+title: 'Managing My Dotfiles'
 date: 2017-08-11T16:58:34-0400
-tags: ["bash", "dotfiles", "osx", "git", "gitconfig"]
+tags: 'bash,dotfiles,osx,git,gitconfig'
 draft: false
 ---
 
@@ -17,7 +17,7 @@ There is a nice way to have multiple users definitions in your git config. You c
 [source 2][2]
 [source 3][3]
 
-##### Sources
+ <!-- Sources -->
 
 [1]: https://nuclearsquid.com/writings/git-tricks-tips-workflows/
 [2]: https://stackoverflow.com/questions/4220416/can-i-specify-multiple-users-for-myself-in-gitconfig
