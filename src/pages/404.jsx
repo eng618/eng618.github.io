@@ -6,6 +6,8 @@ const links = [
   { href: '/about', text: 'About' },
 ];
 
-const Custom404 = () => <FourOhFour links={links} />;
+function Custom404() {
+  return <FourOhFour links={links} />;
+}
 
 export default Custom404;
