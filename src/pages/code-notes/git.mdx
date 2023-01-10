@@ -104,6 +104,15 @@ git checkout <src-branch> -- <path/to/file>
 
 ## Branching
 
+<AnchorLinks small>
+  <AnchorLink>Resetting local branch to match remote</AnchorLink>
+  <AnchorLink>Deleting a remote branch</AnchorLink>
+  <AnchorLink>Local branches</AnchorLink>
+  <AnchorLink>Delete all local branches except main</AnchorLink>
+  <AnchorLink>References to remote branches</AnchorLink>
+  <AnchorLink>Remote branches</AnchorLink>
+</AnchorLinks>
+
 > I follow git branching naming convention outline in this [gist](https://gist.github.com/digitaljhelms/4287848)
 
 List all branches including remotes
@@ -113,6 +122,8 @@ git branch -a
 ```
 
 ### Resetting local branch to match remote
+
+Back to main header: [Branching](#branching)
 
 Setting your branch to exactly match the remote branch can be done in two steps:
 
@@ -128,15 +139,23 @@ git commit -a -m "Saving my work, just in case"
 git branch my-saved-work
 ```
 
-> Tip: Also see git clean
+<InlineNotification>
+
+Also see [git clean](#clean)
+
+</InlineNotification>
 
 ### Deleting a remote branch
+
+Back to main header: [Branching](#branching)
 
 ```shell
 git push origin :<branch-name>
 ```
 
 ### Local branches
+
+Back to main header: [Branching](#branching)
 
 **Sourced From:** [Git housekeeping tutorial](http://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/)
 
@@ -171,7 +190,27 @@ If some of them is just abandoned stuff that you don’t need anymore, remove it
 git branch -D old-abandoned-feature
 ```
 
+### Delete all local branches except main
+
+Back to main header: [Branching](#branching)
+
+You can do a dry run to see all branches this command will delete first by running the following:
+
+```shell
+git branch | grep -v $(git_main_branch)
+```
+
+If this matches what you are looking to delete, you can run the following to actually delete the branch.
+
+```shell
+git branch | grep -v $(git_main_branch) | xargs git branch -D
+```
+
+[source](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/delete-all-branches-except-master-main-local-remote)
+
 ### References to remote branches
+
+Back to main header: [Branching](#branching)
 
 After each git pull or git fetch command Git creates references to remote branches in local repository, but doesn’t clean up stale references.
 
@@ -187,9 +226,15 @@ Clean-up outdated references:
 git remote prune origin
 ```
 
-> Tip: Update repository with: `git fetch -p` and Git automatically prunes all stale references.
+<InlineNotification>
+
+Update repository with: `git fetch -p` and Git automatically prunes all stale references.
+
+</InlineNotification>
 
 ### Remote branches
+
+Back to main header: [Branching](#branching)
 
 Usually, remote repository is a big garbage heap of stale branches, if there is no responsible housekeeping person.
 
