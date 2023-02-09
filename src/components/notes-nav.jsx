@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Catalog32 } from '@carbon/icons-react';
+import { Catalog } from '@carbon/icons-react';
 
 const StyledDiv = styled.div``;
 
@@ -10,7 +10,7 @@ const StyledLink = styled(Link)`
   font-size: 32px;
 `;
 
-const StyledBack = styled(Catalog32)`
+const StyledBack = styled(Catalog)`
   width: 32px;
   position: relative;
   display: inline-block;
@@ -24,7 +24,7 @@ function NotesNav() {
   return (
     <StyledDiv>
       <StyledLink to="/notes">
-        <StyledBack /> Notes Home
+        <StyledBack size={32} /> Notes Home
       </StyledLink>
     </StyledDiv>
   );

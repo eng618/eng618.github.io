@@ -41,8 +41,29 @@ module.exports = {
           branch: 'develop',
         },
         isSwitcherEnabled: false,
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-copy-linked-files',
+            options: {
+              destinationDir: 'downloads',
+              ignoreFileExtensions: ['png', 'jpg', 'jpeg', 'bmp', 'tiff', 'md'],
+            },
+          },
+        ],
       },
     },
+    // {
+    //   resolve: 'gatsby-transformer-remark',
+    //   options: {
+    //     plugins: [
+    //       {
+    //         resolve: `gatsby-remark-copy-linked-files`,
+    //         destinationDir: (f) => `download/${f.name}+${f.hash}`,
+    //         ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`, `md`],
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

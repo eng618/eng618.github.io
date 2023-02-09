@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Launch16 as Launch } from '@carbon/icons-react';
+import { Launch } from '@carbon/icons-react';
 import styled from 'styled-components';
 
 const StyledLaunch = styled(Launch)`
@@ -18,7 +18,7 @@ function ExternalLink({ children, href, target }) {
   return (
     <a href={href} aria-label={children} target={target}>
       {children}
-      <StyledLaunch />
+      <StyledLaunch size={16} />
     </a>
   );
 }
