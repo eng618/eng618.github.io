@@ -5,8 +5,17 @@ export const onServiceWorkerUpdateReady = () => {
   // eslint-disable-next-line no-alert
   window.alert(
     'This application has been updated. ' +
-      'The page will automatically refresh to pull in the latest data.'
+      `The page will automatically refresh to pull in the latest data in ${countDown} seconds.`
   );
+
+  // eslint-disable-next-line no-plusplus
+  for (let i = 10; i > 0; i--) {
+    if (i === 0) {
+      window.location.reload();
+    }
+
+    setTimeout(() => {}, 1000);
+  }
 
   window.location.reload();
 };
