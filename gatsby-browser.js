@@ -5,7 +5,7 @@ export const onServiceWorkerUpdateReady = () => {
   // eslint-disable-next-line no-alert
   window.alert(
     'This application has been updated. ' +
-      `The page will automatically refresh to pull in the latest data in ${countDown} seconds.`
+      'The page will automatically refresh to pull in the latest data in 10 seconds.'
   );
 
   // eslint-disable-next-line no-plusplus
