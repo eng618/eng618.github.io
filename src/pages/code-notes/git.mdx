@@ -321,17 +321,31 @@ git clean -df
 
 ## Diff
 
-Simply use `git diff` and a file name to check difference between commited and non staged changes
+Simply use `git diff` and a file name to check difference between committed and non staged changes.
 
 ```shell
 git diff FILE_NAME
 ```
 
-If you need to verify the difference of a file that is already staged use the following
+If you need to verify the difference of a file that is already staged use the following.
 
 ```shell
 git diff --staged FILE_NAME
 ```
+
+If you you want to diff two branches use the following.
+
+```shell
+git diff main...develop
+
+# or to compare with the current branch simply
+git diff OTHER_BRANCH_NAME
+```
+
+You can also use some useful flags with this command if the output it to great.
+
+- `--name-only` to see only the file names.
+- `-- fileOrDirectory` add this to the end if you want to check only a particular file or directory.
 
 ### Git diff with opendiff
 
