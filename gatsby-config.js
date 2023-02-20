@@ -77,6 +77,7 @@ module.exports = {
         icon: './src/images/icon-v2.png',
       },
     },
+    'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-offline',
   ],
 };

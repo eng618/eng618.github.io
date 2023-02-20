@@ -26,6 +26,7 @@
     "@carbon/icons-react": "^11.16.0",
     "carbon-icons": "^7.0.7",
     "gatsby": "^4.25.4",
+    "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-image": "^2.25.0",
     "gatsby-plugin-manifest": "^5.6.0",
     "gatsby-plugin-offline": "^5.25.0",
