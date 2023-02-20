@@ -3,6 +3,7 @@ module.exports = {
     title: 'Eric N. Garcia',
     description: 'A personal website',
     keywords: 'gatsby,theme,carbon',
+    siteUrl: `https://garciaericn.com`,
   },
   flags: {
     DETECT_NODE_MUTATIONS: true,
