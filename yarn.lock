@@ -1904,6 +1904,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/icons-react@npm:^11.16.1":
+  version: 11.16.1
+  resolution: "@carbon/icons-react@npm:11.16.1"
+  dependencies:
+    "@carbon/icon-helpers": ^10.38.0
+    "@carbon/telemetry": 0.1.0
+    prop-types: ^15.7.2
+  peerDependencies:
+    react: ">=16"
+  checksum: e46f653a262de1ace1d2cab693011cc0097a74988c4283143cb7ab0c45ade0b7003d11476044e35f30b252bd5420a16c27a95b6f2b2e3721f79418b1c268bce2
+  languageName: node
+  linkType: hard
+
 "@carbon/icons@npm:^11.16.0":
   version: 11.16.0
   resolution: "@carbon/icons@npm:11.16.0"
@@ -7234,7 +7247,7 @@ __metadata:
     "@babel/eslint-parser": ^7.19.1
     "@babel/eslint-plugin": ^7.19.1
     "@babel/plugin-transform-react-jsx": ^7.20.13
-    "@carbon/icons-react": ^11.16.0
+    "@carbon/icons-react": ^11.16.1
     "@eng618/prettier-config": ^1.6.1
     "@types/react": ^18.0.28
     babel-loader: ^9.1.2
