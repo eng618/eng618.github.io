@@ -1393,18 +1393,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-react-jsx@npm:^7.20.13":
-  version: 7.20.13
-  resolution: "@babel/plugin-transform-react-jsx@npm:7.20.13"
+"@babel/plugin-transform-react-jsx@npm:^7.21.0":
+  version: 7.21.0
+  resolution: "@babel/plugin-transform-react-jsx@npm:7.21.0"
   dependencies:
     "@babel/helper-annotate-as-pure": ^7.18.6
     "@babel/helper-module-imports": ^7.18.6
     "@babel/helper-plugin-utils": ^7.20.2
     "@babel/plugin-syntax-jsx": ^7.18.6
-    "@babel/types": ^7.20.7
+    "@babel/types": ^7.21.0
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: b1daaa9b093ab59f71572dde7ad05ed3490433a47de103fc866f60347da55fa7fe84cf9b4c9fa22917517d52f70ab5e05ec631bba1c348733c0d8ebbd7de8c68
+  checksum: c77d277d2e55b489a9b9be185c3eed5d8e2c87046778810f8e47ee3c87b47e64cad93c02211c968486c7958fd05ce203c66779446484c98a7b3a69bec687d5dc
   languageName: node
   linkType: hard
 
@@ -7246,7 +7246,7 @@ __metadata:
     "@babel/core": ^7.21.0
     "@babel/eslint-parser": ^7.19.1
     "@babel/eslint-plugin": ^7.19.1
-    "@babel/plugin-transform-react-jsx": ^7.20.13
+    "@babel/plugin-transform-react-jsx": ^7.21.0
     "@carbon/icons-react": ^11.16.1
     "@eng618/prettier-config": ^1.6.1
     "@types/react": ^18.0.28
