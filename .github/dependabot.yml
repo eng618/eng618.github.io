@@ -8,7 +8,11 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    reviewers:
+      - "eng618"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    reviewers:
+      - "eng618"
