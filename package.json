@@ -52,7 +52,7 @@
     "@eng618/prettier-config": "^1.6.1",
     "@types/react": "^18.0.28",
     "babel-loader": "^9.1.2",
-    "eslint": "^8.34.0",
+    "eslint": "^8.35.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-html": "^7.1.0",
