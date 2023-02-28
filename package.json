@@ -48,7 +48,7 @@
     "@babel/core": "^7.21.0",
     "@babel/eslint-parser": "^7.19.1",
     "@babel/eslint-plugin": "^7.19.1",
-    "@babel/plugin-transform-react-jsx": "^7.20.13",
+    "@babel/plugin-transform-react-jsx": "^7.21.0",
     "@eng618/prettier-config": "^1.6.1",
     "@types/react": "^18.0.28",
     "babel-loader": "^9.1.2",
