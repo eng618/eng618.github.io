@@ -1891,6 +1891,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/icon-helpers@npm:^10.39.0":
+  version: 10.39.0
+  resolution: "@carbon/icon-helpers@npm:10.39.0"
+  checksum: b99ed8f595045ca1d6cb41181dfc731e79aa8bc372af4613728d6edc15421ac8d692dc5947c2e56a6fc039c43ae5771e7228edefac6d157f22f99f354e650940
+  languageName: node
+  linkType: hard
+
 "@carbon/icons-react@npm:^11.16.0":
   version: 11.16.0
   resolution: "@carbon/icons-react@npm:11.16.0"
@@ -1904,16 +1911,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/icons-react@npm:^11.16.1":
-  version: 11.16.1
-  resolution: "@carbon/icons-react@npm:11.16.1"
+"@carbon/icons-react@npm:^11.17.0":
+  version: 11.17.0
+  resolution: "@carbon/icons-react@npm:11.17.0"
   dependencies:
-    "@carbon/icon-helpers": ^10.38.0
+    "@carbon/icon-helpers": ^10.39.0
     "@carbon/telemetry": 0.1.0
     prop-types: ^15.7.2
   peerDependencies:
     react: ">=16"
-  checksum: e46f653a262de1ace1d2cab693011cc0097a74988c4283143cb7ab0c45ade0b7003d11476044e35f30b252bd5420a16c27a95b6f2b2e3721f79418b1c268bce2
+  checksum: 166e7e2a09fb5516d77662f6272f50ec21e52035eefc5be6eb8fe1652afea85ebdb2e3983d86ad737a0347237cfc3ea547693a28dd8e5f87d57557e0efd5a981
   languageName: node
   linkType: hard
 
@@ -7247,7 +7254,7 @@ __metadata:
     "@babel/eslint-parser": ^7.19.1
     "@babel/eslint-plugin": ^7.19.1
     "@babel/plugin-transform-react-jsx": ^7.21.0
-    "@carbon/icons-react": ^11.16.1
+    "@carbon/icons-react": ^11.17.0
     "@eng618/prettier-config": ^1.6.1
     "@types/react": ^18.0.28
     babel-loader: ^9.1.2
