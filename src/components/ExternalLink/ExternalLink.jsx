@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Launch } from '@carbon/icons-react';
+import { Launch } from '@carbon/react/icons';
 import styled from 'styled-components';
 
 const StyledLaunch = styled(Launch)`

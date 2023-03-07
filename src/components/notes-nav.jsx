@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Catalog } from '@carbon/icons-react';
+import { Catalog } from '@carbon/react/icons';
 
 const StyledDiv = styled.div``;
 
