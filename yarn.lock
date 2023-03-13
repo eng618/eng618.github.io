@@ -2708,9 +2708,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-darwin-arm64@npm:2.7.9":
-  version: 2.7.9
-  resolution: "@lmdb/lmdb-darwin-arm64@npm:2.7.9"
+"@lmdb/lmdb-darwin-arm64@npm:2.7.10":
+  version: 2.7.10
+  resolution: "@lmdb/lmdb-darwin-arm64@npm:2.7.10"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -2729,9 +2729,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-darwin-x64@npm:2.7.9":
-  version: 2.7.9
-  resolution: "@lmdb/lmdb-darwin-x64@npm:2.7.9"
+"@lmdb/lmdb-darwin-x64@npm:2.7.10":
+  version: 2.7.10
+  resolution: "@lmdb/lmdb-darwin-x64@npm:2.7.10"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -2750,9 +2750,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-arm64@npm:2.7.9":
-  version: 2.7.9
-  resolution: "@lmdb/lmdb-linux-arm64@npm:2.7.9"
+"@lmdb/lmdb-linux-arm64@npm:2.7.10":
+  version: 2.7.10
+  resolution: "@lmdb/lmdb-linux-arm64@npm:2.7.10"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
@@ -2771,9 +2771,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-arm@npm:2.7.9":
-  version: 2.7.9
-  resolution: "@lmdb/lmdb-linux-arm@npm:2.7.9"
+"@lmdb/lmdb-linux-arm@npm:2.7.10":
+  version: 2.7.10
+  resolution: "@lmdb/lmdb-linux-arm@npm:2.7.10"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
@@ -2792,9 +2792,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-x64@npm:2.7.9":
-  version: 2.7.9
-  resolution: "@lmdb/lmdb-linux-x64@npm:2.7.9"
+"@lmdb/lmdb-linux-x64@npm:2.7.10":
+  version: 2.7.10
+  resolution: "@lmdb/lmdb-linux-x64@npm:2.7.10"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -2813,9 +2813,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-win32-x64@npm:2.7.9":
-  version: 2.7.9
-  resolution: "@lmdb/lmdb-win32-x64@npm:2.7.9"
+"@lmdb/lmdb-win32-x64@npm:2.7.10":
+  version: 2.7.10
+  resolution: "@lmdb/lmdb-win32-x64@npm:2.7.10"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -2881,9 +2881,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:3.0.0"
+"@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-darwin-arm64@npm:3.0.2"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -2895,9 +2895,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-darwin-x64@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@msgpackr-extract/msgpackr-extract-darwin-x64@npm:3.0.0"
+"@msgpackr-extract/msgpackr-extract-darwin-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-darwin-x64@npm:3.0.2"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -2909,9 +2909,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-linux-arm64@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm64@npm:3.0.0"
+"@msgpackr-extract/msgpackr-extract-linux-arm64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm64@npm:3.0.2"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
@@ -2923,9 +2923,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-linux-arm@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm@npm:3.0.0"
+"@msgpackr-extract/msgpackr-extract-linux-arm@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-arm@npm:3.0.2"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
@@ -2937,9 +2937,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-linux-x64@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@msgpackr-extract/msgpackr-extract-linux-x64@npm:3.0.0"
+"@msgpackr-extract/msgpackr-extract-linux-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-linux-x64@npm:3.0.2"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -2951,9 +2951,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@msgpackr-extract/msgpackr-extract-win32-x64@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@msgpackr-extract/msgpackr-extract-win32-x64@npm:3.0.0"
+"@msgpackr-extract/msgpackr-extract-win32-x64@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@msgpackr-extract/msgpackr-extract-win32-x64@npm:3.0.2"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -7395,7 +7395,7 @@ __metadata:
     gh-pages: ^5.0.0
     husky: ^8.0.3
     lint-staged: ^13.1.4
-    lmdb: ^2.7.9
+    lmdb: ^2.7.10
     mkdirp: ^2.1.5
     prettier: ^2.8.4
     prop-types: ^15.8.1
@@ -12222,17 +12222,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lmdb@npm:^2.7.9":
-  version: 2.7.9
-  resolution: "lmdb@npm:2.7.9"
+"lmdb@npm:^2.7.10":
+  version: 2.7.10
+  resolution: "lmdb@npm:2.7.10"
   dependencies:
-    "@lmdb/lmdb-darwin-arm64": 2.7.9
-    "@lmdb/lmdb-darwin-x64": 2.7.9
-    "@lmdb/lmdb-linux-arm": 2.7.9
-    "@lmdb/lmdb-linux-arm64": 2.7.9
-    "@lmdb/lmdb-linux-x64": 2.7.9
-    "@lmdb/lmdb-win32-x64": 2.7.9
-    msgpackr: 1.8.3
+    "@lmdb/lmdb-darwin-arm64": 2.7.10
+    "@lmdb/lmdb-darwin-x64": 2.7.10
+    "@lmdb/lmdb-linux-arm": 2.7.10
+    "@lmdb/lmdb-linux-arm64": 2.7.10
+    "@lmdb/lmdb-linux-x64": 2.7.10
+    "@lmdb/lmdb-win32-x64": 2.7.10
+    msgpackr: 1.8.5
     node-addon-api: ^4.3.0
     node-gyp: latest
     node-gyp-build-optional-packages: 5.0.6
@@ -12253,7 +12253,7 @@ __metadata:
       optional: true
   bin:
     download-lmdb-prebuilds: bin/download-prebuilds.js
-  checksum: 76c5288cbd1b58127d478cc7247cc158e50d39f772e852ff0826b2c75a09a65ea05be579a8851e31cf9dca8e021d2e18ad2f91c66348d6f05bbc542bb3734207
+  checksum: 2b4025fa85b6d6cce1f9f97227c90f738403e3d72f422d9ab0fc2ca787e38ea6312e465eecae7839e555518a83a26dc504ac59428b765aa142546239bd243b35
   languageName: node
   linkType: hard
 
@@ -13468,16 +13468,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"msgpackr-extract@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "msgpackr-extract@npm:3.0.0"
+"msgpackr-extract@npm:^3.0.1":
+  version: 3.0.2
+  resolution: "msgpackr-extract@npm:3.0.2"
   dependencies:
-    "@msgpackr-extract/msgpackr-extract-darwin-arm64": 3.0.0
-    "@msgpackr-extract/msgpackr-extract-darwin-x64": 3.0.0
-    "@msgpackr-extract/msgpackr-extract-linux-arm": 3.0.0
-    "@msgpackr-extract/msgpackr-extract-linux-arm64": 3.0.0
-    "@msgpackr-extract/msgpackr-extract-linux-x64": 3.0.0
-    "@msgpackr-extract/msgpackr-extract-win32-x64": 3.0.0
+    "@msgpackr-extract/msgpackr-extract-darwin-arm64": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-darwin-x64": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-linux-arm": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-linux-arm64": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-linux-x64": 3.0.2
+    "@msgpackr-extract/msgpackr-extract-win32-x64": 3.0.2
     node-gyp: latest
     node-gyp-build-optional-packages: 5.0.7
   dependenciesMeta:
@@ -13495,19 +13495,19 @@ __metadata:
       optional: true
   bin:
     download-msgpackr-prebuilds: bin/download-prebuilds.js
-  checksum: 89a92c1422399ab796f31742a8b1724b4e7a766706417c7c6da30f3be2a1dff64d182ed20109987dc38520c0864c9c7607a082ae95f1d15a2fa3695aa30dcd22
+  checksum: 5adb809b965bac41c310e60373d54c955fe78e4d134ab036d0f9ee5b322cec0a739878d395e17c1ac82d840705896b2dafae6a8cc04ad34c14d2de4b06b58330
   languageName: node
   linkType: hard
 
-"msgpackr@npm:1.8.3":
-  version: 1.8.3
-  resolution: "msgpackr@npm:1.8.3"
+"msgpackr@npm:1.8.5":
+  version: 1.8.5
+  resolution: "msgpackr@npm:1.8.5"
   dependencies:
-    msgpackr-extract: ^3.0.0
+    msgpackr-extract: ^3.0.1
   dependenciesMeta:
     msgpackr-extract:
       optional: true
-  checksum: 15a3a7db3332b1a6e9b5ca71d57b862bf10c73d7b3e4f37abfe009d9b0843857cc9c625fed942f3f53d39770468c9ef92a83798e64993cb6389fd695075f3f74
+  checksum: baa6d94fb6ea0592318c19a988f9379279e1882042c46585802c89720fcd8698e59819b55afb188b126f8ee3be792098791b2cfe03ad1defdb6011edb3b146ad
   languageName: node
   linkType: hard
 
