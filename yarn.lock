@@ -2097,6 +2097,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/styles@npm:^1.25.0":
+  version: 1.25.0
+  resolution: "@carbon/styles@npm:1.25.0"
+  dependencies:
+    "@carbon/colors": ^11.13.0
+    "@carbon/feature-flags": ^0.13.0
+    "@carbon/grid": ^11.12.0
+    "@carbon/layout": ^11.12.0
+    "@carbon/motion": ^11.10.0
+    "@carbon/themes": ^11.17.0
+    "@carbon/type": ^11.16.0
+    "@ibm/plex": 6.0.0-next.6
+  peerDependencies:
+    sass: ^1.33.0
+  checksum: a9035f234b2587a7d9280ba9b33ab28663f9ecfd6f7f154ae29ee29fa33beff8f905f4954f9da39cf66cf7805593c66cc5f353fd4fc0e361d9cdd739e32c6928
+  languageName: node
+  linkType: hard
+
 "@carbon/telemetry@npm:0.1.0":
   version: 0.1.0
   resolution: "@carbon/telemetry@npm:0.1.0"
@@ -7383,7 +7401,7 @@ __metadata:
     "@babel/eslint-plugin": ^7.19.1
     "@babel/plugin-transform-react-jsx": ^7.21.0
     "@carbon/react": ^1.24.0
-    "@carbon/styles": ^1.24.0
+    "@carbon/styles": ^1.25.0
     "@eng618/prettier-config": ^1.6.1
     "@types/react": ^18.0.28
     babel-loader: ^9.1.2
