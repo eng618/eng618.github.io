@@ -2790,9 +2790,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-darwin-arm64@npm:2.7.10":
-  version: 2.7.10
-  resolution: "@lmdb/lmdb-darwin-arm64@npm:2.7.10"
+"@lmdb/lmdb-darwin-arm64@npm:2.7.11":
+  version: 2.7.11
+  resolution: "@lmdb/lmdb-darwin-arm64@npm:2.7.11"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -2811,9 +2811,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-darwin-x64@npm:2.7.10":
-  version: 2.7.10
-  resolution: "@lmdb/lmdb-darwin-x64@npm:2.7.10"
+"@lmdb/lmdb-darwin-x64@npm:2.7.11":
+  version: 2.7.11
+  resolution: "@lmdb/lmdb-darwin-x64@npm:2.7.11"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -2832,9 +2832,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-arm64@npm:2.7.10":
-  version: 2.7.10
-  resolution: "@lmdb/lmdb-linux-arm64@npm:2.7.10"
+"@lmdb/lmdb-linux-arm64@npm:2.7.11":
+  version: 2.7.11
+  resolution: "@lmdb/lmdb-linux-arm64@npm:2.7.11"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
@@ -2853,9 +2853,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-arm@npm:2.7.10":
-  version: 2.7.10
-  resolution: "@lmdb/lmdb-linux-arm@npm:2.7.10"
+"@lmdb/lmdb-linux-arm@npm:2.7.11":
+  version: 2.7.11
+  resolution: "@lmdb/lmdb-linux-arm@npm:2.7.11"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
@@ -2874,9 +2874,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-x64@npm:2.7.10":
-  version: 2.7.10
-  resolution: "@lmdb/lmdb-linux-x64@npm:2.7.10"
+"@lmdb/lmdb-linux-x64@npm:2.7.11":
+  version: 2.7.11
+  resolution: "@lmdb/lmdb-linux-x64@npm:2.7.11"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -2895,9 +2895,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-win32-x64@npm:2.7.10":
-  version: 2.7.10
-  resolution: "@lmdb/lmdb-win32-x64@npm:2.7.10"
+"@lmdb/lmdb-win32-x64@npm:2.7.11":
+  version: 2.7.11
+  resolution: "@lmdb/lmdb-win32-x64@npm:2.7.11"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -3950,14 +3950,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.28":
-  version: 18.0.28
-  resolution: "@types/react@npm:18.0.28"
+"@types/react@npm:^18.0.29":
+  version: 18.0.29
+  resolution: "@types/react@npm:18.0.29"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: e752df961105e5127652460504785897ca6e77259e0da8f233f694f9e8f451cde7fa0709d4456ade0ff600c8ce909cfe29f9b08b9c247fa9b734e126ec53edd7
+  checksum: 75f56f81d80a1c15ee3fcd2039bdc5f7a70f49cf69827ee0fc8beece9809b234f245dd62552e91018d8f25792986bd513b44caf054554d5c5eb979a5f9460214
   languageName: node
   linkType: hard
 
@@ -7449,7 +7449,7 @@ __metadata:
     "@carbon/react": ^1.25.0
     "@carbon/styles": ^1.25.0
     "@eng618/prettier-config": ^1.6.1
-    "@types/react": ^18.0.28
+    "@types/react": ^18.0.29
     babel-loader: ^9.1.2
     eslint: ^8.36.0
     eslint-config-airbnb: ^19.0.4
@@ -7463,7 +7463,7 @@ __metadata:
     eslint-webpack-plugin: ^4.0.0
     gatsby: ^4.25.5
     gatsby-plugin-advanced-sitemap: ^2.1.0
-    gatsby-plugin-eslint: ^4.0.3
+    gatsby-plugin-eslint: ^4.0.4
     gatsby-plugin-image: ^2.25.0
     gatsby-plugin-manifest: ^5.8.0
     gatsby-plugin-offline: ^5.25.0
@@ -7477,7 +7477,7 @@ __metadata:
     gh-pages: ^5.0.0
     husky: ^8.0.3
     lint-staged: ^13.2.0
-    lmdb: ^2.7.10
+    lmdb: ^2.7.11
     mkdirp: ^2.1.6
     prettier: ^2.8.7
     prop-types: ^15.8.1
@@ -9367,16 +9367,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-eslint@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "gatsby-plugin-eslint@npm:4.0.3"
+"gatsby-plugin-eslint@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "gatsby-plugin-eslint@npm:4.0.4"
   dependencies:
     webpack-merge: ^5.8.0
   peerDependencies:
     eslint: ^7.18.0 || ^8
-    eslint-webpack-plugin: ^2.4.3 || ^3
+    eslint-webpack-plugin: ^2.4.3 || ^3 || ^4
     gatsby: ^2 || ^3 || ^4 || ^5
-  checksum: 787763e817be3b1e04039df901bc2a6eb11dca2fc0dc7b453df7f24ff74fe3444458da9a63cb9b9427073e00ff0690692aaaea0b41e73bbf744c464a233138fb
+  checksum: 325c2283398da7cd1aaf0e06a1c92cea702fe31cea2c728e998d2295ac84cb788204cd1b64bc865422f4243c4177b5196f8af72697b97a88be129deef9777c85
   languageName: node
   linkType: hard
 
@@ -12303,16 +12303,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lmdb@npm:^2.7.10":
-  version: 2.7.10
-  resolution: "lmdb@npm:2.7.10"
+"lmdb@npm:^2.7.11":
+  version: 2.7.11
+  resolution: "lmdb@npm:2.7.11"
   dependencies:
-    "@lmdb/lmdb-darwin-arm64": 2.7.10
-    "@lmdb/lmdb-darwin-x64": 2.7.10
-    "@lmdb/lmdb-linux-arm": 2.7.10
-    "@lmdb/lmdb-linux-arm64": 2.7.10
-    "@lmdb/lmdb-linux-x64": 2.7.10
-    "@lmdb/lmdb-win32-x64": 2.7.10
+    "@lmdb/lmdb-darwin-arm64": 2.7.11
+    "@lmdb/lmdb-darwin-x64": 2.7.11
+    "@lmdb/lmdb-linux-arm": 2.7.11
+    "@lmdb/lmdb-linux-arm64": 2.7.11
+    "@lmdb/lmdb-linux-x64": 2.7.11
+    "@lmdb/lmdb-win32-x64": 2.7.11
     msgpackr: 1.8.5
     node-addon-api: ^4.3.0
     node-gyp: latest
@@ -12334,7 +12334,7 @@ __metadata:
       optional: true
   bin:
     download-lmdb-prebuilds: bin/download-prebuilds.js
-  checksum: 2b4025fa85b6d6cce1f9f97227c90f738403e3d72f422d9ab0fc2ca787e38ea6312e465eecae7839e555518a83a26dc504ac59428b765aa142546239bd243b35
+  checksum: 44f9c7ea078b79c5a11179af3e4a6e604c63ced6fedbd58b06a048ba9e1ab54bac5772675a7de637a7955918ea7fa62c233d76d0a232137b3003ede539cd8516
   languageName: node
   linkType: hard
 
