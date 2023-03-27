@@ -7463,7 +7463,7 @@ __metadata:
     eslint-webpack-plugin: ^4.0.0
     gatsby: ^4.25.5
     gatsby-plugin-advanced-sitemap: ^2.1.0
-    gatsby-plugin-eslint: ^4.0.3
+    gatsby-plugin-eslint: ^4.0.4
     gatsby-plugin-image: ^2.25.0
     gatsby-plugin-manifest: ^5.8.0
     gatsby-plugin-offline: ^5.25.0
@@ -9367,16 +9367,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-eslint@npm:^4.0.3":
-  version: 4.0.3
-  resolution: "gatsby-plugin-eslint@npm:4.0.3"
+"gatsby-plugin-eslint@npm:^4.0.4":
+  version: 4.0.4
+  resolution: "gatsby-plugin-eslint@npm:4.0.4"
   dependencies:
     webpack-merge: ^5.8.0
   peerDependencies:
     eslint: ^7.18.0 || ^8
-    eslint-webpack-plugin: ^2.4.3 || ^3
+    eslint-webpack-plugin: ^2.4.3 || ^3 || ^4
     gatsby: ^2 || ^3 || ^4 || ^5
-  checksum: 787763e817be3b1e04039df901bc2a6eb11dca2fc0dc7b453df7f24ff74fe3444458da9a63cb9b9427073e00ff0690692aaaea0b41e73bbf744c464a233138fb
+  checksum: 325c2283398da7cd1aaf0e06a1c92cea702fe31cea2c728e998d2295ac84cb788204cd1b64bc865422f4243c4177b5196f8af72697b97a88be129deef9777c85
   languageName: node
   linkType: hard
 
