@@ -23,7 +23,7 @@
     "test": "yarn format && yarn lint"
   },
   "dependencies": {
-    "@carbon/react": "^1.25.0",
+    "@carbon/react": "^1.26.0",
     "@carbon/styles": "^1.25.0",
     "gatsby": "^4.25.5",
     "gatsby-plugin-advanced-sitemap": "^2.1.0",

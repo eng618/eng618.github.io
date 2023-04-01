@@ -2092,15 +2092,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@carbon/react@npm:^1.25.0":
-  version: 1.25.0
-  resolution: "@carbon/react@npm:1.25.0"
+"@carbon/react@npm:^1.26.0":
+  version: 1.26.0
+  resolution: "@carbon/react@npm:1.26.0"
   dependencies:
     "@babel/runtime": ^7.18.3
     "@carbon/feature-flags": ^0.13.0
     "@carbon/icons-react": ^11.17.0
     "@carbon/layout": ^11.12.0
-    "@carbon/styles": ^1.25.0
+    "@carbon/styles": ^1.26.0
     "@carbon/telemetry": 0.1.0
     classnames: 2.3.2
     copy-to-clipboard: ^3.3.1
@@ -2121,7 +2121,7 @@ __metadata:
     react: ^16.8.6 || ^17.0.1
     react-dom: ^16.8.6 || ^17.0.1
     sass: ^1.33.0
-  checksum: c3db13a2fdd5d63d5c39ed72bb322742a621177dfd2950f32907d72047754a1558892d5a191843f46b9875eda703eb6e8d8c69010806a84ec6a08347dae59cb6
+  checksum: c85062c2ba98fa0e2e40c77497d408b1097562eeac081ad047c1668c9b29cf930abd98d585c8e80067277b69733515085bec25a9ae054cec76746609592167d8
   languageName: node
   linkType: hard
 
@@ -2158,6 +2158,24 @@ __metadata:
   peerDependencies:
     sass: ^1.33.0
   checksum: a9035f234b2587a7d9280ba9b33ab28663f9ecfd6f7f154ae29ee29fa33beff8f905f4954f9da39cf66cf7805593c66cc5f353fd4fc0e361d9cdd739e32c6928
+  languageName: node
+  linkType: hard
+
+"@carbon/styles@npm:^1.26.0":
+  version: 1.26.0
+  resolution: "@carbon/styles@npm:1.26.0"
+  dependencies:
+    "@carbon/colors": ^11.13.0
+    "@carbon/feature-flags": ^0.13.0
+    "@carbon/grid": ^11.12.0
+    "@carbon/layout": ^11.12.0
+    "@carbon/motion": ^11.10.0
+    "@carbon/themes": ^11.17.0
+    "@carbon/type": ^11.16.0
+    "@ibm/plex": 6.0.0-next.6
+  peerDependencies:
+    sass: ^1.33.0
+  checksum: d075f56450b8cb6b5af4a3e6c42841ee3ce8efaf9c49828ac5eb603b37b779bcb505cb1b127b2b2ed5eceb24641deb10e8adbbe1732481156df5f81e8bf02cc9
   languageName: node
   linkType: hard
 
@@ -7446,7 +7464,7 @@ __metadata:
     "@babel/eslint-parser": ^7.21.3
     "@babel/eslint-plugin": ^7.19.1
     "@babel/plugin-transform-react-jsx": ^7.21.0
-    "@carbon/react": ^1.25.0
+    "@carbon/react": ^1.26.0
     "@carbon/styles": ^1.25.0
     "@eng618/prettier-config": ^1.6.1
     "@types/react": ^18.0.29
