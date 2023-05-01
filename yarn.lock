@@ -4376,14 +4376,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^18.0.32":
-  version: 18.0.32
-  resolution: "@types/react@npm:18.0.32"
+"@types/react@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "@types/react@npm:18.2.0"
   dependencies:
     "@types/prop-types": "*"
     "@types/scheduler": "*"
     csstype: ^3.0.2
-  checksum: c8dbce83c455e520e75f3649988f46100e3a3c0bf7241281ea5bd9067a0368290f0d7c6102e12e6ec9d649134b29a3ef4c421f376ec5aa06ed78cbdd8c144b4c
+  checksum: db3d92b423150222a666329f7aa3023e3e942044700557b8a7d161530847e621aec9f56c9e7f71761b06dd164c8a7b17ad52355863efe80963dffa5537e8e5fd
   languageName: node
   linkType: hard
 
@@ -8226,7 +8226,7 @@ __metadata:
     "@carbon/react": ^1.26.0
     "@carbon/styles": ^1.26.0
     "@eng618/prettier-config": ^1.6.1
-    "@types/react": ^18.0.32
+    "@types/react": ^18.2.0
     babel-loader: ^9.1.2
     eslint: ^8.37.0
     eslint-config-airbnb: ^19.0.4
