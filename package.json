@@ -23,12 +23,12 @@
     "test": "yarn format && yarn lint"
   },
   "dependencies": {
-    "@carbon/react": "^1.28.0",
-    "@carbon/styles": "^1.28.0",
-    "gatsby": "^4.25.6",
+    "@carbon/react": "^1.30.0",
+    "@carbon/styles": "^1.30.0",
+    "gatsby": "^4.25.7",
     "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-image": "^2.25.0",
-    "gatsby-plugin-manifest": "^5.9.0",
+    "gatsby-plugin-manifest": "^5.10.0",
     "gatsby-plugin-offline": "^5.25.0",
     "gatsby-plugin-sharp": "^4.25.1",
     "gatsby-remark-copy-linked-files": "5.25.0",
@@ -37,22 +37,22 @@
     "gatsby-theme-carbon": "^4.0.0-next.2",
     "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.25.0",
-    "lmdb": "^2.7.11",
+    "lmdb": "^2.8.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.5",
-    "@babel/eslint-parser": "^7.21.3",
+    "@babel/core": "^7.22.1",
+    "@babel/eslint-parser": "^7.21.8",
     "@babel/eslint-plugin": "^7.19.1",
-    "@babel/plugin-transform-react-jsx": "^7.21.5",
+    "@babel/plugin-transform-react-jsx": "^7.22.3",
     "@eng618/prettier-config": "^1.6.1",
-    "@types/react": "^18.2.0",
+    "@types/react": "^18.2.7",
     "babel-loader": "^9.1.2",
-    "eslint": "^8.39.0",
+    "eslint": "^8.41.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-html": "^7.1.0",
@@ -69,7 +69,7 @@
     "mkdirp": "^2.1.6",
     "prettier": "^2.8.8",
     "typescript": "^5.0.4",
-    "webpack": "^5.81.0"
+    "webpack": "^5.85.0"
   },
   "resolutions": {
     "ansi-html": "^0.0.8",
