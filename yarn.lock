@@ -2326,10 +2326,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eng618/prettier-config@npm:^1.6.1":
-  version: 1.6.1
-  resolution: "@eng618/prettier-config@npm:1.6.1"
-  checksum: 40295a19b08f9c567b918004b4605e1afc4efb65d5d9508a06f585f3ff9dfbdd273ca8c34b60e8fdb9aa15b5c40c9588629708dcf113dbd59e36eeb760996319
+"@eng618/prettier-config@npm:^1.6.4":
+  version: 1.6.4
+  resolution: "@eng618/prettier-config@npm:1.6.4"
+  checksum: 37609ec6ae49c19b195a085a12aa67c522fc10354881f023a0c585a0012f8d80f66e8bf45d750cffacfa796add867cbe2cf8ca58d96f2d27510b381af6d0490c
   languageName: node
   linkType: hard
 
@@ -7688,7 +7688,7 @@ __metadata:
     "@babel/plugin-transform-react-jsx": ^7.22.3
     "@carbon/react": ^1.30.0
     "@carbon/styles": ^1.30.0
-    "@eng618/prettier-config": ^1.6.1
+    "@eng618/prettier-config": ^1.6.4
     "@types/react": ^18.2.7
     babel-loader: ^9.1.2
     eslint: ^8.41.0
