@@ -47,7 +47,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.1",
     "@babel/eslint-parser": "^7.21.8",
-    "@babel/eslint-plugin": "^7.19.1",
+    "@babel/eslint-plugin": "^7.22.5",
     "@babel/plugin-transform-react-jsx": "^7.22.3",
     "@eng618/prettier-config": "^1.6.1",
     "@types/react": "^18.2.7",
