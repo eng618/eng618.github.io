@@ -15,3 +15,11 @@ This page holds bash cheat sheets
 ```shell path=https://stackoverflow.com/a/69690491
 find . -iname "*\.{file-extension}" -print0 | xargs -0 code
 ```
+
+## Printing the last exit code
+
+Sometimes you need to read the exit code of the last ran command, to check it if succeeded or failed. To do so exicute the following command.
+
+```shell
+echo $?
+```
