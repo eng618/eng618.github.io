@@ -27,55 +27,70 @@ const BadgesLeftText = function BadgesLeftText() {
 const BadgesRight = function BadgesRightText() {
   return (
     // Max badges per row is 4
-    <Row className={badgesRow}>
-      <Column colMd={1} colLg={1} noGutterMdLeft>
-        <ImageCard
-          href="https://www.credly.com/badges/84c7f84c-eb57-489a-93ce-f0701008b7e3/public_url"
-          actionIcon="Launch"
-        >
-          <StaticImage
-            src="../../images/credly/ibm-agile-explorer.png"
-            alt="Agile explorer"
-          />
-        </ImageCard>
-      </Column>
+    <>
+      <Row className={badgesRow}>
+        <Column colMd={1} colLg={1} noGutterMdLeft>
+          <ImageCard
+            href="https://www.credly.com/badges/01f77238-4e0d-406b-a2e1-b94ab3d27ef3/public_url"
+            actionIcon="Launch"
+          >
+            <StaticImage
+              src="../../images/credly/developer-profession-level-3-expert.png"
+              alt="Agile explorer"
+            />
+          </ImageCard>
+        </Column>
+      </Row>
+      <Row className={badgesRow}>
+        <Column colMd={1} colLg={1} noGutterMdLeft>
+          <ImageCard
+            href="https://www.credly.com/badges/84c7f84c-eb57-489a-93ce-f0701008b7e3/public_url"
+            actionIcon="Launch"
+          >
+            <StaticImage
+              src="../../images/credly/ibm-agile-explorer.png"
+              alt="Agile explorer"
+            />
+          </ImageCard>
+        </Column>
 
-      <Column colMd={1} colLg={1} noGutterMdLeft>
-        <ImageCard
-          href="https://www.credly.com/badges/836c8f8f-fdd6-41aa-a310-ca38c0a6e54e/public_url"
-          actionIcon="Launch"
-        >
-          <StaticImage
-            src="../../images/credly/ibm-cloud-kubernetes-service.png"
-            alt="IBM Cloud Kubernetes Service"
-          />
-        </ImageCard>
-      </Column>
+        <Column colMd={1} colLg={1} noGutterMdLeft>
+          <ImageCard
+            href="https://www.credly.com/badges/836c8f8f-fdd6-41aa-a310-ca38c0a6e54e/public_url"
+            actionIcon="Launch"
+          >
+            <StaticImage
+              src="../../images/credly/ibm-cloud-kubernetes-service.png"
+              alt="IBM Cloud Kubernetes Service"
+            />
+          </ImageCard>
+        </Column>
 
-      <Column colMd={1} colLg={1} noGutterMdLeft>
-        <ImageCard
-          href="https://www.credly.com/badges/de8ea4d0-1d49-4084-bc16-3b0a5366d354/public_url"
-          actionIcon="Launch"
-        >
-          <StaticImage
-            src="../../images/credly/ibm-carbon-design-system-developer-essentials-react.png"
-            alt="IBM Carbon Design System Developer Essentials - React"
-          />
-        </ImageCard>
-      </Column>
+        <Column colMd={1} colLg={1} noGutterMdLeft>
+          <ImageCard
+            href="https://www.credly.com/badges/de8ea4d0-1d49-4084-bc16-3b0a5366d354/public_url"
+            actionIcon="Launch"
+          >
+            <StaticImage
+              src="../../images/credly/ibm-carbon-design-system-developer-essentials-react.png"
+              alt="IBM Carbon Design System Developer Essentials - React"
+            />
+          </ImageCard>
+        </Column>
 
-      <Column colMd={1} colLg={1} noGutterMdLeft>
-        <ImageCard
-          href="https://www.credly.com/badges/36ddd342-c057-4624-9738-504cd982d585/public_url"
-          actionIcon="Launch"
-        >
-          <StaticImage
-            src="../../images/credly/enterprise-design-thinking-practitioner.png"
-            alt="Enterprise Design Thinking Practitioner"
-          />
-        </ImageCard>
-      </Column>
-    </Row>
+        <Column colMd={1} colLg={1} noGutterMdLeft>
+          <ImageCard
+            href="https://www.credly.com/badges/36ddd342-c057-4624-9738-504cd982d585/public_url"
+            actionIcon="Launch"
+          >
+            <StaticImage
+              src="../../images/credly/enterprise-design-thinking-practitioner.png"
+              alt="Enterprise Design Thinking Practitioner"
+            />
+          </ImageCard>
+        </Column>
+      </Row>
+    </>
   );
 };
 
