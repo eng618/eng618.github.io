@@ -49,7 +49,7 @@
     "@babel/eslint-plugin": "^7.22.10",
     "@babel/plugin-transform-react-jsx": "^7.22.15",
     "@eng618/prettier-config": "^1.7.2",
-    "@types/react": "^18.2.25",
+    "@types/react": "^18.2.39",
     "babel-loader": "^9.1.3",
     "eslint": "^8.50.0",
     "eslint-config-airbnb": "^19.0.4",
