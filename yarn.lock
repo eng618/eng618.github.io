@@ -3198,6 +3198,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/colors@npm:^11.20.0":
+  version: 11.20.1
+  resolution: "@carbon/colors@npm:11.20.1"
+  checksum: eb9d983c1ec4852f8542ea21f8bb31d383c417d55fe60a3d1ab8a0e85b617f41699b91657240f07f789b852abe48828f1546da92b1c46de9cfe21c81bb612fd7
+  languageName: node
+  linkType: hard
+
 "@carbon/elements@npm:^11.19.0":
   version: 11.19.0
   resolution: "@carbon/elements@npm:11.19.0"
@@ -3242,6 +3249,15 @@ __metadata:
   dependencies:
     "@carbon/layout": ^11.19.0
   checksum: 1f23b7f174880eac0ec37af6088a725694ad1bc7104c9c39978f301c8900fa1f9932e41d72b030577c28e15136ab0a5f967dca2b843d297dd265040ba1fc104c
+  languageName: node
+  linkType: hard
+
+"@carbon/grid@npm:^11.21.0, @carbon/grid@npm:^11.21.1":
+  version: 11.21.1
+  resolution: "@carbon/grid@npm:11.21.1"
+  dependencies:
+    "@carbon/layout": ^11.20.1
+  checksum: e9bcb0940f6714f428864c8ec356c41c556e802694ede484259235cfc806a021fc498cc6e4f6e2014303ecfdf459ad4b0134820d0d92722f2ceafc9287321a0c
   languageName: node
   linkType: hard
 
@@ -3306,10 +3322,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/layout@npm:^11.20.0, @carbon/layout@npm:^11.20.1":
+  version: 11.20.1
+  resolution: "@carbon/layout@npm:11.20.1"
+  checksum: 8db3a31c08ab1fc62bd06404a72ca1e724c938d1ac73c708a63b06103fe054a5ab4294b1fba3471e3f55140ebe0e91e32872a2828dda73a32801fccb670acd35
+  languageName: node
+  linkType: hard
+
 "@carbon/motion@npm:^11.15.0":
   version: 11.15.0
   resolution: "@carbon/motion@npm:11.15.0"
   checksum: 985a559324fb4cb6b1df50ead3d9c1ceefec338f075f5cca4a9d937888cb6b357207a20493807eed47627e41529de215e4b51e0e217eee12970c1b8da2ce1b90
+  languageName: node
+  linkType: hard
+
+"@carbon/motion@npm:^11.16.0":
+  version: 11.16.1
+  resolution: "@carbon/motion@npm:11.16.1"
+  checksum: 1b7644fb19a9154a7d690128ed2fe831232576308dfeb30c694d533e5f8d357dbaf1b3bed7d4c274acb407d84d1ade087583d4f9aec4a8ac1aa9dfffb6922098
   languageName: node
   linkType: hard
 
@@ -3438,6 +3468,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/styles@npm:^1.46.0":
+  version: 1.46.0
+  resolution: "@carbon/styles@npm:1.46.0"
+  dependencies:
+    "@carbon/colors": ^11.20.0
+    "@carbon/feature-flags": ^0.16.0
+    "@carbon/grid": ^11.21.0
+    "@carbon/layout": ^11.20.0
+    "@carbon/motion": ^11.16.0
+    "@carbon/themes": ^11.28.0
+    "@carbon/type": ^11.25.0
+    "@ibm/plex": 6.0.0-next.6
+  peerDependencies:
+    sass: ^1.33.0
+  peerDependenciesMeta:
+    sass:
+      optional: true
+  checksum: 854d1c8d61f3df4f11e6cefce0baa92f2f1d547e7fb05ac17936c9500f277842561c8ebe04f561321e0eb653eb5ae0ddc4b3d4480e58b01a37237b489eb54577
+  languageName: node
+  linkType: hard
+
 "@carbon/telemetry@npm:0.1.0":
   version: 0.1.0
   resolution: "@carbon/telemetry@npm:0.1.0"
@@ -3471,6 +3522,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/themes@npm:^11.28.0":
+  version: 11.28.0
+  resolution: "@carbon/themes@npm:11.28.0"
+  dependencies:
+    "@carbon/colors": ^11.20.0
+    "@carbon/layout": ^11.20.0
+    "@carbon/type": ^11.25.0
+    color: ^4.0.0
+  checksum: 52bc43b1b5ee846afc870c1898fadd3efe258fa66cb0e66672a1e20179c3833d6e517be433b339f6538887593342aba27f3130c0c3a61646c505eb16b24e06c2
+  languageName: node
+  linkType: hard
+
 "@carbon/type@npm:^11.15.0":
   version: 11.15.0
   resolution: "@carbon/type@npm:11.15.0"
@@ -3488,6 +3551,16 @@ __metadata:
     "@carbon/grid": ^11.20.0
     "@carbon/layout": ^11.19.0
   checksum: 98c6a49cbe4cbcf1fef959b356e1e87c5197f2b19f72e7255abb3131dcc77f1832e0920d16d09cab0ea67dcc72f90f47ec6969052bf8e82302f7faf00f733795
+  languageName: node
+  linkType: hard
+
+"@carbon/type@npm:^11.25.0":
+  version: 11.25.1
+  resolution: "@carbon/type@npm:11.25.1"
+  dependencies:
+    "@carbon/grid": ^11.21.1
+    "@carbon/layout": ^11.20.1
+  checksum: 5184b9cddf050d06dbc3a369400c149e594cd281e090eb0fea972ef964b741ca94c20b828cb6c138be0812861d335d0abbabfe78b368483a5a97bf2ad7e1fc68
   languageName: node
   linkType: hard
 
@@ -9159,7 +9232,7 @@ __metadata:
     "@babel/eslint-plugin": ^7.22.10
     "@babel/plugin-transform-react-jsx": ^7.22.15
     "@carbon/react": ^1.39.0
-    "@carbon/styles": ^1.39.0
+    "@carbon/styles": ^1.46.0
     "@eng618/prettier-config": ^1.7.2
     "@types/react": ^18.2.25
     babel-loader: ^9.1.3
