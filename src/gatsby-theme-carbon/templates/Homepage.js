@@ -7,7 +7,7 @@ import {
   Column,
   ImageCard,
 } from 'gatsby-theme-carbon';
-import HomepageTemplate from 'gatsby-theme-carbon/src/templates/Homepage';
+import HomepageTemplate from 'gatsby-theme-carbon/src/components/Layouts/Homepage';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { badgesRow } from './Homepage.module.scss';
