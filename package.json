@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.28.0",
   "license": "MIT",
-  "packageManager": "yarn@3.6.1",
+  "packageManager": "yarn@4.1.0",
   "scripts": {
     "build": "gatsby build",
     "build:clean": "yarn clean && gatsby build",
