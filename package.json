@@ -23,8 +23,8 @@
     "test": "yarn format && yarn lint"
   },
   "dependencies": {
-    "@carbon/react": "^1.50.0",
-    "@carbon/styles": "^1.50.0",
+    "@carbon/react": "^1.51.0",
+    "@carbon/styles": "^1.51.0",
     "gatsby": "^5.13.3",
     "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-image": "^3.13.1",
@@ -34,7 +34,7 @@
     "gatsby-remark-copy-linked-files": "6.13.1",
     "gatsby-remark-images": "^7.13.1",
     "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-theme-carbon": "^3.4.10",
+    "gatsby-theme-carbon": "^3.4.13",
     "gatsby-transformer-remark": "^6.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "lmdb": "^2.9.2",
@@ -48,8 +48,8 @@
     "@babel/eslint-parser": "^7.23.10",
     "@babel/eslint-plugin": "^7.23.5",
     "@babel/plugin-transform-react-jsx": "^7.23.4",
-    "@eng618/prettier-config": "1.7.9",
-    "@types/react": "^18.2.55",
+    "@eng618/prettier-config": "2.1.0",
+    "@types/react": "^18.2.57",
     "babel-loader": "^9.1.3",
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -63,11 +63,11 @@
     "eslint-webpack-plugin": "^4.0.1",
     "gatsby-plugin-eslint": "^4.0.4",
     "gh-pages": "^6.1.1",
-    "husky": "^9.0.10",
+    "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3",
-    "webpack": "^5.90.1"
+    "webpack": "^5.90.3"
   },
   "resolutions": {
     "ansi-html": "^0.0.8",
