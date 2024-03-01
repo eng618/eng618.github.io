@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@carbon/react": "^1.51.0",
-    "@carbon/styles": "^1.51.0",
+    "@carbon/styles": "^1.51.1",
     "gatsby": "^5.13.3",
     "gatsby-plugin-advanced-sitemap": "^2.1.0",
     "gatsby-plugin-image": "^3.13.1",

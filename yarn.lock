@@ -1656,6 +1656,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@carbon/feature-flags@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "@carbon/feature-flags@npm:0.17.0"
+  checksum: 10/b49d7d93769bcbb8e61565662943ca67973118126db489d2083a3f2e22e3238fdd073742dd4bdf0b9ed6ed1656da9c3df373373acd325cff5270958896df2d7a
+  languageName: node
+  linkType: hard
+
 "@carbon/grid@npm:^11.21.0, @carbon/grid@npm:^11.21.1":
   version: 11.21.1
   resolution: "@carbon/grid@npm:11.21.1"
@@ -1770,6 +1777,27 @@ __metadata:
     sass:
       optional: true
   checksum: 10/39f9e56f192c1458a8ba11e2c0c0b58fe1b09e7212adfcc00b61fb270578949979c4ce4b8166193a5489ae347a0558855dae27f47ca0a7a09367cda94aa16fc0
+  languageName: node
+  linkType: hard
+
+"@carbon/styles@npm:^1.51.1":
+  version: 1.52.0
+  resolution: "@carbon/styles@npm:1.52.0"
+  dependencies:
+    "@carbon/colors": "npm:^11.20.0"
+    "@carbon/feature-flags": "npm:^0.17.0"
+    "@carbon/grid": "npm:^11.21.0"
+    "@carbon/layout": "npm:^11.20.0"
+    "@carbon/motion": "npm:^11.16.0"
+    "@carbon/themes": "npm:^11.32.0"
+    "@carbon/type": "npm:^11.25.0"
+    "@ibm/plex": "npm:6.0.0-next.6"
+  peerDependencies:
+    sass: ^1.33.0
+  peerDependenciesMeta:
+    sass:
+      optional: true
+  checksum: 10/e2923646387a9d363cf78b43f5fb08720549a9755adea954331bbcf63cb48c50fa0109b19e8614caf3199810c1ab0689617425a1735e7dbde514311c4c808d72
   languageName: node
   linkType: hard
 
@@ -7085,7 +7113,7 @@ __metadata:
     "@babel/eslint-plugin": "npm:^7.23.5"
     "@babel/plugin-transform-react-jsx": "npm:^7.23.4"
     "@carbon/react": "npm:^1.51.0"
-    "@carbon/styles": "npm:^1.51.0"
+    "@carbon/styles": "npm:^1.51.1"
     "@eng618/prettier-config": "npm:2.1.0"
     "@types/react": "npm:^18.2.57"
     babel-loader: "npm:^9.1.3"
