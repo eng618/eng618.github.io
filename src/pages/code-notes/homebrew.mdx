@@ -15,6 +15,7 @@ Helpful commands while working with brew.
 <AnchorLinks>
   <AnchorLink>When trying to install using homebrew</AnchorLink>
   <AnchorLink>Bundle</AnchorLink>
+  <AnchorLink>Housekeeping</AnchorLink>
   <AnchorLink>Useful taps and packages</AnchorLink>
 </AnchorLinks>
 
@@ -97,6 +98,24 @@ brew bundle --force cleanup --file=~/.eng/Brewfile
 # Pointing to Brewfile in current working directory
 brew bundle --force cleanup
 ```
+
+## Housekeeping
+
+- `autoremove`: Removes all unused dependencies.
+
+  ```shell
+  brew autoremove
+  ```
+
+- `cleanup`: cleans up cached packages and old versions of installed packages. You can use the `--dry-run` flag here to see what would be removed, before clearing is desired.
+
+  ```shell
+  # This safely removes aged cache and packages.
+  brew cleanup
+
+  # This cleans up all regardless of age.
+  brew cleanup --prune=all
+  ```
 
 ## Useful taps and packages
 
