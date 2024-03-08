@@ -56,18 +56,20 @@ Keep you upgrade oh my zsh with:
 upgrade_oh_my_zsh
 ```
 
-## Powerlevel9k
+## Powerlevel10k
 
-Install [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh) theme. Since we are using Oh My Zsh, we can install it in the **~/.oh-my-zsh/custom/themes/** directory with the following.
+Install [Powerlevel10k](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#oh-my-zsh) theme. Since we are using Oh My Zsh, we can install it in the **~/.oh-my-zsh/custom/themes/** directory with the following.
 
 ```zsh
-git clone https://github.com/bhilburn/powerlevel9k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel9k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 then simply add the theme to you **~/.zsh** file.
 
 ```zsh
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# or exicute
+p10k configure
 ```
 
 To include syntax highlighting of your shell install the [zsh-syntax-highlighting plugins](https://github.com/zsh-users/zsh-syntax-highlighting) with the following:
@@ -78,29 +80,21 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ## Install fonts with gliphs
 
-I like to use [IBM Plex](https://github.com/IBM/plex), which is patch with powerline gliphs from [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts).
+I like to use [IBM Plex](https://github.com/IBM/plex), which is patch with powerline glyphs from [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts).
 
-See [this list](https://github.com/ryanoasis/nerd-fonts#patched-fonts) of patched fonts to find the one you want
+See [this list](https://github.com/ryanoasis/nerd-fonts#patched-fonts) of patched fonts to find the one you want. You can also use this [playground](https://www.programmingfonts.org/) to see the fonts quickly in a simulated code environments.
+
+Once you have found the font you want the easiest way to install is via Homebrew, with the following command.
 
 ```zsh
-# Clone repo
-git clone https://github.com/ryanoasis/nerd-fonts.git
+brew tap homebrew/cask-fonts &&
+brew install --cask font-<FONT NAME>-nerd-font
 
-cd nerd-fonts
-
-# Install all fonts
-./install.sh
-
-# or
-
-# Install a single font
-./install.sh <FontName>
-
-# In my case I used
-./install.sh IBMPlexMono # which installs IBM Plex Mono
+# example for Blex Mono
+brew install --cash font-blex-mono-nerd-font
 ```
 
-## Other plugins and custimizations
+## Other plugins and customizations
 
 Install [colorls](https://github.com/athityakumar/colorls#installation)
 
