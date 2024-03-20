@@ -63,7 +63,7 @@ export const pageQuery = graphql`
 export const pageQuery = graphql`
   {
     allMdx {
-      group(field: frontmatter___category) {
+      group(field: { frontmatter: { category: SELECT } }) {
         edges {
           node {
             frontmatter {
