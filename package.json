@@ -37,7 +37,7 @@
     "gatsby-theme-carbon": "^4.0.0-next.2",
     "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^4.25.0",
-    "lmdb": "^2.8.5",
+    "lmdb": "^3.0.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
