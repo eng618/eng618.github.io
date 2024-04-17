@@ -1,5 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
 import { HomepageBanner, HomepageCallout, Row, Column, ImageCard } from 'gatsby-theme-carbon';
 import HomepageTemplate from 'gatsby-theme-carbon/src/components/Layouts/Homepage';
 import { StaticImage } from 'gatsby-plugin-image';
