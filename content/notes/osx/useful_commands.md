@@ -7,11 +7,6 @@ last_updated: 2016-10-06
 category: osx
 ---
 
-**Jump to**:
-
-- TOC
-  {:toc}
-
 ## Bash Profile
 
 Use `source` to update bash_profile without relaunching terminal

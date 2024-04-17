@@ -10,7 +10,7 @@ This page is under construction
 <h4>Published Applications</h4>
 
 <div class="mdl-grid">
-  <!-- Add liquid to add card for each item in directory -->
+  {/* Add liquid to add card for each item in directory */}
 
   <!-- Add this block per item in portfolio -->
   <div
