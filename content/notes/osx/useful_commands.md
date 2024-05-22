@@ -1,5 +1,4 @@
 ---
-layout: note
 title: Useful Commands
 author: 'Eric Garcia'
 updatedBy: Eric Garcia
