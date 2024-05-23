@@ -2630,9 +2630,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-darwin-arm64@npm:3.0.10":
-  version: 3.0.10
-  resolution: "@lmdb/lmdb-darwin-arm64@npm:3.0.10"
+"@lmdb/lmdb-darwin-arm64@npm:3.0.11":
+  version: 3.0.11
+  resolution: "@lmdb/lmdb-darwin-arm64@npm:3.0.11"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
@@ -2651,9 +2651,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-darwin-x64@npm:3.0.10":
-  version: 3.0.10
-  resolution: "@lmdb/lmdb-darwin-x64@npm:3.0.10"
+"@lmdb/lmdb-darwin-x64@npm:3.0.11":
+  version: 3.0.11
+  resolution: "@lmdb/lmdb-darwin-x64@npm:3.0.11"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
@@ -2672,9 +2672,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-arm64@npm:3.0.10":
-  version: 3.0.10
-  resolution: "@lmdb/lmdb-linux-arm64@npm:3.0.10"
+"@lmdb/lmdb-linux-arm64@npm:3.0.11":
+  version: 3.0.11
+  resolution: "@lmdb/lmdb-linux-arm64@npm:3.0.11"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
@@ -2693,9 +2693,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-arm@npm:3.0.10":
-  version: 3.0.10
-  resolution: "@lmdb/lmdb-linux-arm@npm:3.0.10"
+"@lmdb/lmdb-linux-arm@npm:3.0.11":
+  version: 3.0.11
+  resolution: "@lmdb/lmdb-linux-arm@npm:3.0.11"
   conditions: os=linux & cpu=arm
   languageName: node
   linkType: hard
@@ -2714,9 +2714,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-linux-x64@npm:3.0.10":
-  version: 3.0.10
-  resolution: "@lmdb/lmdb-linux-x64@npm:3.0.10"
+"@lmdb/lmdb-linux-x64@npm:3.0.11":
+  version: 3.0.11
+  resolution: "@lmdb/lmdb-linux-x64@npm:3.0.11"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
@@ -2735,9 +2735,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lmdb/lmdb-win32-x64@npm:3.0.10":
-  version: 3.0.10
-  resolution: "@lmdb/lmdb-win32-x64@npm:3.0.10"
+"@lmdb/lmdb-win32-x64@npm:3.0.11":
+  version: 3.0.11
+  resolution: "@lmdb/lmdb-win32-x64@npm:3.0.11"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -7377,13 +7377,13 @@ __metadata:
     gatsby-remark-copy-linked-files: "npm:6.13.1"
     gatsby-remark-images: "npm:^7.13.1"
     gatsby-source-filesystem: "npm:^5.13.1"
-    gatsby-theme-carbon: "npm:^4.0.0-next.11"
+    gatsby-theme-carbon: "npm:^4.0.0"
     gatsby-transformer-remark: "npm:^6.13.1"
     gatsby-transformer-sharp: "npm:^5.13.1"
     gh-pages: "npm:^6.1.1"
     husky: "npm:^9.0.11"
     lint-staged: "npm:^15.2.4"
-    lmdb: "npm:^3.0.10"
+    lmdb: "npm:^3.0.11"
     prettier: "npm:^3.2.5"
     prop-types: "npm:^15.8.1"
     react: "npm:^18.3.1"
@@ -9648,9 +9648,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-theme-carbon@npm:^4.0.0-next.11":
-  version: 4.0.0-next.11
-  resolution: "gatsby-theme-carbon@npm:4.0.0-next.11"
+"gatsby-theme-carbon@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "gatsby-theme-carbon@npm:4.0.0"
   dependencies:
     "@babel/core": "npm:^7.24.5"
     "@babel/plugin-proposal-class-properties": "npm:^7.18.6"
@@ -9704,7 +9704,7 @@ __metadata:
     gatsby: ^5.13.3
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 10/96afe7d341e91bdbdd8c249e96be18e0543ee47ecace3135bde82b9b9a210fc0f5b70927f57d6ef145b8b67e8a118183993246b965322787aa0a0691fd3e4ecf
+  checksum: 10/4fee5cbb7f5c1de49cea4f3d41b7ed699a9d275febea61699ef5508c181fe2b32bf06964714c56d593118b95f30780fb97ee819bb6a883d655c6a91b9bd70466
   languageName: node
   linkType: hard
 
@@ -12201,16 +12201,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lmdb@npm:^3.0.10":
-  version: 3.0.10
-  resolution: "lmdb@npm:3.0.10"
+"lmdb@npm:^3.0.11":
+  version: 3.0.11
+  resolution: "lmdb@npm:3.0.11"
   dependencies:
-    "@lmdb/lmdb-darwin-arm64": "npm:3.0.10"
-    "@lmdb/lmdb-darwin-x64": "npm:3.0.10"
-    "@lmdb/lmdb-linux-arm": "npm:3.0.10"
-    "@lmdb/lmdb-linux-arm64": "npm:3.0.10"
-    "@lmdb/lmdb-linux-x64": "npm:3.0.10"
-    "@lmdb/lmdb-win32-x64": "npm:3.0.10"
+    "@lmdb/lmdb-darwin-arm64": "npm:3.0.11"
+    "@lmdb/lmdb-darwin-x64": "npm:3.0.11"
+    "@lmdb/lmdb-linux-arm": "npm:3.0.11"
+    "@lmdb/lmdb-linux-arm64": "npm:3.0.11"
+    "@lmdb/lmdb-linux-x64": "npm:3.0.11"
+    "@lmdb/lmdb-win32-x64": "npm:3.0.11"
     msgpackr: "npm:^1.9.9"
     node-addon-api: "npm:^6.1.0"
     node-gyp: "npm:latest"
@@ -12232,7 +12232,7 @@ __metadata:
       optional: true
   bin:
     download-lmdb-prebuilds: bin/download-prebuilds.js
-  checksum: 10/296831ab68775101ab8dace887fc1cabd3cdf42600024d7b012f453a33523be24a1b93137f5991ad825576b545716900691fde2c3858bfdc69144cd9f1ccd980
+  checksum: 10/2b15b425b2f521b76bd4df07b83ab778d9506eebaa4678208a36bcd77df33a56302505930b1dc4829087eadc532245670535a33c254cf9f3ae216b7608f7fa34
   languageName: node
   linkType: hard
 
