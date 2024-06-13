@@ -1,13 +1,6 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
-import {
-  HomepageBanner,
-  HomepageCallout,
-  Row,
-  Column,
-  ImageCard,
-} from 'gatsby-theme-carbon';
-import HomepageTemplate from 'gatsby-theme-carbon/src/templates/Homepage';
+import { HomepageBanner, HomepageCallout, Row, Column, ImageCard } from 'gatsby-theme-carbon';
+import HomepageTemplate from 'gatsby-theme-carbon/src/components/Layouts/Homepage';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { badgesRow } from './Homepage.module.scss';
@@ -34,10 +27,7 @@ const BadgesRight = function BadgesRightText() {
             href="https://www.credly.com/badges/01f77238-4e0d-406b-a2e1-b94ab3d27ef3/public_url"
             actionIcon="Launch"
           >
-            <StaticImage
-              src="../../images/credly/developer-profession-level-3-expert.png"
-              alt="Agile explorer"
-            />
+            <StaticImage src="../../images/credly/developer-profession-level-3-expert.png" alt="Agile explorer" />
           </ImageCard>
         </Column>
       </Row>
@@ -47,10 +37,7 @@ const BadgesRight = function BadgesRightText() {
             href="https://www.credly.com/badges/84c7f84c-eb57-489a-93ce-f0701008b7e3/public_url"
             actionIcon="Launch"
           >
-            <StaticImage
-              src="../../images/credly/ibm-agile-explorer.png"
-              alt="Agile explorer"
-            />
+            <StaticImage src="../../images/credly/ibm-agile-explorer.png" alt="Agile explorer" />
           </ImageCard>
         </Column>
 
@@ -103,10 +90,7 @@ const CertsRight = function CertsRight() {
     <Row className={badgesRow}>
       <Column colMd={1} colLg={1} noGutterMdLeft>
         <ImageCard aspectRatio="4:3">
-          <StaticImage
-            src="../../images/2022-CIOHackathon-certificate.png"
-            alt="CIO Hackathon 2022"
-          />
+          <StaticImage src="../../images/2022-CIOHackathon-certificate.png" alt="CIO Hackathon 2022" />
         </ImageCard>
       </Column>
     </Row>
@@ -120,20 +104,10 @@ const BannerText = function BannerText() {
 const customProps = {
   Banner: <HomepageBanner renderText={BannerText} image={HeroTechVector} />,
   FirstCallout: (
-    <HomepageCallout
-      backgroundColor="#262626"
-      color="white"
-      leftText={BadgesLeftText}
-      rightText={BadgesRight}
-    />
+    <HomepageCallout backgroundColor="#262626" color="white" leftText={BadgesLeftText} rightText={BadgesRight} />
   ),
   SecondCallout: (
-    <HomepageCallout
-      backgroundColor="#262626"
-      color="white"
-      leftText={CertsLeftText}
-      rightText={CertsRight}
-    />
+    <HomepageCallout backgroundColor="#262626" color="white" leftText={CertsLeftText} rightText={CertsRight} />
   ),
 };
 

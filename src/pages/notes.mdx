@@ -12,23 +12,22 @@ This is my **Hidden** notes landing page.
 
 </PageDescription>
 
+{/* FIXME: Need to update this page to list notes again. */}
+
+```jsx
 <>
   {props.data.allMdx.group.map((group) => (
     <div key={group.edges[0].node.id}>
       <Title>{group.edges[0].node.frontmatter.category.toUpperCase()}</Title>
       <CardGroup>
         {group.edges.map((edge) => (
-          <MiniCard
-            key={edge.node.frontmatter.title}
-            title={edge.node.frontmatter.title}
-            href={`/${edge.node.slug}`}
-            actionIcon="arrowRight"
-          />
+          <MiniCard key={edge.node.frontmatter.title} title={edge.node.frontmatter.title} actionIcon="arrowRight" />
         ))}
       </CardGroup>
     </div>
   ))}
 </>
+```
 
 ## TODO
 
@@ -60,10 +59,11 @@ export const pageQuery = graphql`
 `;
 ```
 
+```js
 export const pageQuery = graphql`
   {
     allMdx {
-      group(field: frontmatter___category) {
+      group(field: { frontmatter: { category: SELECT } }) {
         edges {
           node {
             frontmatter {
@@ -72,7 +72,6 @@ export const pageQuery = graphql`
               title
             }
             id
-            slug
             timeToRead
             excerpt
           }
@@ -81,3 +80,4 @@ export const pageQuery = graphql`
     }
   }
 `;
+```

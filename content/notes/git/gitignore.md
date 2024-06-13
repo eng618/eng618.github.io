@@ -1,5 +1,4 @@
 ---
-layout: note
 title: "Updating .gitignore"
 author: "Eric Garcia"
 last_updated: 2016-07-14

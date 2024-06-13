@@ -1,5 +1,4 @@
 ---
-layout: note
 title: Working with Forked Repositories
 author: "Eric Garcia"
 last_updated: 2016-07-14
@@ -28,7 +27,7 @@ You can set `upstream` as the repo to follow (**userName**)
 git remote add upstream git@github.ibm.com:MFPSamples/DevCenter
 ```
 
-Once this is done your are free to `fetch` and `pull` code from the `upstream` witch is the source repo for all changes (representing another ** userName**).
+Once this is done your are free to `fetch` and `pull` code from the `upstream` witch is the source repo for all changes (representing another **userName**).
 
 ```sh
 git fetch upstream

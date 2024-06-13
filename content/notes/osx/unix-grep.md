@@ -1,5 +1,4 @@
 ---
-layout: note
 title: GREP
 author: "Eric Garcia"
 last_updated: 2016-07-14
@@ -22,18 +21,18 @@ ls | grep -v ".log" | xargs rm
 
 - Use the `-c` flag to count the number of occurrences of search in a file.
 
-      	```bash
-      	grep -c "SEARCH_TERM" FILE.log
-      	```
+       ```bash
+       grep -c "SEARCH_TERM" FILE.log
+       ```
 
 - Use the `-i` flag to search a term without case sensitivity
 
-      	```bash
-      	grep -i "SEARCH_TERM" FILE.log
-      	```
+       ```bash
+       grep -i "SEARCH_TERM" FILE.log
+       ```
 
 - Use the `-v` flag to return everything but the search term
 
-      	```bash
-      	grep -v "SEARCH_TERM" FILE.log
-      	```
+       ```bash
+       grep -v "SEARCH_TERM" FILE.log
+       ```

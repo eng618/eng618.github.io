@@ -1,5 +1,4 @@
 ---
-layout: note
 title: "Git Branching"
 author: "Eric Garcia"
 last_updated: 2016-07-14
@@ -115,13 +114,13 @@ for branch in `git branch -r --merged | grep -v HEAD`; do echo -e `git show --fo
 Now, you can delete own remote branches, and ask other authors to clean-up theirs:
 
 ```bash
-$ git push origin --delete branch-name
+git push origin --delete branch-name
 ```
 
 Similar snippet for not merged branches:
 
 ```bash
-$ for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r
+for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r
 ```
 
 This list should be reviewed more thoroughly to avoid losing important commits.

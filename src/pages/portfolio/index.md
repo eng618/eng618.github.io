@@ -10,7 +10,7 @@ This page is under construction
 <h4>Published Applications</h4>
 
 <div class="mdl-grid">
-  <!-- Add liquid to add card for each item in directory -->
+  {/* Add liquid to add card for each item in directory */}
 
   <!-- Add this block per item in portfolio -->
   <div
@@ -27,9 +27,8 @@ This page is under construction
       <h2 class="mdl-card__title-text">Memory Vault</h2>
     </div>
     <div class="mdl-card__supporting-text">
-      Cross platform app that keeps all your memories safe and synced between
-      all your Android and iOS devices. Your memories are saved in the cloud so
-      they are always safe...even if your phone isn't.
+      Cross platform app that keeps all your memories safe and synced between all your Android and iOS devices. Your
+      memories are saved in the cloud so they are always safe...even if your phone isn't.
     </div>
     <div class="mdl-card__actions mdl-card--border">
       <a
@@ -49,8 +48,7 @@ This page is under construction
 
 <!-- Setup for category cards -->
 
-{% assign certCategories = site.data.lyndaCoC | group_by: "category" | sort:
-"name" %}
+{% assign certCategories = site.data.lyndaCoC | group_by: "category" | sort: "name" %}
 
 <div class="mdl-grid">
   {% for certCategory in certCategories %}
