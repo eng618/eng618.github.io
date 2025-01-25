@@ -4,6 +4,9 @@
   "version": "1.28.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "20.x"
+  },
   "packageManager": "yarn@4.6.0",
   "scripts": {
     "build": "gatsby build",
@@ -72,13 +75,10 @@
   "resolutions": {
     "ansi-html": "^0.0.8",
     "cross-fetch": "^3.1.5",
-    "gatsby-transformer-remark@npm:5.25.1/sanitize-html": "^2.7.1",
     "glob-parent": "^6.0.1",
     "got": "^11.8.5",
     "node-fetch": "^2.6.7",
     "nth-check": "^2.0.1",
-    "optionator@npm:0.9.1/word-wrap": "^1.2.5",
-    "resolve-url-loader@npm:3.1.4/loader-utils": "^1.4.1",
     "trim": "^0.0.3",
     "ws": "^7.4.6"
   },
