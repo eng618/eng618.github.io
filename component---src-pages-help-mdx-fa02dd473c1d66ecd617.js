@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkengarcia=self.webpackChunkengarcia||[]).push([[2970],{9596:function(e,n,t){t.r(n);var c=t(8453),a=t(6540);function r(e){const n=Object.assign({h1:"h1"},(0,c.R)(),e.components);return a.createElement(n.h1,null,"Help")}n.default=function(e){void 0===e&&(e={});const{wrapper:n}=Object.assign({},(0,c.R)(),e.components);return n?a.createElement(n,e,a.createElement(r,e)):r(e)}}}]);
+//# sourceMappingURL=component---src-pages-help-mdx-fa02dd473c1d66ecd617.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkengarcia=self.webpackChunkengarcia||[]).push([[4411],{8859:function(e,n,t){t.r(n);var c=t(8453),r=t(6540);function a(e){const n=Object.assign({h2:"h2"},(0,c.R)(),e.components);return r.createElement(n.h2,null,"Privacy & Terms")}n.default=function(e){void 0===e&&(e={});const{wrapper:n}=Object.assign({},(0,c.R)(),e.components);return n?r.createElement(n,e,r.createElement(a,e)):a(e)}}}]);
+//# sourceMappingURL=component---src-pages-privacy-and-terms-mdx-7ba417e07cf80eebb310.js.map
