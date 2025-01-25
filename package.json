@@ -4,7 +4,7 @@
   "version": "1.28.0",
   "main": "index.js",
   "license": "MIT",
-  "packageManager": "yarn@4.1.1",
+  "packageManager": "yarn@4.6.0",
   "scripts": {
     "build": "gatsby build",
     "build:clean": "yarn clean && gatsby build",
