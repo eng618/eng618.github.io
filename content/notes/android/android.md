@@ -1,5 +1,4 @@
 ---
-layout: note
 title: Android
 author: 'Eric Garcia'
 last_updated: 2016-07-25
@@ -21,6 +20,6 @@ tags: 'android,client side development'
 
 5. In the Available Software dialog, select the checkbox next to Developer Tools and click Next.
 6. In the next window, you'll see a list of the tools to be downloaded. Click Next.
-7. Read and accept the license agreements, then click Finish. <br/>
+7. Read and accept the license agreements, then click Finish.  
    If you get a security warning saying that the authenticity or validity of the software can't be established, click OK.
 8. When the installation completes, restart Eclipse.

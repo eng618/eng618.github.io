@@ -14,7 +14,7 @@ const StyledLaunch = styled(Launch)`
   fill: #0062ff;
 `;
 
-function ExternalLink({ children, href, target }) {
+function ExternalLink({ children = 'link', href, target = 'blank' }) {
   return (
     <a href={href} aria-label={children} target={target}>
       {children}
@@ -24,14 +24,9 @@ function ExternalLink({ children, href, target }) {
 }
 
 ExternalLink.propTypes = {
-  children: PropTypes.string,
+  children: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  target: PropTypes.string,
-};
-
-ExternalLink.defaultProps = {
-  children: 'link',
-  target: 'blank',
+  target: PropTypes.string.isRequired,
 };
 
 export default ExternalLink;

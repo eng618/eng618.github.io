@@ -9,7 +9,6 @@ module.exports = {
     // DETECT_NODE_MUTATIONS: true,
     DEV_SSR: true,
     FAST_DEV: true,
-    PARALLEL_QUERY_RUNNING: true,
     PARALLEL_SOURCING: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
@@ -78,7 +77,6 @@ module.exports = {
         icon: './src/images/icon-v2.png',
       },
     },
-    'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-offline',
   ],
 };

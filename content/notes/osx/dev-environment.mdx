@@ -1,5 +1,4 @@
 ---
-layout: note
 title: Setting up your OSX development environment
 updatedBy: Eric Garcia
 author: Eric Garcia
@@ -25,10 +24,12 @@ Some very useful tools that can be installed with **Home Brew** `brew install CO
 - `bash-completion`
 - `node`
 - `nvm`
-- `rbenc`
+- `rbenv`
 - `wget`
 
-For trouble shooting brew issues see [Homebrew](./homebrew)
+{/* TODO: clean this up */}
+{/* This file was moved, and no longer used here… */}
+{/* For troubleshooting brew issues see [Homebrew](./homebrew) */}
 
 ### Updating bash and bash-completion
 
@@ -39,9 +40,9 @@ You can update bash using homebrew. With `homebrew install bash`. It is also imp
 You will need to update how you load the bash completion in your **[bash/bash_rc]profile** as follows.
 
 ```shell
-####### Verify is bash_completion is installed #######
+####### Verify if bash_completion is installed #######
 
- # Add tab completion for bash completion 2
+# Add tab completion for bash completion 2
 if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
   source "$(brew --prefix)/share/bash-completion/bash_completion";
   export PS1='\W$(__git_ps1) \$ '
@@ -63,20 +64,13 @@ When it comes to Java management on a Mac there are several options in which you
 
 ### jenv
 
-This software is available through Homebrew. It is well documented on it's <a href="https://github.com/gcuisinier/jenv" target="blank">GitHub page</a>, . Let us discus a few caveats here. First and foremost you must add any installed versions of Java installed for jenv to be able to manage it. You can see a list of install by running the command `/usr/libexec/java_home -V`.
+This software is available through Homebrew. It is well documented on its [GitHub page](https://github.com/gcuisinier/jenv). Let us discuss a few caveats here. First and foremost you must add any installed versions of Java installed for jenv to be able to manage it. You can see a list of install by running the command `/usr/libexec/java_home -V`.
 
-- <a href="http://www.jenv.be/" target="blank">
-    jenv
-  </a> - use jenv to manage Java versions
+[jenv](http://www.jenv.be/)
 
 ### Using .bash_profile
 
-<a
-  href="http://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions/26252993#26252993"
-  target="blank"
->
-  See this Stack Overflow post
-</a> for simple java version management using your `.bash_profile`
+[See this Stack Overflow post](http://stackoverflow.com/questions/26252591/mac-os-x-and-multiple-java-versions/26252993#26252993)
 
 ## Ruby Management
 
@@ -95,8 +89,9 @@ Plugins to consider
 This is a very personal choice, and I can only detail the ones I'm familiar with.
 
 - Sublime Text 3: is a very customizable text editor with a largely supported development community.
-  _For usage details see the internal [Sublime Text 3](../osx-sublime_text) notes page.
-  _ <a href="https://www.sublimetext.com/" target="blank" >Sublime Homepage<i class="material-icons">open_in_new</i></a>
+  _For usage details see the internal [Sublime Text 3](../osx-sublime_text) notes page._
+
+  [Sublime Homepage](https://www.sublimetext.com/)
 
 - Atom
 
@@ -104,6 +99,4 @@ _If you would like to share your favorite please update this page._
 
 ## Other
 
-<a href="https://robots.thoughtbot.com/using-rbenv-to-manage-rubies-and-gems" target="blank">
-  Using rbenv to Manage Rubies and Gems
-</a>
+[Using rbenv to Manage Rubies and Gems](https://robots.thoughtbot.com/using-rbenv-to-manage-rubies-and-gems)
