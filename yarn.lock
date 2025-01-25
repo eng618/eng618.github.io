@@ -7845,7 +7845,7 @@ __metadata:
     gatsby: "npm:^5.13.6"
     gatsby-plugin-eslint: "npm:^4.0.4"
     gatsby-plugin-image: "npm:^3.13.1"
-    gatsby-plugin-manifest: "npm:^5.13.1"
+    gatsby-plugin-manifest: "npm:^5.14.0"
     gatsby-plugin-offline: "npm:^6.13.2"
     gatsby-plugin-sharp: "npm:^5.14.0"
     gatsby-remark-copy-linked-files: "npm:6.13.1"
@@ -9911,6 +9911,21 @@ __metadata:
   peerDependencies:
     gatsby: ^5.0.0-next
   checksum: 10/45d59a4aa57bc4378b8da19517e738403755ae94fb549732aa71b23cbf7dfad640d58bbec1465d54b19cd79d40893875365790f28191fbf427cf515be720b50b
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-manifest@npm:^5.14.0":
+  version: 5.14.0
+  resolution: "gatsby-plugin-manifest@npm:5.14.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.20.13"
+    gatsby-core-utils: "npm:^4.14.0"
+    gatsby-plugin-utils: "npm:^4.14.0"
+    semver: "npm:^7.5.3"
+    sharp: "npm:^0.32.6"
+  peerDependencies:
+    gatsby: ^5.0.0-next
+  checksum: 10/9663fdaca22377f9d384b416ce044c118c5be979c0faa7367aa2fd2c517c684fd39600156510714139edc25ade24b6fb5123ac515e7849d831006372b70cd8fb
   languageName: node
   linkType: hard
 
