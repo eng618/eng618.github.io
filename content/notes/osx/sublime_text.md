@@ -5,14 +5,14 @@ last_updated: 2016-07-14
 category: osx
 ---
 
-in `.bash_profile`
+In `.bash_profile`:
 
 ```bash
 export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
 export EDITOR='subl -w'
 ```
 
-Create symbolic link from terminal
+Create a symbolic link from the terminal:
 
 ```bash
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
