@@ -202,15 +202,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-plugin@npm:^7.24.7":
-  version: 7.24.7
-  resolution: "@babel/eslint-plugin@npm:7.24.7"
+"@babel/eslint-plugin@npm:^7.25.9":
+  version: 7.25.9
+  resolution: "@babel/eslint-plugin@npm:7.25.9"
   dependencies:
     eslint-rule-composer: "npm:^0.3.0"
   peerDependencies:
     "@babel/eslint-parser": ^7.11.0
     eslint: ^7.5.0 || ^8.0.0 || ^9.0.0
-  checksum: 10/77c9578074b098a62327ba78e1605daf82440380ed42cfc09620a567cb7f9443d1418da161b15342339d5cff244af115ed9f5a90b52fccbdcce45cdf0f7fce6e
+  checksum: 10/08ba33f7656bcead5256bdc9b7b26e58c7485f8b7d6d469a6033d7c5aebc577810fb4c946af75ea8610add7f6b71ec13fd3f63a2b63913ab11d31e20b3599604
   languageName: node
   linkType: hard
 
@@ -7934,7 +7934,7 @@ __metadata:
   dependencies:
     "@babel/core": "npm:^7.24.7"
     "@babel/eslint-parser": "npm:^7.26.5"
-    "@babel/eslint-plugin": "npm:^7.24.7"
+    "@babel/eslint-plugin": "npm:^7.25.9"
     "@babel/plugin-transform-react-jsx": "npm:^7.25.9"
     "@carbon/react": "npm:^1.59.0"
     "@carbon/styles": "npm:^1.59.0"
