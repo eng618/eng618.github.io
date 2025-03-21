@@ -1,0 +1,79 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    desc: 'Runs the project in development mode'
+    cmds:
+      - yarn dev
+
+  dev:
+    desc: 'Starts the development server'
+    cmds:
+      - yarn dev
+
+  build:
+    desc: 'Builds the project for production'
+    cmds:
+      - yarn build
+
+  build:clean:
+    desc: 'Cleans and builds the project for production'
+    cmds:
+      - yarn build:clean
+
+  build:prod:
+    desc: 'Builds the project for production with prefix paths'
+    cmds:
+      - yarn build:prod
+
+  clean:
+    desc: 'Cleans the project'
+    cmds:
+      - yarn clean
+
+  deploy:
+    desc: 'Deploys the project to GitHub Pages'
+    cmds:
+      - yarn deploy
+
+  dev:reset:
+    desc: 'Resets the development environment'
+    cmds:
+      - yarn dev:reset
+
+  format:
+    desc: 'Checks code formatting'
+    cmds:
+      - yarn format
+
+  format:fix:
+    desc: 'Fixes code formatting issues'
+    cmds:
+      - yarn format:fix
+
+  lint:
+    desc: 'Lints the code'
+    cmds:
+      - yarn lint
+
+  lint:fix:
+    desc: 'Fixes linting issues'
+    cmds:
+      - yarn lint:fix
+
+  test:
+    desc: 'Runs the test suite (currently only format and lint)'
+    cmds:
+      - yarn test
+
+  serve:
+    desc: 'Serves the built project'
+    cmds:
+      - yarn serve
+
+  start:
+    desc: 'Alias for `yarn dev`'
+    cmds:
+      - yarn start
