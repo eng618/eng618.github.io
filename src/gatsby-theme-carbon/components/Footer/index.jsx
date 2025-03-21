@@ -19,7 +19,7 @@ function Content({ buildTime }) {
           />
         </a>
       </p>
-      <p>© 2021 Garcia Enterprise</p>
+      <p>© 2021-2024 Garcia Enterprise</p>
     </>
   );
 }
