@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   siteMetadata: {
     title: 'Eric N. Garcia',
     description: 'A personal website',
