@@ -40,7 +40,7 @@
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-theme-carbon": "^4.0.1",
     "gatsby-transformer-remark": "^6.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.14.0",
     "lmdb": "^3.2.2",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
