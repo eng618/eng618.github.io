@@ -20,13 +20,13 @@ export default {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `notes`,
-        path: `${__dirname}/content/notes`,
+        path: `${process.cwd()}/content/notes`, // Use process.cwd() for dynamic path
       },
     },
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `${__dirname}/content/notes`,
+        path: `${process.cwd()}/content/notes`, // Use process.cwd() for dynamic path
       },
     },
     {
