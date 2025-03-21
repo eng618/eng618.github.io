@@ -31,8 +31,8 @@ const links = {
       linkText: 'LinkedIn',
     },
     {
-      href: 'https://twitter.com/garciaericn',
-      linkText: 'Twitter',
+      href: 'https://x.com/garciaericn',
+      linkText: 'X',
     },
   ],
   secondCol: [],

@@ -13,11 +13,11 @@ const HeroText = styled.h1`
   font-weight: bold;
 `;
 
-const BadgesLeftText = function BadgesLeftText() {
+function BadgesLeftText() {
   return <p>Digital badges</p>;
-};
+}
 
-const BadgesRight = function BadgesRightText() {
+function BadgesRight() {
   return (
     // Max badges per row is 4
     <>
@@ -79,13 +79,13 @@ const BadgesRight = function BadgesRightText() {
       </Row>
     </>
   );
-};
+}
 
-const CertsLeftText = function CertsLeftText() {
+function CertsLeftText() {
   return <p>Certificates</p>;
-};
+}
 
-const CertsRight = function CertsRight() {
+function CertsRight() {
   return (
     <Row className={badgesRow}>
       <Column colMd={1} colLg={1} noGutterMdLeft>
@@ -95,11 +95,11 @@ const CertsRight = function CertsRight() {
       </Column>
     </Row>
   );
-};
+}
 
-const BannerText = function BannerText() {
+function BannerText() {
   return <HeroText>Eric N. Garcia</HeroText>;
-};
+}
 
 const customProps = {
   Banner: <HomepageBanner renderText={BannerText} image={HeroTechVector} />,
@@ -112,8 +112,8 @@ const customProps = {
 };
 
 // spreading the original props gives us props.children (mdx content)
-const ShadowedHomepage = function ShadowedHomepage(props) {
+function ShadowedHomepage(props) {
   return <HomepageTemplate {...props} {...customProps} />;
-};
+}
 
 export default ShadowedHomepage;

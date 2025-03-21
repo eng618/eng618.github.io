@@ -13,8 +13,8 @@ const links = [
 ];
 
 // shouldOpenNewTabs: true if outbound links should open in a new tab
-const CustomResources = function CustomResources() {
+function CustomResources() {
   return <ResourceLinks shouldOpenNewTabs links={links} />;
-};
+}
 
 export default CustomResources;
