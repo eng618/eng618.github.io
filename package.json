@@ -38,7 +38,7 @@
     "gatsby-remark-copy-linked-files": "6.13.1",
     "gatsby-remark-images": "^7.13.1",
     "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-theme-carbon": "^4.0.1",
+    "gatsby-theme-carbon": "^4.2.12",
     "gatsby-transformer-remark": "^6.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
     "lmdb": "^3.2.2",
