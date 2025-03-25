@@ -1,3 +1,6 @@
+import { join } from 'path';
+import { cwd } from 'process';
+
 export default {
   siteMetadata: {
     title: 'Eric N. Garcia',
@@ -10,6 +13,7 @@ export default {
     DEV_SSR: true,
     FAST_DEV: true,
     PARALLEL_SOURCING: true,
+    PRESERVE_WEBPACK_CACHE: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
   },
   plugins: [
@@ -20,13 +24,13 @@ export default {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `notes`,
-        path: `${process.cwd()}/content/notes`, // Use process.cwd() for dynamic path
+        path: join(cwd(), 'content', 'notes'),
       },
     },
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
-        path: `${process.cwd()}/content/notes`, // Use process.cwd() for dynamic path
+        path: join(cwd(), 'content', 'notes'),
       },
     },
     {
