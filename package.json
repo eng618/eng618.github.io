@@ -28,7 +28,7 @@
     "test": "yarn format && yarn lint"
   },
   "dependencies": {
-    "@carbon/react": "^1.59.0",
+    "@carbon/react": "^1.79.0",
     "@carbon/styles": "^1.59.0",
     "gatsby": "^5.13.6",
     "gatsby-plugin-image": "^3.13.1",
