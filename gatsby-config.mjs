@@ -1,3 +1,5 @@
+import process from 'process';
+
 export default {
   siteMetadata: {
     title: 'Eric N. Garcia',
