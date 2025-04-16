@@ -50,7 +50,7 @@
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/eslint-parser": "^7.26.5",
-    "@babel/eslint-plugin": "^7.25.9",
+    "@babel/eslint-plugin": "^7.27.0",
     "@babel/plugin-transform-react-jsx": "^7.25.9",
     "@eng618/prettier-config": "^2.2.14",
     "@eslint/compat": "^1.2.7",
