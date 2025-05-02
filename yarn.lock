@@ -7237,7 +7237,7 @@ __metadata:
     gatsby-remark-copy-linked-files: "npm:^6.14.0"
     gatsby-remark-images: "npm:^7.14.0"
     gatsby-source-filesystem: "npm:^5.14.0"
-    gatsby-theme-carbon: "npm:^4.3.0"
+    gatsby-theme-carbon: "npm:^4.3.2"
     gatsby-transformer-remark: "npm:^6.14.0"
     gatsby-transformer-sharp: "npm:^5.14.0"
     gh-pages: "npm:^6.3.0"
@@ -9574,9 +9574,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-theme-carbon@npm:^4.3.0":
-  version: 4.3.0
-  resolution: "gatsby-theme-carbon@npm:4.3.0"
+"gatsby-theme-carbon@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "gatsby-theme-carbon@npm:4.3.2"
   dependencies:
     "@babel/core": "npm:^7.26.10"
     "@babel/plugin-proposal-class-properties": "npm:^7.18.6"
@@ -9630,7 +9630,7 @@ __metadata:
     gatsby: ^5.13.3
     react: ^18.2.0
     react-dom: ^18.2.0
-  checksum: 10/da766f6f6c51f992036df14b8dbfdbef5ac2a5d6c8cb813297d8d73f7f9f6cdd5e11d52468f7f9f77d520e3fca681c1d8339515dee70645dd8662934ceb46efa
+  checksum: 10/04534061fc5530eac67db252a6590dd14622a46ce352b44bbf421f1cfb60fab56e37bef68a100aae3bce8825e329b03da24b770c334a6367b484d895972f8301
   languageName: node
   linkType: hard
 
