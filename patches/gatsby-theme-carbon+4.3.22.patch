@@ -1,0 +1,74 @@
+diff --git a/node_modules/gatsby-theme-carbon/src/util/hooks/useOnClickOutside.js b/node_modules/gatsby-theme-carbon/src/util/hooks/useOnClickOutside.js
+index 1b7d53d..b33d25d 100644
+--- a/node_modules/gatsby-theme-carbon/src/util/hooks/useOnClickOutside.js
++++ b/node_modules/gatsby-theme-carbon/src/util/hooks/useOnClickOutside.js
+@@ -2,18 +2,20 @@ import { useEffect } from 'react';
+ 
+ let passiveListenerSupported;
+ 
+-try {
+-  const opts = Object.defineProperty({}, 'passive', {
+-    // eslint-disable-next-line getter-return
+-    get() {
+-      passiveListenerSupported = true;
+-    },
+-  });
+-  window.addEventListener('testPassive', null, opts);
+-  window.removeEventListener('testPassive', null, opts);
+-} catch (e) {
+-  console.warn(e);
+-  passiveListenerSupported = false;
++if (typeof window !== 'undefined') {
++  try {
++    const opts = Object.defineProperty({}, 'passive', {
++      // eslint-disable-next-line getter-return
++      get() {
++        passiveListenerSupported = true;
++      },
++    });
++    window.addEventListener('testPassive', null, opts);
++    window.removeEventListener('testPassive', null, opts);
++  } catch (e) {
++    console.warn(e);
++    passiveListenerSupported = false;
++  }
+ }
+ 
+ function useOnClickOutside(ref, handler) {
+diff --git a/node_modules/gatsby-theme-carbon/src/util/hooks/useScrollPosition.js b/node_modules/gatsby-theme-carbon/src/util/hooks/useScrollPosition.js
+index e999924..2acb242 100644
+--- a/node_modules/gatsby-theme-carbon/src/util/hooks/useScrollPosition.js
++++ b/node_modules/gatsby-theme-carbon/src/util/hooks/useScrollPosition.js
+@@ -3,18 +3,20 @@ import _throttle from 'lodash.throttle';
+ 
+ let passiveListenerSupported;
+ 
+-try {
+-  const opts = Object.defineProperty({}, 'passive', {
+-    // eslint-disable-next-line getter-return
+-    get() {
+-      passiveListenerSupported = true;
+-    },
+-  });
+-  window.addEventListener('testPassive', null, opts);
+-  window.removeEventListener('testPassive', null, opts);
+-} catch (e) {
+-  console.warn(e);
+-  passiveListenerSupported = false;
++if (typeof window !== 'undefined') {
++  try {
++    const opts = Object.defineProperty({}, 'passive', {
++      // eslint-disable-next-line getter-return
++      get() {
++        passiveListenerSupported = true;
++      },
++    });
++    window.addEventListener('testPassive', null, opts);
++    window.removeEventListener('testPassive', null, opts);
++  } catch (e) {
++    console.warn(e);
++    passiveListenerSupported = false;
++  }
+ }
+ 
+ const getPosition = () => {

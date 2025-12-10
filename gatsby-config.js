@@ -1,6 +1,5 @@
-import process from 'process';
 
-export default {
+module.exports = {
   siteMetadata: {
     title: 'Eric N. Garcia',
     description: 'A personal website',
@@ -9,7 +8,7 @@ export default {
   },
   flags: {
     // DETECT_NODE_MUTATIONS: true,
-    DEV_SSR: true,
+    // DEV_SSR: true,
     FAST_DEV: true,
     PARALLEL_SOURCING: true,
     PRESERVE_FILE_DOWNLOAD_CACHE: true,
@@ -79,6 +78,5 @@ export default {
         icon: './src/images/icon-v2.png',
       },
     },
-    'gatsby-plugin-offline',
   ],
 };
