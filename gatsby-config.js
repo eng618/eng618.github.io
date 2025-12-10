@@ -1,4 +1,3 @@
-
 module.exports = {
   siteMetadata: {
     title: 'Eric N. Garcia',
