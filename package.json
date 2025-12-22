@@ -22,7 +22,6 @@
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
     "prepare": "husky install",
-    "postinstall": "patch-package",
     "serve": "gatsby serve",
     "start": "yarn dev",
     "test": "yarn format && yarn lint"
@@ -40,7 +39,7 @@
     "gatsby-remark-copy-linked-files": "^6.15.0",
     "gatsby-remark-images": "^7.15.0",
     "gatsby-source-filesystem": "^5.15.0",
-    "gatsby-theme-carbon": "^4.3.24",
+    "gatsby-theme-carbon": "^4.3.26",
     "gatsby-transformer-remark": "^6.15.0",
     "gatsby-transformer-sharp": "^5.15.0",
     "lmdb": "^3.4.4",
@@ -75,7 +74,6 @@
     "globals": "^16.5.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
-    "patch-package": "^8.0.1",
     "prettier": "^3.7.4",
     "webpack": "^5.103.0"
   },
