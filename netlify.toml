@@ -1,0 +1,6 @@
+[build]
+  command = "yarn build"
+  publish = "public"
+
+[functions]
+  directory = "netlify/functions"

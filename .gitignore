@@ -70,6 +70,8 @@ public/
 .obsidian
 .eslintcache
 
+# Netlify build artifacts
+.netlify/
 
 #Ignore vscode AI rules
 .github/instructions/codacy.instructions.md
