@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomepageBanner, HomepageCallout, Row, Column, ImageCard } from 'gatsby-theme-carbon';
+import { HomepageBanner, HomepageCallout, Row, Column, ImageCard, Button } from 'gatsby-theme-carbon';
 import HomepageTemplate from 'gatsby-theme-carbon/src/components/Layouts/Homepage';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
@@ -97,6 +97,47 @@ function CertsRight() {
   );
 }
 
+function SkillsLeftText() {
+  return <p>Core Technologies</p>;
+}
+
+function SkillsRight() {
+  return (
+    <div>
+      <p>Full-stack software engineer with expertise in:</p>
+      <ul style={{ marginTop: '1rem', lineHeight: '1.6' }}>
+        <li>
+          <strong>Frontend:</strong> React, TypeScript, Carbon Design System
+        </li>
+        <li>
+          <strong>Backend:</strong> Node.js, Python, Go
+        </li>
+        <li>
+          <strong>Cloud:</strong> AWS, Kubernetes, Docker
+        </li>
+        <li>
+          <strong>DevOps:</strong> CI/CD, Infrastructure as Code
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+function ContactLeftText() {
+  return <p>Let&apos;s Connect</p>;
+}
+
+function ContactRight() {
+  return (
+    <div>
+      <p>Interested in collaboration or have questions?</p>
+      <Button kind="primary" style={{ marginTop: '1rem' }} renderIcon="ArrowRight" href="/contact">
+        Get In Touch
+      </Button>
+    </div>
+  );
+}
+
 function BannerText() {
   return <HeroText>Eric N. Garcia</HeroText>;
 }
@@ -107,7 +148,13 @@ const customProps = {
     <HomepageCallout backgroundColor="#262626" color="white" leftText={BadgesLeftText} rightText={BadgesRight} />
   ),
   SecondCallout: (
-    <HomepageCallout backgroundColor="#262626" color="white" leftText={CertsLeftText} rightText={CertsRight} />
+    <HomepageCallout backgroundColor="#161616" color="white" leftText={CertsLeftText} rightText={CertsRight} />
+  ),
+  ThirdCallout: (
+    <HomepageCallout backgroundColor="#262626" color="white" leftText={SkillsLeftText} rightText={SkillsRight} />
+  ),
+  FourthCallout: (
+    <HomepageCallout backgroundColor="#161616" color="white" leftText={ContactLeftText} rightText={ContactRight} />
   ),
 };
 
