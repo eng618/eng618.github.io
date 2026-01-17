@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { TextInput, TextArea, Button, Form, Grid, Row, Column } from '@carbon/react';
 import { Send } from '@carbon/icons-react';
+import { navigate } from 'gatsby';
 
 const FormContainer = styled(motion.div)`
   background: rgba(22, 22, 22, 0.8); /* Darker background to prevent bleed */
@@ -92,6 +93,44 @@ const StyledTextArea = styled(TextArea)`
 `;
 
 const ContactForm = () => {
+  const [formState, setFormState] = useState({});
+
+  const handleChange = (e) => {
+    setFormState({ ...formState, [e.target.name]: e.target.value });
+  };
+
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const body = encode({
+      'form-name': form.getAttribute('name'),
+      ...formState,
+    });
+
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body,
+    })
+      .then((response) => {
+        if (response.ok) {
+          navigate(form.getAttribute('action'));
+        } else {
+          throw new Error('Form submission failed');
+        }
+      })
+      .catch((error) => {
+        console.error('Submission error:', error);
+        alert('There was an error submitting the form. Please try again.');
+      });
+  };
+
   return (
     <Grid>
       <Row>
@@ -104,12 +143,31 @@ const ContactForm = () => {
             <FormTitle>Get in Touch</FormTitle>
             <FormSubtitle>Have a project in mind or just want to say hi? Drop me a message below.</FormSubtitle>
 
-            <Form name="contact" method="POST" data-netlify="true" action="/success">
+            <Form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              action="/success/"
+              onSubmit={handleSubmit}
+            >
               <input type="hidden" name="form-name" value="contact" />
+              <p hidden>
+                <label>
+                  Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+                </label>
+              </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <Row>
                   <Column colLg={6} colMd={4} colSm={4}>
-                    <StyledTextInput id="name" name="name" labelText="Full Name" placeholder="John Doe" required />
+                    <StyledTextInput
+                      id="name"
+                      name="name"
+                      labelText="Full Name"
+                      placeholder="John Doe"
+                      onChange={handleChange}
+                      required
+                    />
                   </Column>
                   <Column colLg={6} colMd={4} colSm={4}>
                     <StyledTextInput
@@ -118,6 +176,7 @@ const ContactForm = () => {
                       type="email"
                       labelText="Email Address"
                       placeholder="john@example.com"
+                      onChange={handleChange}
                       required
                     />
                   </Column>
@@ -128,6 +187,7 @@ const ContactForm = () => {
                   name="subject"
                   labelText="Subject"
                   placeholder="How can I help you?"
+                  onChange={handleChange}
                   required
                 />
 
@@ -137,6 +197,7 @@ const ContactForm = () => {
                   labelText="Message"
                   placeholder="Tell me more about your inquiry..."
                   rows={6}
+                  onChange={handleChange}
                   required
                 />
 

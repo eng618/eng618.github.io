@@ -18,6 +18,7 @@
     "dev:clean": "gatsby clean && gatsby develop -H 0.0.0.0",
     "dev:reset": "yarn clean && rm -rf node_modules yarn.lock && yarn && yarn test && yarn dev",
     "dev:linux": "BROWSER=/snap/bin/chromium gatsby develop -H 0.0.0.0 --open",
+    "dev:check": "yarn format:fix && yarn lint:fix",
     "format": "prettier --check \"src/**/*.{scss,css,js,jsx,md,mdx}\"",
     "format:fix": "prettier --write \"src/**/*.{scss,css,js,jsx,md,mdx}\"",
     "lint": "eslint . --cache",
