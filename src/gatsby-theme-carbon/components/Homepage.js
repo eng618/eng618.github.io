@@ -1,10 +1,11 @@
 import React from 'react';
-import { HomepageCallout, Row, Column, ImageCard, Button } from 'gatsby-theme-carbon';
-import HomepageTemplate from 'gatsby-theme-carbon/src/components/Layouts/Homepage';
+import { HomepageCallout, Row, Column, ImageCard } from 'gatsby-theme-carbon';
+import { Button } from '@carbon/react';
+import HomepageTemplate from './Layouts/Homepage';
 import { StaticImage } from 'gatsby-plugin-image';
 import { motion } from 'framer-motion';
 import { badgesRow } from './Homepage.module.scss';
-import AnimatedHero from '../../../components/AnimatedHero';
+import AnimatedHero from '../../components/AnimatedHero';
 
 import HeroTechVector from '../../images/hero-vector.svg';
 
