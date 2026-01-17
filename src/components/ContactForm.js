@@ -93,7 +93,13 @@ const StyledTextArea = styled(TextArea)`
 `;
 
 const ContactForm = () => {
-  const [formState, setFormState] = useState({});
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    'bot-field': '',
+  });
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
@@ -113,7 +119,7 @@ const ContactForm = () => {
       ...formState,
     });
 
-    fetch('/', {
+    fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body,
@@ -122,7 +128,7 @@ const ContactForm = () => {
         if (response.ok) {
           navigate(form.getAttribute('action'));
         } else {
-          throw new Error('Form submission failed');
+          throw new Error('Form submission failed with status: ' + response.status);
         }
       })
       .catch((error) => {
@@ -154,7 +160,7 @@ const ContactForm = () => {
               <input type="hidden" name="form-name" value="contact" />
               <p hidden>
                 <label>
-                  Don’t fill this out: <input name="bot-field" onChange={handleChange} />
+                  Don’t fill this out: <input name="bot-field" value={formState['bot-field']} onChange={handleChange} />
                 </label>
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -165,6 +171,7 @@ const ContactForm = () => {
                       name="name"
                       labelText="Full Name"
                       placeholder="John Doe"
+                      value={formState.name}
                       onChange={handleChange}
                       required
                     />
@@ -176,6 +183,7 @@ const ContactForm = () => {
                       type="email"
                       labelText="Email Address"
                       placeholder="john@example.com"
+                      value={formState.email}
                       onChange={handleChange}
                       required
                     />
@@ -187,6 +195,7 @@ const ContactForm = () => {
                   name="subject"
                   labelText="Subject"
                   placeholder="How can I help you?"
+                  value={formState.subject}
                   onChange={handleChange}
                   required
                 />
@@ -197,6 +206,7 @@ const ContactForm = () => {
                   labelText="Message"
                   placeholder="Tell me more about your inquiry..."
                   rows={6}
+                  value={formState.message}
                   onChange={handleChange}
                   required
                 />
