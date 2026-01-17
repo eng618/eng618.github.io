@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { TextInput, TextArea, Button, Stack, Form, Grid, Row, Column } from '@carbon/react';
+import { TextInput, TextArea, Button, Form, Grid, Row, Column } from '@carbon/react';
 import { Send } from '@carbon/icons-react';
 
 const FormContainer = styled(motion.div)`

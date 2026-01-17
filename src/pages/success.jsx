@@ -52,7 +52,8 @@ const SuccessPage = ({ pageContext = { frontmatter: { title: 'Success' } }, loca
             >
               <Title>Message Sent!</Title>
               <Message>
-                Thank you for reaching out. I've received your message and will get back to you as soon as possible.
+                Thank you for reaching out. I&apos;ve received your message and will get back to you as soon as
+                possible.
               </Message>
               <Button href="/" kind="primary" renderIcon={ArrowLeft} style={{ backgroundColor: '#9c8bff' }}>
                 Back to Home

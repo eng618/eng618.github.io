@@ -16,6 +16,7 @@ export default [
       '**/public/**',
       '**/node_modules/**',
       '**/.cache/**',
+      '**/.netlify/**',
       'prettier.config.js',
       'commitlint.config.js',
       'packages/example/gatsby-config.js',

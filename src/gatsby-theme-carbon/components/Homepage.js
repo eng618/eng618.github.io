@@ -145,7 +145,7 @@ function ContactRight() {
 }
 
 // Wrap callouts in motion.div for scroll reveal
-const AnimatedCallout = ({ children, ...props }) => (
+const AnimatedCallout = ({ ...props }) => (
   <motion.div
     variants={sectionVariant}
     initial="hidden"
