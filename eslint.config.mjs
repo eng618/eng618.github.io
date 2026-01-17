@@ -37,24 +37,15 @@ export default [
     },
   },
   { languageOptions: { globals: globals.browser } },
-  // Add this config for commonJS files
+  // Add this config for node files
   {
-    files: ['gatsby-config.js'],
+    files: ['*.cjs', 'gatsby-config.js', 'gatsby-node.js', 'netlify/functions/**/*.js'],
     languageOptions: {
       globals: {
         ...globals.node,
       },
       parserOptions: {
         sourceType: 'commonjs',
-      },
-    },
-  },
-  // Add this config for node files
-  {
-    files: ['*.cjs', '*.js'],
-    languageOptions: {
-      globals: {
-        ...globals.node,
       },
     },
   },
