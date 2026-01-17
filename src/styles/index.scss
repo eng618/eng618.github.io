@@ -10,11 +10,16 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Outfit', sans-serif;
 }
 
 // Override Carbon's type tokens if needed or specific classes
 .HeroText-module--heroText {
-   font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', sans-serif;
 }

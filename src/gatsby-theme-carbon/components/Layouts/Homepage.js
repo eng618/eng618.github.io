@@ -26,7 +26,8 @@ const Homepage = ({
       pageKeywords={keywords}
       titleType={titleType}
       homepage
-      theme={homepageTheme}>
+      theme={homepageTheme}
+    >
       {Banner}
       {FirstCallout}
       {SecondCallout}

@@ -1,16 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { 
-  TextInput, 
-  TextArea, 
-  Button, 
-  Stack, 
-  Form, 
-  Grid, 
-  Row, 
-  Column 
-} from '@carbon/react';
+import { TextInput, TextArea, Button, Stack, Form, Grid, Row, Column } from '@carbon/react';
 import { Send } from '@carbon/icons-react';
 
 const FormContainer = styled(motion.div)`
@@ -56,13 +47,13 @@ const StyledTextInput = styled(TextInput)`
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
-  
+
   .cds--text-input {
     background-color: rgba(255, 255, 255, 0.05) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     color: white !important;
     height: 3rem;
-    
+
     &:focus {
       outline: 2px solid #9c8bff !important;
       outline-offset: -2px;
@@ -83,12 +74,12 @@ const StyledTextArea = styled(TextArea)`
     font-weight: 500;
     margin-bottom: 0.5rem;
   }
-  
+
   .cds--text-area {
     background-color: rgba(255, 255, 255, 0.05) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
     color: white !important;
-    
+
     &:focus {
       outline: 2px solid #9c8bff !important;
       outline-offset: -2px;
@@ -108,28 +99,17 @@ const ContactForm = () => {
           <FormContainer
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
           >
             <FormTitle>Get in Touch</FormTitle>
             <FormSubtitle>Have a project in mind or just want to say hi? Drop me a message below.</FormSubtitle>
-            
-            <Form 
-              name="contact" 
-              method="POST" 
-              data-netlify="true" 
-              action="/success"
-            >
+
+            <Form name="contact" method="POST" data-netlify="true" action="/success">
               <input type="hidden" name="form-name" value="contact" />
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <Row>
                   <Column colLg={6} colMd={4} colSm={4}>
-                    <StyledTextInput
-                      id="name"
-                      name="name"
-                      labelText="Full Name"
-                      placeholder="John Doe"
-                      required
-                    />
+                    <StyledTextInput id="name" name="name" labelText="Full Name" placeholder="John Doe" required />
                   </Column>
                   <Column colLg={6} colMd={4} colSm={4}>
                     <StyledTextInput
@@ -142,7 +122,7 @@ const ContactForm = () => {
                     />
                   </Column>
                 </Row>
-                
+
                 <StyledTextInput
                   id="subject"
                   name="subject"
@@ -150,7 +130,7 @@ const ContactForm = () => {
                   placeholder="How can I help you?"
                   required
                 />
-                
+
                 <StyledTextArea
                   id="message"
                   name="message"
@@ -159,17 +139,17 @@ const ContactForm = () => {
                   rows={6}
                   required
                 />
-                
+
                 <div style={{ marginTop: '1rem' }}>
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     renderIcon={Send}
                     size="lg"
-                    style={{ 
+                    style={{
                       backgroundColor: '#9c8bff',
                       borderRadius: '4px',
                       fontWeight: '600',
-                      width: 'fit-content'
+                      width: 'fit-content',
                     }}
                   >
                     Send Message

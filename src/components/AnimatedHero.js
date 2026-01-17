@@ -32,12 +32,12 @@ const GradientText = styled(motion.h1)`
   font-size: 5rem;
   line-height: 1.1;
   margin-bottom: 2rem;
-  
-  background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 40%, #9c8bff 80%, #00EEFF 100%);
+
+  background: linear-gradient(135deg, #ffffff 0%, #f4f4f4 40%, #9c8bff 80%, #00eeff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  
+
   filter: drop-shadow(0 0 40px rgba(156, 139, 255, 0.15));
 
   @media (max-width: 672px) {
@@ -68,11 +68,11 @@ const AnimatedHero = ({ image }) => {
               >
                 Hello, I'm
               </Greeting>
-              
+
               <GradientText
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
+                transition={{ duration: 0.8, delay: 0.2, type: 'spring', stiffness: 100 }}
               >
                 Eric N. Garcia
               </GradientText>
@@ -86,16 +86,22 @@ const AnimatedHero = ({ image }) => {
               </SubText>
             </ContentWrapper>
           </Column>
-          
+
           <Column colMd={4} colLg={4}>
             <motion.div
-               style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}
-               initial={{ opacity: 0, scale: 0.8 }}
-               animate={{ opacity: 1, scale: 1 }}
-               transition={{ duration: 1, delay: 0.5 }}
+              style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.5 }}
             >
-               {/* Use the existing vector image passed as prop or import it here if intended to reuse */}
-               {image && <img src={image} alt="Hero Vector" style={{ maxWidth: '100%', height: 'auto', filter: 'drop-shadow(0 10px 30px rgba(156,139,255,0.2))' }} />}
+              {/* Use the existing vector image passed as prop or import it here if intended to reuse */}
+              {image && (
+                <img
+                  src={image}
+                  alt="Hero Vector"
+                  style={{ maxWidth: '100%', height: 'auto', filter: 'drop-shadow(0 10px 30px rgba(156,139,255,0.2))' }}
+                />
+              )}
             </motion.div>
           </Column>
         </Row>
