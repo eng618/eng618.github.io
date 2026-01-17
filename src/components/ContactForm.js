@@ -119,7 +119,7 @@ const ContactForm = () => {
       ...formState,
     });
 
-    fetch(window.location.pathname, {
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body,
