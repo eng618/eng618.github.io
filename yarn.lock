@@ -1902,6 +1902,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/inter@npm:^5.2.8":
+  version: 5.2.8
+  resolution: "@fontsource/inter@npm:5.2.8"
+  checksum: 10/7cab342c52e5bd70908bb2c2d0957aca0bcdcd887b5bc4338d962113b245a7753b676e2a457caf8100fab0244e9dc2cc7995e2dcc5e10514e55dc86dbd7044dc
+  languageName: node
+  linkType: hard
+
+"@fontsource/outfit@npm:^5.2.8":
+  version: 5.2.8
+  resolution: "@fontsource/outfit@npm:5.2.8"
+  checksum: 10/6f2da694dddf52a89b25863e91b81e20d83666cde72361e9f5f2d9e6230ac087a9947e643b5568a55c2932c24914fe6c950eb830591fc40e9893608c87128bae
+  languageName: node
+  linkType: hard
+
 "@garcia-enterprise/gatsby-plugin-sass-resources@npm:^4.0.2":
   version: 4.0.2
   resolution: "@garcia-enterprise/gatsby-plugin-sass-resources@npm:4.0.2"
@@ -7179,6 +7193,8 @@ __metadata:
     "@eslint/compat": "npm:^1.4.1"
     "@eslint/eslintrc": "npm:^3.3.3"
     "@eslint/js": "npm:^9.39.1"
+    "@fontsource/inter": "npm:^5.2.8"
+    "@fontsource/outfit": "npm:^5.2.8"
     "@mdx-js/react": "npm:^3.1.1"
     "@types/react": "npm:^18.3.27"
     babel-loader: "npm:^10.0.0"
@@ -7192,6 +7208,7 @@ __metadata:
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-webpack-plugin: "npm:^5.0.2"
+    framer-motion: "npm:^12.26.2"
     gatsby: "npm:^5.15.0"
     gatsby-plugin-eslint: "npm:^4.0.4"
     gatsby-plugin-image: "npm:^3.15.0"
@@ -8869,6 +8886,28 @@ __metadata:
   version: 5.3.4
   resolution: "fraction.js@npm:5.3.4"
   checksum: 10/ef2c4bc81b2484065f8f7e4c2498f3fdfe6d233b8e7c7f75e3683ed10698536129b2c2dbd6c3f788ca4a020ec07116dd909a91036a364c98dc802b5003bfc613
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^12.26.2":
+  version: 12.26.2
+  resolution: "framer-motion@npm:12.26.2"
+  dependencies:
+    motion-dom: "npm:^12.26.2"
+    motion-utils: "npm:^12.24.10"
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10/80d43806c4d3b1208b3ef4766e332f738fcf1fdd1c2b90f1601ff78072865a20fb41f67a495702be95c5d41b4ca54657e94dc81d02f97fdc4bee6271ef39cf14
   languageName: node
   linkType: hard
 
@@ -14138,6 +14177,22 @@ __metadata:
   version: 2.30.1
   resolution: "moment@npm:2.30.1"
   checksum: 10/ae42d876d4ec831ef66110bdc302c0657c664991e45cf2afffc4b0f6cd6d251dde11375c982a5c0564ccc0fa593fc564576ddceb8c8845e87c15f58aa6baca69
+  languageName: node
+  linkType: hard
+
+"motion-dom@npm:^12.26.2":
+  version: 12.26.2
+  resolution: "motion-dom@npm:12.26.2"
+  dependencies:
+    motion-utils: "npm:^12.24.10"
+  checksum: 10/a24f7df17673433ab32820e508a475d681830b2edbd1a92f9ca64604a02a5ffb53e8bfec317344c34c65a601f2332d0486f038eed0c7db13b8dbc5c750f0063f
+  languageName: node
+  linkType: hard
+
+"motion-utils@npm:^12.24.10":
+  version: 12.24.10
+  resolution: "motion-utils@npm:12.24.10"
+  checksum: 10/b023223fe617a32d2ade933b6a505caa11252eb2094f0ea65eda6db35d463a7b3cc766708141a7828405ab8d5c3651bb71fbf6e8e63769ef7d36e7d77b755b58
   languageName: node
   linkType: hard
 

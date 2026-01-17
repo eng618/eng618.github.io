@@ -1,1 +1,20 @@
 // This is where your application styles could go.
+@use '@carbon/react/scss/type' as *;
+
+:root {
+  --cds-font-family-sans: 'Inter', sans-serif;
+  --cds-font-family-serif: 'Outfit', sans-serif; // Using serif slot or just custom
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+}
+
+// Override Carbon's type tokens if needed or specific classes
+.HeroText-module--heroText {
+   font-family: 'Outfit', sans-serif;
+}

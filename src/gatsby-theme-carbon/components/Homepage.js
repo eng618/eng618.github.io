@@ -1,17 +1,22 @@
 import React from 'react';
-import { HomepageBanner, HomepageCallout, Row, Column, ImageCard, Button } from 'gatsby-theme-carbon';
+import { HomepageCallout, Row, Column, ImageCard, Button } from 'gatsby-theme-carbon';
 import HomepageTemplate from 'gatsby-theme-carbon/src/components/Layouts/Homepage';
 import { StaticImage } from 'gatsby-plugin-image';
-import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { badgesRow } from './Homepage.module.scss';
+import AnimatedHero from '../../../components/AnimatedHero';
 
 import HeroTechVector from '../../images/hero-vector.svg';
 
-const HeroText = styled.h1`
-  color: #505050;
-  filter: drop-shadow(0 0 0.25rem #9c8bff);
-  font-weight: bold;
-`;
+// Animation variants for scroll reveal
+const sectionVariant = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
+  }
+};
 
 function BadgesLeftText() {
   return <p>Digital badges</p>;
@@ -138,23 +143,31 @@ function ContactRight() {
   );
 }
 
-function BannerText() {
-  return <HeroText>Eric N. Garcia</HeroText>;
-}
+// Wrap callouts in motion.div for scroll reveal
+const AnimatedCallout = ({ children, ...props }) => (
+  <motion.div
+    variants={sectionVariant}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, margin: "-50px" }}
+  >
+    <HomepageCallout {...props} />
+  </motion.div>
+);
 
 const customProps = {
-  Banner: <HomepageBanner renderText={BannerText} image={HeroTechVector} />,
+  Banner: <AnimatedHero image={HeroTechVector} />,
   FirstCallout: (
-    <HomepageCallout backgroundColor="#262626" color="white" leftText={BadgesLeftText} rightText={BadgesRight} />
+    <AnimatedCallout backgroundColor="#262626" color="white" leftText={BadgesLeftText} rightText={BadgesRight} />
   ),
   SecondCallout: (
-    <HomepageCallout backgroundColor="#161616" color="white" leftText={CertsLeftText} rightText={CertsRight} />
+    <AnimatedCallout backgroundColor="#161616" color="white" leftText={CertsLeftText} rightText={CertsRight} />
   ),
   ThirdCallout: (
-    <HomepageCallout backgroundColor="#262626" color="white" leftText={SkillsLeftText} rightText={SkillsRight} />
+    <AnimatedCallout backgroundColor="#262626" color="white" leftText={SkillsLeftText} rightText={SkillsRight} />
   ),
   FourthCallout: (
-    <HomepageCallout backgroundColor="#161616" color="white" leftText={ContactLeftText} rightText={ContactRight} />
+    <AnimatedCallout backgroundColor="#161616" color="white" leftText={ContactLeftText} rightText={ContactRight} />
   ),
 };
 

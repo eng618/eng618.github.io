@@ -1,3 +1,5 @@
+import '@fontsource/outfit';
+import '@fontsource/inter';
 import './src/styles/index.scss';
 
 export const onServiceWorkerUpdateReady = () => {
