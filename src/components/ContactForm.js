@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { TextInput, TextArea, Button, Form, Grid, Row, Column } from '@carbon/react';
+import { TextInput, TextArea, Button, Grid, Row, Column } from '@carbon/react';
 import { Send } from '@carbon/icons-react';
 import { navigate } from 'gatsby';
 
@@ -115,13 +115,13 @@ const ContactForm = () => {
     e.preventDefault();
     const form = e.target;
     const body = encode({
-      'form-name': form.getAttribute('name'),
+      'form-name': 'contact_me',
       ...formState,
     });
 
     console.log('Submitting form with body:', body);
 
-    fetch(window.location.pathname, {
+    fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body,
@@ -153,15 +153,16 @@ const ContactForm = () => {
             <FormTitle>Get in Touch</FormTitle>
             <FormSubtitle>Have a project in mind or just want to say hi? Drop me a message below.</FormSubtitle>
 
-            <Form
-              name="contact"
+            <form
+              name="contact_me"
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               action="/success/"
               onSubmit={handleSubmit}
+              className="cds--form"
             >
-              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="form-name" value="contact_me" />
               <p hidden>
                 <label>
                   Don’t fill this out: <input name="bot-field" value={formState['bot-field']} onChange={handleChange} />
@@ -231,7 +232,7 @@ const ContactForm = () => {
                   </Button>
                 </div>
               </div>
-            </Form>
+            </form>
           </FormContainer>
         </Column>
       </Row>
