@@ -119,15 +119,19 @@ const ContactForm = () => {
       ...formState,
     });
 
-    fetch('/', {
+    console.log('Submitting form with body:', body);
+
+    fetch(window.location.pathname, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body,
     })
       .then((response) => {
         if (response.ok) {
+          console.log('Form successfully submitted');
           navigate(form.getAttribute('action'));
         } else {
+          console.error('Form submission failed with status:', response.status);
           throw new Error('Form submission failed with status: ' + response.status);
         }
       })

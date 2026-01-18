@@ -174,18 +174,7 @@ const customProps = {
 
 // spreading the original props gives us props.children (mdx content)
 function ShadowedHomepage(props) {
-  return (
-    <>
-      <HomepageTemplate {...props} {...customProps} />
-      <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-        <input type="hidden" name="form-name" value="contact" />
-        <input type="text" name="name" />
-        <input type="email" name="email" />
-        <input type="text" name="subject" />
-        <textarea name="message"></textarea>
-      </form>
-    </>
-  );
+  return <HomepageTemplate {...props} {...customProps} />;
 }
 
 export default ShadowedHomepage;
