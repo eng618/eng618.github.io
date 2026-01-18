@@ -110,19 +110,19 @@ function SkillsLeftText() {
 function SkillsRight() {
   return (
     <div>
-      <p>Full-stack software engineer with expertise in:</p>
+      <p>System Architect with deep specialization in:</p>
       <ul style={{ marginTop: '1rem', lineHeight: '1.6' }}>
         <li>
-          <strong>Frontend:</strong> React, TypeScript, Carbon Design System
+          <strong>Systems Architecture:</strong> Scalable Design, Cloud-Native Strategies, Integration Patterns
         </li>
         <li>
-          <strong>Backend:</strong> Node.js, Python, Go
+          <strong>Languages:</strong> Go, Node.js, Java, Swift
         </li>
         <li>
-          <strong>Cloud:</strong> AWS, Kubernetes, Docker
+          <strong>Frontend & Design:</strong> React, TypeScript, Carbon Design System, UI/UX
         </li>
         <li>
-          <strong>DevOps:</strong> CI/CD, Infrastructure as Code
+          <strong>Mobile & Edge:</strong> iOS &amp; Android Native, Distributed Systems
         </li>
       </ul>
     </div>
@@ -174,7 +174,20 @@ const customProps = {
 
 // spreading the original props gives us props.children (mdx content)
 function ShadowedHomepage(props) {
-  return <HomepageTemplate {...props} {...customProps} />;
+  return (
+    <>
+      <HomepageTemplate {...props} {...customProps} />
+      <div style={{ display: 'none' }}>
+        <form name="contact_me" data-netlify="true" data-netlify-honeypot="bot-field" action="/success/">
+          <input type="hidden" name="form-name" value="contact_me" />
+          <input type="text" name="name" />
+          <input type="email" name="email" />
+          <input type="text" name="subject" />
+          <textarea name="message"></textarea>
+        </form>
+      </div>
+    </>
+  );
 }
 
 export default ShadowedHomepage;
