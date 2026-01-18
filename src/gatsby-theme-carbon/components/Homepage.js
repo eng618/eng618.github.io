@@ -96,7 +96,11 @@ function CertsRight() {
     <Row className={badgesRow}>
       <Column colMd={1} colLg={1} noGutterMdLeft>
         <ImageCard aspectRatio="4:3">
-          <StaticImage src="../../images/2022-CIOHackathon-certificate.png" alt="CIO Hackathon 2022" />
+          <StaticImage
+            src="../../images/2022-CIOHackathon-certificate.png"
+            alt="CIO Hackathon 2022"
+            width={700}
+          />
         </ImageCard>
       </Column>
     </Row>

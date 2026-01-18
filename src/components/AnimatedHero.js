@@ -99,7 +99,9 @@ const AnimatedHero = ({ image }) => {
               {image && (
                 <img
                   src={image}
-                  alt="Hero Vector"
+                  alt="Abstract architectural system vector illustration representing Eric's work as a System Architect"
+                  loading="eager"
+                  fetchPriority="high"
                   style={{ maxWidth: '100%', height: 'auto', filter: 'drop-shadow(0 10px 30px rgba(156,139,255,0.2))' }}
                 />
               )}

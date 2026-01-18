@@ -7409,6 +7409,7 @@ __metadata:
     gatsby-plugin-image: "npm:^3.15.0"
     gatsby-plugin-manifest: "npm:^5.15.0"
     gatsby-plugin-mdx: "npm:^5.15.0"
+    gatsby-plugin-offline: "npm:^6.15.0"
     gatsby-plugin-sharp: "npm:^5.15.0"
     gatsby-remark-copy-linked-files: "npm:^6.15.0"
     gatsby-remark-images: "npm:^7.15.0"
