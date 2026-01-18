@@ -82,7 +82,8 @@ const AnimatedHero = ({ image }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Full-stack software engineer building engaging digital experiences and cloud-native solutions.
+                System Architect at Verizon with over 2 years of experience designing and implementing complex, scalable
+                enterprise solutions.
               </SubText>
             </ContentWrapper>
           </Column>
