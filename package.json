@@ -23,7 +23,7 @@
     "format:fix": "prettier --write \"src/**/*.{scss,css,js,jsx,md,mdx}\"",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
-    "prepare": "husky install",
+    "prepare": "husky",
     "serve": "gatsby serve",
     "start": "yarn dev",
     "test": "yarn format && yarn lint"
