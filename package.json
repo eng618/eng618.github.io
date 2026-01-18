@@ -61,7 +61,7 @@
     "@eng618/prettier-config": "^2.4.12",
     "@eslint/compat": "^1.4.1",
     "@eslint/eslintrc": "^3.3.3",
-    "@eslint/js": "^9.39.1",
+    "@eslint/js": "^9.39.2",
     "@types/react": "^18.3.27",
     "babel-loader": "^10.0.0",
     "eslint": "^9.39.1",
