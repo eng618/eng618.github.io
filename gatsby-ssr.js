@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.com/docs/ssr-apis/
  */
 
-export const onRenderBody = ({ getHeadComponents, replaceHeadComponents }) => {
+export const onPreRenderHTML = ({ getHeadComponents, replaceHeadComponents }) => {
   const headComponents = getHeadComponents();
 
   // Filter out the IBM Plex preload if it's not being used.
