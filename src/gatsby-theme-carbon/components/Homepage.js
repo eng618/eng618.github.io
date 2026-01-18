@@ -116,7 +116,7 @@ function SkillsRight() {
           <strong>Systems Architecture:</strong> Scalable Design, Cloud-Native Strategies, Integration Patterns
         </li>
         <li>
-          <strong>Languages:</strong> Go, Javascript, Java, Swift
+          <strong>Languages:</strong> Go, Node.js, Java, Swift
         </li>
         <li>
           <strong>Frontend & Design:</strong> React, TypeScript, Carbon Design System, UI/UX
