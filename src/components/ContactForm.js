@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { TextInput, TextArea, Button, Grid, Row, Column } from '@carbon/react';
-import { Send } from '@carbon/icons-react';
-import { navigate } from 'gatsby';
+import { TextInput, TextArea, Button, Grid, Row, Column, InlineNotification } from '@carbon/react';
+import { Send, CheckmarkFilled, ErrorFilled } from '@carbon/icons-react';
+import { useForm, ValidationError } from '@formspree/react';
 
 const FormContainer = styled(motion.div)`
   background: rgba(22, 22, 22, 0.8); /* Darker background to prevent bleed */
@@ -92,54 +92,52 @@ const StyledTextArea = styled(TextArea)`
   }
 `;
 
+const SuccessMessage = styled(motion.div)`
+  text-align: center;
+  padding: 3rem;
+  color: white;
+
+  h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #9c8bff;
+  }
+
+  p {
+    font-family: 'Inter', sans-serif;
+    color: #c6c6c6;
+    margin-bottom: 2rem;
+  }
+`;
+
 const ContactForm = () => {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    'bot-field': '',
-  });
+  const [state, handleSubmit] = useForm('meezlzyn');
 
-  const handleChange = (e) => {
-    setFormState({ ...formState, [e.target.name]: e.target.value });
-  };
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const body = encode({
-      'form-name': 'contact_me',
-      ...formState,
-    });
-
-    console.log('Submitting form with body:', body);
-
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body,
-    })
-      .then((response) => {
-        if (response.ok) {
-          console.log('Form successfully submitted');
-          navigate(form.getAttribute('action'));
-        } else {
-          console.error('Form submission failed with status:', response.status);
-          throw new Error('Form submission failed with status: ' + response.status);
-        }
-      })
-      .catch((error) => {
-        console.error('Submission error:', error);
-        alert('There was an error submitting the form. Please try again.');
-      });
-  };
+  if (state.succeeded) {
+    return (
+      <Grid>
+        <Row>
+          <Column colLg={12} colMd={8} colSm={4}>
+            <FormContainer
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <SuccessMessage>
+                <CheckmarkFilled size={64} style={{ color: '#9c8bff', marginBottom: '1.5rem' }} />
+                <h3>Message Sent!</h3>
+                <p>Thanks for reaching out. I'll get back to you as soon as possible.</p>
+                <Button kind="ghost" onClick={() => window.location.reload()} style={{ color: '#9c8bff' }}>
+                  Send another message
+                </Button>
+              </SuccessMessage>
+            </FormContainer>
+          </Column>
+        </Row>
+      </Grid>
+    );
+  }
 
   return (
     <Grid>
@@ -153,33 +151,22 @@ const ContactForm = () => {
             <FormTitle>Get in Touch</FormTitle>
             <FormSubtitle>Have a project in mind or just want to say hi? Drop me a message below.</FormSubtitle>
 
-            <form
-              name="contact_me"
-              method="POST"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              action="/success/"
-              onSubmit={handleSubmit}
-              className="cds--form"
-            >
-              <input type="hidden" name="form-name" value="contact_me" />
-              <p hidden>
-                <label>
-                  Don’t fill this out: <input name="bot-field" value={formState['bot-field']} onChange={handleChange} />
-                </label>
-              </p>
+            {state.errors && state.errors.length > 0 && (
+              <InlineNotification
+                kind="error"
+                title="Submission Error"
+                subtitle="There was an error submitting your message. Please check the form and try again."
+                hideCloseButton
+                style={{ marginBottom: '1.5rem', maxWidth: '100%' }}
+              />
+            )}
+
+            <form onSubmit={handleSubmit} className="cds--form">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <Row>
                   <Column colLg={6} colMd={4} colSm={4}>
-                    <StyledTextInput
-                      id="name"
-                      name="name"
-                      labelText="Full Name"
-                      placeholder="John Doe"
-                      value={formState.name}
-                      onChange={handleChange}
-                      required
-                    />
+                    <StyledTextInput id="name" name="name" labelText="Full Name" placeholder="John Doe" required />
+                    <ValidationError prefix="Name" field="name" errors={state.errors} />
                   </Column>
                   <Column colLg={6} colMd={4} colSm={4}>
                     <StyledTextInput
@@ -188,10 +175,9 @@ const ContactForm = () => {
                       type="email"
                       labelText="Email Address"
                       placeholder="john@example.com"
-                      value={formState.email}
-                      onChange={handleChange}
                       required
                     />
+                    <ValidationError prefix="Email" field="email" errors={state.errors} />
                   </Column>
                 </Row>
 
@@ -200,10 +186,9 @@ const ContactForm = () => {
                   name="subject"
                   labelText="Subject"
                   placeholder="How can I help you?"
-                  value={formState.subject}
-                  onChange={handleChange}
                   required
                 />
+                <ValidationError prefix="Subject" field="subject" errors={state.errors} />
 
                 <StyledTextArea
                   id="message"
@@ -211,16 +196,16 @@ const ContactForm = () => {
                   labelText="Message"
                   placeholder="Tell me more about your inquiry..."
                   rows={6}
-                  value={formState.message}
-                  onChange={handleChange}
                   required
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
 
                 <div style={{ marginTop: '1rem' }}>
                   <Button
                     type="submit"
                     renderIcon={Send}
                     size="lg"
+                    disabled={state.submitting}
                     style={{
                       backgroundColor: '#9c8bff',
                       borderRadius: '4px',
@@ -228,7 +213,7 @@ const ContactForm = () => {
                       width: 'fit-content',
                     }}
                   >
-                    Send Message
+                    {state.submitting ? 'Sending...' : 'Send Message'}
                   </Button>
                 </div>
               </div>

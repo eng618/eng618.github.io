@@ -2118,6 +2118,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@formspree/core@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@formspree/core@npm:4.0.0"
+  dependencies:
+    "@stripe/stripe-js": "npm:^5.7.0"
+  checksum: 10/fd1851fd323f27c388919e91ccf51688d79c4fdc34c2bc26d48c4f2be4f93ae6c5d07a73c7e52297aa532fc8f5036fd0411384b3b56a52e321b8c7db54d269da
+  languageName: node
+  linkType: hard
+
+"@formspree/react@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@formspree/react@npm:3.0.0"
+  dependencies:
+    "@formspree/core": "npm:^4.0.0"
+    "@stripe/react-stripe-js": "npm:^3.1.1"
+    "@stripe/stripe-js": "npm:^5.7.0"
+  peerDependencies:
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0
+  checksum: 10/3d90f47b5862aa851d5449f67bcec6c2c197026475fe51a0b1a79d5f4fd0cc820b782159149daf3b486f8911f9b4e0eefcd430b857124cf3a0e69ad236465cfa
+  languageName: node
+  linkType: hard
+
 "@garcia-enterprise/gatsby-plugin-sass-resources@npm:^4.0.2":
   version: 4.0.2
   resolution: "@garcia-enterprise/gatsby-plugin-sass-resources@npm:4.0.2"
@@ -3723,6 +3746,26 @@ __metadata:
   version: 3.1.2
   resolution: "@socket.io/component-emitter@npm:3.1.2"
   checksum: 10/89888f00699eb34e3070624eb7b8161fa29f064aeb1389a48f02195d55dd7c52a504e52160016859f6d6dffddd54324623cdd47fd34b3d46f9ed96c18c456edc
+  languageName: node
+  linkType: hard
+
+"@stripe/react-stripe-js@npm:^3.1.1":
+  version: 3.10.0
+  resolution: "@stripe/react-stripe-js@npm:3.10.0"
+  dependencies:
+    prop-types: "npm:^15.7.2"
+  peerDependencies:
+    "@stripe/stripe-js": ">=1.44.1 <8.0.0"
+    react: ">=16.8.0 <20.0.0"
+    react-dom: ">=16.8.0 <20.0.0"
+  checksum: 10/f498796c7cf2fb9892ccb0a22a0eedd28f710707324cb2e0e94be2f726deae59c356e1e7ee50149714f6f66fd5b06b090b2f13a4c45f0eed964a145ad4add912
+  languageName: node
+  linkType: hard
+
+"@stripe/stripe-js@npm:^5.7.0":
+  version: 5.10.0
+  resolution: "@stripe/stripe-js@npm:5.10.0"
+  checksum: 10/e22aea6a20869f66038825d3a6fae8d2603677d7a4768d6380222cb074e2770767e844e5e66f1dcde06d1b4e8ea54c0887887e5b8d0ec9d902721cab153b3f77
   languageName: node
   linkType: hard
 
@@ -7390,6 +7433,7 @@ __metadata:
     "@eslint/js": "npm:^9.39.2"
     "@fontsource/inter": "npm:^5.2.8"
     "@fontsource/outfit": "npm:^5.2.8"
+    "@formspree/react": "npm:^3.0.0"
     "@mdx-js/react": "npm:^3.1.1"
     "@types/react": "npm:^18.3.27"
     babel-loader: "npm:^10.0.0"

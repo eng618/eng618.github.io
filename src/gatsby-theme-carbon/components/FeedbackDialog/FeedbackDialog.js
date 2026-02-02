@@ -4,7 +4,7 @@ import ThemeFeedbackDialog from 'gatsby-theme-carbon/src/components/FeedbackDial
 const FeedbackDialog = function FeedbackDialog({ props }) {
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('/.netlify/functions/feedback', {
+      const response = await fetch('/feedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
