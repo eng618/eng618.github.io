@@ -48,7 +48,7 @@
     "gatsby-source-filesystem": "^5.15.0",
     "gatsby-theme-carbon": "^4.3.29",
     "gatsby-transformer-remark": "^6.15.0",
-    "gatsby-transformer-sharp": "^5.15.0",
+    "gatsby-transformer-sharp": "^5.16.0",
     "lmdb": "^3.4.4",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
