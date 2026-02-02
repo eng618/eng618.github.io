@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { TextInput, TextArea, Button, Grid, Row, Column, InlineNotification } from '@carbon/react';
-import { Send, CheckmarkFilled, ErrorFilled } from '@carbon/icons-react';
+import { Send, CheckmarkFilled } from '@carbon/icons-react';
 import { useForm, ValidationError } from '@formspree/react';
 
 const FormContainer = styled(motion.div)`
@@ -127,7 +127,7 @@ const ContactForm = () => {
               <SuccessMessage>
                 <CheckmarkFilled size={64} style={{ color: '#9c8bff', marginBottom: '1.5rem' }} />
                 <h3>Message Sent!</h3>
-                <p>Thanks for reaching out. I'll get back to you as soon as possible.</p>
+                <p>Thanks for reaching out. I&apos;ll get back to you as soon as possible.</p>
                 <Button kind="ghost" onClick={() => window.location.reload()} style={{ color: '#9c8bff' }}>
                   Send another message
                 </Button>
