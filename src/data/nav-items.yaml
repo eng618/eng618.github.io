@@ -1,6 +1,9 @@
 - title: About
   pages:
     - path: /about
+- title: Portfolio
+  pages:
+    - path: /portfolio
 - title: Contact
   pages:
     - path: /contact

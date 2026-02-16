@@ -1,0 +1,346 @@
+{
+  "allCourses": {
+    "certificates": {
+      "url": "https://www.lynda.com/AllCertificates/User/1791353"
+    }
+  },
+  "courses": [
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "14C929D8194E45959D590EBD9095225C",
+      "completed": "2018-01",
+      "length": "4h 40m",
+      "title": "Angular: Progressive Web Apps",
+      "url": "https://www.lynda.com/ViewCertificate/14C929D8194E45959D590EBD9095225C?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "iOS",
+      "certificateNumber": "E9C05DEACF60498799FA4794D18565E3",
+      "completed": "2017-08",
+      "length": "2h 14m",
+      "title": "iOS App development: Test-Driven Development",
+      "url": "https://www.lynda.com/ViewCertificate/E9C05DEACF60498799FA4794D18565E3?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Developer",
+      "certificateNumber": "84D90C33E84441B1BB9B0EAD19DE47B4",
+      "completed": "2017-04",
+      "length": "2h 19m",
+      "title": "AngularJS 1: Adding Registration to Your Application",
+      "url": "https://www.lynda.com/ViewCertificate/84D90C33E84441B1BB9B0EAD19DE47B4?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Developer",
+      "certificateNumber": "8D428010F0BA4B9EBA85402CE6A5E5C6",
+      "completed": "2017-02",
+      "length": "2h 19m",
+      "title": "Docker: The Basics",
+      "url": "https://www.lynda.com/Docker-tutorials/Docker-Basics/485649-2.html?utm_source=linkedin&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Programming",
+      "certificateNumber": "4D2F91302BB04E1B86CB6BB39D7CA791",
+      "completed": "2017-01",
+      "length": "1h 25m",
+      "title": "Computer Science Principles: Programming",
+      "url": "https://www.lynda.com/ViewCertificate/4D2F91302BB04E1B86CB6BB39D7CA791?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Mobile",
+      "certificateNumber": "2D5E69C89D94417D9DE8A08E544E0074",
+      "completed": "2016-09",
+      "length": "3h 31m",
+      "title": "Building a Mobile App with AngularJS 1 and Ionic",
+      "url": "https://www.lynda.com/ViewCertificate/2D5E69C89D94417D9DE8A08E544E0074?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "570144E439FB4406B8FE8131D994BDBF",
+      "completed": "2016-09",
+      "length": "57m 40s",
+      "title": "Up and Running with Node.js",
+      "url": "https://www.lynda.com/ViewCertificate/570144E439FB4406B8FE8131D994BDBF?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "8C74862D9EED4119961BE05F732F305A",
+      "completed": "2016-08",
+      "length": "1h 20m",
+      "title": "Up and Running with AngularJS 1",
+      "url": "https://www.lynda.com/ViewCertificate/8C74862D9EED4119961BE05F732F305A?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "41E568CDCD3B48E9BF8D323D04E76B65",
+      "completed": "2016-05",
+      "length": "4h 27m",
+      "title": "Jekyll for Web Designers",
+      "url": "https://www.lynda.com/ViewCertificate/41E568CDCD3B48E9BF8D323D04E76B65?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "iOS",
+      "certificateNumber": "23A244139E9740F58EAA3C1A32866EB4",
+      "completed": "2015-04",
+      "length": "1h 30m",
+      "title": "Comparing Swift and Objective-C",
+      "url": "https://www.lynda.com/ViewCertificate/23A244139E9740F58EAA3C1A32866EB4?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "iOS",
+      "certificateNumber": "6BAB011EED0B4E0CB9193362E2A6F4D7",
+      "completed": "2015-04",
+      "title": "iOS Game Development with Sprite Kit",
+      "url": "https://www.lynda.com/ViewCertificate/6BAB011EED0B4E0CB9193362E2A6F4D7?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "iOS",
+      "certificateNumber": "BD743650193545F7BAE369E4F23D528E",
+      "completed": "2015-04",
+      "length": "5h 48m",
+      "title": "iOS 8 App Development with Swift 1 Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/BD743650193545F7BAE369E4F23D528E?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "iOS",
+      "certificateNumber": "592039F285AF4F7F919B3AFB44C3424C",
+      "completed": "2015-02",
+      "title": "Swift Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/592039F285AF4F7F919B3AFB44C3424C?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Android",
+      "certificateNumber": "18574CC82526417996A09C09934D1273",
+      "completed": "2014-09",
+      "length": "2h 8m",
+      "title": "Building Adaptive Android Apps with Fragments",
+      "url": "https://www.lynda.com/ViewCertificate/18574CC82526417996A09C09934D1273?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Programming",
+      "certificateNumber": "9613AAE8699C43BBA3B4CA4394DA6D23",
+      "completed": "2014-06",
+      "length": "3h 1m",
+      "title": "Foundations of Programming: Object-Oriented Design",
+      "url": "https://www.lynda.com/ViewCertificate/9613AAE8699C43BBA3B4CA4394DA6D23?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Android",
+      "certificateNumber": "322144B3357641608DA61B1DD3646719",
+      "completed": "2014-05",
+      "length": "2h 22m",
+      "title": "Android Studio First Look",
+      "url": "https://www.lynda.com/ViewCertificate/322144B3357641608DA61B1DD3646719?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Android",
+      "certificateNumber": "8D5EDF97406043BC8E590B74CD03A5C9",
+      "completed": "2014-05",
+      "length": "5h 10m",
+      "title": "Android SDK Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/8D5EDF97406043BC8E590B74CD03A5C9?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "iOS",
+      "certificateNumber": "E2F940CE043743BCAD6D6185BF608C5B",
+      "completed": "2014-03",
+      "length": "6h 16m",
+      "title": "iOS App Development Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/E2F940CE043743BCAD6D6185BF608C5B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "iOS",
+      "certificateNumber": "9EFE4322BAF84413A27A2A0FAEEE38B5",
+      "completed": "2013-12",
+      "length": "6h 2m",
+      "title": "Objective-C Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/9EFE4322BAF84413A27A2A0FAEEE38B5?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "UI/UX",
+      "certificateNumber": "776F7A713AB4417F963E769E97283D5E",
+      "completed": "2013-12",
+      "length": "13m 53s",
+      "title": "UX Design Techniques: Overview (2013)",
+      "url": "https://www.lynda.com/ViewCertificate/776F7A713AB4417F963E769E97283D5E?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "iOS",
+      "certificateNumber": "E3770FA28D474D50A21CCD68075DE7A5",
+      "completed": "2013-12",
+      "title": "Objective-C Essential Training (2011)",
+      "url": "https://www.lynda.com/ViewCertificate/E3770FA28D474D50A21CCD68075DE7A5?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Programming",
+      "certificateNumber": "44DE18E59DA34ECDA70379B5F6C5F46B",
+      "completed": "2013-11",
+      "length": "1h 24m",
+      "title": "Foundations of Programming: Software Quality Assurance",
+      "url": "https://www.lynda.com/ViewCertificate/44DE18E59DA34ECDA70379B5F6C5F46B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Design",
+      "certificateNumber": "0D6BE191DBB84A8F962133538D29D836",
+      "completed": "2013-10",
+      "length": "1h 50m",
+      "title": "Bridge CC for Photographers",
+      "url": "https://www.lynda.com/ViewCertificate/0D6BE191DBB84A8F962133538D29D836?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "D3620AEDF1174E568B9DB4F4CE3B208B",
+      "completed": "2013-09",
+      "title": "Creating a Responsive Web Design (2012)",
+      "url": "https://www.lynda.com/ViewCertificate/D3620AEDF1174E568B9DB4F4CE3B208B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Personal",
+      "certificateNumber": "B3B5D2B336794B55B6BA6135583ED077",
+      "completed": "2013-08",
+      "length": "11m 11s",
+      "title": "Managing Your Time",
+      "url": "https://www.lynda.com/ViewCertificate/B3B5D2B336794B55B6BA6135583ED077?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "859995B908B04B29B288E9001F4FA911",
+      "completed": "2013-05",
+      "length": "5h 31m",
+      "title": "JavaScript Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/859995B908B04B29B288E9001F4FA911?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "914B153E40894F7697874B3490765F6D",
+      "completed": "2013-05",
+      "title": "jQuery Mobile Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/914B153E40894F7697874B3490765F6D?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Design",
+      "certificateNumber": "3B9BEF1B14B146AE889032A008217EB6",
+      "completed": "2012-10",
+      "length": "6h 39m",
+      "title": "Photoshop CS6 One-on-One: Fundamentals",
+      "url": "https://www.lynda.com/ViewCertificate/3B9BEF1B14B146AE889032A008217EB6?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "categor": "iOS",
+      "certificateNumber": "A7DE40A37EFE4698AF9F3296297EA3FA",
+      "completed": "2018-03",
+      "length": "3h 15m",
+      "title": "Swift 4 Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/A7DE40A37EFE4698AF9F3296297EA3FA?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "A4C4EAEF2A904831BF5C52B7D6AA3EAE",
+      "completed": "2018-07",
+      "length": "1h 8m",
+      "title": "Learning REST APIs",
+      "url": "https://www.lynda.com/ViewCertificate/A4C4EAEF2A904831BF5C52B7D6AA3EAE?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Development",
+      "certificateNumber": "E822645214C3464DA58018F7E70A2444",
+      "completed": "2018-09",
+      "length": "46m 13s",
+      "title": "Kubernetes: Native Tools",
+      "url": "https://www.lynda.com/ViewCertificate/E822645214C3464DA58018F7E70A2444?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Mobile",
+      "certificatNumber": "13354C111E0A426EA0F1DD09978C4F2D",
+      "completed": "2019-01",
+      "length": "1h 25m",
+      "title": "Learning Google Flutter for Mobile Developers",
+      "url": "https://www.lynda.com/ViewCertificate/13354C111E0A426EA0F1DD09978C4F2D?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "0A0B5740E3C2437AABE8B3AD2C14F98E",
+      "completed": "2018-02",
+      "length": "1h 24m",
+      "title": "Learning React.js",
+      "url": "https://www.lynda.com/ViewCertificate/0A0B5740E3C2437AABE8B3AD2C14F98E?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "65E61BA935D34114B47ABC0A1D29712B",
+      "completed": "2019-03",
+      "length": "1h 10m",
+      "title": "React: Components, Context, and Accessibility",
+      "url": "https://www.lynda.com/ViewCertificate/65E61BA935D34114B47ABC0A1D29712B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "65E61BA935D34114B47ABC0A1D29712B",
+      "completed": "2019-06",
+      "length": "47m 15s",
+      "title": "Learning React.js",
+      "url": "https://www.lynda.com/ViewCertificate/09E9D9A1B3C043D5B6D74BF78D91ED80?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "2A935679BD1B4E2F86E9AE1E6CC0B4B5",
+      "completed": "2019-06",
+      "length": "1h 25m",
+      "title": "React.js Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/2A935679BD1B4E2F86E9AE1E6CC0B4B5?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Lynda.com",
+      "category": "Web",
+      "certificateNumber": "64550FC016E645FF822CB7C3EEC0372D",
+      "completed": "2019-11",
+      "length": "1h 54m",
+      "title": "GraphQL Essential Training",
+      "url": "https://www.lynda.com/ViewCertificate/64550FC016E645FF822CB7C3EEC0372D?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate"
+    },
+    {
+      "authority": "Udemy.com",
+      "category": "Computer Science",
+      "certificateNumber": "UC-199d2b50-3884-4267-991c-69af71c90f90",
+      "completed": "2021-06",
+      "length": "11h",
+      "title": "Computer Science 101: Master the Theory Behind Programming",
+      "url": "ude.my/UC-199d2b50-3884-4267-991c-69af71c90f90"
+    }
+  ]
+}
