@@ -1,6 +1,6 @@
 ---
-title: "Git Clean"
-author: "Eric Garcia"
+title: 'Git Clean'
+author: 'Eric Garcia'
 last_updated: 2016-07-14
 category: git
 ---

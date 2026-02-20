@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Developer Profession - Level 3: Expert",
+    "image": "/credly/developer-profession-level-3-expert.png",
+    "url": "https://www.credly.com/org/ibm/badge/developer-profession-level-3-expert",
+    "authority": "IBM",
+    "description": "Expert level recognition within the IBM Developer Profession, demonstrating mastery in software development practices, architecture, and technical leadership."
+  },
+  {
+    "title": "Enterprise Design Thinking Practitioner",
+    "image": "/credly/enterprise-design-thinking-practitioner.png",
+    "url": "https://www.credly.com/badges/36ddd342-c057-4624-9738-504cd982d585/public_url",
+    "authority": "IBM",
+    "description": "Practical application of Enterprise Design Thinking to solve complex problems at scale, focusing on user outcomes and cross-functional collaboration."
+  },
+  {
+    "title": "IBM Carbon Design System Developer Essentials - React",
+    "image": "/credly/ibm-carbon-design-system-developer-essentials-react.png",
+    "url": "https://www.credly.com/badges/de8ea4d0-1d49-4084-bc16-3b0a5366d354/public_url",
+    "authority": "IBM",
+    "description": "Essential knowledge and skills for building accessible, high-quality user interfaces using the IBM Carbon Design System with React."
+  },
+  {
+    "title": "IBM Cloud Kubernetes Service",
+    "image": "/credly/ibm-cloud-kubernetes-service.png",
+    "url": "https://www.credly.com/badges/836c8f8f-fdd6-41aa-a310-ca38c0a6e54e/public_url",
+    "authority": "IBM",
+    "description": "Understanding core concepts of Kubernetes on IBM Cloud, including container orchestration, pods, resources, and architectural models."
+  },
+  {
+    "title": "IBM Agile Explorer",
+    "image": "/credly/ibm-agile-explorer.png",
+    "url": "https://www.credly.com/badges/84c7f84c-eb57-489a-93ce-f0701008b7e3/public_url",
+    "authority": "IBM",
+    "description": "Exploration and application of Agile principles and values to improve teamwork, efficiency, and delivery of user value."
+  }
+]

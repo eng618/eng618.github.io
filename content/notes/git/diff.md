@@ -1,6 +1,6 @@
 ---
-title: "Git Diff"
-author: "Eric Garcia"
+title: 'Git Diff'
+author: 'Eric Garcia'
 last_updated: 2016-07-14
 category: git
 ---

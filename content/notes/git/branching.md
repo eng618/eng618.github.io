@@ -1,6 +1,6 @@
 ---
-title: "Git Branching"
-author: "Eric Garcia"
+title: 'Git Branching'
+author: 'Eric Garcia'
 last_updated: 2016-07-14
 category: git
 ---
