@@ -1,6 +1,6 @@
 ---
 title: Sublime Text
-author: "Eric Garcia"
+author: 'Eric Garcia'
 last_updated: 2016-07-14
 category: osx
 ---

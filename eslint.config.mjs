@@ -1,72 +1,13 @@
-import { fixupPluginRules } from '@eslint/compat';
-import pluginJs from '@eslint/js';
-import eslintConfigPrettier from 'eslint-config-prettier';
-import html from 'eslint-plugin-html';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-import pluginReact from 'eslint-plugin-react';
-import pluginReactHooks from 'eslint-plugin-react-hooks';
-import globals from 'globals';
+import { nextjs } from '@gv-tech/eslint-config';
 
-/** @type {import('eslint').Linter.Config[]} */
+/**
+ * ESLint configuration for Next.js projects. Uses @gv-tech/eslint-config for sensible defaults. For more information on
+ * configuration options, see: https://github.com/Garcia-Ventures/eslint-config
+ */
 export default [
+  ...nextjs,
+  // Add project-specific overrides here
   {
-    ignores: [
-      '**/dist/**',
-      '**/public/**',
-      '**/node_modules/**',
-      '**/.cache/**',
-      '**/.netlify/**',
-      'prettier.config.js',
-      'commitlint.config.js',
-      'packages/example/gatsby-config.js',
-    ],
-  },
-  {
-    plugins: {
-      reactHooks: fixupPluginRules(pluginReactHooks),
-    },
-  },
-  {
-    files: ['**/*.html'],
-    plugins: { html },
-  },
-  {
-    files: ['**/*.{js,mjs,cjs,jsx}'],
-    plugins: {
-      'jsx-a11y': jsxA11y,
-    },
-  },
-  { languageOptions: { globals: globals.browser } },
-  // Add this config for node files
-  {
-    files: ['*.cjs', 'gatsby-config.js', 'gatsby-node.js', 'netlify/functions/**/*.js'],
-    languageOptions: {
-      globals: {
-        ...globals.node,
-      },
-      parserOptions: {
-        sourceType: 'commonjs',
-      },
-    },
-  },
-
-  pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
-  eslintPluginPrettierRecommended,
-  eslintConfigPrettier,
-
-  {
-    settings: {
-      react: {
-        version: '18',
-      },
-    },
-    rules: {
-      'react/prop-types': 0,
-      'react/jsx-no-useless-fragment': 1,
-      'no-useless-escape': 0,
-      'prettier/prettier': 'error',
-    },
+    ignores: ['eslint.config.mjs'],
   },
 ];
