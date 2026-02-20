@@ -32,7 +32,7 @@ export function Hero() {
               }}
               className="mb-8 text-5xl font-extrabold leading-tight tracking-tight sm:text-7xl lg:text-8xl font-outfit"
             >
-              <span className="bg-gradient-to-br from-foreground via-foreground/90 to-primary bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(var(--color-primary),0.15)]">
+              <span className="bg-gradient-to-br from-foreground via-foreground/90 to-primary bg-clip-text text-transparent drop-shadow-[0_0_40px_rgb(var(--primary)_/_0.15)]">
                 Eric N. Garcia
               </span>
             </motion.h1>
