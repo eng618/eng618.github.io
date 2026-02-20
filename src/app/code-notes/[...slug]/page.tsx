@@ -8,6 +8,7 @@ import { rehypePrettyCode } from 'rehype-pretty-code';
 
 import { EditOnGithub } from '@/components/edit-on-github';
 import { mdxComponents } from '@/components/mdx-components';
+import remarkGfm from 'remark-gfm';
 
 interface CodeNotePageProps {
   params: Promise<{
@@ -59,6 +60,7 @@ export default async function CodeNotePage({ params }: CodeNotePageProps) {
               components={mdxComponents}
               options={{
                 mdxOptions: {
+                  remarkPlugins: [remarkGfm],
                   rehypePlugins: [
                     [
                       rehypePrettyCode,

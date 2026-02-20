@@ -7,6 +7,7 @@ import { getAllContent, getContentBySlug } from '@/lib/notes';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import { rehypePrettyCode } from 'rehype-pretty-code';
+import remarkGfm from 'remark-gfm';
 
 interface AppPageProps {
   params: Promise<{
@@ -56,6 +57,7 @@ export default async function AppPage({ params }: AppPageProps) {
               components={mdxComponents}
               options={{
                 mdxOptions: {
+                  remarkPlugins: [remarkGfm],
                   rehypePlugins: [
                     [
                       rehypePrettyCode,
