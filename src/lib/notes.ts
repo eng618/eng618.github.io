@@ -13,6 +13,14 @@ export interface NoteMetadata {
 
 export type ContentType = 'notes' | 'code-notes' | 'apps';
 
+function sanitizeSlug(slugArray: string[]): string {
+  const rawSlug = slugArray.join('/');
+  // Allow only URL-safe characters: letters, digits, hyphen, underscore, and forward slash for nesting
+  const cleaned = rawSlug.replace(/[^A-Za-z0-9/_-]/g, '');
+  // Normalize multiple slashes and trim leading/trailing slashes
+  return cleaned.replace(/\/+/g, '/').replace(/^\/+|\/+$/g, '');
+}
+
 export function getAllContent(type: ContentType) {
   const basePath = path.join(CONTENT_PATH, type);
   if (!fs.existsSync(basePath)) return [];
@@ -41,7 +49,7 @@ export function getAllContent(type: ContentType) {
 
       return {
         ...(data as NoteMetadata),
-        slug: slugArray.join('/'),
+        slug: sanitizeSlug(slugArray),
       };
     })
     .filter((item) => item.slug !== '');
