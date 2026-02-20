@@ -75,7 +75,7 @@ export default async function AppPage({ params }: AppPageProps) {
             />
           </div>
 
-          <div className="mt-16 flex border-t border-border pt-8">
+          <div className="mt-16 flex justify-center border-t border-border pt-8">
             <EditOnGithub relativePath={app.filePath} />
           </div>
         </article>
