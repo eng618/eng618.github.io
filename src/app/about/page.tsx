@@ -66,7 +66,7 @@ export default function AboutPage() {
                   height="100%"
                   src="https://www.youtube-nocookie.com/embed/5FohgYaD9OU"
                   title="YouTube video player"
-                  frameBorder="0"
+                  className="border-0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
