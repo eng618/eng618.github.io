@@ -34,7 +34,7 @@ export default async function AppPage({ params }: AppPageProps) {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-grow bg-background py-20">
-        <article className="container mx-auto px-4 lg:px-8">
+        <article className="container mx-auto px-4 lg:px-8 max-w-4xl">
           <Breadcrumb
             items={[
               { label: 'Apps', href: '/apps' },
@@ -44,9 +44,9 @@ export default async function AppPage({ params }: AppPageProps) {
                 current: true,
               },
             ]}
-            className="mb-8"
+            className="mb-8 justify-center"
           />
-          <div className="mb-12 border-b border-border pb-8">
+          <div className="mb-12 border-b border-border pb-8 text-center">
             <h1 className="mb-4 text-4xl font-bold font-outfit lg:text-5xl">{app.metadata.title}</h1>
             {app.metadata.description && <p className="text-xl text-muted-foreground">{app.metadata.description}</p>}
           </div>
