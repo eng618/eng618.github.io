@@ -1,5 +1,7 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
+import { AspectRatio } from '@/components/ui-wrapper';
+import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -31,11 +33,18 @@ export default function AboutPage() {
               </div>
 
               <div className="relative">
-                <div className="aspect-[4/3] w-full rounded-2xl border border-border bg-card backdrop-blur-sm overflow-hidden flex items-center justify-center italic text-muted-foreground">
-                  {/* Photo Placeholder */}
-                  Garcia Family Photo
+                <div className="w-full rounded-2xl border border-border bg-card backdrop-blur-sm overflow-hidden italic text-muted-foreground relative">
+                  <AspectRatio ratio={4 / 3}>
+                    <Image
+                      src="/images/garcia_family.jpg"
+                      alt="Eric Garcia and his family"
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </AspectRatio>
                 </div>
-                <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-primary/20 blur-3xl" />
+                <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-primary/20 blur-3xl opacity-50" />
               </div>
             </div>
           </div>
