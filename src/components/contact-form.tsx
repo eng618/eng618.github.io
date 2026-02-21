@@ -15,7 +15,7 @@ import { useForm as useFormspree } from '@formspree/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Send } from 'lucide-react';
-import { useForm } from 'react-hook-form';
+import { useForm, type ControllerRenderProps } from 'react-hook-form';
 import * as z from 'zod';
 
 const formSchema = z.object({
@@ -77,7 +77,7 @@ export function ContactForm() {
             <FormField
               control={form.control}
               name="name"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'name'> }) => (
                 <FormItem>
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
@@ -90,7 +90,7 @@ export function ContactForm() {
             <FormField
               control={form.control}
               name="email"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<FormValues, 'email'> }) => (
                 <FormItem>
                   <FormLabel>Email Address</FormLabel>
                   <FormControl>
@@ -105,7 +105,7 @@ export function ContactForm() {
           <FormField
             control={form.control}
             name="subject"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, 'subject'> }) => (
               <FormItem>
                 <FormLabel>Subject</FormLabel>
                 <FormControl>
@@ -119,7 +119,7 @@ export function ContactForm() {
           <FormField
             control={form.control}
             name="message"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<FormValues, 'message'> }) => (
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>

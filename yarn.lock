@@ -6080,7 +6080,7 @@ __metadata:
     clsx: "npm:^2.1.1"
     eslint: "npm:^10.0.1"
     eslint-config-next: "npm:16.1.6"
-    framer-motion: "npm:^12.34.2"
+    framer-motion: "npm:^12.34.3"
     gray-matter: "npm:^4.0.3"
     husky: "npm:^9.1.7"
     js-yaml: "npm:^4.1.1"
@@ -6094,7 +6094,7 @@ __metadata:
     prop-types: "npm:^15.8.1"
     react: "npm:19.2.4"
     react-dom: "npm:19.2.4"
-    react-hook-form: "npm:^7.71.1"
+    react-hook-form: "npm:^7.71.2"
     react-is: "npm:^19.2.4"
     rehype-pretty-code: "npm:^0.14.1"
     remark-gfm: "npm:^4.0.1"
@@ -7274,11 +7274,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^12.34.2":
-  version: 12.34.2
-  resolution: "framer-motion@npm:12.34.2"
+"framer-motion@npm:^12.34.3":
+  version: 12.34.3
+  resolution: "framer-motion@npm:12.34.3"
   dependencies:
-    motion-dom: "npm:^12.34.2"
+    motion-dom: "npm:^12.34.3"
     motion-utils: "npm:^12.29.2"
     tslib: "npm:^2.4.0"
   peerDependencies:
@@ -7292,7 +7292,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10/724db611f13d23d56230c9228f2c56561e3f0c1520fc3aebcd56389bb332f5efe72ee911a863d24d473357d2511219a79dfc284bf39a45434436dff93cee3d60
+  checksum: 10/4565dc7f35c631c07ade3b77b19c14946ca37cc1125176e4b8c3a6b7d6994207867f9d9befcb2885d5bc8b6b4ea82ff8ee2cfa869f676cc28d18656acb33ff88
   languageName: node
   linkType: hard
 
@@ -10501,12 +10501,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"motion-dom@npm:^12.34.2":
-  version: 12.34.2
-  resolution: "motion-dom@npm:12.34.2"
+"motion-dom@npm:^12.34.3":
+  version: 12.34.3
+  resolution: "motion-dom@npm:12.34.3"
   dependencies:
     motion-utils: "npm:^12.29.2"
-  checksum: 10/13ec4137c0a33a1b826840b1fcc80d38f5e84783f529d28e8c71d293098b2be77b581c4cfe7bfe8e2da6854bd69824005d93edeba462818425a95f7a84d0d557
+  checksum: 10/17abb91f87020f00470f886cced6c6ebd58b9d5848c9bb12eb38f029dc7077344cf6ac2ccbe0adf1a8996191c17a98abfe91eaa99a1723909d7dd25a4f2b1101
   languageName: node
   linkType: hard
 
@@ -11728,12 +11728,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-hook-form@npm:^7.71.1":
-  version: 7.71.1
-  resolution: "react-hook-form@npm:7.71.1"
+"react-hook-form@npm:^7.71.2":
+  version: 7.71.2
+  resolution: "react-hook-form@npm:7.71.2"
   peerDependencies:
     react: ^16.8.0 || ^17 || ^18 || ^19
-  checksum: 10/54b56aa52a6ac17fb5aa68ce072b08f50b75c2705bf878069f817c346e464c1ebfbf67be372d94cf8e620fa07ca8e64ffca71bb69071dd0290a1ef8f43eefb9d
+  checksum: 10/4cc90868016f8463463ea5d1812f9405832e02fdb12f18ff0262c6437e7a9cdfe6443a7f58decf903cb8f20bfd68c0ed419283b0d6be886f3e84dc4d14b0efa6
   languageName: node
   linkType: hard
 

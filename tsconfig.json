@@ -19,7 +19,11 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@gv-tech/ui-web": ["./node_modules/@gv-tech/design-system/dist/packages/ui-web/src/index"],
+      "@gv-tech/ui-core": ["./node_modules/@gv-tech/design-system/dist/packages/ui-core/src/index"],
+      "@gv-tech/design-tokens": ["./node_modules/@gv-tech/design-system/dist/packages/design-tokens/src/index"],
+      "@gv-tech/design-system": ["./node_modules/@gv-tech/design-system/dist/src/index"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts", "**/*.mts"],

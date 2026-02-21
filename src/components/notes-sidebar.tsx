@@ -149,7 +149,7 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
           type="search"
           placeholder="Search notes..."
           value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
           className="bg-background w-full"
         />
       </div>
