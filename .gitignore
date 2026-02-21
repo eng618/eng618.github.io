@@ -53,3 +53,7 @@ next-env.d.ts
 
 # eslint
 .eslintcache
+eslintReport.html
+
+#Ignore vscode AI rules
+.github/instructions/codacy.instructions.md

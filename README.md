@@ -1,6 +1,6 @@
 # GarciaEricN
 
-[![Build](https://github.com/eng618/eng618.github.io/actions/workflows/build-and-deploy.yml/badge.svg)](https://github.com/eng618/eng618.github.io/actions/workflows/build-and-deploy.yml)
+[![Build and Test](https://github.com/eng618/eng618.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/eng618/eng618.github.io/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/eng618/eng618.github.io/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/eng618/eng618.github.io/actions/workflows/github-code-scanning/codeql)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/aae2a8f8828b4ae4a3a43d4936dcbdce)](https://app.codacy.com/gh/ENG618/eng618.github.io/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
