@@ -33,8 +33,8 @@ export default async function AppPage({ params }: AppPageProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-grow bg-background py-20">
-        <article className="container mx-auto px-4 lg:px-8 max-w-4xl">
+      <main className="bg-background flex-grow py-20">
+        <article className="container mx-auto max-w-4xl px-4 lg:px-8">
           <Breadcrumb
             items={[
               { label: 'Apps', href: '/apps' },
@@ -46,9 +46,9 @@ export default async function AppPage({ params }: AppPageProps) {
             ]}
             className="mb-8 justify-center"
           />
-          <div className="mb-12 border-b border-border pb-8 text-center">
-            <h1 className="mb-4 text-4xl font-bold font-outfit lg:text-5xl">{app.metadata.title}</h1>
-            {app.metadata.description && <p className="text-xl text-muted-foreground">{app.metadata.description}</p>}
+          <div className="border-border mb-12 border-b pb-8 text-center">
+            <h1 className="font-outfit mb-4 text-4xl font-bold lg:text-5xl">{app.metadata.title}</h1>
+            {app.metadata.description && <p className="text-muted-foreground text-xl">{app.metadata.description}</p>}
           </div>
 
           <div className="prose dark:prose-invert prose-zinc mx-auto max-w-4xl">
@@ -75,7 +75,7 @@ export default async function AppPage({ params }: AppPageProps) {
             />
           </div>
 
-          <div className="mt-16 flex justify-center border-t border-border pt-8">
+          <div className="border-border mt-16 flex justify-center border-t pt-8">
             <EditOnGithub relativePath={app.filePath} />
           </div>
         </article>

@@ -24,22 +24,22 @@ export default function GoProjectsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-grow bg-background pb-20">
+      <main className="bg-background flex-grow pb-20">
         <section className="py-20 lg:py-32">
           <div className="container mx-auto px-4 lg:px-8">
-            <h1 className="mb-6 text-4xl font-bold font-outfit lg:text-5xl">Go Projects</h1>
-            <p className="mb-12 max-w-2xl text-xl text-muted-foreground">
+            <h1 className="font-outfit mb-6 text-4xl font-bold lg:text-5xl">Go Projects</h1>
+            <p className="text-muted-foreground mb-12 max-w-2xl text-xl">
               A collection of tools and libraries built with the Go programming language.
             </p>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {goProjects.map((project) => (
-                <div key={project.title} className="rounded-2xl border border-border bg-card p-8 backdrop-blur-sm">
-                  <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20 text-primary">
+                <div key={project.title} className="border-border bg-card rounded-2xl border p-8 backdrop-blur-sm">
+                  <div className="bg-primary/20 text-primary mb-6 flex h-12 w-12 items-center justify-center rounded-lg">
                     <Terminal className="h-6 w-6" />
                   </div>
-                  <h2 className="mb-4 text-2xl font-bold font-outfit">{project.title}</h2>
-                  <p className="mb-8 text-lg text-muted-foreground leading-relaxed">{project.description}</p>
+                  <h2 className="font-outfit mb-4 text-2xl font-bold">{project.title}</h2>
+                  <p className="text-muted-foreground mb-8 text-lg leading-relaxed">{project.description}</p>
 
                   <div className="flex flex-wrap gap-4">
                     <Button variant="default" asChild>

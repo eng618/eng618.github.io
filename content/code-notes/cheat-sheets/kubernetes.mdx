@@ -16,7 +16,7 @@ keywords: 'Elasticsearch,Kubernetes,vi'
 If you need too delete a pod, and can not wait for it to stop and terminate, you can force the delettions with the following:
 
 ```shell
-kubectl delete pods -n <namespace> --grace-period=0 --force
+kubectl delete pods -n --force < namespace > --grace-period=0
 ```
 
 **Flags**
@@ -70,5 +70,4 @@ echo ""
 echo "~~ Removing helm releases ~~"
 helm ls --namespace "$k8s_namespace" | grep -v NAME | awk '{print $1}' | xargs -I arg helm delete --purge arg
 echo ""
-
 ```

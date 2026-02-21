@@ -16,12 +16,12 @@ export default function Home() {
         <section className="bg-muted/30 py-20">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              <div className="rounded-2xl border border-border bg-card/50 p-8 backdrop-blur-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20 text-primary">
+              <div className="border-border bg-card/50 rounded-2xl border p-8 backdrop-blur-sm">
+                <div className="bg-primary/20 text-primary mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
                   <Briefcase className="h-6 w-6" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold font-outfit">Portfolio</h3>
-                <p className="mb-6 text-muted-foreground">
+                <h3 className="font-outfit mb-2 text-xl font-bold">Portfolio</h3>
+                <p className="text-muted-foreground mb-6">
                   Explore my professional journey, system architectures, and major projects.
                 </p>
                 <Button variant="link" className="p-0" asChild>
@@ -31,12 +31,12 @@ export default function Home() {
                 </Button>
               </div>
 
-              <div className="rounded-2xl border border-border bg-card/50 p-8 backdrop-blur-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20 text-primary">
+              <div className="border-border bg-card/50 rounded-2xl border p-8 backdrop-blur-sm">
+                <div className="bg-primary/20 text-primary mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
                   <Code className="h-6 w-6" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold font-outfit">Code Notes</h3>
-                <p className="mb-6 text-muted-foreground">
+                <h3 className="font-outfit mb-2 text-xl font-bold">Code Notes</h3>
+                <p className="text-muted-foreground mb-6">
                   Cheat sheets and technical reference materials for various programming languages.
                 </p>
                 <Button variant="link" className="p-0" asChild>
@@ -46,12 +46,12 @@ export default function Home() {
                 </Button>
               </div>
 
-              <div className="rounded-2xl border border-border bg-card/50 p-8 backdrop-blur-sm">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/20 text-primary">
+              <div className="border-border bg-card/50 rounded-2xl border p-8 backdrop-blur-sm">
+                <div className="bg-primary/20 text-primary mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
                   <BookOpen className="h-6 w-6" />
                 </div>
-                <h3 className="mb-2 text-xl font-bold font-outfit">Education</h3>
-                <p className="mb-6 text-muted-foreground">
+                <h3 className="font-outfit mb-2 text-xl font-bold">Education</h3>
+                <p className="text-muted-foreground mb-6">
                   Lifelong learning journey including degrees, specialized certifications, and courses.
                 </p>
                 <Button variant="link" className="p-0" asChild>

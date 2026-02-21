@@ -24,11 +24,11 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ items, className }: BreadcrumbProps) {
   return (
-    <BreadcrumbRoot className={cn('uppercase tracking-wider', className)}>
+    <BreadcrumbRoot className={cn('tracking-wider uppercase', className)}>
       <BreadcrumbList className="gap-1.5 sm:gap-1.5">
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link href="/" className="flex items-center transition-colors hover:text-accent-foreground">
+            <Link href="/" className="hover:text-accent-foreground flex items-center transition-colors">
               <Home className="h-3.5 w-3.5" />
               <span className="sr-only">Home</span>
             </Link>
@@ -40,10 +40,10 @@ export function Breadcrumb({ items, className }: BreadcrumbProps) {
             <BreadcrumbSeparator className="opacity-50" />
             <BreadcrumbItem>
               {item.current ? (
-                <BreadcrumbPage className="font-semibold text-foreground">{item.label}</BreadcrumbPage>
+                <BreadcrumbPage className="text-foreground font-semibold">{item.label}</BreadcrumbPage>
               ) : (
                 <BreadcrumbLink asChild>
-                  <Link href={item.href} className="transition-colors hover:text-accent-foreground">
+                  <Link href={item.href} className="hover:text-accent-foreground transition-colors">
                     {item.label}
                   </Link>
                 </BreadcrumbLink>

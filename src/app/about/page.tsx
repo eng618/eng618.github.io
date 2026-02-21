@@ -7,13 +7,13 @@ export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-grow bg-background pb-20">
+      <main className="bg-background flex-grow pb-20">
         <section className="py-20 lg:py-32">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
               <div>
-                <h1 className="mb-6 text-4xl font-bold font-outfit lg:text-5xl">About Me</h1>
-                <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
+                <h1 className="font-outfit mb-6 text-4xl font-bold lg:text-5xl">About Me</h1>
+                <div className="text-muted-foreground space-y-6 text-lg leading-relaxed">
                   <p>
                     My name is Eric Garcia. I am a graduate from Full Sail University with a Bachelors Degree in Mobile
                     Development.
@@ -33,7 +33,7 @@ export default function AboutPage() {
               </div>
 
               <div className="relative">
-                <div className="w-full rounded-2xl border border-border bg-card backdrop-blur-sm overflow-hidden italic text-muted-foreground relative">
+                <div className="border-border bg-card text-muted-foreground relative w-full overflow-hidden rounded-2xl border italic backdrop-blur-sm">
                   <AspectRatio ratio={4 / 3}>
                     <Image
                       src="/images/garcia_family.jpg"
@@ -44,7 +44,7 @@ export default function AboutPage() {
                     />
                   </AspectRatio>
                 </div>
-                <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-primary/20 blur-3xl opacity-50" />
+                <div className="bg-primary/20 absolute -bottom-6 -left-6 h-32 w-32 rounded-full opacity-50 blur-3xl" />
               </div>
             </div>
           </div>
@@ -52,12 +52,12 @@ export default function AboutPage() {
 
         <section className="bg-muted/30 py-20">
           <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="mb-12 text-3xl font-bold font-outfit">Education & Experience</h2>
+            <h2 className="font-outfit mb-12 text-3xl font-bold">Education & Experience</h2>
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
               <div>
-                <h3 className="mb-4 text-2xl font-bold font-outfit text-foreground">Full Sail University</h3>
-                <p className="mb-6 text-muted-foreground italic">Bachelor of Science in Mobile Development</p>
-                <ul className="grid grid-cols-1 gap-2 text-muted-foreground sm:grid-cols-2">
+                <h3 className="font-outfit text-foreground mb-4 text-2xl font-bold">Full Sail University</h3>
+                <p className="text-muted-foreground mb-6 italic">Bachelor of Science in Mobile Development</p>
+                <ul className="text-muted-foreground grid grid-cols-1 gap-2 sm:grid-cols-2">
                   <li>• Mobile Media Design</li>
                   <li>• Scalable Data Infrastructures</li>
                   <li>• Visual Frameworks</li>
@@ -69,7 +69,7 @@ export default function AboutPage() {
                 </ul>
               </div>
 
-              <div className="aspect-video w-full rounded-2xl border border-border bg-black overflow-hidden shadow-2xl">
+              <div className="border-border aspect-video w-full overflow-hidden rounded-2xl border bg-black shadow-2xl">
                 <iframe
                   width="100%"
                   height="100%"

@@ -108,7 +108,7 @@ But this command does not provide much information. What if this branch is merge
 This magic snippet provides all required information:
 
 ```bash
-for branch in `git branch -r --merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r
+for branch in $(git branch -r --merged | grep -v HEAD); do echo -e $(git show --format="%ci %cr %an" $branch | head -n 1) \\t$branch; done | sort -r
 ```
 
 Now, you can delete own remote branches, and ask other authors to clean-up theirs:
@@ -120,7 +120,7 @@ git push origin --delete branch-name
 Similar snippet for not merged branches:
 
 ```bash
-for branch in `git branch -r --no-merged | grep -v HEAD`; do echo -e `git show --format="%ci %cr %an" $branch | head -n 1` \\t$branch; done | sort -r
+for branch in $(git branch -r --no-merged | grep -v HEAD); do echo -e $(git show --format="%ci %cr %an" $branch | head -n 1) \\t$branch; done | sort -r
 ```
 
 This list should be reviewed more thoroughly to avoid losing important commits.

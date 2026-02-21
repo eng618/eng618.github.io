@@ -16,7 +16,7 @@ export function EditOnGithub({ relativePath, className }: EditOnGithubProps) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        'group inline-flex items-center space-x-2 text-xs font-medium text-muted-foreground transition-colors hover:text-accent-foreground',
+        'group text-muted-foreground hover:text-accent-foreground inline-flex items-center space-x-2 text-xs font-medium transition-colors',
         className,
       )}
     >

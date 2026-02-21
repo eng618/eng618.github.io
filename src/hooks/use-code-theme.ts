@@ -26,11 +26,15 @@ export function useCodeTheme() {
       if (e instanceof StorageEvent) {
         if (e.key === THEME_KEY) {
           const nextTheme = e.newValue as CodeTheme;
-          if (nextTheme) setTheme(nextTheme);
+          if (nextTheme) {
+            setTheme(nextTheme);
+          }
         }
       } else if (e.type === EVENT_NAME) {
         const nextTheme = (e as ThemeChangeEvent).detail;
-        if (nextTheme) setTheme(nextTheme);
+        if (nextTheme) {
+          setTheme(nextTheme);
+        }
       }
     };
 

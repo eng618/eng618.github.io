@@ -29,7 +29,9 @@ function buildTree(notes: NoteMetadata[]): TreeNode {
     let current = root;
 
     parts.forEach((part, index) => {
-      if (!current.children) current.children = {};
+      if (!current.children) {
+        current.children = {};
+      }
 
       if (!current.children[part]) {
         const isLast = index === parts.length - 1;
@@ -52,7 +54,9 @@ function buildTree(notes: NoteMetadata[]): TreeNode {
 }
 
 function filterTree(node: TreeNode, query: string): TreeNode | null {
-  if (!query) return node;
+  if (!query) {
+    return node;
+  }
 
   if (!node.isFolder) {
     const matchesTitle = node.metadata?.title?.toLowerCase().includes(query.toLowerCase());
@@ -90,13 +94,13 @@ function TreeItem({ node, basePath, level = 0 }: { node: TreeNode; basePath: str
         <CollapsibleTrigger asChild>
           <button
             className={cn(
-              'flex w-full items-center gap-2 rounded-md py-1.5 px-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground text-left',
+              'hover:bg-accent hover:text-accent-foreground flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-sm font-medium',
               level > 0 && 'ml-4',
             )}
             style={{ paddingLeft: `${level * 12 + 8}px` }}
           >
             {isOpen ? <ChevronDown className="h-4 w-4 shrink-0" /> : <ChevronRight className="h-4 w-4 shrink-0" />}
-            <Folder className="h-4 w-4 shrink-0 text-muted-foreground" />
+            <Folder className="text-muted-foreground h-4 w-4 shrink-0" />
             <span className="truncate">{node.name}</span>
           </button>
         </CollapsibleTrigger>
@@ -118,7 +122,7 @@ function TreeItem({ node, basePath, level = 0 }: { node: TreeNode; basePath: str
     <Link
       href={href}
       className={cn(
-        'flex w-full items-center gap-2 rounded-md py-1.5 px-2 text-sm hover:bg-accent hover:text-accent-foreground transition-colors',
+        'hover:bg-accent hover:text-accent-foreground flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors',
         isActive ? 'bg-accent text-accent-foreground font-medium' : 'text-muted-foreground',
         level > 0 && 'ml-4',
       )}
@@ -139,24 +143,24 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
   }, [notes, searchQuery]);
 
   return (
-    <aside className="w-full lg:w-72 flex-shrink-0 border-r border-border bg-card/50 backdrop-blur-sm lg:h-[calc(100vh-4rem)] flex flex-col sticky top-16 z-20">
-      <div className="p-4 border-b border-border">
+    <aside className="border-border bg-card/50 sticky top-16 z-20 flex w-full flex-shrink-0 flex-col border-r backdrop-blur-sm lg:h-[calc(100vh-4rem)] lg:w-72">
+      <div className="border-border border-b p-4">
         <Input
           type="search"
           placeholder="Search notes..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full bg-background"
+          className="bg-background w-full"
         />
       </div>
       <ScrollArea className="flex-1">
-        <div className="p-2 flex flex-col gap-1">
+        <div className="flex flex-col gap-1 p-2">
           {filteredTree.children && Object.keys(filteredTree.children).length > 0 ? (
             Object.values(filteredTree.children).map((child) => (
               <TreeItem key={child.path} node={child} basePath={basePath} />
             ))
           ) : (
-            <p className="p-4 text-sm text-muted-foreground text-center">No notes found.</p>
+            <p className="text-muted-foreground p-4 text-center text-sm">No notes found.</p>
           )}
         </div>
       </ScrollArea>

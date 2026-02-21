@@ -29,7 +29,7 @@ This will allow you to use the alias `git ignored` to list all excluded files
 
 ```bash
 [alias]
- ignored = !git ls-files -v | grep "^[[:lower:]]"
+ignored = !git ls-files -v | grep "^[[:lower:]]"
 ```
 
 ## Ignoring un-tracked files in your local repo

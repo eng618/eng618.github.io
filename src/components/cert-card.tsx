@@ -13,14 +13,14 @@ interface CertProps {
 
 export function CertCard({ cert }: { cert: CertProps }) {
   return (
-    <Card className="flex h-full flex-col border-border bg-card transition-colors hover:bg-accent/50">
+    <Card className="border-border bg-card hover:bg-accent/50 flex h-full flex-col transition-colors">
       <CardHeader className="pb-2">
         <div className="flex items-start justify-between gap-4">
           <div className="space-y-1">
-            <Badge variant="outline" className="mb-2 text-[10px] uppercase tracking-wider text-muted-foreground/70">
+            <Badge variant="outline" className="text-muted-foreground/70 mb-2 text-[10px] tracking-wider uppercase">
               {cert.category}
             </Badge>
-            <CardTitle className="text-lg font-bold font-outfit line-clamp-2">{cert.course}</CardTitle>
+            <CardTitle className="font-outfit line-clamp-2 text-lg font-bold">{cert.course}</CardTitle>
           </div>
           <Link
             href={cert.url}
@@ -33,7 +33,7 @@ export function CertCard({ cert }: { cert: CertProps }) {
         </div>
         <CardDescription>{cert.authority}</CardDescription>
       </CardHeader>
-      <CardContent className="mt-auto pt-4 flex flex-col gap-2 text-sm text-muted-foreground">
+      <CardContent className="text-muted-foreground mt-auto flex flex-col gap-2 pt-4 text-sm">
         <div className="flex items-center gap-2">
           <Calendar className="h-3 w-3" />
           <span>{cert.completed}</span>

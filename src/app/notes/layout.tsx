@@ -12,7 +12,7 @@ export default function NotesLayout({ children }: { children: ReactNode }) {
       <Header />
       <div className="flex flex-1 flex-col lg:flex-row">
         <NotesSidebar notes={notes} basePath="/notes" />
-        <main className="flex-1 w-full flex flex-col items-center">{children}</main>
+        <main className="flex w-full flex-1 flex-col items-center">{children}</main>
       </div>
       <Footer />
     </div>

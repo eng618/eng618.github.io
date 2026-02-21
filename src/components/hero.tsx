@@ -5,18 +5,18 @@ import Image from 'next/image';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-background py-20 lg:py-32">
+    <section className="bg-background relative overflow-hidden py-20 lg:py-32">
       {/* Background radial gradient */}
       <div className="absolute top-0 right-0 h-full w-full bg-[radial-gradient(circle_at_100%_0%,var(--color-accent),transparent)] opacity-50" />
 
-      <div className="container relative z-10 mx-auto px-4 lg:px-8">
+      <div className="relative z-10 container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-8">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="mb-2 text-xl tracking-wider text-muted-foreground font-sans"
+              className="text-muted-foreground mb-2 font-sans text-xl tracking-wider"
             >
               Hello, I&apos;m
             </motion.p>
@@ -30,9 +30,9 @@ export function Hero() {
                 type: 'spring',
                 stiffness: 100,
               }}
-              className="mb-8 text-5xl font-extrabold leading-tight tracking-tight sm:text-7xl lg:text-8xl font-outfit"
+              className="font-outfit mb-8 text-5xl leading-tight font-extrabold tracking-tight sm:text-7xl lg:text-8xl"
             >
-              <span className="bg-gradient-to-br from-foreground via-foreground/90 to-primary bg-clip-text text-transparent drop-shadow-[0_0_40px_rgb(var(--primary)_/_0.15)]">
+              <span className="from-foreground via-foreground/90 to-primary bg-gradient-to-br bg-clip-text text-transparent drop-shadow-[0_0_40px_rgb(var(--primary)_/_0.15)]">
                 Eric N. Garcia
               </span>
             </motion.h1>
@@ -41,7 +41,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="max-w-xl text-xl leading-relaxed text-muted-foreground lg:text-2xl"
+              className="text-muted-foreground max-w-xl text-xl leading-relaxed lg:text-2xl"
             >
               System Architect at Verizon with over a decade of experience designing and implementing complex, scalable
               enterprise solutions.
@@ -55,9 +55,9 @@ export function Hero() {
               transition={{ duration: 1, delay: 0.5 }}
               className="relative aspect-square w-full max-w-[400px]"
             >
-              <div className="absolute inset-0 rounded-full bg-primary/10 blur-[60px]" />
+              <div className="bg-primary/10 absolute inset-0 rounded-full blur-[60px]" />
               {/* Note: In a real migration, we'd use the actual vector/image */}
-              <div className="relative flex h-full w-full items-center justify-center rounded-2xl border border-border bg-card/50 backdrop-blur-sm overflow-hidden">
+              <div className="border-border bg-card/50 relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border backdrop-blur-sm">
                 <Image
                   src="/hero-vector.svg"
                   alt="Architectural Illustration"

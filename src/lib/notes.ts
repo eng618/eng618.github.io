@@ -23,7 +23,9 @@ function sanitizeSlug(slugArray: string[]): string {
 
 export function getAllContent(type: ContentType) {
   const basePath = path.join(CONTENT_PATH, type);
-  if (!fs.existsSync(basePath)) return [];
+  if (!fs.existsSync(basePath)) {
+    return [];
+  }
 
   const getFilesRecursively = (dir: string): string[] => {
     const entries = fs.readdirSync(dir, { withFileTypes: true });

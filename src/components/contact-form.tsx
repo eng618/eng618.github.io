@@ -50,8 +50,8 @@ export function ContactForm() {
         animate={{ opacity: 1, scale: 1 }}
         className="flex flex-col items-center justify-center p-12 text-center"
       >
-        <CheckCircle2 className="mb-4 h-16 w-16 text-primary" />
-        <h3 className="mb-2 text-2xl font-bold font-outfit">Message Sent!</h3>
+        <CheckCircle2 className="text-primary mb-4 h-16 w-16" />
+        <h3 className="font-outfit mb-2 text-2xl font-bold">Message Sent!</h3>
         <p className="text-muted-foreground">Thanks for reaching out. I&apos;ll get back to you soon.</p>
         <Button variant="ghost" onClick={() => window.location.reload()} className="mt-6">
           Send another message
@@ -64,10 +64,10 @@ export function ContactForm() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="mx-auto w-full max-w-2xl rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-8"
+      className="border-border bg-card/50 mx-auto w-full max-w-2xl rounded-2xl border p-8 backdrop-blur-sm"
     >
       <div className="mb-8">
-        <h2 className="text-3xl font-bold font-outfit">Get in Touch</h2>
+        <h2 className="font-outfit text-3xl font-bold">Get in Touch</h2>
         <p className="text-muted-foreground">Have a project in mind or just want to say hi?</p>
       </div>
 

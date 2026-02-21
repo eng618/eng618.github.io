@@ -40,14 +40,14 @@ You will need to update how you load the bash completion in your **[bash/bash_rc
 
 # Add tab completion for bash completion 2
 if which brew > /dev/null && [ -f "$(brew --prefix)/share/bash-completion/bash_completion" ]; then
-  source "$(brew --prefix)/share/bash-completion/bash_completion";
+  source "$(brew --prefix)/share/bash-completion/bash_completion"
   export PS1='\W$(__git_ps1) \$ '
 
 # Fallback to bash completion
 elif [ -f /etc/bash_completion ]; then
-  source /etc/bash_completion;
+  source /etc/bash_completion
   export PS1='\W$(__git_ps1) \$ '
-fi;
+fi
 ```
 
 **Note**: you can leave out the `export` of `PS1` if you choose. I just prefer a simple concise command prompt.

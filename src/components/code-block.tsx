@@ -11,10 +11,18 @@ export function CodeBlock({ className, children, ...props }: ComponentProps<'pre
   const { theme, toggleTheme, mounted } = useCodeTheme();
 
   const extractText = (node: ReactNode): string => {
-    if (typeof node === 'string') return node;
-    if (typeof node === 'number') return node.toString();
-    if (Array.isArray(node)) return node.map(extractText).join('');
-    if (isValidElement<{ children?: ReactNode }>(node)) return extractText(node.props.children);
+    if (typeof node === 'string') {
+      return node;
+    }
+    if (typeof node === 'number') {
+      return node.toString();
+    }
+    if (Array.isArray(node)) {
+      return node.map(extractText).join('');
+    }
+    if (isValidElement<{ children?: ReactNode }>(node)) {
+      return extractText(node.props.children);
+    }
     return '';
   };
 
@@ -22,19 +30,19 @@ export function CodeBlock({ className, children, ...props }: ComponentProps<'pre
 
   return (
     <div className="group relative" data-code-theme={theme}>
-      <div className="absolute right-4 top-4 z-10 flex gap-1 opacity-0 transition-opacity group-hover:opacity-100">
+      <div className="absolute top-4 right-4 z-10 flex gap-1 opacity-0 transition-opacity group-hover:opacity-100">
         {mounted && (
           <ThemeToggle
             variant="binary"
             customTheme={theme}
             onThemeChange={toggleTheme}
-            className="h-8 w-8 text-muted-foreground transition-all hover:bg-accent hover:text-accent-foreground"
+            className="text-muted-foreground hover:bg-accent hover:text-accent-foreground h-8 w-8 transition-all"
           />
         )}
         <CopyButton text={textContent} />
       </div>
       <pre
-        className={cn('mb-4 mt-6 overflow-x-auto rounded-lg border border-border p-4 backdrop-blur-sm', className)}
+        className={cn('border-border mt-6 mb-4 overflow-x-auto rounded-lg border p-4 backdrop-blur-sm', className)}
         {...props}
       >
         {children}

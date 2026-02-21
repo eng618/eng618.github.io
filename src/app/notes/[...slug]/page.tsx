@@ -31,7 +31,7 @@ export default async function NotePage({ params }: NotePageProps) {
 
   return (
     <div className="w-full py-8 lg:py-12">
-      <article className="container mx-auto px-4 lg:px-8 max-w-4xl">
+      <article className="container mx-auto max-w-4xl px-4 lg:px-8">
         <Breadcrumb
           items={[
             { label: 'Notes', href: '/notes' },
@@ -43,11 +43,11 @@ export default async function NotePage({ params }: NotePageProps) {
           ]}
           className="mb-8 justify-center"
         />
-        <div className="mb-12 border-b border-border pb-8 text-center">
-          <h1 className="mb-4 text-4xl font-bold font-outfit lg:text-5xl">
+        <div className="border-border mb-12 border-b pb-8 text-center">
+          <h1 className="font-outfit mb-4 text-4xl font-bold lg:text-5xl">
             {note.metadata.title || resolvedParams.slug[resolvedParams.slug.length - 1]}
           </h1>
-          {note.metadata.description && <p className="text-xl text-muted-foreground">{note.metadata.description}</p>}
+          {note.metadata.description && <p className="text-muted-foreground text-xl">{note.metadata.description}</p>}
         </div>
 
         <div className="prose dark:prose-invert prose-zinc mx-auto max-w-4xl">
@@ -74,7 +74,7 @@ export default async function NotePage({ params }: NotePageProps) {
           />
         </div>
 
-        <div className="mt-16 flex justify-center border-t border-border pt-8">
+        <div className="border-border mt-16 flex justify-center border-t pt-8">
           <EditOnGithub relativePath={note.filePath} />
         </div>
       </article>

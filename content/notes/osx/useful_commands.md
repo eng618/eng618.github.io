@@ -33,7 +33,7 @@ This section is designated to helping you work with and create scripts.
 To allow everyone to execute the script, enter:
 
 ```bash
-chmod +x <script>.sh
+chmod +x < script > .sh
 ```
 
 To set the permissions for the user and the group to read and execute only (no write permission), enter:
@@ -47,10 +47,10 @@ chmod ug=rx script.sh
 Unzip all files in a directory:
 
 ```bash
-for i in *.zip ; do
- mkdir $i.d
- cd $i.d
- unzip $i
- cd ../
+for i in *.zip; do
+  mkdir $i.d
+  cd $i.d
+  unzip $i
+  cd ../
 done
 ```

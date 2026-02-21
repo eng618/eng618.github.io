@@ -29,9 +29,9 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
+    <header className="border-border bg-background/80 sticky top-0 z-50 w-full border-b backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 lg:px-8">
-        <Link href="/" className="text-xl font-bold tracking-tighter font-outfit">
+        <Link href="/" className="font-outfit text-xl font-bold tracking-tighter">
           {siteConfig.author.toUpperCase()}
         </Link>
 
@@ -46,7 +46,7 @@ export function Header() {
                       href={item.href}
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        'bg-transparent text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground',
+                        'text-muted-foreground hover:bg-accent hover:text-accent-foreground bg-transparent text-sm font-medium transition-colors',
                       )}
                     >
                       {item.title}
@@ -68,7 +68,7 @@ export function Header() {
             href={siteConfig.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:block text-muted-foreground hover:text-accent-foreground"
+            className="text-muted-foreground hover:text-accent-foreground hidden md:block"
           >
             <span className="sr-only">GitHub</span>
             <Github className="h-5 w-5" />
@@ -77,14 +77,14 @@ export function Header() {
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden text-foreground">
+              <Button variant="ghost" size="icon" className="text-foreground md:hidden">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="border-border bg-background/95 backdrop-blur-xl">
               <SheetHeader>
-                <SheetTitle className="text-left font-outfit text-foreground">Menu</SheetTitle>
+                <SheetTitle className="font-outfit text-foreground text-left">Menu</SheetTitle>
               </SheetHeader>
               <div className="mt-8 flex flex-col gap-4">
                 {siteConfig.navItems.map((item) => (
@@ -92,17 +92,17 @@ export function Header() {
                     key={item.title}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium text-muted-foreground transition-colors hover:text-accent-foreground"
+                    className="text-muted-foreground hover:text-accent-foreground text-lg font-medium transition-colors"
                   >
                     {item.title}
                   </Link>
                 ))}
-                <hr className="my-4 border-border" />
+                <hr className="border-border my-4" />
                 <Link
                   href={siteConfig.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-lg font-medium text-muted-foreground hover:text-accent-foreground"
+                  className="text-muted-foreground hover:text-accent-foreground flex items-center gap-2 text-lg font-medium"
                 >
                   <Github className="h-5 w-5" /> GitHub
                 </Link>
