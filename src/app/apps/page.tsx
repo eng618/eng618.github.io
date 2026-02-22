@@ -1,7 +1,7 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui-wrapper';
 import { getAllContent } from '@/lib/notes';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web/card';
 import { ArrowRight, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 

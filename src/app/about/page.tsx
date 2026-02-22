@@ -1,6 +1,6 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { AspectRatio } from '@/components/ui-wrapper';
+import { AspectRatio } from '@gv-tech/ui-web';
 import Image from 'next/image';
 
 export default function AboutPage() {

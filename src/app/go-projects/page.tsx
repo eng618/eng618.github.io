@@ -1,6 +1,6 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { Button } from '@/components/ui-wrapper';
+import { Button } from '@gv-tech/ui-web';
 import { ExternalLink, Github, Terminal } from 'lucide-react';
 import Link from 'next/link';
 

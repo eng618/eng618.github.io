@@ -1,7 +1,7 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
-import { Button } from '@/components/ui-wrapper';
+import { Button } from '@gv-tech/ui-web';
 import { ArrowRight, BookOpen, Briefcase, Code } from 'lucide-react';
 import Link from 'next/link';
 

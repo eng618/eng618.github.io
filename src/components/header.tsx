@@ -1,5 +1,7 @@
 'use client';
 
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
 import {
   Button,
   NavigationMenu,
@@ -13,9 +15,7 @@ import {
   SheetTitle,
   SheetTrigger,
   ThemeToggle,
-} from '@/components/ui-wrapper';
-import { siteConfig } from '@/config/site';
-import { cn } from '@/lib/utils';
+} from '@gv-tech/ui-web';
 import { Github, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';

@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@/components/theme-provider';
-import { Toaster } from '@/components/ui-wrapper';
+import { Toaster } from '@gv-tech/ui-web/toaster';
 import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google';
 import './globals.css';

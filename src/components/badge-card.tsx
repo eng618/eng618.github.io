@@ -1,4 +1,4 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui-wrapper';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';

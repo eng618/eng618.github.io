@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/components/ui-wrapper';
 import { cn } from '@/lib/utils';
+import { Button } from '@gv-tech/ui-web';
 import { Check, Copy } from 'lucide-react';
 import { useState } from 'react';
 

@@ -2,10 +2,10 @@
 
 import { useCodeTheme } from '@/hooks/use-code-theme';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@gv-tech/ui-web';
 import type { ComponentProps, ReactNode } from 'react';
 import { isValidElement } from 'react';
 import { CopyButton } from './copy-button';
-import { ThemeToggle } from './ui-wrapper';
 
 export function CodeBlock({ className, children, ...props }: ComponentProps<'pre'>) {
   const { theme, toggleTheme, mounted } = useCodeTheme();

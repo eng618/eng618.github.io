@@ -1,4 +1,4 @@
-import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui-wrapper';
+import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web';
 import { Calendar, Clock, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 

@@ -1,5 +1,6 @@
 'use client';
 
+import { useForm as useFormspree } from '@formspree/react';
 import {
   Button,
   Form,
@@ -10,8 +11,7 @@ import {
   FormMessage,
   Input,
   Textarea,
-} from '@/components/ui-wrapper';
-import { useForm as useFormspree } from '@formspree/react';
+} from '@gv-tech/ui-web';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Send } from 'lucide-react';

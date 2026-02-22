@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui-wrapper';
 import { getAllContent } from '@/lib/notes';
+import { Card, CardContent, CardHeader, CardTitle } from '@gv-tech/ui-web';
 import { Code2, Cpu, Terminal } from 'lucide-react';
 
 export default function CodeNotesIndexPage() {

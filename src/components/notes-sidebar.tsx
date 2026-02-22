@@ -2,7 +2,7 @@
 
 import type { NoteMetadata } from '@/lib/notes';
 import { cn } from '@/lib/utils';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger, Input, ScrollArea } from '@gv-tech/design-system';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger, Input, ScrollArea } from '@gv-tech/ui-web';
 import { ChevronDown, ChevronRight, FileText, Folder } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

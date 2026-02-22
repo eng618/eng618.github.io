@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import {
   BreadcrumbItem,
   BreadcrumbLink,
@@ -5,8 +6,7 @@ import {
   BreadcrumbPage,
   Breadcrumb as BreadcrumbRoot,
   BreadcrumbSeparator,
-} from '@/components/ui-wrapper';
-import { cn } from '@/lib/utils';
+} from '@gv-tech/ui-web';
 import { Home } from 'lucide-react';
 import Link from 'next/link';
 import * as React from 'react';

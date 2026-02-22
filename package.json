@@ -29,7 +29,7 @@
   "prettier": "@eng618/prettier-config",
   "dependencies": {
     "@formspree/react": "^3.0.0",
-    "@gv-tech/design-system": "^2.9.1",
+    "@gv-tech/ui-web": "^2.12.1",
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/typography": "^0.5.19",
     "class-variance-authority": "^0.7.1",

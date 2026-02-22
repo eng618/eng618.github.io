@@ -2,9 +2,9 @@ import { BadgeCard } from '@/components/badge-card';
 import { CertCard } from '@/components/cert-card';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui-wrapper';
 import badgesData from '@/data/badges.json';
 import certsData from '@/data/certs.json';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web';
 
 // Define the Certificate interface based on usage and JSON data
 interface Certificate {

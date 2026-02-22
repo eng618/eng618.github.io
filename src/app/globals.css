@@ -1,9 +1,5 @@
 @import 'tailwindcss';
 
-@layer components {
-  @import '@gv-tech/design-system/style.css';
-}
-
 @plugin '@tailwindcss/typography';
 
 @theme {
