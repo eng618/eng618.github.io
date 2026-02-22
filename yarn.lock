@@ -1294,12 +1294,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eng618/prettier-config@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "@eng618/prettier-config@npm:2.8.1"
+"@eng618/prettier-config@npm:^2.9.0":
+  version: 2.9.0
+  resolution: "@eng618/prettier-config@npm:2.9.0"
   dependencies:
+    "@homer0/prettier-plugin-jsdoc": "npm:^11.0.2"
     prettier-plugin-curly: "npm:^0.4.1"
-    prettier-plugin-jsdoc: "npm:^1.8.0"
     prettier-plugin-multiline-arrays: "npm:^4.1.4"
     prettier-plugin-organize-imports: "npm:^4.3.0"
     prettier-plugin-packagejson: "npm:^3.0.0"
@@ -1313,7 +1313,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10/3da215e41d5b87ebded41513fb1f8938c9fd59e6990c44ba498a3631777691023dd5a6333fa9fa5ddf998866c2382e802f0dcdac3d14cc901fad143e414b2a51
+  checksum: 10/06c6f9d5ca12290e4ed33810259567915bec7b208a54fdcb7c44652c46590422736f009000c1c982fb55b13c7fa958693ec719b593ba103e6b97c8c90b3305d6
   languageName: node
   linkType: hard
 
@@ -2023,12 +2023,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gv-tech/design-system@npm:^2.6.0":
-  version: 2.6.0
-  resolution: "@gv-tech/design-system@npm:2.6.0"
+"@gv-tech/design-system@npm:^2.9.1":
+  version: 2.9.1
+  resolution: "@gv-tech/design-system@npm:2.9.1"
   dependencies:
     "@expo/metro-config": "npm:~54.0.9"
     "@expo/metro-runtime": "npm:~6.1.2"
+    "@rn-primitives/types": "npm:^1.2.0"
+    class-variance-authority: "npm:^0.7.1"
     expo: "npm:~54.0.0"
     expo-splash-screen: "npm:~31.0.11"
     expo-status-bar: "npm:~3.0.8"
@@ -2050,7 +2052,7 @@ __metadata:
     react-is: ^16 || ^17 || ^18 || ^19
     react-native: ^0.77.0
     react-native-svg: ^15.11.1
-  checksum: 10/4c7e0ffe6dbc56793dd41f4c53270484feac95781d50de89483b4fb3f5b6f80b2830a916ee5dc827b404eb71f2aba225f591ea85aa52a761dd5a28a86159b693
+  checksum: 10/ea9e8094af773b7184ddda3483c67526ad5c6c31af872c6a6d4f77f24d8ad42cf2a5511686dd792cfa2019dfc45b25616e0eb63ce12cc2fc78ffa3fb49caecd0
   languageName: node
   linkType: hard
 
@@ -2085,6 +2087,18 @@ __metadata:
     typescript-eslint:
       optional: true
   checksum: 10/d12fe89650e77dc0d58f1da4336820e04b4bce7884d537506778054fa96fdd79386f1a6f5dcf737369c0ee0b0ed8ff9b20ecccf762613cbdf20ed884b0d966d7
+  languageName: node
+  linkType: hard
+
+"@homer0/prettier-plugin-jsdoc@npm:^11.0.2":
+  version: 11.0.2
+  resolution: "@homer0/prettier-plugin-jsdoc@npm:11.0.2"
+  dependencies:
+    comment-parser: "npm:^1.4.5"
+    ramda: "npm:0.32.0"
+  peerDependencies:
+    prettier: ^3.5.3
+  checksum: 10/0d838ca884fb94670b7605cb6f037ed9d53ba0718cdaa85d678707c1ede44ad8332af7b0d0daca0584bf4ad28dda94517556f950dc8788f6088b51e052c280b6
   languageName: node
   linkType: hard
 
@@ -2933,6 +2947,22 @@ __metadata:
   version: 0.3.6
   resolution: "@reteps/dockerfmt@npm:0.3.6"
   checksum: 10/2664c830f0c0c577ef37f9fe6f722d4e0086bf065f51dd4cd992d6df96aba859c0e6cf46e1ddb9853d6969e8cc03eafa4265d4e3bfe44338b7266843c7da41b7
+  languageName: node
+  linkType: hard
+
+"@rn-primitives/types@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@rn-primitives/types@npm:1.2.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+    react-native-web: "*"
+  peerDependenciesMeta:
+    react-native:
+      optional: true
+    react-native-web:
+      optional: true
+  checksum: 10/c82fcd43f52584fb2a714bbf1244b7f7f0ecbe90f5cdf90281cee2a812b31655d81906f185e51be24e0f0e545e3a0203c53816e68f11fc01bbad6808358c3a81
   languageName: node
   linkType: hard
 
@@ -4971,13 +5001,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"binary-searching@npm:^2.0.5":
-  version: 2.0.5
-  resolution: "binary-searching@npm:2.0.5"
-  checksum: 10/8399941f7a7fe24093a41937fdb0fee6226887e376d5c01c766aee66a4058182b891c491c0de120af1aaa9c10c4637d325d56f6ca38883c66a2f0c7dcc81a6b3
-  languageName: node
-  linkType: hard
-
 "boolbase@npm:^1.0.0":
   version: 1.0.0
   resolution: "boolbase@npm:1.0.0"
@@ -5459,7 +5482,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"comment-parser@npm:^1.4.0":
+"comment-parser@npm:^1.4.5":
   version: 1.4.5
   resolution: "comment-parser@npm:1.4.5"
   checksum: 10/4b5cacc7ab1ec48e3f51b788bd7cda567f5c83040e029e5c92eacf0785735a9b44ac49fdaf73d9bd4af9464aa4cc8cc7184902090b55b0023605a845f2666ba4
@@ -6058,9 +6081,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "engarcia@workspace:."
   dependencies:
-    "@eng618/prettier-config": "npm:^2.8.1"
+    "@eng618/prettier-config": "npm:^2.9.0"
     "@formspree/react": "npm:^3.0.0"
-    "@gv-tech/design-system": "npm:^2.6.0"
+    "@gv-tech/design-system": "npm:^2.9.1"
     "@gv-tech/eslint-config": "npm:^0.1.8"
     "@hookform/resolvers": "npm:^5.2.2"
     "@next/eslint-plugin-next": "npm:^16.1.6"
@@ -11372,19 +11395,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-jsdoc@npm:^1.8.0":
-  version: 1.8.0
-  resolution: "prettier-plugin-jsdoc@npm:1.8.0"
-  dependencies:
-    binary-searching: "npm:^2.0.5"
-    comment-parser: "npm:^1.4.0"
-    mdast-util-from-markdown: "npm:^2.0.0"
-  peerDependencies:
-    prettier: ^3.0.0
-  checksum: 10/f25412b87b74f77606addb718207b6273d41697a04931c52e011c6c637fdebfeca57a1572523cb95e144e808840af1399b5fd72767d14281ea2066c0b8b70b11
-  languageName: node
-  linkType: hard
-
 "prettier-plugin-multiline-arrays@npm:^4.1.4":
   version: 4.1.4
   resolution: "prettier-plugin-multiline-arrays@npm:4.1.4"
@@ -11673,6 +11683,13 @@ __metadata:
   version: 1.0.0
   resolution: "railroad-diagrams@npm:1.0.0"
   checksum: 10/5349cf7a27f28c2cd152b525964624e0d0a795ab062d01682084381570fbb07ab877035771bcfb27cd5b6a7ee9f8371ecc34ccc8c3bde3443676230a59a7a85e
+  languageName: node
+  linkType: hard
+
+"ramda@npm:0.32.0":
+  version: 0.32.0
+  resolution: "ramda@npm:0.32.0"
+  checksum: 10/ee03949247ce0cdbb86642c7087adb015552a91e29e21ffe63f1d3e492328144dc3028f7f804f53c028ce753e46e50d0f4ba09c24b394efb98c1e412a5dd046c
   languageName: node
   linkType: hard
 

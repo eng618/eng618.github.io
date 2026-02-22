@@ -29,7 +29,7 @@
   "prettier": "@eng618/prettier-config",
   "dependencies": {
     "@formspree/react": "^3.0.0",
-    "@gv-tech/design-system": "^2.6.0",
+    "@gv-tech/design-system": "^2.9.1",
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/typography": "^0.5.19",
     "class-variance-authority": "^0.7.1",
@@ -50,7 +50,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@eng618/prettier-config": "^2.8.1",
+    "@eng618/prettier-config": "^2.9.0",
     "@gv-tech/eslint-config": "^0.1.8",
     "@next/eslint-plugin-next": "^16.1.6",
     "@tailwindcss/postcss": "^4.2.0",
