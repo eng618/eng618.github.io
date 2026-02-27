@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "next build",
+    "clean": "rm -rf .next",
     "dev": "next dev",
     "format": "prettier --write .",
     "format:ci": "prettier --check .",

@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-@source '../../node_modules/@gv-tech/ui-web/src/**/*.{js,ts,jsx,tsx}';
-@source '../../node_modules/@gv-tech/ui-core/src/**/*.{js,ts,jsx,tsx}';
+@source '../../node_modules/@gv-tech/ui-web';
+@source '../../node_modules/@gv-tech/ui-core';
 
 @plugin '@tailwindcss/typography';
 
