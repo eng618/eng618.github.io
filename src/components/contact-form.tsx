@@ -81,7 +81,7 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Full Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                    <Input placeholder="John Doe" suppressHydrationWarning {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,7 +94,7 @@ export function ContactForm() {
                 <FormItem>
                   <FormLabel>Email Address</FormLabel>
                   <FormControl>
-                    <Input placeholder="john@example.com" {...field} />
+                    <Input placeholder="john@example.com" suppressHydrationWarning {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -109,7 +109,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Subject</FormLabel>
                 <FormControl>
-                  <Input placeholder="How can I help you?" {...field} />
+                  <Input placeholder="How can I help you?" suppressHydrationWarning {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -123,7 +123,12 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Tell me more about your inquiry..." rows={6} {...field} />
+                  <Textarea
+                    placeholder="Tell me more about your inquiry..."
+                    rows={6}
+                    suppressHydrationWarning
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
