@@ -824,9 +824,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@gv-tech/ui-web@npm:^2.15.2":
-  version: 2.15.2
-  resolution: "@gv-tech/ui-web@npm:2.15.2"
+"@gv-tech/ui-web@npm:^2.16.0":
+  version: 2.16.0
+  resolution: "@gv-tech/ui-web@npm:2.16.0"
   dependencies:
     "@gv-tech/design-tokens": "npm:^2.12.0"
     "@gv-tech/ui-core": "npm:^2.12.0"
@@ -876,7 +876,7 @@ __metadata:
     next-themes: ">=0.4.0"
     react: ">=18"
     react-dom: ">=18"
-  checksum: 10/a47d122ec9746ba19fe071b8289afb3a36bb70d74e65108ed909d113f380e5b442f91f79e161912fe373cd673adc7e11c465c8220853f160dd09673e5879a18b
+  checksum: 10/b07d0ded5bb2dd2c0c9675adefa9d1520228bc864a290df3aa5682c694bbcf5251259b9a1741b07811687505b14c819f7d98c74844010fe1e41efff1ed1a7e0d
   languageName: node
   linkType: hard
 
@@ -4953,7 +4953,7 @@ __metadata:
     "@eng618/prettier-config": "npm:^2.9.1"
     "@formspree/react": "npm:^3.0.0"
     "@gv-tech/eslint-config": "npm:^0.1.8"
-    "@gv-tech/ui-web": "npm:^2.15.2"
+    "@gv-tech/ui-web": "npm:^2.16.0"
     "@hookform/resolvers": "npm:^5.2.2"
     "@next/eslint-plugin-next": "npm:^16.1.6"
     "@tailwindcss/postcss": "npm:^4.2.1"
