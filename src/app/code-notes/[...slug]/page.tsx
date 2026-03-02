@@ -1,11 +1,13 @@
 import { Breadcrumb } from '@/components/breadcrumb';
+import { EditOnGithub } from '@/components/edit-on-github';
+import { mdxComponents } from '@/components/mdx-components';
+import { MobileSubHeader } from '@/components/mobile-sub-header';
+import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
 import { getAllContent, getContentBySlug } from '@/lib/notes';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import { rehypePrettyCode } from 'rehype-pretty-code';
-
-import { EditOnGithub } from '@/components/edit-on-github';
-import { mdxComponents } from '@/components/mdx-components';
+import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
 interface CodeNotePageProps {
@@ -23,61 +25,79 @@ export async function generateStaticParams() {
 
 export default async function CodeNotePage({ params }: CodeNotePageProps) {
   const resolvedParams = await params;
+  const notes = getAllContent('code-notes');
   const note = getContentBySlug('code-notes', resolvedParams.slug);
 
   if (!note) {
     notFound();
   }
 
+  const title = note.metadata.title || resolvedParams.slug[resolvedParams.slug.length - 1];
+
   return (
-    <div className="w-full py-8 lg:py-12">
-      <article className="container mx-auto max-w-4xl px-4 lg:px-8">
-        <Breadcrumb
-          items={[
-            { label: 'Code Notes', href: '/code-notes' },
-            {
-              label: note.metadata.title || resolvedParams.slug[resolvedParams.slug.length - 1],
-              href: '#',
-              current: true,
-            },
-          ]}
-          className="mb-8 justify-center"
-        />
-        <div className="border-border mb-12 border-b pb-8 text-center">
-          <h1 className="font-outfit mb-4 text-4xl font-bold tracking-widest uppercase lg:text-5xl">
-            {note.metadata.title || resolvedParams.slug[resolvedParams.slug.length - 1]}
-          </h1>
-          {note.metadata.description && <p className="text-muted-foreground text-xl">{note.metadata.description}</p>}
-        </div>
+    <TableOfContents minLevel={2} maxLevel={4}>
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="flex flex-col lg:flex-row lg:gap-8 xl:gap-12">
+          <article className="w-full min-w-0 flex-1 py-8 lg:py-12">
+            <Breadcrumb
+              items={[
+                { label: 'Code Notes', href: '/code-notes' },
+                {
+                  label: title,
+                  href: '#',
+                  current: true,
+                },
+              ]}
+              className="mb-8"
+            />
+            <MobileSubHeader notes={notes} basePath="/code-notes" className="mb-8" />
+            <div className="border-border mb-12 border-b pb-8">
+              <h1 className="font-outfit mb-4 text-4xl font-bold tracking-widest uppercase lg:text-5xl">{title}</h1>
+              {note.metadata.description && (
+                <p className="text-muted-foreground text-xl">{note.metadata.description}</p>
+              )}
+            </div>
 
-        <div className="prose dark:prose-invert prose-zinc mx-auto max-w-4xl">
-          <MDXRemote
-            source={note.content}
-            components={mdxComponents}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm],
-                rehypePlugins: [
-                  [
-                    rehypePrettyCode,
-                    {
-                      theme: {
-                        dark: 'everforest-dark',
-                        light: 'everforest-light',
-                      },
-                      defaultColor: false,
+            <TableOfContentsContent>
+              <div className="prose dark:prose-invert prose-zinc max-w-none">
+                <MDXRemote
+                  source={note.content}
+                  components={mdxComponents}
+                  options={{
+                    mdxOptions: {
+                      remarkPlugins: [remarkGfm],
+                      rehypePlugins: [
+                        rehypeSlug,
+                        [
+                          rehypePrettyCode,
+                          {
+                            theme: {
+                              dark: 'everforest-dark',
+                              light: 'everforest-light',
+                            },
+                            defaultColor: false,
+                          },
+                        ],
+                      ],
                     },
-                  ],
-                ],
-              },
-            }}
-          />
-        </div>
+                  }}
+                />
+              </div>
+            </TableOfContentsContent>
 
-        <div className="border-border mt-16 flex justify-center border-t pt-8">
-          <EditOnGithub relativePath={note.filePath} />
+            <div className="border-border mt-16 flex border-t pt-8">
+              <EditOnGithub relativePath={note.filePath} />
+            </div>
+          </article>
+
+          <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-60 shrink-0 py-12 lg:block xl:w-64">
+            <div className="flex flex-col gap-4">
+              <h2 className="font-outfit text-sm font-semibold tracking-wider uppercase">On this page</h2>
+              <TableOfContentsList className="text-sm" />
+            </div>
+          </aside>
         </div>
-      </article>
-    </div>
+      </div>
+    </TableOfContents>
   );
 }
