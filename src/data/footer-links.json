@@ -1,0 +1,47 @@
+{
+  "sections": [
+    {
+      "title": "Navigation",
+      "links": [
+        { "label": "About", "href": "/about" },
+        { "label": "Portfolio", "href": "/portfolio" },
+        { "label": "Apps", "href": "/apps" }
+      ]
+    },
+    {
+      "title": "Resources",
+      "links": [
+        { "label": "Code Notes", "href": "/code-notes" },
+        { "label": "Go Projects", "href": "/go-projects" },
+        { "label": "Contact", "href": "/contact" }
+      ]
+    },
+    {
+      "title": "Legal",
+      "links": [
+        { "label": "Privacy", "href": "/privacy" },
+        { "label": "License", "href": "/LICENSE" }
+      ]
+    }
+  ],
+  "social": [
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/eng618",
+      "label": "Visit my GitHub"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "linkedin",
+      "url": "https://linkedin.com/in/garciaericn",
+      "label": "Connect on LinkedIn"
+    },
+    {
+      "name": "Twitter",
+      "icon": "twitter",
+      "url": "https://twitter.com/garciaericn",
+      "label": "Follow on Twitter"
+    }
+  ]
+}
