@@ -20,7 +20,7 @@
       "title": "Legal",
       "links": [
         { "label": "Privacy", "href": "/privacy" },
-        { "label": "License", "href": "/LICENSE" }
+        { "label": "License", "href": "/license" }
       ]
     }
   ],
