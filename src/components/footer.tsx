@@ -4,7 +4,7 @@ import { siteConfig } from '@/config/site';
 import footerLinksData from '@/data/footer-links.json';
 import Link from 'next/link';
 
-function SocialIcon({ name, url, label }: { name: string; icon: string; url: string; label: string }) {
+function SocialIcon({ icon, url, label }: { icon: string; url: string; label: string }) {
   const iconMap: { [key: string]: React.ReactNode } = {
     github: (
       <svg className="size-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -36,7 +36,7 @@ function SocialIcon({ name, url, label }: { name: string; icon: string; url: str
       className="text-muted-foreground hover:text-foreground transition-colors duration-200"
       title={label}
     >
-      {iconMap[name] || name}
+      {iconMap[icon] || icon}
     </a>
   );
 }
@@ -58,7 +58,7 @@ export function Footer() {
             {/* Social Media Icons */}
             <div className="flex gap-4">
               {footerLinksData.social.map((social) => (
-                <SocialIcon key={social.name} name={social.icon} url={social.url} label={social.label} />
+                <SocialIcon key={social.name} icon={social.icon} url={social.url} label={social.label} />
               ))}
             </div>
           </div>
