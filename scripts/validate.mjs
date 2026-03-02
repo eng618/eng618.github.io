@@ -7,28 +7,28 @@ const fix = args.includes('--fix');
 const steps = [
   {
     name: 'Format',
-    cmd: 'yarn',
-    args: fix ? ['format'] : ['format:ci'],
+    cmd: 'bun',
+    args: fix ? ['run', 'format'] : ['run', 'format:ci'],
   },
   {
     name: 'Lint',
-    cmd: 'yarn',
-    args: fix ? ['lint:fix'] : ['lint'],
+    cmd: 'bun',
+    args: fix ? ['run', 'lint:fix'] : ['run', 'lint'],
   },
   {
     name: 'Type Check',
-    cmd: 'yarn',
-    args: ['tsc', '--noEmit'],
+    cmd: 'bun',
+    args: ['run', 'tsc', '--noEmit'],
   },
   {
     name: 'Test',
-    cmd: 'yarn',
-    args: ['vitest', 'run'],
+    cmd: 'bun',
+    args: ['run', 'vitest', 'run'],
   },
   {
     name: 'Build',
-    cmd: 'yarn',
-    args: ['build'],
+    cmd: 'bun',
+    args: ['run', 'build'],
   },
 ];
 

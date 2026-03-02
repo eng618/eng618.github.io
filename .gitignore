@@ -10,6 +10,7 @@
 /node_modules
 /.pnp
 .pnp.*
+
 ### yarn ###
 # https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
 

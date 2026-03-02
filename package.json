@@ -12,11 +12,10 @@
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
     "lint:report": "eslint . --cache -o ./eslintReport.html -f html",
-    "prepare": "husky",
     "start": "next start",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "validate": "node scripts/validate.mjs"
+    "validate": "bun scripts/validate.mjs"
   },
   "lint-staged": {
     "*.(js|ts|mjs|cjs)?(x)": [
@@ -81,7 +80,7 @@
     "vitest": "^4.0.18",
     "vitest-fetch-mock": "^0.4.5"
   },
-  "packageManager": "yarn@4.12.0",
+  "packageManager": "bun@1.3.9",
   "engines": {
     "node": ">=22.x"
   }

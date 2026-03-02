@@ -11,54 +11,49 @@ tasks:
   build:
     desc: "Builds the project for production"
     cmds:
-      - yarn build
+      - bun run build
 
   dev:
     desc: "Starts the development server"
     cmds:
-      - yarn dev
+      - bun run dev
 
   format:
     desc: "Formats code with Prettier"
     cmds:
-      - yarn format
+      - bun run format
 
   format:ci:
     desc: "Checks code formatting with Prettier (CI)"
     cmds:
-      - yarn format:ci
+      - bun run format:ci
 
   lint:
     desc: "Lints the code with ESLint"
     cmds:
-      - yarn lint
+      - bun run lint
 
   lint:fix:
     desc: "Fixes linting issues"
     cmds:
-      - yarn lint:fix
+      - bun run lint:fix
 
   lint:report:
     desc: "Generates an HTML linting report"
     cmds:
-      - yarn lint:report
-
-  prepare:
-    desc: "Prepares the project (Husky setup)"
-    cmds:
-      - yarn prepare
+      - bun run lint:report
 
   start:
     desc: "Starts the production server"
     cmds:
-      - yarn start
+      - bun run start
 
   test:
     desc: "Runs tests with Vitest"
     cmds:
-      - yarn test
+      - bun run test
 
   test:watch:
     desc: "Runs tests in watch mode"
     cmds:
-      - yarn test:watch
+      - bun run test:watch

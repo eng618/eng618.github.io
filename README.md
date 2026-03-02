@@ -22,10 +22,10 @@ To get a local copy up and running, follow these steps:
    cd eng618.github.io
    ```
 
-3. Install dependencies using Yarn:
+3. Install dependencies using Bun:
 
    ```bash
-   yarn install
+   bun install
    ```
 
 ## Usage
@@ -33,7 +33,7 @@ To get a local copy up and running, follow these steps:
 To start the development server:
 
 ```bash
-yarn dev
+bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -41,13 +41,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 To build the project for production:
 
 ```bash
-yarn build
+bun run build
 ```
 
 To run tests:
 
 ```bash
-yarn test
+bun test
 ```
 
 ## Support
