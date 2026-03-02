@@ -1,33 +1,8 @@
-import { BadgeCard } from '@/components/badge-card';
-import { CertCard } from '@/components/cert-card';
+import { BadgesSection } from '@/components/badges-section';
+import { CertsSection } from '@/components/certs-section';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import badgesData from '@/data/badges.json';
-import certsData from '@/data/certs.json';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web';
-
-// Define the Certificate interface based on usage and JSON data
-interface Certificate {
-  category: string;
-  certificateNumber?: string;
-  course: string;
-  url: string;
-  completed: string;
-  authority: string;
-  length: string | null;
-}
-
-// Grouping logic
-const groupedCerts = certsData.reduce((acc: Record<string, Certificate[]>, cert: Certificate) => {
-  const category = cert.category || 'General';
-  if (!acc[category]) {
-    acc[category] = [];
-  }
-  acc[category].push(cert);
-  return acc;
-}, {});
-
-const categories = Object.keys(groupedCerts).sort();
 
 export default function PortfolioPage() {
   return (
@@ -44,17 +19,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Digital Badges */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="font-outfit mb-4 text-3xl font-bold">Digital Badges</h2>
-            <p className="text-muted-foreground mb-12">Verified professional achievements and skills from IBM.</p>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-              {badgesData.map((badge) => (
-                <BadgeCard key={badge.title} badge={badge} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <BadgesSection />
 
         {/* Featured Projects */}
         <section className="bg-muted/10 py-20">
@@ -83,31 +48,7 @@ export default function PortfolioPage() {
         </section>
 
         {/* Certifications */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="font-outfit mb-4 text-3xl font-bold">Certifications</h2>
-            <p className="text-muted-foreground mb-12">
-              A record of completed courses from Lynda.com and other platforms.
-            </p>
-
-            <div className="space-y-16">
-              {categories.map((category) => (
-                <div key={category}>
-                  <h3 className="text-primary mb-6 flex items-center gap-4 text-xl font-semibold">
-                    <span className="bg-border h-px flex-grow" />
-                    {category}
-                    <span className="bg-border h-px flex-grow" />
-                  </h3>
-                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {groupedCerts[category].map((cert) => (
-                      <CertCard key={cert.certificateNumber || cert.course} cert={cert} />
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <CertsSection />
       </main>
       <Footer />
     </div>
