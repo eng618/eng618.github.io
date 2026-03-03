@@ -1,10 +1,12 @@
 # GarciaEricN
 
+This is my personal portfolio site source code. It showcases my projects, skills, and experience as a software engineer.
+
+## Badges
+
 [![Build and Test](https://github.com/eng618/eng618.github.io/actions/workflows/ci.yml/badge.svg)](https://github.com/eng618/eng618.github.io/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/eng618/eng618.github.io/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/eng618/eng618.github.io/actions/workflows/github-code-scanning/codeql)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/aae2a8f8828b4ae4a3a43d4936dcbdce)](https://app.codacy.com/gh/ENG618/eng618.github.io/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-
-This is my personal portfolio site source code. It showcases my projects, skills, and experience as a software engineer.
 
 ## Installation
 
@@ -53,6 +55,12 @@ bun test
 ## Support
 
 If you encounter any issues or have questions, please [open an issue](https://github.com/eng618/eng618.github.io/issues).
+
+### Support this project
+
+If you find this project useful and want to support its development, you can buy me a coffee!
+
+[![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=%E2%98%95&slug=eng618&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/eng618)
 
 ## Contributing
 
