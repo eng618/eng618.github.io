@@ -13,7 +13,8 @@ This skill helps the agent create and manage MDX notes in the `content/notes` di
    - Create a new directory within `content/notes/` for the note.
    - Create an `index.mdx` file inside that directory.
    - Include the necessary frontmatter (title, date).
-   - Use @gv-tech/ui-web components like `Button` if applicable.
+   - Use @gv-tech/ui-web components for all UI elements.
+   - Built with Next.js 16, React 19, and TypeScript.
 
 2. **Note Linking**:
    - Ensure new notes are logically connected or mentioned in relevant parent pages if necessary.
