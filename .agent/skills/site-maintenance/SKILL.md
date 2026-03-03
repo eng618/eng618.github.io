@@ -12,13 +12,19 @@ This skill provides guidance on maintaining the Next.js foundation of the site.
 1. **Dependency Updates**:
    - Use `bun` for managing dependencies.
    - Check `package.json` before adding new packages to avoid duplication.
+   - When adding UI-related dependencies, prioritize @gv-tech/ui-web components
 
 2. **Next.js Configuration**:
    - Modify `next.config.ts` or TypeScript configuration as needed.
    - Be cautious when changing the `app/` or `pages/` directories; understand Next.js routing and layout hierarchies.
    - Validate any new custom webpack or environment settings.
 
-3. **Hosting and Serverless**:
+3. **Component Library Compliance**:
+   - Ensure all new components use @gv-tech/ui-web before creating custom components
+   - Refer to the ui-library-preference skill for component selection guidelines
+   - Audit existing components periodically for compliance
+
+4. **Hosting and Serverless**:
    - The site is deployed via **Cloudflare Pages** with auto‑deploys on commit to `develop` (and other branches as configured).
    - Keep an eye on any build environment variables or settings in the Cloudflare dashboard.
    - For serverless logic, maintain files under `src/pages/api/` or dedicated functions directories as required.
