@@ -21,8 +21,19 @@ export default function PrivacyPage() {
             </p>
             <h2>Cookies and tracking</h2>
             <p>
-              This site is built with Next.js and does not use cookies or tracking scripts by default. Any analytics or
-              third-party embeds will be disclosed on this page when they are added.
+              This site uses Plausible Analytics, a privacy-friendly analytics service that does not use cookies or
+              collect personal data. Plausible collects only aggregated, anonymized data about page views, form
+              submissions, and outbound link clicks. No personally identifiable information is collected or stored. For
+              more details, see the{' '}
+              <a
+                href="https://plausible.io/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:underline"
+              >
+                Plausible Privacy Policy
+              </a>
+              .
             </p>
             <h2>External links</h2>
             <p>
