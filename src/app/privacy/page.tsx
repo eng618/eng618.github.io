@@ -1,5 +1,6 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
+import { PlausibleOptOutToggle } from '@/components/plausible-opt-out-toggle';
 
 export default function PrivacyPage() {
   return (
@@ -22,9 +23,17 @@ export default function PrivacyPage() {
             <h2>Cookies and tracking</h2>
             <p>
               This site uses Plausible Analytics, a privacy-friendly analytics service that does not use cookies or
-              collect personal data. Plausible collects only aggregated, anonymized data about page views, form
-              submissions, and outbound link clicks. No personally identifiable information is collected or stored. For
-              more details, see the{' '}
+              collect personal data. Plausible collects only aggregated, anonymized data about:
+            </p>
+            <ul>
+              <li>Page views</li>
+              <li>Form submissions</li>
+              <li>Outbound link clicks</li>
+              <li>File downloads (PDFs, documents, etc.)</li>
+            </ul>
+            <p>
+              Custom properties such as page titles are also tracked to help understand content engagement. No
+              personally identifiable information is collected or stored. For more details, see the{' '}
               <a
                 href="https://plausible.io/privacy"
                 target="_blank"
@@ -35,6 +44,20 @@ export default function PrivacyPage() {
               </a>
               .
             </p>
+            <h2>Opting out of analytics</h2>
+            <p>
+              If you prefer not to be included in analytics, you can opt out using your browser's developer tools or by
+              visiting this page and using the opt-out button (if available). When you opt out, Plausible will not
+              collect any data about your visits. To opt out, run this command in your browser's console:
+            </p>
+            <code className="bg-muted block rounded p-2">localStorage.plausible_ignore = "true"</code>
+            <p>To opt back in, you can remove this setting or use:</p>
+            <code className="bg-muted block rounded p-2">localStorage.removeItem("plausible_ignore")</code>
+          </div>
+          <div className="mt-8">
+            <PlausibleOptOutToggle />
+          </div>
+          <div className="prose text-muted-foreground mt-8 max-w-none">
             <h2>External links</h2>
             <p>
               Links to other websites are provided for convenience. I am not responsible for the content or privacy

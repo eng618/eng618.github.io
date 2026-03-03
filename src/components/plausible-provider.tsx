@@ -15,6 +15,11 @@ export function PlausibleProvider() {
           autoCapturePageviews: true,
           formSubmissions: true,
           outboundLinks: true,
+          fileDownloads: true,
+          customProperties: () => ({
+            // Add page heading as a custom property for better content categorization
+            page_title: document.querySelector('h1')?.textContent || document.title,
+          }),
         });
       }
     };

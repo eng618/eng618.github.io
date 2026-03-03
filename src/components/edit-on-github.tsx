@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { Button } from '@gv-tech/ui-web';
 import { Edit2 } from 'lucide-react';
 
 interface EditOnGithubProps {
@@ -11,17 +12,19 @@ export function EditOnGithub({ relativePath, className }: EditOnGithubProps) {
   const url = `${GITHUB_BASE_URL}/${relativePath}`;
 
   return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Button
+      variant="ghost"
+      size="sm"
+      asChild
       className={cn(
-        'group text-muted-foreground hover:text-accent-foreground inline-flex items-center space-x-2 text-xs font-medium transition-colors',
+        'text-muted-foreground hover:text-accent-foreground inline-flex items-center space-x-2 text-xs font-medium transition-colors',
         className,
       )}
     >
-      <Edit2 className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
-      <span>Edit this page on GitHub</span>
-    </a>
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <Edit2 className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
+        <span>Edit this page on GitHub</span>
+      </a>
+    </Button>
   );
 }

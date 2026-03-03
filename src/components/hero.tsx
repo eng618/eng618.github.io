@@ -1,5 +1,6 @@
 'use client';
 
+import { Card, CardContent } from '@gv-tech/ui-web';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -57,14 +58,16 @@ export function Hero() {
             >
               <div className="bg-primary/10 absolute inset-0 rounded-full blur-[60px]" />
               {/* Note: In a real migration, we'd use the actual vector/image */}
-              <div className="border-border bg-card/50 relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border backdrop-blur-sm">
-                <Image
-                  src="/hero-vector.svg"
-                  alt="Architectural Illustration"
-                  fill
-                  className="object-contain p-8 opacity-60 dark:opacity-80"
-                />
-              </div>
+              <Card className="border-border bg-card/50 relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border backdrop-blur-sm">
+                <CardContent className="p-0">
+                  <Image
+                    src="/hero-vector.svg"
+                    alt="Architectural Illustration"
+                    fill
+                    className="object-contain p-8 opacity-60 dark:opacity-80"
+                  />
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
         </div>
