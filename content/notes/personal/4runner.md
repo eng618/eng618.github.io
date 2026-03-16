@@ -4,15 +4,15 @@
 
 ## 🚙 Current stats (update over time)
 
-| Item | Value |
-| --- | --- |
-| Model | 2017 Toyota 4Runner |
-| Current mileage | **___** |
-| Last oil change | **___** (at **___ mi**) |
-| Last tire rotation | **___** (at **___ mi**) |
-| Last coolant service | **___** (at **___ mi**) |
-| Primary use | Highway / Daily / Off‑road / Towing |
-| Notes | e.g., lift, tires, cargo setup, etc. |
+| Item                 | Value                                |
+| -------------------- | ------------------------------------ |
+| Model                | 2017 Toyota 4Runner                  |
+| Current mileage      | **\_\_\_**                           |
+| Last oil change      | **\_\_\_** (at **\_\_\_ mi**)        |
+| Last tire rotation   | **\_\_\_** (at **\_\_\_ mi**)        |
+| Last coolant service | **\_\_\_** (at **\_\_\_ mi**)        |
+| Primary use          | Highway / Daily / Off‑road / Towing  |
+| Notes                | e.g., lift, tires, cargo setup, etc. |
 
 > Tip: Keep this page bookmarked and update the table after major service events. It makes planning the next interval a lot easier.
 
