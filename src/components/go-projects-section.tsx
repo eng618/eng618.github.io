@@ -1,7 +1,8 @@
 import { Button, Card, CardContent, CardHeader, CardTitle } from '@gv-tech/ui-web';
-import { ExternalLink, Github, Terminal } from 'lucide-react';
+import { ExternalLink, Terminal } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import { FaGithub } from 'react-icons/fa';
 import { ProjectCardSkeleton } from './project-card-skeleton';
 
 const goProjects = [
@@ -37,7 +38,7 @@ function ProjectsGrid() {
             <div className="flex flex-wrap gap-4">
               <Button variant="default" asChild>
                 <Link href={project.repoUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" /> Source Code
+                  <FaGithub className="mr-2 h-4 w-4" /> Source Code
                 </Link>
               </Button>
               <Button variant="outline" className="border-border hover:bg-accent" asChild>

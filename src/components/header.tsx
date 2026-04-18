@@ -16,9 +16,10 @@ import {
   SheetTrigger,
   ThemeToggle,
 } from '@gv-tech/ui-web';
-import { Github, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +72,7 @@ export function Header() {
             className="text-muted-foreground hover:text-accent-foreground hidden md:block"
           >
             <span className="sr-only">GitHub</span>
-            <Github className="h-5 w-5" />
+            <FaGithub className="h-5 w-5" />
           </Link>
 
           {/* Mobile Navigation */}
@@ -104,7 +105,7 @@ export function Header() {
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-accent-foreground flex items-center gap-2 text-lg font-medium"
                 >
-                  <Github className="h-5 w-5" /> GitHub
+                  <FaGithub className="h-5 w-5" /> GitHub
                 </Link>
               </div>
             </SheetContent>
