@@ -39,6 +39,11 @@ export function ContactForm() {
     },
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const uiControl = form.control as any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const uiForm = form as any;
+
   async function onSubmit(values: FormValues) {
     await handleSubmitFormspree(values);
   }
@@ -71,11 +76,11 @@ export function ContactForm() {
         <p className="text-muted-foreground">Have a project in mind or just want to say hi?</p>
       </div>
 
-      <Form {...form}>
+      <Form {...uiForm}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <FormField
-              control={form.control}
+              control={uiControl}
               name="name"
               render={({ field }: { field: ControllerRenderProps<FormValues, 'name'> }) => (
                 <FormItem>
@@ -88,7 +93,7 @@ export function ContactForm() {
               )}
             />
             <FormField
-              control={form.control}
+              control={uiControl}
               name="email"
               render={({ field }: { field: ControllerRenderProps<FormValues, 'email'> }) => (
                 <FormItem>
@@ -103,7 +108,7 @@ export function ContactForm() {
           </div>
 
           <FormField
-            control={form.control}
+            control={uiControl}
             name="subject"
             render={({ field }: { field: ControllerRenderProps<FormValues, 'subject'> }) => (
               <FormItem>
@@ -117,7 +122,7 @@ export function ContactForm() {
           />
 
           <FormField
-            control={form.control}
+            control={uiControl}
             name="message"
             render={({ field }: { field: ControllerRenderProps<FormValues, 'message'> }) => (
               <FormItem>
