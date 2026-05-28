@@ -1,4 +1,5 @@
 import { PlausibleProvider } from '@/components/plausible-provider';
+import { WebVitals } from '@/components/web-vitals';
 import { ThemeProvider, Toaster } from '@gv-tech/ui-web';
 import type { Metadata } from 'next';
 import { Inter, Outfit } from 'next/font/google';
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>
         <ThemeProvider disableTransitionOnChange>
           <PlausibleProvider />
+          <WebVitals />
           {children}
           <Toaster />
         </ThemeProvider>
