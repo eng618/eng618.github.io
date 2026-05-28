@@ -1,6 +1,6 @@
 import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle, Skeleton } from '@gv-tech/ui-web';
 
-export function CertSkeleton() {
+export function CourseSkeleton() {
   return (
     <Card className="border-border bg-card flex h-full flex-col">
       <CardHeader className="pb-2">

@@ -2,7 +2,7 @@ import { Badge, Card, CardContent, CardDescription, CardHeader, CardTitle } from
 import { Calendar, Clock, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
-interface CertProps {
+interface CourseProps {
   course: string;
   url: string;
   completed: string;
@@ -11,19 +11,19 @@ interface CertProps {
   category: string;
 }
 
-export function CertCard({ cert }: { cert: CertProps }) {
+export function CourseCard({ course }: { course: CourseProps }) {
   return (
     <Card className="border-border bg-card hover:bg-accent/50 flex h-full flex-col transition-colors">
       <CardHeader className="pb-2">
         <div className="flex items-start justify-between gap-4">
           <div className="space-y-1">
             <Badge variant="outline" className="text-muted-foreground/70 mb-2 text-[10px] tracking-wider uppercase">
-              {cert.category}
+              {course.category}
             </Badge>
-            <CardTitle className="font-outfit line-clamp-2 text-lg font-bold">{cert.course}</CardTitle>
+            <CardTitle className="font-outfit line-clamp-2 text-lg font-bold">{course.course}</CardTitle>
           </div>
           <Link
-            href={cert.url}
+            href={course.url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-accent-foreground"
@@ -31,17 +31,17 @@ export function CertCard({ cert }: { cert: CertProps }) {
             <ExternalLink className="h-4 w-4" />
           </Link>
         </div>
-        <CardDescription>{cert.authority}</CardDescription>
+        <CardDescription>{course.authority}</CardDescription>
       </CardHeader>
       <CardContent className="text-muted-foreground mt-auto flex flex-col gap-2 pt-4 text-sm">
         <div className="flex items-center gap-2">
           <Calendar className="h-3 w-3" />
-          <span>{cert.completed}</span>
+          <span>{course.completed}</span>
         </div>
-        {cert.length && (
+        {course.length && (
           <div className="flex items-center gap-2">
             <Clock className="h-3 w-3" />
-            <span>{cert.length}</span>
+            <span>{course.length}</span>
           </div>
         )}
       </CardContent>

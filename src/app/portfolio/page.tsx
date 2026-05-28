@@ -1,7 +1,7 @@
 'use client';
 
 import { BadgesSection } from '@/components/badges-section';
-import { CertsSection } from '@/components/certs-section';
+import { CoursesSection } from '@/components/courses-section';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web';
@@ -280,8 +280,8 @@ export default function PortfolioPage() {
           </div>
         </motion.section>
 
-        {/* Certifications */}
-        <CertsSection />
+        {/* Completed Courses */}
+        <CoursesSection />
       </main>
       <Footer />
     </div>
