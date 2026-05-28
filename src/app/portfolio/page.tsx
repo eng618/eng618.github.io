@@ -1,6 +1,7 @@
 'use client';
 
 import { BadgesSection } from '@/components/badges-section';
+import { CertsSection } from '@/components/certs-section';
 import { CoursesSection } from '@/components/courses-section';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
@@ -101,6 +102,9 @@ export default function PortfolioPage() {
 
         {/* Digital Badges */}
         <BadgesSection />
+
+        {/* Certifications */}
+        <CertsSection />
 
         {/* Featured Projects */}
         <motion.section
