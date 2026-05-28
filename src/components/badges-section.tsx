@@ -30,7 +30,7 @@ export function BadgesSection() {
     <section className="py-20">
       <div className="container mx-auto px-4 lg:px-8">
         <h2 className="font-outfit mb-4 text-3xl font-bold">Digital Badges</h2>
-        <p className="text-muted-foreground mb-12">Verified professional achievements and skills from IBM.</p>
+        <p className="text-muted-foreground mb-12">Verified professional credentials and skills from IBM and Google.</p>
         <Suspense fallback={<BadgesGridFallback />}>
           <BadgesGrid />
         </Suspense>
