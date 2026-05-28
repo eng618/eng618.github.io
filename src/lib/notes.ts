@@ -54,7 +54,7 @@ export function getAllContent(type: ContentType) {
         slug: sanitizeSlug(slugArray),
       };
     })
-    .filter((item) => item.slug !== '');
+    .filter((item) => item.slug !== '' && !item.slug.endsWith('privacy'));
 }
 
 export function getContentBySlug(type: ContentType, slugArray: string[]) {
@@ -71,7 +71,37 @@ export function getContentBySlug(type: ContentType, slugArray: string[]) {
   for (const fullPath of possiblePaths) {
     if (fs.existsSync(fullPath)) {
       const fileContent = fs.readFileSync(fullPath, 'utf8');
-      const { data, content } = matter(fileContent);
+      const { data } = matter(fileContent);
+      let { content } = matter(fileContent);
+
+      // Pre-process relative links inside MDX content to resolve relative to the current parent slug.
+      // For example, if slug is ['eng618'], a link like `[Privacy Policy](./privacy)` becomes `[Privacy Policy](/apps/eng618/privacy)`
+      const parentRoute = `/apps/${slugArray.slice(0, -1).join('/') || slugArray[0]}`;
+
+      // Matches markdown links: [text](./relative) or [text](../relative) or [text](relative) where relative is not a URL
+      content = content.replace(/\]\((?!\w+:)([^)]+)\)/g, (match, p1) => {
+        let targetPath = p1.trim();
+        // Resolve relative link relative to the current slug
+        if (targetPath.startsWith('.')) {
+          // Normalize the relative path manually
+          const currentDir = `/apps/${slugArray.slice(0, -1).join('/') || slugArray[0]}`;
+          if (targetPath.startsWith('./')) {
+            targetPath = `${currentDir}/${targetPath.slice(2)}`;
+          } else if (targetPath.startsWith('../')) {
+            const grandDir = `/apps/${slugArray.slice(0, -2).join('/') || ''}`;
+            targetPath = `${grandDir}/${targetPath.slice(3)}`.replace(/\/+$/, '');
+          }
+        } else if (!targetPath.startsWith('/') && !targetPath.startsWith('#')) {
+          // It's a plain relative path (e.g., "privacy")
+          const currentDir = `/apps/${slugArray.slice(0, -1).join('/') || slugArray[0]}`;
+          targetPath = `${currentDir}/${targetPath}`;
+        }
+
+        // Remove trailing index/slash if any
+        targetPath = targetPath.replace(/\/index$/, '').replace(/\/$/, '');
+        return `](${targetPath})`;
+      });
+
       return {
         metadata: data as NoteMetadata,
         content,

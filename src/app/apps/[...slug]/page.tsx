@@ -3,9 +3,11 @@ import { EditOnGithub } from '@/components/edit-on-github';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { mdxComponents } from '@/components/mdx-components';
-import { getAllContent, getContentBySlug } from '@/lib/notes';
+import { getContentBySlug } from '@/lib/notes';
+import fs from 'fs';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
+import path from 'path';
 import { rehypePrettyCode } from 'rehype-pretty-code';
 import remarkGfm from 'remark-gfm';
 
@@ -16,10 +18,32 @@ interface AppPageProps {
 }
 
 export async function generateStaticParams() {
-  const apps = getAllContent('apps');
-  return apps.map((app) => ({
-    slug: app.slug.split('/'),
-  }));
+  // To compile and render all pages (including privacy docs), we scan the directory directly rather than using filtered list
+  const basePath = path.join(process.cwd(), 'content', 'apps');
+  if (!fs.existsSync(basePath)) {
+    return [];
+  }
+  const getFilesRecursively = (dir: string): string[] => {
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
+    const files = entries.flatMap((entry) => {
+      const res = path.resolve(dir, entry.name);
+      return entry.isDirectory() ? getFilesRecursively(res) : res;
+    });
+    return files.filter((f) => f.endsWith('.md') || f.endsWith('.mdx'));
+  };
+
+  const files = getFilesRecursively(basePath);
+  return files
+    .map((filePath) => {
+      const relativePath = path.relative(basePath, filePath);
+      const slugArray = relativePath
+        .replace(/\.mdx?$/, '')
+        .replace(/index$/, '')
+        .split(path.sep)
+        .filter(Boolean);
+      return { slug: slugArray };
+    })
+    .filter((param) => param.slug.length > 0);
 }
 
 export default async function AppPage({ params }: AppPageProps) {

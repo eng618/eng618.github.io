@@ -69,12 +69,25 @@ export const mdxComponents = {
   },
 
   // Links
-  a: ({ className, ...props }: ComponentProps<'a'>) => (
-    <a
-      className={cn('text-primary hover:text-primary/80 font-medium underline underline-offset-4', className)}
-      {...props}
-    />
-  ),
+  a: ({ className, href, ...props }: ComponentProps<'a'>) => {
+    const isInternal = href && (href.startsWith('/') || href.startsWith('.') || href.startsWith('#'));
+    if (isInternal) {
+      return (
+        <NextLink
+          href={href}
+          className={cn('text-primary hover:text-primary/80 font-medium underline underline-offset-4', className)}
+          {...props}
+        />
+      );
+    }
+    return (
+      <a
+        href={href}
+        className={cn('text-primary hover:text-primary/80 font-medium underline underline-offset-4', className)}
+        {...props}
+      />
+    );
+  },
 
   // Support legacy <Link> if any still remain
   Link: ({ href, to, children, ...props }: ComponentProps<typeof NextLink> & { to?: string; children: ReactNode }) => {
