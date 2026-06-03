@@ -1,4 +1,16 @@
 import { cn } from '@/lib/utils';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Badge,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@gv-tech/ui-web';
 import NextLink from 'next/link';
 import type { ComponentProps, ReactNode } from 'react';
 import { CodeBlock } from './code-block';
@@ -150,4 +162,16 @@ export const mdxComponents = {
     <div className="text-muted-foreground mb-8 text-xl">{children}</div>
   ),
   NotesNav: () => null,
+
+  // GV Tech UI Web components
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+  Badge,
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 };

@@ -1,0 +1,128 @@
+---
+title: AI Recommended Learning List
+author: 'Eric Garcia'
+last_updated: 2026-06-03
+category: AI
+keywords: 'ai, learning, prompt engineering, courses, influencers'
+---
+
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  Badge,
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@gv-tech/ui-web';
+
+# AI Recommended Learning List
+
+This is a curated list of resources, courses, and influencers to help you get up to speed with Artificial Intelligence and Prompt Engineering.
+
+## Courses to Take
+
+<div className="grid gap-4 md:grid-cols-2 mt-4 mb-8">
+  <Card>
+    <CardHeader>
+      <CardTitle>ChatGPT Prompt Engineering for Developers</CardTitle>
+      <CardDescription>DeepLearning.AI & OpenAI</CardDescription>
+    </CardHeader>
+    <CardContent>
+      Learn how to use a large language model (LLM) to quickly build new and powerful applications.
+      <div className="mt-4 flex gap-2">
+        <Badge>Beginner Friendly</Badge> 
+        <Badge variant="secondary">Free</Badge>
+      </div>
+    </CardContent>
+  </Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>Generative AI Learning Path</CardTitle>
+      <CardDescription>Google Cloud Skills Boost</CardDescription>
+    </CardHeader>
+    <CardContent>
+      A curated collection of content to help you learn about Generative AI products and technologies, from the fundamentals of Large Language Models to how to create and deploy generative AI solutions on Google Cloud.
+      <div className="mt-4 flex gap-2">
+        <Badge>Comprehensive</Badge>
+      </div>
+    </CardContent>
+  </Card>
+</div>
+
+## Basic Understanding of AI Prompting
+
+Prompt engineering is the art of communicating with a generative AI model. Here are some key principles:
+
+<Accordion type="single" collapsible className="mt-4 mb-8 w-full">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Be Specific and Clear</AccordionTrigger>
+    <AccordionContent>
+      Instead of asking "Write about dogs," try "Write a 300-word blog post about the benefits of adopting a senior dog,
+      targeting first-time pet owners."
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Provide Context</AccordionTrigger>
+    <AccordionContent>
+      Give the AI background information. "Act as a senior software engineer reviewing my code. Here is the context..."
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-3">
+    <AccordionTrigger>Use Examples (Few-Shot Prompting)</AccordionTrigger>
+    <AccordionContent>
+      Show the AI what you want. Provide a few examples of the desired input and output format before asking it to
+      generate the final response.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+
+## Prominent AI Influencers to Follow on X
+
+<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-4">
+  <Card>
+    <CardHeader>
+      <CardTitle>Andrew Ng</CardTitle>
+      <CardDescription><a href="https://twitter.com/AndrewYNg">@AndrewYNg</a></CardDescription>
+    </CardHeader>
+    <CardContent>
+      Founder of DeepLearning.AI, Co-founder of Coursera, and a pioneering figure in Machine Learning. Great for educational content and industry thoughts.
+    </CardContent>
+  </Card>
+
+<Card>
+  <CardHeader>
+    <CardTitle>Lex Fridman</CardTitle>
+    <CardDescription>
+      <a href="https://twitter.com/lexfridman">@lexfridman</a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    Host of the Lex Fridman Podcast, frequently interviewing top minds in AI, physics, and computer science.
+  </CardContent>
+</Card>
+
+  <Card>
+    <CardHeader>
+      <CardTitle>Yann LeCun</CardTitle>
+      <CardDescription><a href="https://twitter.com/ylecun">@ylecun</a></CardDescription>
+    </CardHeader>
+    <CardContent>
+      VP & Chief AI Scientist at Meta. Turing Award Laureate. Follow for deep technical insights and opinions on the future of AI.
+    </CardContent>
+  </Card>
+  
+  <Card>
+    <CardHeader>
+      <CardTitle>Andrej Karpathy</CardTitle>
+      <CardDescription><a href="https://twitter.com/karpathy">@karpathy</a></CardDescription>
+    </CardHeader>
+    <CardContent>
+      Formerly Director of AI at Tesla and founding member of OpenAI. Offers brilliant, accessible explanations of complex AI concepts.
+    </CardContent>
+  </Card>
+</div>

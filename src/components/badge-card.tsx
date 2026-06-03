@@ -13,7 +13,7 @@ interface BadgeProps {
 
 export function BadgeCard({ badge }: { badge: BadgeProps }) {
   return (
-    <Card className="border-border bg-card hover:bg-accent/30 flex h-full flex-col overflow-hidden transition-all hover:shadow-md">
+    <Card className="hover:bg-accent/30 h-full transition-all hover:shadow-md">
       <div className="bg-muted/20 relative flex aspect-square items-center justify-center p-6">
         <Image
           src={badge.image}

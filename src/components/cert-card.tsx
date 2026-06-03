@@ -25,7 +25,7 @@ export function CertCard({ cert }: { cert: CertProps }) {
   const verifyUrl = certCode && isCoursera ? `https://coursera.org/verify/specialization/${certCode}` : cert.url;
 
   return (
-    <Card className="border-border bg-card hover:bg-accent/30 flex h-full flex-col overflow-hidden transition-all hover:shadow-md">
+    <Card className="hover:bg-accent/30 h-full transition-all hover:shadow-md">
       <div className="bg-muted/20 relative flex aspect-[4/3] items-center justify-center overflow-hidden p-6">
         <Image
           src={cert.image}

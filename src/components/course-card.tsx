@@ -13,7 +13,7 @@ interface CourseProps {
 
 export function CourseCard({ course }: { course: CourseProps }) {
   return (
-    <Card className="border-border bg-card hover:bg-accent/50 flex h-full flex-col transition-colors">
+    <Card className="hover:bg-accent/50 h-full transition-colors">
       <CardHeader className="pb-2">
         <div className="flex items-start justify-between gap-4">
           <div className="space-y-1">

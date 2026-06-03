@@ -1,3 +1,4 @@
+@import '@gv-tech/design-tokens/theme.css';
 @import 'tailwindcss';
 @config '../../tailwind.config.js';
 @source '../../node_modules/@gv-tech/ui-web';
@@ -8,80 +9,6 @@
 @theme {
   /* Container override */
   --container-2xl: 1400px;
-}
-
-@layer base {
-  /* @tokens-start */
-  :root {
-    --background: 0 0% 96%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 225 73% 57%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 93 28% 54%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 92%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 0 0% 88%;
-    --accent-foreground: 222 47% 11%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 89%;
-    --input: 0 0% 89%;
-    --ring: 222 47% 11%;
-    --radius: 0.5rem;
-
-    /* Brand Tokens */
-    --brand-blue: 225 73% 57%;
-    --brand-green: 151 66% 27%;
-    --brand-floral-white: 40 100% 97%;
-    --neutral-white: 0 0% 100%;
-    --neutral-black: 0 0% 0%;
-    --neutral-gray50: 0 0% 96%;
-    --neutral-gray100: 0 0% 92%;
-    --neutral-gray200: 0 0% 89%;
-    --neutral-gray300: 0 0% 88%;
-    --neutral-gray400: 0 0% 70%;
-    --neutral-gray500: 215 16% 47%;
-    --neutral-gray600: 222 47% 11%;
-    --neutral-gray700: 0 0% 18%;
-    --neutral-gray800: 0 0% 15%;
-    --neutral-gray900: 0 0% 14%;
-    --neutral-gray950: 0 0% 11%;
-    --neutral-gray975: 0 0% 9%;
-    --neutral-gray990: 0 0% 6%;
-    --semantic-success: 93 28% 54%;
-    --semantic-success-dark: 96 44% 61%;
-    --semantic-destructive: 0 84.2% 60.2%;
-    --semantic-destructive-dark: 0 62.8% 30.6%;
-  }
-
-  .dark {
-    --background: 0 0% 9%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 14%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 11%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 227 96% 71%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 96 44% 61%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 6%;
-    --muted-foreground: 0 0% 70%;
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 0 0% 90%;
-    --radius: 0.5rem;
-  }
-  /* @tokens-end */
 }
 
 @layer base {

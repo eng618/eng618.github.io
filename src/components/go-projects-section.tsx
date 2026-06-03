@@ -25,7 +25,7 @@ function ProjectsGrid() {
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
       {goProjects.map((project) => (
-        <Card key={project.title} className="border-border bg-card rounded-2xl border p-8 backdrop-blur-sm">
+        <Card key={project.title} className="backdrop-blur-sm transition-all hover:shadow-md">
           <CardHeader className="pb-4">
             <div className="bg-primary/20 text-primary mb-6 flex h-12 w-12 items-center justify-center rounded-lg">
               <Terminal className="h-6 w-6" />
