@@ -82,7 +82,7 @@
     "tailwindcss": "^4.2.4",
     "tsx": "^4.22.3",
     "typescript": "^6.0.3",
-    "vite": "^8.0.14",
+    "vite": "^8.1.2",
     "vitest": "^4.1.7",
     "vitest-fetch-mock": "^0.4.5"
   },
