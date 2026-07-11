@@ -112,10 +112,18 @@ export default function AboutPage() {
                     </div>
                     <span className="text-muted-foreground ml-4 text-sm whitespace-nowrap">Jan 2024 - Present</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">
-                    Leading the design of high-performance, scalable enterprise systems. Architecting cloud-native
-                    solutions and providing technical leadership across distributed teams.
-                  </p>
+                  <div className="text-muted-foreground mt-3 space-y-2 text-sm">
+                    <p>
+                      Leading the design of high-performance, scalable enterprise systems and cloud-native solutions.
+                      Bridged the design-to-code gap by architecting and building a custom mobile design system from
+                      scratch using shadcn/ui and React Native, scaling it to support 7,000+ active users from field
+                      engineers to executive leadership.
+                    </p>
+                    <p>
+                      Spearheading cross-functional roadmaps, establishing technical strategies, and implementing
+                      AI-powered solutions to sanitize and process downstream comments and reviews.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="border-border bg-card rounded-lg border p-6 transition-shadow hover:shadow-md">
@@ -126,10 +134,18 @@ export default function AboutPage() {
                     </div>
                     <span className="text-muted-foreground ml-4 text-sm whitespace-nowrap">Jul 2021 - Dec 2023</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">
-                    Promoted to Senior role with responsibility for full-stack development. Contributed to Carbon Design
-                    System as a maintainer and worked on enterprise-scale applications.
-                  </p>
+                  <div className="text-muted-foreground mt-3 space-y-2 text-sm">
+                    <p>
+                      Led full-stack development and open-source contributions for the Carbon Design System. Served as a
+                      core maintainer of <code>gatsby-theme-carbon</code>, supporting hundreds of documentation and
+                      components portals globally while ensuring strict web accessibility (WCAG / a11y) standards.
+                    </p>
+                    <p>
+                      Directed major migrations to upgrade Gatsby core libraries, resolving extensive breaking changes.
+                      Presented architectural standards on untyped Go constants and executed production hotfixes for
+                      critical security leaks within 24 hours.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="border-border bg-card rounded-lg border p-6 transition-shadow hover:shadow-md">
@@ -140,10 +156,16 @@ export default function AboutPage() {
                     </div>
                     <span className="text-muted-foreground ml-4 text-sm whitespace-nowrap">Jan 2020 - Jun 2021</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">
-                    Advanced technical role focusing on software engineering excellence. Optimized backend services and
-                    resolved critical security vulnerabilities.
-                  </p>
+                  <div className="text-muted-foreground mt-3 space-y-2 text-sm">
+                    <p>
+                      Designed, architected, and globalized a high-performance migration utility written in Go, utilized
+                      by enterprise clients to transition data between major versions of IBM API Connect.
+                    </p>
+                    <p>
+                      Focused on enterprise analytics and data integration endpoints, resolving critical vulnerabilities
+                      and ensuring system reliability under heavy workloads.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="border-border bg-card rounded-lg border p-6 transition-shadow hover:shadow-md">
@@ -154,10 +176,16 @@ export default function AboutPage() {
                     </div>
                     <span className="text-muted-foreground ml-4 text-sm whitespace-nowrap">Jul 2015 - Dec 2019</span>
                   </div>
-                  <p className="text-muted-foreground text-sm">
-                    Started career at IBM as a Software Engineer. Developed mobile and web applications, created sample
-                    applications for MobileFirst Platform.
-                  </p>
+                  <div className="text-muted-foreground mt-3 space-y-2 text-sm">
+                    <p>
+                      Responsible for Level-3 product support for the IBM MobileFirst Platform. Diagnosed client-side
+                      codebase issues in customer apps and authored core software patches.
+                    </p>
+                    <p>
+                      Created developer relations content, including push notification tutorials and sample applications
+                      written in Swift, Objective-C, and Java.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
