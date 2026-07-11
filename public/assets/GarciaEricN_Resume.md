@@ -34,15 +34,14 @@ _Jan 2024 – Present (Remote / USA)_
 - **AI Integration**: Designed and implemented AI-powered solutions to automatically sanitize and process customer and reseller feedback/comments for downstream integration.
 - **Technical Leadership**: Acted as the engineering lead on core architectural projects, driving decisions from ideation to implementation, setting technical roadmaps, and scoping development phases.
 
-### IBM Corp. | Senior Full Stack Developer
+### IBM Corp. | Senior Full Stack Developer (Quote to Cash)
 
 _Jul 2021 – Dec 2023 (Orlando, FL / Remote)_
 
-- **Carbon Design System Maintenance**: Active contributor and core maintainer of the open-source [gatsby-theme-carbon](https://github.com/carbon-design-system/gatsby-theme-carbon), supporting hundreds of internal and external Carbon Design System sites globally.
-- **Major Upgrades & Technical Debt**: Led a major upgrade of Gatsby versions, a significant undertaking requiring the rewriting of large portions of the codebase to resolve breaking changes and restore framework stability.
-- **Accessibility (a11y)**: Ensured strict WCAG compliance across all Carbon component libraries, optimizing the user experience for users across the globe.
-- **Code Quality & Standardization**: Promoted standard patterns across Go repositories, including presenting best practices on untyped const standards during IBM developer chapter calls.
-- **Security & Vulnerability Management**: Handled high-priority security vulnerabilities, implementing end-to-end hotfixes to production environments within a 24-hour turnaround (e.g., correcting config leaks of API keys).
+- **Microservices & API Architecture**: Led the development and maintenance of core sales deal microservices (Go, React, TypeScript) on the Quote-to-Cash (Q2C) platform, driving database performance improvements and legacy system modernizations.
+- **Security Engineering**: Triaged and resolved critical high-priority security vulnerabilities (e.g. logging and watcher leaks of config keys and API secrets), executing hotfixes all the way to production within a strict 24-hour turnaround.
+- **CI/CD & Developer Experience**: Streamlined pipeline integrations, enhanced testing tooling, and promoted code quality standards (such as untyped Go constants) during developer chapter calls.
+- **Open-Source Design Systems (Extra Initiative)**: Core maintainer of the IBM Carbon Design System's [gatsby-theme-carbon](https://github.com/carbon-design-system/gatsby-theme-carbon), leading Gatsby major upgrades, fixing theme bugs, and maintaining strict WCAG/a11y compatibility for hundreds of global portals.
 
 ### IBM Corp. | Staff Software Engineer (Migration & Analytics)
 

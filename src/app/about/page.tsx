@@ -129,21 +129,23 @@ export default function AboutPage() {
                 <div className="border-border bg-card rounded-lg border p-6 transition-shadow hover:shadow-md">
                   <div className="mb-2 flex items-start justify-between">
                     <div>
-                      <h4 className="font-outfit text-foreground text-lg font-semibold">Senior Full Stack Developer</h4>
+                      <h4 className="font-outfit text-foreground text-lg font-semibold">
+                        Senior Full Stack Developer (Quote to Cash)
+                      </h4>
                       <p className="text-primary font-medium">IBM</p>
                     </div>
                     <span className="text-muted-foreground ml-4 text-sm whitespace-nowrap">Jul 2021 - Dec 2023</span>
                   </div>
                   <div className="text-muted-foreground mt-3 space-y-2 text-sm">
                     <p>
-                      Led full-stack development and open-source contributions for the Carbon Design System. Served as a
-                      core maintainer of <code>gatsby-theme-carbon</code>, supporting hundreds of documentation and
-                      components portals globally while ensuring strict web accessibility (WCAG / a11y) standards.
+                      Led full-stack development and maintenance of core Sales deal microservices (Go, React,
+                      TypeScript) on the Quote-to-Cash (Q2C) platform, optimization of microservices, and execution of
+                      high-priority production security hotfixes within 24 hours.
                     </p>
                     <p>
-                      Directed major migrations to upgrade Gatsby core libraries, resolving extensive breaking changes.
-                      Presented architectural standards on untyped Go constants and executed production hotfixes for
-                      critical security leaks within 24 hours.
+                      Served as a core maintainer of the open-source <code>gatsby-theme-carbon</code> for the IBM Carbon
+                      Design System (extra community initiative), leading major framework migrations and maintaining
+                      WCAG/a11y standards globally.
                     </p>
                   </div>
                 </div>
