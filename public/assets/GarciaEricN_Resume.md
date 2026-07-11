@@ -1,0 +1,96 @@
+# Eric Garcia
+
+**Senior Software Engineer & Systems Architect**
+
+407-536-9513 | [eng618@garciaericn.com](mailto:eng618@garciaericn.com) | [www.garciaericn.com](http://www.garciaericn.com)
+[GitHub (eng618)](https://github.com/eng618) | [LinkedIn (eng618)](https://linkedin.com/in/eng618) | Orlando, FL (Remote Friendly)
+
+---
+
+## Professional Summary
+
+A results-driven Senior Software Engineer and Systems Architect with over 11 years of professional experience designing, building, and scaling cross-platform design systems and cloud-native enterprise architectures. Proven track record in bridging the gap between design and engineering, maintaining open-source software, and driving the adoption of accessible (a11y) component libraries. Proficient in React, React Native, TypeScript, Node.js, and Go, with deep experience building reusable UI frameworks and leading complex upgrades supporting over 7,000+ active enterprise users.
+
+---
+
+## Technical Skills & Core Competencies
+
+- **Languages**: JavaScript, TypeScript, Go, Swift, Java, Kotlin, Objective-C, HTML5, CSS3/Tailwind CSS
+- **Frameworks & Libraries**: React, React Native, Next.js, Gatsby, Storybook, Radix UI, Expo, NativeWind
+- **Architecture & Tools**: Cloud-Native Design, Microservices, Monorepos (Nx), Design Token Pipelines, GraphQL, REST APIs, CI/CD (GitHub Actions, Nx Release), Git, Docker, Kubernetes
+- **Specialties & Standards**: Web Accessibility (WCAG / a11y), User Experience (UX/UI) Workflows, Design Tooling, AI Engineering Workflows, Technical Leadership & Project Scoping
+
+---
+
+## Professional Experience
+
+### Verizon | Principal Engineer - Systems Architect
+
+_Jan 2024 – Present (Remote / USA)_
+
+- **Design System Development**: Architected and built a custom, multi-platform mobile design system from the ground up, starting from a foundation of shadcn/ui and `reactnative-reusables` and customizing it to fit Verizon's brand identity and unique application needs.
+- **Bridging the Design-to-Code Gap**: Created and launched the mobile platform design system to bridge the gap between design and engineering, while continuously enhancing and aligning the desktop design system portfolio along the way.
+- **Enterprise Scale**: Scaled the design system and application architecture to support an internal user base of 7,000+ active users, including field engineers, retail staff, and executive leadership.
+- **AI Integration**: Designed and implemented AI-powered solutions to automatically sanitize and process customer and reseller feedback/comments for downstream integration.
+- **Technical Leadership**: Acted as the engineering lead on core architectural projects, driving decisions from ideation to implementation, setting technical roadmaps, and scoping development phases.
+
+### IBM Corp. | Senior Full Stack Developer
+
+_Jul 2021 – Dec 2023 (Orlando, FL / Remote)_
+
+- **Carbon Design System Maintenance**: Active contributor and core maintainer of the open-source [gatsby-theme-carbon](https://github.com/carbon-design-system/gatsby-theme-carbon), supporting hundreds of internal and external Carbon Design System sites globally.
+- **Major Upgrades & Technical Debt**: Led a major upgrade of Gatsby versions, a significant undertaking requiring the rewriting of large portions of the codebase to resolve breaking changes and restore framework stability.
+- **Accessibility (a11y)**: Ensured strict WCAG compliance across all Carbon component libraries, optimizing the user experience for users across the globe.
+- **Code Quality & Standardization**: Promoted standard patterns across Go repositories, including presenting best practices on untyped const standards during IBM developer chapter calls.
+- **Security & Vulnerability Management**: Handled high-priority security vulnerabilities, implementing end-to-end hotfixes to production environments within a 24-hour turnaround (e.g., correcting config leaks of API keys).
+
+### IBM Corp. | Staff Software Engineer (Migration & Analytics)
+
+_Jan 2020 – Jun 2021 (Orlando, FL)_
+
+- **Go Migration Utility**: Designed, architected, and implemented a high-performance migration utility written in Go, utilized by enterprise clients to safely migrate data between major versions of IBM API Connect.
+- **Internationalization**: Led the design and architectural changes required to globalize the migration utility application, working directly with clients to resolve edge cases.
+
+### IBM Corp. | Staff Software Engineer (API Connect Analytics)
+
+_Feb 2017 – Jan 2020 (Orlando, FL)_
+
+- **Enterprise Integration**: Focused on the Analytics and Enterprise Integration portions of IBM API Connect, a modern, secure API management solution.
+- **Design & Collaboration**: Collaborated with system designers and engineers across multiple teams to ensure component reliability and high-throughput data processing.
+
+### IBM Corp. | Software Engineer (MobileFirst Platform)
+
+_Jul 2015 – Feb 2017 (Orlando, FL)_
+
+- **Support & Fixes**: Responsible for Level-3 product support, troubleshooting client-side iOS/Android code issues, and creating core product fixes.
+- **Developer Relations**: Created tutorials and sample applications demonstrating push notification integration.
+  - _Push Notifications iOS (Swift)_: [GitHub Code](https://github.com/MobileFirst-Platform-Developer-Center/PushNotificationsSwift) & [Docs](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/handling-push-notifications/ios/)
+  - _Push Notifications Android (Java)_: [GitHub Code](https://github.com/MobileFirst-Platform-Developer-Center/PushNotificationsAndroid) & [Docs](https://mobilefirstplatform.ibmcloud.com/tutorials/en/foundation/8.0/notifications/handling-push-notifications/android/)
+
+---
+
+## Open Source Projects
+
+- **gvtech-design**: Author and maintainer of a multi-platform React (web) & React Native (mobile) design system monorepo built with Nx and TypeScript. Serves as the UI foundation for multiple active websites and mobile apps.
+- **gatsby-theme-carbon**: Core maintainer of the official Carbon Design System Gatsby theme.
+- **eslint-config**: Author of standardized ESLint flat configurations utilized across personal and enterprise projects.
+
+---
+
+## Education
+
+**Full Sail University** | Winter Park, FL
+_Bachelor of Science in Mobile Development_ (Graduated 10/2015)
+
+- Focused on building native applications (iOS/Swift/Objective-C & Android/Java/Kotlin), scalable data architectures, mobile UI/UX design, and cross-platform frameworks.
+
+---
+
+## Certifications & Digital Badges
+
+- **Google AI Essentials Specialization** (Google / Coursera, May 2026)
+- **Developer Profession - Level 3: Expert** (IBM, Sep 2023)
+- **IBM Carbon Design System Developer Essentials - React** (IBM, Jul 2019)
+- **IBM Cloud Kubernetes Service** (IBM, Jan 2020)
+- **IBM Agile Explorer** (IBM, Nov 2022)
+- **Enterprise Design Thinking Practitioner** (IBM, 2016)

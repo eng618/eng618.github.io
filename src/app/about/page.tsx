@@ -1,6 +1,6 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { AspectRatio } from '@gv-tech/ui-web';
+import { AspectRatio, Button } from '@gv-tech/ui-web';
 import Image from 'next/image';
 
 export default function AboutPage() {
@@ -93,7 +93,14 @@ export default function AboutPage() {
 
             {/* Professional Experience */}
             <div>
-              <h3 className="font-outfit text-foreground mb-8 text-2xl font-bold">Professional Experience</h3>
+              <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <h3 className="font-outfit text-foreground text-2xl font-bold">Professional Experience</h3>
+                <Button variant="outline" size="sm" asChild>
+                  <a href="/assets/resume.html" target="_blank" rel="noopener noreferrer">
+                    View Resume
+                  </a>
+                </Button>
+              </div>
               <div className="space-y-6">
                 <div className="border-border bg-card rounded-lg border p-6 transition-shadow hover:shadow-md">
                   <div className="mb-2 flex items-start justify-between">
