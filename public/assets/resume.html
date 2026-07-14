@@ -1,6 +1,17 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
+    <script>
+      (function () {
+        const localTheme = localStorage.getItem('color-theme') || 'system';
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (localTheme === 'dark' || (localTheme === 'system' && systemPrefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eric Garcia - Resume</title>
@@ -111,22 +122,24 @@
       class="no-print dark:bg-brand-gray900 sticky top-0 z-50 border-b border-gray-200 bg-white py-3 shadow-sm dark:border-gray-800"
     >
       <div class="mx-auto flex max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a
-          href="/"
-          class="text-brand-blue-light dark:text-brand-blue-dark flex items-center text-sm font-semibold hover:underline"
-        >
-          <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to site
-        </a>
+        <div id="dynamic-links" class="flex items-center gap-4">
+          <a
+            href="/"
+            class="text-brand-blue-light dark:text-brand-blue-dark flex items-center text-sm font-semibold hover:underline"
+          >
+            <svg class="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Back to site
+          </a>
+        </div>
         <div class="flex items-center gap-3">
           <button
             id="themeToggle"
             class="rounded-lg bg-gray-100 p-2 text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
             title="Toggle theme"
           >
-            <!-- Sun Icon -->
+            <!-- Sun Icon (Light) -->
             <svg id="sunIcon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 stroke-linecap="round"
@@ -135,13 +148,22 @@
                 d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"
               />
             </svg>
-            <!-- Moon Icon -->
+            <!-- Moon Icon (Dark) -->
             <svg id="moonIcon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+            <!-- System Icon -->
+            <svg id="systemIcon" class="hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
               />
             </svg>
           </button>
@@ -817,38 +839,94 @@
       const themeToggleBtn = document.getElementById('themeToggle');
       const sunIcon = document.getElementById('sunIcon');
       const moonIcon = document.getElementById('moonIcon');
+      const systemIcon = document.getElementById('systemIcon');
 
-      // Detect user preference
-      function initTheme() {
-        // Default to dark mode to match class="dark" on <html>
-        const localTheme = localStorage.getItem('color-theme');
+      // Helper to update the UI icons and document class
+      function applyTheme(theme) {
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.add('hidden');
+        systemIcon.classList.add('hidden');
+
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        if (localTheme === 'light' || (!localTheme && !systemPrefersDark)) {
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+          moonIcon.classList.remove('hidden');
+        } else if (theme === 'light') {
           document.documentElement.classList.remove('dark');
           sunIcon.classList.remove('hidden');
         } else {
-          document.documentElement.classList.add('dark');
-          moonIcon.classList.remove('hidden');
+          // 'system'
+          systemIcon.classList.remove('hidden');
+          if (systemPrefersDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
         }
       }
 
+      function initTheme() {
+        const localTheme = localStorage.getItem('color-theme') || 'system';
+        applyTheme(localTheme);
+      }
+
       themeToggleBtn.addEventListener('click', function () {
-        if (document.documentElement.classList.contains('dark')) {
-          document.documentElement.classList.remove('dark');
-          localStorage.setItem('color-theme', 'light');
-          moonIcon.classList.add('hidden');
-          sunIcon.classList.remove('hidden');
+        const currentTheme = localStorage.getItem('color-theme') || 'system';
+        let nextTheme = 'system';
+
+        if (currentTheme === 'system') {
+          nextTheme = 'light';
+        } else if (currentTheme === 'light') {
+          nextTheme = 'dark';
         } else {
-          document.documentElement.classList.add('dark');
-          localStorage.setItem('color-theme', 'dark');
-          sunIcon.classList.add('hidden');
-          moonIcon.classList.remove('hidden');
+          nextTheme = 'system';
+        }
+
+        localStorage.setItem('color-theme', nextTheme);
+        applyTheme(nextTheme);
+      });
+
+      // Listen to system changes
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+        const currentTheme = localStorage.getItem('color-theme') || 'system';
+        if (currentTheme === 'system') {
+          applyTheme('system');
         }
       });
 
+      // Dynamic Cover Letter Links injection (no hardcoding in repository)
+      function initDynamicLinks() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const clSlug = urlParams.get('cl');
+        const container = document.getElementById('dynamic-links');
+
+        if (clSlug && container) {
+          // Add separator
+          const separator = document.createElement('span');
+          separator.className = 'text-gray-300 dark:text-gray-700';
+          separator.textContent = '|';
+          container.appendChild(separator);
+
+          // Add link
+          const link = document.createElement('a');
+          link.href = `/cover-letter?slug=${clSlug}`;
+          link.className = 'text-brand-blue-light dark:text-brand-blue-dark flex items-center text-sm font-semibold hover:underline';
+          link.title = 'View tailored cover letter';
+
+          if (clSlug.includes('manager') || clSlug.includes('em')) {
+            link.textContent = 'Manager CL';
+          } else {
+            link.textContent = 'Design Eng CL';
+          }
+
+          container.appendChild(link);
+        }
+      }
+
       // Initialize
       initTheme();
+      initDynamicLinks();
     </script>
   </body>
 </html>

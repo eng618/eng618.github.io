@@ -90,7 +90,10 @@ export function Footer() {
         <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="text-muted-foreground text-sm">
             <p>
-              © {currentYear} {siteConfig.name}. All rights reserved.
+              <Link href="/admin" className="hover:text-muted-foreground cursor-default select-none">
+                ©
+              </Link>{' '}
+              {currentYear} {siteConfig.name}. All rights reserved.
             </p>
           </div>
           <div className="text-muted-foreground text-sm">

@@ -34,6 +34,7 @@
     "@gv-tech/ui-web": "^2.26.2",
     "@hookform/resolvers": "^5.2.2",
     "@plausible-analytics/tracker": "^0.4.5",
+    "@supabase/supabase-js": "^2.110.3",
     "@tailwindcss/typography": "^0.5.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
