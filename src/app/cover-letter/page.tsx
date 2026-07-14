@@ -238,12 +238,12 @@ function CoverLetterHeader() {
           {slug && (
             <>
               <span className="text-muted-foreground">|</span>
-              <a
-                href={`/assets/resume.html?cl=${slug}`}
+              <Link
+                href={`/resume?cl=${slug}`}
                 className="text-primary flex items-center text-sm font-semibold hover:underline"
               >
                 View Resume
-              </a>
+              </Link>
             </>
           )}
         </div>

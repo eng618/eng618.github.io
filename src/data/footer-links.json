@@ -11,7 +11,7 @@
     {
       "title": "Resources",
       "links": [
-        { "label": "Resume", "href": "/assets/resume.html" },
+        { "label": "Resume", "href": "/resume" },
         { "label": "Code Notes", "href": "/code-notes" },
         { "label": "Go Projects", "href": "/go-projects" },
         { "label": "Contact", "href": "/contact" }

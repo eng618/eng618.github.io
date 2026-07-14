@@ -9,6 +9,14 @@
 @theme {
   /* Container override */
   --container-2xl: 1400px;
+
+  /* Brand colors for the resume page */
+  --color-brand-blue-light: hsl(225, 73%, 57%);
+  --color-brand-blue-dark: hsl(227, 96%, 71%);
+  --color-brand-oxford: hsl(222, 47%, 11%);
+  --color-brand-gray50: hsl(0, 0%, 96%);
+  --color-brand-gray975: hsl(0, 0%, 9%);
+  --color-brand-gray900: hsl(0, 0%, 14%);
 }
 
 @layer base {

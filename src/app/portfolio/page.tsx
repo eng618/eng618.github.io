@@ -104,7 +104,7 @@ export default function PortfolioPage() {
               className="mt-6"
             >
               <Button asChild>
-                <a href="/assets/resume.html" target="_blank" rel="noopener noreferrer">
+                <a href="/resume" target="_blank" rel="noopener noreferrer">
                   View Full Resume
                 </a>
               </Button>

@@ -96,7 +96,7 @@ export default function AboutPage() {
               <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <h3 className="font-outfit text-foreground text-2xl font-bold">Professional Experience</h3>
                 <Button variant="outline" size="sm" asChild>
-                  <a href="/assets/resume.html" target="_blank" rel="noopener noreferrer">
+                  <a href="/resume" target="_blank" rel="noopener noreferrer">
                     View Resume
                   </a>
                 </Button>
