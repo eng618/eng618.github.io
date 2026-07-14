@@ -7,7 +7,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
   Input,
-  ScrollArea,
   Sheet,
   SheetContent,
   SheetHeader,
@@ -172,9 +171,10 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
           value={searchQuery}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
           className="bg-background w-full"
+          suppressHydrationWarning
         />
       </div>
-      <ScrollArea className="flex-1">
+      <div className="flex-1 overflow-y-auto">
         <div className="flex flex-col gap-1 p-2">
           {filteredTree.children && Object.keys(filteredTree.children).length > 0 ? (
             Object.values(filteredTree.children).map((child) => (
@@ -184,7 +184,7 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
             <p className="text-muted-foreground p-4 text-center text-sm">No notes found.</p>
           )}
         </div>
-      </ScrollArea>
+      </div>
     </>
   );
 
@@ -217,9 +217,10 @@ export function MobileNotesSidebar({
           value={searchQuery}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQuery(e.target.value)}
           className="bg-background w-full"
+          suppressHydrationWarning
         />
       </div>
-      <ScrollArea className="flex-1">
+      <div className="flex-1 overflow-y-auto">
         <div className="flex flex-col gap-1 p-2">
           {filteredTree.children && Object.keys(filteredTree.children).length > 0 ? (
             Object.values(filteredTree.children).map((child) => (
@@ -229,7 +230,7 @@ export function MobileNotesSidebar({
             <p className="text-muted-foreground p-4 text-center text-sm">No notes found.</p>
           )}
         </div>
-      </ScrollArea>
+      </div>
     </>
   );
 

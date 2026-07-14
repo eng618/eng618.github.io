@@ -12,9 +12,11 @@ export default function CodeNotesLayout({ children }: { children: ReactNode }) {
       <Header />
       <div className="flex flex-1 flex-col lg:flex-row">
         <NotesSidebar notes={notes} basePath="/code-notes" />
-        <main className="flex w-full flex-1 flex-col items-center">{children}</main>
+        <main className="flex w-full flex-1 flex-col items-center justify-between">
+          <div className="w-full flex-1 flex flex-col items-center">{children}</div>
+          <Footer className="w-full" />
+        </main>
       </div>
-      <Footer />
     </div>
   );
 }

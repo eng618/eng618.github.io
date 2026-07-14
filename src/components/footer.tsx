@@ -41,11 +41,13 @@ function SocialIcon({ icon, url, label }: { icon: string; url: string; label: st
   );
 }
 
-export function Footer() {
+import { cn } from '@/lib/utils';
+
+export function Footer({ className }: { className?: string } = {}) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-border bg-background border-t">
+    <footer className={cn("border-border bg-background border-t", className)}>
       <div className="container mx-auto px-4 py-12 lg:px-8">
         {/* Main Footer Content */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-4">
