@@ -3,6 +3,7 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { supabase } from '@/lib/supabase';
+import { cn } from '@/lib/utils';
 import {
   Button,
   Card,
@@ -19,7 +20,8 @@ import {
   Textarea,
 } from '@gv-tech/ui-web';
 import { Check, Copy, Edit2, ExternalLink, Key, Lock, LogOut, Mail, Plus, Trash2 } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { marked } from 'marked';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || '';
 
@@ -56,6 +58,51 @@ export default function AdminPage() {
   const [privateNotes, setPrivateNotes] = useState<PrivateNote[]>([]);
   const [editingNote, setEditingNote] = useState<Partial<PrivateNote> | null>(null);
   const [noteError, setNoteError] = useState<string | null>(null);
+  const [noteEditorMode, setNoteEditorMode] = useState<'edit' | 'preview' | 'split'>('edit');
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const adjustTextareaHeight = () => {
+    const textarea = textareaRef.current;
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  };
+
+  useEffect(() => {
+    if (editingNote) {
+      setTimeout(adjustTextareaHeight, 0);
+    }
+  }, [editingNote?.content, noteEditorMode]);
+
+  const handleNoteKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const textarea = e.currentTarget;
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const value = textarea.value;
+
+      const newValue = value.substring(0, start) + '  ' + value.substring(end);
+      setEditingNote((prev) => (prev ? { ...prev, content: newValue } : null));
+
+      setTimeout(() => {
+        textarea.selectionStart = textarea.selectionEnd = start + 2;
+      }, 0);
+    }
+  };
+
+  const parsedNoteContent = useMemo(() => {
+    if (!editingNote?.content) {
+      return '';
+    }
+    try {
+      return marked.parse(editingNote.content) as string;
+    } catch (e) {
+      console.error(e);
+      return '';
+    }
+  }, [editingNote?.content]);
 
   // Copied slug state
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -627,19 +674,87 @@ export default function AdminPage() {
                         </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <label htmlFor="noteContent" className="text-sm leading-none font-medium">
-                          Body Content (Markdown)
-                        </label>
-                        <Textarea
-                          id="noteContent"
-                          rows={14}
-                          placeholder="# Meeting notes..."
-                          value={editingNote.content || ''}
-                          onChange={(e) => setEditingNote({ ...editingNote, content: e.target.value })}
-                          required
-                          className="font-mono text-sm leading-relaxed"
-                        />
+                      <div className="space-y-4">
+                        <div className="border-border/50 flex items-center justify-between border-b pb-2">
+                          <label htmlFor="noteContent" className="text-sm font-semibold tracking-wider uppercase">
+                            Body Content (Markdown)
+                          </label>
+                          <div className="border-border bg-muted/50 flex gap-0.5 rounded-lg border p-0.5">
+                            <button
+                              type="button"
+                              onClick={() => setNoteEditorMode('edit')}
+                              className={cn(
+                                'rounded-md px-3 py-1 text-xs font-medium transition-colors',
+                                noteEditorMode === 'edit'
+                                  ? 'bg-background text-foreground font-semibold shadow-sm'
+                                  : 'text-muted-foreground hover:text-foreground',
+                              )}
+                            >
+                              Edit
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setNoteEditorMode('preview')}
+                              className={cn(
+                                'rounded-md px-3 py-1 text-xs font-medium transition-colors',
+                                noteEditorMode === 'preview'
+                                  ? 'bg-background text-foreground font-semibold shadow-sm'
+                                  : 'text-muted-foreground hover:text-foreground',
+                              )}
+                            >
+                              Preview
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setNoteEditorMode('split')}
+                              className={cn(
+                                'hidden rounded-md px-3 py-1 text-xs font-medium transition-colors md:inline-flex',
+                                noteEditorMode === 'split'
+                                  ? 'bg-background text-foreground font-semibold shadow-sm'
+                                  : 'text-muted-foreground hover:text-foreground',
+                              )}
+                            >
+                              Split
+                            </button>
+                          </div>
+                        </div>
+
+                        <div
+                          className={cn(
+                            'grid items-stretch gap-4',
+                            noteEditorMode === 'split' ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1',
+                          )}
+                        >
+                          {/* EDIT PANEL */}
+                          {(noteEditorMode === 'edit' || noteEditorMode === 'split') && (
+                            <div className="h-full">
+                              <Textarea
+                                ref={textareaRef}
+                                id="noteContent"
+                                placeholder="# Meeting notes..."
+                                value={editingNote.content || ''}
+                                onChange={(e) => {
+                                  setEditingNote({ ...editingNote, content: e.target.value });
+                                  adjustTextareaHeight();
+                                }}
+                                onKeyDown={handleNoteKeyDown}
+                                required
+                                className="h-full min-h-[300px] w-full resize-none overflow-hidden font-mono text-sm leading-relaxed"
+                              />
+                            </div>
+                          )}
+
+                          {/* PREVIEW PANEL */}
+                          {(noteEditorMode === 'preview' || noteEditorMode === 'split') && (
+                            <div className="border-border bg-card/30 prose dark:prose-invert prose-neutral no-print h-full min-h-[300px] max-w-none rounded-lg border p-6">
+                              {editingNote.content ? (
+                                <div dangerouslySetInnerHTML={{ __html: parsedNoteContent }} />
+                              ) : (
+                                <p className="text-muted-foreground text-sm italic">Nothing to preview yet.</p>
+                              )}
+                            </div>
+                          )}
+                        </div>
                       </div>
 
                       <div className="border-border/50 flex justify-end gap-3 border-t pt-4">
