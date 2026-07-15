@@ -1,6 +1,6 @@
-import { MobileSubHeader } from '@/components/mobile-sub-header';
+import { Breadcrumb } from '@/components/breadcrumb';
 import { getAllContent } from '@/lib/notes';
-import { Card, CardContent, CardHeader, CardTitle } from '@gv-tech/ui-web';
+import { Card, CardContent, CardHeader, CardTitle, SidebarTrigger } from '@gv-tech/ui-web';
 import { BookOpen, Map, Sparkles } from 'lucide-react';
 
 export default function NotesIndexPage() {
@@ -9,8 +9,11 @@ export default function NotesIndexPage() {
 
   return (
     <>
-      <MobileSubHeader notes={notes} basePath="/notes" showToc={false} />
-      <div className="w-full max-w-4xl px-4 py-12 lg:px-8 lg:py-16">
+      <div className="w-full max-w-4xl px-4 py-8 lg:px-8">
+        <div className="flex items-center gap-4 mb-8 no-print">
+          <SidebarTrigger />
+          <Breadcrumb items={[]} className="mb-0" />
+        </div>
         <div className="mb-12">
           <h1 className="font-outfit mb-4 text-4xl font-bold lg:text-5xl">Digital Garden & Notes</h1>
           <p className="text-muted-foreground text-xl leading-relaxed">
