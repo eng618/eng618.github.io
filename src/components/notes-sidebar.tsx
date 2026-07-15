@@ -1,6 +1,7 @@
 'use client';
 
 import type { NoteMetadata } from '@/lib/notes';
+import { supabase } from '@/lib/supabase';
 import { cn } from '@/lib/utils';
 import {
   Collapsible,
@@ -9,14 +10,14 @@ import {
   Input,
   Sidebar,
   SidebarContent,
-  SidebarHeader,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarHeader,
 } from '@gv-tech/ui-web';
 import { ChevronDown, ChevronRight, FileText, Folder } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useMemo, useState } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, useMemo, useState } from 'react';
 
 type TreeNode = {
   name: string;
@@ -106,6 +107,7 @@ function TreeItem({
   onSelect?: () => void;
 }) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(true);
 
   if (node.isFolder && node.children) {
@@ -135,8 +137,11 @@ function TreeItem({
     );
   }
 
-  const href = `${basePath}/${node.path}`;
-  const isActive = pathname === href;
+  const isPrivate = basePath === '/notes/private' || !!(pathname && pathname.startsWith('/notes/private'));
+  const noteId = node.metadata?.slug.split('/').pop() || '';
+  const href = isPrivate ? `/notes/private?id=${noteId}` : `${basePath}/${node.path}`;
+  const activeId = searchParams?.get('id') || null;
+  const isActive = isPrivate ? activeId === noteId : pathname === href;
 
   return (
     <Link
@@ -157,16 +162,65 @@ function TreeItem({
 
 export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const pathname = usePathname();
+  const isPrivateNotes = !!(pathname && pathname.startsWith('/notes/private'));
+  const [privateNotes, setPrivateNotes] = useState<NoteMetadata[]>([]);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    if (!isPrivateNotes) {
+      return;
+    }
+
+    const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || '';
+
+    const checkSessionAndFetch = async (session: any) => {
+      if (session?.user?.email === ADMIN_EMAIL) {
+        setIsAdmin(true);
+        const { data, error } = await supabase
+          .from('private_notes')
+          .select('*')
+          .order('created_at', { ascending: false });
+
+        if (!error && data) {
+          const mapped: NoteMetadata[] = data.map((note: any) => ({
+            slug: `${note.category}/${note.id}`,
+            title: note.title,
+            category: note.category,
+            date: note.created_at,
+          }));
+          setPrivateNotes(mapped);
+        }
+      } else {
+        setIsAdmin(false);
+        setPrivateNotes([]);
+      }
+    };
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      checkSessionAndFetch(session);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      checkSessionAndFetch(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [isPrivateNotes]);
+
+  const activeNotes = isPrivateNotes ? privateNotes : notes;
 
   const filteredTree = useMemo(() => {
-    const tree = buildTree(notes);
+    const tree = buildTree(activeNotes);
     return filterTree(tree, searchQuery) || { name: 'root', path: '', isFolder: true, children: {} };
-  }, [notes, searchQuery]);
+  }, [activeNotes, searchQuery]);
 
   return (
     <Sidebar
       collapsible="offcanvas"
-      className="border-border bg-card/50 top-16 z-20 h-[calc(100vh-4rem)] border-r backdrop-blur-sm hidden lg:flex"
+      className="border-border bg-card/50 top-16 z-20 hidden h-[calc(100vh-4rem)] border-r backdrop-blur-sm lg:flex"
     >
       <SidebarHeader className="border-border border-b p-4">
         <Input
@@ -186,7 +240,9 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
                 <TreeItem key={child.path} node={child} basePath={basePath} />
               ))
             ) : (
-              <p className="text-muted-foreground p-4 text-center text-sm">No notes found.</p>
+              <p className="text-muted-foreground p-4 text-center text-sm">
+                {!isPrivateNotes || isAdmin ? 'No notes found.' : 'Please log in to view private notes.'}
+              </p>
             )}
           </SidebarGroupContent>
         </SidebarGroup>

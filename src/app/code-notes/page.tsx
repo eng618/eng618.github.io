@@ -10,7 +10,7 @@ export default function CodeNotesIndexPage() {
   return (
     <>
       <div className="w-full max-w-4xl px-4 py-8 lg:px-8">
-        <div className="flex items-center gap-4 mb-8 no-print">
+        <div className="no-print mb-8 flex items-center gap-4">
           <SidebarTrigger />
           <Breadcrumb items={[]} className="mb-0" />
         </div>

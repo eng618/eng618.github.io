@@ -3,7 +3,7 @@ import { Header } from '@/components/header';
 import { NotesSidebar } from '@/components/notes-sidebar';
 import { getAllContent } from '@/lib/notes';
 import { SidebarInset, SidebarProvider } from '@gv-tech/ui-web';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 
 export default function CodeNotesLayout({ children }: { children: ReactNode }) {
   const notes = getAllContent('code-notes');
@@ -12,7 +12,9 @@ export default function CodeNotesLayout({ children }: { children: ReactNode }) {
     <div className="bg-background flex min-h-screen flex-col">
       <Header />
       <SidebarProvider>
-        <NotesSidebar notes={notes} basePath="/code-notes" />
+        <Suspense fallback={<div className="border-border bg-card/50 hidden w-80 border-r lg:block" />}>
+          <NotesSidebar notes={notes} basePath="/code-notes" />
+        </Suspense>
         <SidebarInset className="bg-background flex min-w-0 flex-1 flex-col">
           <div className="flex w-full flex-1 flex-col items-center">
             <div className="flex w-full max-w-7xl flex-col items-stretch px-4 py-8 lg:px-8 lg:py-12">{children}</div>

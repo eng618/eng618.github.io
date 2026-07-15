@@ -1,10 +1,10 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import Link from 'next/link';
 import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { ArrowLeft, Printer } from 'lucide-react';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react';
 
 function ResumeHeader() {
   const searchParams = useSearchParams();
@@ -16,7 +16,7 @@ function ResumeHeader() {
   }, []);
 
   return (
-    <div className="print:hidden no-print border-b border-gray-200 bg-white py-3 shadow-sm dark:border-gray-800 dark:bg-brand-gray900 sticky top-0 z-50">
+    <div className="no-print dark:bg-brand-gray900 sticky top-0 z-50 border-b border-gray-200 bg-white py-3 shadow-sm dark:border-gray-800 print:hidden">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div id="dynamic-links" className="flex items-center gap-4">
           <Link
@@ -57,7 +57,9 @@ function ResumeHeader() {
 export default function ResumePage() {
   return (
     <div className="bg-brand-gray50 text-brand-oxford dark:bg-brand-gray975 min-h-screen font-sans transition-colors duration-200 dark:text-gray-100">
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @media print {
           body {
             background-color: white !important;
@@ -107,10 +109,12 @@ export default function ResumePage() {
             padding: 0 !important;
           }
         }
-      `}} />
+      `,
+        }}
+      />
       <Suspense
         fallback={
-          <div className="print:hidden no-print border-b border-gray-200 bg-white py-3 shadow-sm dark:border-gray-800 dark:bg-brand-gray900 sticky top-0 z-50">
+          <div className="no-print dark:bg-brand-gray900 sticky top-0 z-50 border-b border-gray-200 bg-white py-3 shadow-sm dark:border-gray-800 print:hidden">
             <div className="mx-auto flex max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
               <div className="flex items-center gap-4">
                 <Link
@@ -131,17 +135,18 @@ export default function ResumePage() {
       {/* Main Container */}
       <main className="print-layout mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8 print:p-0">
         {/* Top Header Card */}
-        <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent mb-8 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:shadow-none print:border-none print:p-0">
+        <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent mb-8 rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:border-none print:p-0 print:shadow-none">
           <div className="flex flex-col gap-4">
             <div>
               <h1 className="font-outfit text-brand-oxford print-text-dark text-4xl font-extrabold tracking-tight sm:text-5xl dark:text-white print:text-black">
                 Eric Garcia
               </h1>
-              <p className="text-brand-blue-light dark:text-brand-blue-dark font-outfit print-text-primary mt-2 text-xl font-semibold print:text-primary">
+              <p className="text-brand-blue-light dark:text-brand-blue-dark font-outfit print-text-primary print:text-primary mt-2 text-xl font-semibold">
                 Senior Software Engineer & Systems Architect
               </p>
               <p className="text-md print-text-muted mt-2 max-w-3xl font-normal text-gray-500 dark:text-gray-400 print:text-gray-700">
-                Specializing in cross-platform design systems, developer platforms, and robust cloud-native architecture.
+                Specializing in cross-platform design systems, developer platforms, and robust cloud-native
+                architecture.
               </p>
             </div>
 
@@ -275,8 +280,8 @@ export default function ResumePage() {
         <div className="print-grid grid grid-cols-1 gap-8 lg:grid-cols-3">
           {/* Left Side: Experience (Span 2) */}
           <div className="print-col-span-2 space-y-8 lg:col-span-2">
-            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:shadow-none print:border-none print:p-0">
-              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-6 border-b border-gray-100 pb-3 text-2xl font-bold dark:border-gray-800 dark:text-white print:text-black print:border-gray-200">
+            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:border-none print:p-0 print:shadow-none">
+              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-6 border-b border-gray-100 pb-3 text-2xl font-bold dark:border-gray-800 dark:text-white print:border-gray-200 print:text-black">
                 Professional Experience
               </h2>
 
@@ -289,7 +294,7 @@ export default function ResumePage() {
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
                         Principal Engineer - Systems Architect
                       </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary text-sm font-medium print:text-primary">
+                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
                         Verizon
                       </p>
                     </div>
@@ -313,8 +318,8 @@ export default function ResumePage() {
                       7,000+ active internal users, supporting staff from field engineers to executive leadership.
                     </li>
                     <li>
-                      <strong>AI Enablement</strong>: Designed and delivered an AI-powered feedback sanitization engine to
-                      process and validate downstream customer and reseller messages.
+                      <strong>AI Enablement</strong>: Designed and delivered an AI-powered feedback sanitization engine
+                      to process and validate downstream customer and reseller messages.
                     </li>
                     <li>
                       <strong>Technical Roadmaps</strong>: Acted as primary engineering lead on large-scale features,
@@ -331,7 +336,7 @@ export default function ResumePage() {
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
                         Senior Full Stack Developer (Quote to Cash)
                       </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary text-sm font-medium print:text-primary">
+                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
                         IBM Corp.
                       </p>
                     </div>
@@ -341,9 +346,9 @@ export default function ResumePage() {
                   </div>
                   <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
                     <li>
-                      <strong>Microservices & API Architecture</strong>: Led the development and maintenance of core sales
-                      deal microservices (Go, React, TypeScript) on the Quote-to-Cash (Q2C) platform, driving database
-                      performance improvements and legacy system modernizations.
+                      <strong>Microservices & API Architecture</strong>: Led the development and maintenance of core
+                      sales deal microservices (Go, React, TypeScript) on the Quote-to-Cash (Q2C) platform, driving
+                      database performance improvements and legacy system modernizations.
                     </li>
                     <li>
                       <strong>Security Engineering</strong>: Triaged and resolved critical high-priority security
@@ -352,13 +357,13 @@ export default function ResumePage() {
                     </li>
                     <li>
                       <strong>CI/CD & Developer Experience</strong>: Streamlined pipeline integrations, enhanced testing
-                      tooling, and promoted code quality standards (such as untyped Go constants) during developer chapter
-                      calls.
+                      tooling, and promoted code quality standards (such as untyped Go constants) during developer
+                      chapter calls.
                     </li>
                     <li>
                       <strong>Open-Source Design Systems (Extra Initiative)</strong>: Core maintainer of the IBM Carbon
-                      Design System&apos;s <code>gatsby-theme-carbon</code> project, leading Gatsby major upgrades, fixing
-                      theme bugs, and maintaining strict WCAG/a11y compatibility for hundreds of global portals.
+                      Design System&apos;s <code>gatsby-theme-carbon</code> project, leading Gatsby major upgrades,
+                      fixing theme bugs, and maintaining strict WCAG/a11y compatibility for hundreds of global portals.
                     </li>
                   </ul>
                 </div>
@@ -371,7 +376,7 @@ export default function ResumePage() {
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
                         Staff Software Engineer (Migration & Analytics)
                       </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary text-sm font-medium print:text-primary">
+                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
                         IBM Corp.
                       </p>
                     </div>
@@ -386,8 +391,8 @@ export default function ResumePage() {
                       Connect.
                     </li>
                     <li>
-                      <strong>Internationalization</strong>: Spearheaded architectural changes to translate and globalize
-                      the CLI tool, addressing client specifications directly.
+                      <strong>Internationalization</strong>: Spearheaded architectural changes to translate and
+                      globalize the CLI tool, addressing client specifications directly.
                     </li>
                   </ul>
                 </div>
@@ -400,7 +405,7 @@ export default function ResumePage() {
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
                         Staff Software Engineer (API Connect)
                       </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary text-sm font-medium print:text-primary">
+                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
                         IBM Corp.
                       </p>
                     </div>
@@ -414,8 +419,8 @@ export default function ResumePage() {
                       integration endpoints for a cloud-native API management portal.
                     </li>
                     <li>
-                      <strong>Collaboration</strong>: Partnered across design and engineering silos to preserve component
-                      stability and ensure performance under high workloads.
+                      <strong>Collaboration</strong>: Partnered across design and engineering silos to preserve
+                      component stability and ensure performance under high workloads.
                     </li>
                   </ul>
                 </div>
@@ -428,7 +433,7 @@ export default function ResumePage() {
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
                         Software Engineer (MobileFirst Support)
                       </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary text-sm font-medium print:text-primary">
+                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
                         IBM Corp.
                       </p>
                     </div>
@@ -454,8 +459,8 @@ export default function ResumePage() {
           {/* Right Side: Skills, Certs, Projects (Span 1) */}
           <div className="space-y-8">
             {/* Skills Card */}
-            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:shadow-none print:border-none print:p-0">
-              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-5 border-b border-gray-100 pb-3 text-xl font-bold dark:border-gray-800 dark:text-white print:text-black print:border-gray-200">
+            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:border-none print:p-0 print:shadow-none">
+              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-5 border-b border-gray-100 pb-3 text-xl font-bold dark:border-gray-800 dark:text-white print:border-gray-200 print:text-black">
                 Technical Skills
               </h2>
               <div className="space-y-4">
@@ -467,7 +472,7 @@ export default function ResumePage() {
                     {['TypeScript', 'JavaScript', 'Go', 'Swift', 'Java', 'Kotlin', 'Objective-C'].map((lang) => (
                       <span
                         key={lang}
-                        className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:text-black print:border-gray-300"
+                        className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
                       >
                         {lang}
                       </span>
@@ -480,22 +485,16 @@ export default function ResumePage() {
                     Frameworks & Design Systems
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {[
-                      'React (DOM)',
-                      'React Native',
-                      'Next.js',
-                      'Gatsby',
-                      'Storybook',
-                      'Radix UI',
-                      'NativeWind',
-                    ].map((framework) => (
-                      <span
-                        key={framework}
-                        className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:text-black print:border-gray-300"
-                      >
-                        {framework}
-                      </span>
-                    ))}
+                    {['React (DOM)', 'React Native', 'Next.js', 'Gatsby', 'Storybook', 'Radix UI', 'NativeWind'].map(
+                      (framework) => (
+                        <span
+                          key={framework}
+                          className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
+                        >
+                          {framework}
+                        </span>
+                      ),
+                    )}
                   </div>
                 </div>
 
@@ -507,7 +506,7 @@ export default function ResumePage() {
                     {['Monorepos (Nx)', 'GraphQL', 'REST APIs', 'Kubernetes', 'Docker', 'CI/CD'].map((tool) => (
                       <span
                         key={tool}
-                        className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:text-black print:border-gray-300"
+                        className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
                       >
                         {tool}
                       </span>
@@ -523,7 +522,7 @@ export default function ResumePage() {
                     {['WCAG / a11y', 'Design Tokens', 'UX/UI Patterns'].map((standard) => (
                       <span
                         key={standard}
-                        className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:text-black print:border-gray-300"
+                        className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
                       >
                         {standard}
                       </span>
@@ -534,8 +533,8 @@ export default function ResumePage() {
             </div>
 
             {/* Projects Card */}
-            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:shadow-none print:border-none print:p-0">
-              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-5 border-b border-gray-100 pb-3 text-xl font-bold dark:border-gray-800 dark:text-white print:text-black print:border-gray-200">
+            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:border-none print:p-0 print:shadow-none">
+              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-5 border-b border-gray-100 pb-3 text-xl font-bold dark:border-gray-800 dark:text-white print:border-gray-200 print:text-black">
                 Open Source Projects
               </h2>
               <div className="print-text-dark space-y-4 text-sm print:text-black">
@@ -547,8 +546,8 @@ export default function ResumePage() {
                     Author & Maintainer
                   </p>
                   <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 print:text-black">
-                    Multi-platform React & React Native monorepo powered by Nx. Serves as component baseline for personal
-                    & customer platforms.
+                    Multi-platform React & React Native monorepo powered by Nx. Serves as component baseline for
+                    personal & customer platforms.
                   </p>
                 </div>
 
@@ -580,15 +579,15 @@ export default function ResumePage() {
             </div>
 
             {/* Education Card */}
-            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:shadow-none print:border-none print:p-0">
-              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-5 border-b border-gray-100 pb-3 text-xl font-bold dark:border-gray-800 dark:text-white print:text-black print:border-gray-200">
+            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:border-none print:p-0 print:shadow-none">
+              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-5 border-b border-gray-100 pb-3 text-xl font-bold dark:border-gray-800 dark:text-white print:border-gray-200 print:text-black">
                 Education
               </h2>
               <div className="print-text-dark text-sm print:text-black">
                 <h3 className="print-text-dark font-bold text-gray-800 dark:text-gray-200 print:text-black">
                   Full Sail University
                 </h3>
-                <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary mt-0.5 text-xs font-semibold print:text-primary">
+                <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary mt-0.5 text-xs font-semibold">
                   B.S. in Mobile Development
                 </p>
                 <p className="print-text-muted mt-0.5 text-xs text-gray-500 dark:text-gray-400 print:text-gray-600">
@@ -602,8 +601,8 @@ export default function ResumePage() {
             </div>
 
             {/* Certifications Card */}
-            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:shadow-none print:border-none print:p-0">
-              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-5 border-b border-gray-100 pb-3 text-xl font-bold dark:border-gray-800 dark:text-white print:text-black print:border-gray-200">
+            <div className="dark:bg-brand-gray900 print-card print-border print-bg-transparent rounded-2xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 print:border-none print:p-0 print:shadow-none">
+              <h2 className="font-outfit text-brand-oxford print-border print-text-dark mb-5 border-b border-gray-100 pb-3 text-xl font-bold dark:border-gray-800 dark:text-white print:border-gray-200 print:text-black">
                 Certifications & Badges
               </h2>
               <ul className="print-text-dark list-none space-y-3 pl-1 text-xs text-gray-600 dark:text-gray-300 print:text-black">
@@ -615,7 +614,7 @@ export default function ResumePage() {
                   { title: 'Enterprise Design Thinking Practitioner', sub: 'IBM Credential · 2016' },
                 ].map((cert, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <span className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary mt-0.5 font-bold print:text-primary">
+                    <span className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary mt-0.5 font-bold">
                       •
                     </span>
                     <div>
