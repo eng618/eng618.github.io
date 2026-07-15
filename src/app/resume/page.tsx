@@ -7,6 +7,25 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
 
+// Analytics helper to safely send events to Plausible
+const trackEvent = (eventName: string, props?: Record<string, string | number | boolean>) => {
+  const formattedProps: Record<string, string> = {};
+  if (props) {
+    Object.entries(props).forEach(([key, val]) => {
+      formattedProps[key] = String(val);
+    });
+  }
+
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    console.log(`[Analytics Dev] Event: ${eventName}`, formattedProps);
+    return;
+  }
+
+  if (typeof window !== 'undefined' && window.plausible) {
+    window.plausible(eventName, { props: formattedProps });
+  }
+};
+
 interface ResumeHeaderProps {
   activeTab: 'resume' | 'cv';
   setActiveTab: (tab: 'resume' | 'cv') => void;
@@ -49,7 +68,10 @@ function ResumeHeader({ activeTab, setActiveTab }: ResumeHeaderProps) {
         <div className="flex justify-center">
           <div className="dark:bg-brand-gray950 flex rounded-lg border border-gray-200 bg-gray-50 p-0.5 dark:border-gray-800">
             <button
-              onClick={() => setActiveTab('resume')}
+              onClick={() => {
+                trackEvent('Resume Tab Toggle', { selected_tab: 'resume' });
+                setActiveTab('resume');
+              }}
               className={cn(
                 'rounded-md px-4 py-1.5 text-xs font-bold transition-all duration-200',
                 activeTab === 'resume'
@@ -60,7 +82,10 @@ function ResumeHeader({ activeTab, setActiveTab }: ResumeHeaderProps) {
               Resume
             </button>
             <button
-              onClick={() => setActiveTab('cv')}
+              onClick={() => {
+                trackEvent('Resume Tab Toggle', { selected_tab: 'cv' });
+                setActiveTab('cv');
+              }}
               className={cn(
                 'rounded-md px-4 py-1.5 text-xs font-bold transition-all duration-200',
                 activeTab === 'cv'
@@ -79,7 +104,13 @@ function ResumeHeader({ activeTab, setActiveTab }: ResumeHeaderProps) {
           ) : (
             <div className="h-9 w-9" />
           )}
-          <Button onClick={() => window.print()} className="flex items-center gap-2 font-semibold">
+          <Button
+            onClick={() => {
+              trackEvent('Resume Print', { document_type: activeTab });
+              window.print();
+            }}
+            className="flex items-center gap-2 font-semibold"
+          >
             <Printer className="h-4 w-4" />
             {activeTab === 'resume' ? 'Print Resume' : 'Print CV'}
           </Button>
@@ -191,6 +222,9 @@ export default function ResumePage() {
             <div className="print-text-dark mt-2 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-gray-600 dark:text-gray-300 print:text-black">
               <a
                 href="mailto:eng618@garciaericn.com"
+                onClick={() =>
+                  trackEvent('Resume Contact Click', { channel: 'email', link_url: 'mailto:eng618@garciaericn.com' })
+                }
                 className="hover:text-brand-blue-light dark:hover:text-brand-blue-dark flex items-center gap-2 whitespace-nowrap transition-colors"
               >
                 <svg
@@ -232,6 +266,9 @@ export default function ResumePage() {
                 href="http://www.garciaericn.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent('Resume Contact Click', { channel: 'website', link_url: 'http://www.garciaericn.com' })
+                }
                 className="hover:text-brand-blue-light dark:hover:text-brand-blue-dark flex items-center gap-2 whitespace-nowrap transition-colors"
               >
                 <svg
@@ -255,6 +292,9 @@ export default function ResumePage() {
                 href="https://github.com/eng618"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent('Resume Contact Click', { channel: 'github', link_url: 'https://github.com/eng618' })
+                }
                 className="hover:text-brand-blue-light dark:hover:text-brand-blue-dark flex items-center gap-2 whitespace-nowrap transition-colors"
               >
                 <svg
@@ -276,6 +316,12 @@ export default function ResumePage() {
                 href="https://linkedin.com/in/eng618"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  trackEvent('Resume Contact Click', {
+                    channel: 'linkedin',
+                    link_url: 'https://linkedin.com/in/eng618',
+                  })
+                }
                 className="hover:text-brand-blue-light dark:hover:text-brand-blue-dark flex items-center gap-2 whitespace-nowrap transition-colors"
               >
                 <svg

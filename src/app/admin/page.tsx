@@ -25,6 +25,25 @@ import { marked } from 'marked';
 import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
+// Analytics helper to safely send events to Plausible
+const trackEvent = (eventName: string, props?: Record<string, string | number | boolean>) => {
+  const formattedProps: Record<string, string> = {};
+  if (props) {
+    Object.entries(props).forEach(([key, val]) => {
+      formattedProps[key] = String(val);
+    });
+  }
+
+  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
+    console.log(`[Analytics Dev] Event: ${eventName}`, formattedProps);
+    return;
+  }
+
+  if (typeof window !== 'undefined' && window.plausible) {
+    window.plausible(eventName, { props: formattedProps });
+  }
+};
+
 const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || '';
 
 interface CoverLetter {
@@ -50,6 +69,11 @@ export default function AdminPage() {
   const [email, setEmail] = useState('');
   const [loginMsg, setLoginMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [activeTab, setActiveTab] = useState('cover-letters');
+
+  // Security tracking refs
+  const hasTrackedDeniedRef = useRef(false);
+  const hasTrackedSuccessRef = useRef(false);
+  const loginAttemptsRef = useRef(0);
 
   // Cover Letters State
   const [coverLetters, setCoverLetters] = useState<CoverLetter[]>([]);
@@ -126,11 +150,25 @@ export default function AdminPage() {
     return () => subscription.unsubscribe();
   }, []);
 
-  // Fetch letters & notes when logged in as admin
+  // Fetch letters & notes when logged in as admin and track security events
   useEffect(() => {
-    if (session && session.user?.email === ADMIN_EMAIL) {
-      fetchCoverLetters();
-      fetchPrivateNotes();
+    if (session) {
+      const email = session.user?.email || '';
+      const domain = email.split('@')[1] || '';
+
+      if (email === ADMIN_EMAIL) {
+        fetchCoverLetters();
+        fetchPrivateNotes();
+        if (!hasTrackedSuccessRef.current) {
+          trackEvent('Admin Auth Success', { email_domain: domain });
+          hasTrackedSuccessRef.current = true;
+        }
+      } else {
+        if (!hasTrackedDeniedRef.current) {
+          trackEvent('Admin Access Denied', { attempted_email_domain: domain });
+          hasTrackedDeniedRef.current = true;
+        }
+      }
     }
   }, [session]);
 
@@ -159,6 +197,15 @@ export default function AdminPage() {
     setLoading(true);
     setLoginMsg(null);
 
+    // Track attempt count to detect potential bruteforce
+    loginAttemptsRef.current += 1;
+    if (loginAttemptsRef.current > 5) {
+      trackEvent('Admin Suspicious Activity', {
+        attempts_count: loginAttemptsRef.current,
+        anomaly_type: 'rate_limit_bypass_attempt',
+      });
+    }
+
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
@@ -167,10 +214,18 @@ export default function AdminPage() {
     });
 
     setLoading(false);
+    const domain = email.split('@')[1] || '';
     if (error) {
       setLoginMsg({ type: 'error', text: error.message });
+      trackEvent('Admin Auth Failed', {
+        error_code: error.status || 'unknown',
+        attempted_email_domain: domain,
+      });
     } else {
       setLoginMsg({ type: 'success', text: 'Magic link sent! Check your email inbox.' });
+      trackEvent('Admin Magic Link Requested', {
+        attempted_email_domain: domain,
+      });
     }
   };
 
