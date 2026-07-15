@@ -97,6 +97,18 @@ export default function PortfolioPage() {
             >
               A collection of architectural solutions, mobile applications, and professional certifications.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-6"
+            >
+              <Button asChild>
+                <a href="/resume" target="_blank" rel="noopener noreferrer">
+                  View Full Resume
+                </a>
+              </Button>
+            </motion.div>
           </div>
         </motion.section>
 

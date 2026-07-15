@@ -1,7 +1,7 @@
 import { Breadcrumb } from '@/components/breadcrumb';
 import { EditOnGithub } from '@/components/edit-on-github';
 import { mdxComponents } from '@/components/mdx-components';
-import { MobileSubHeader } from '@/components/mobile-sub-header';
+import { MobileTOC } from '@/components/mobile-sub-header';
 import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
 import { getAllContent, getContentBySlug } from '@/lib/notes';
 import { MDXRemote } from 'next-mdx-remote/rsc';
@@ -9,6 +9,8 @@ import { notFound } from 'next/navigation';
 import { rehypePrettyCode } from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
+
+import { SidebarTrigger } from '@gv-tech/ui-web';
 
 interface NotePageProps {
   params: Promise<{
@@ -36,21 +38,26 @@ export default async function NotePage({ params }: NotePageProps) {
 
   return (
     <TableOfContents minLevel={2} maxLevel={4}>
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="w-full">
         <div className="flex flex-col lg:flex-row lg:gap-8 xl:gap-12">
           <article className="w-full min-w-0 flex-1 py-8 lg:py-12">
-            <Breadcrumb
-              items={[
-                { label: 'Notes', href: '/notes' },
-                {
-                  label: title,
-                  href: '#',
-                  current: true,
-                },
-              ]}
-              className="mb-8"
-            />
-            <MobileSubHeader notes={notes} basePath="/notes" className="mb-8" />
+            <div className="bg-background/95 border-border no-print sticky top-16 z-30 -mx-4 mb-8 flex items-center justify-between gap-4 border-b px-4 py-3 backdrop-blur lg:-mx-8 lg:px-8">
+              <div className="flex min-w-0 flex-1 items-center gap-4">
+                <SidebarTrigger />
+                <Breadcrumb
+                  items={[
+                    { label: 'Notes', href: '/notes' },
+                    {
+                      label: title,
+                      href: '#',
+                      current: true,
+                    },
+                  ]}
+                  className="mb-0"
+                />
+              </div>
+              <MobileTOC />
+            </div>
             <div className="border-border mb-12 border-b pb-8">
               <h1 className="font-outfit mb-4 text-4xl font-bold lg:text-5xl">{title}</h1>
               {note.metadata.description && (

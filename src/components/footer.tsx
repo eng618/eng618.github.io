@@ -41,11 +41,13 @@ function SocialIcon({ icon, url, label }: { icon: string; url: string; label: st
   );
 }
 
-export function Footer() {
+import { cn } from '@/lib/utils';
+
+export function Footer({ className }: { className?: string } = {}) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-border bg-background border-t">
+    <footer className={cn('border-border bg-background border-t', className)}>
       <div className="container mx-auto px-4 py-12 lg:px-8">
         {/* Main Footer Content */}
         <div className="mb-8 grid grid-cols-1 gap-8 md:grid-cols-4">
@@ -90,7 +92,10 @@ export function Footer() {
         <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="text-muted-foreground text-sm">
             <p>
-              © {currentYear} {siteConfig.name}. All rights reserved.
+              <Link href="/admin" className="hover:text-muted-foreground cursor-default select-none">
+                ©
+              </Link>{' '}
+              {currentYear} {siteConfig.name}. All rights reserved.
             </p>
           </div>
           <div className="text-muted-foreground text-sm">
