@@ -14,6 +14,7 @@ import {
   SidebarGroupContent,
   SidebarHeader,
 } from '@gv-tech/ui-web';
+import { Session } from '@supabase/supabase-js';
 import { ChevronDown, ChevronRight, FileText, Folder } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
@@ -174,7 +175,7 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
 
     const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || '';
 
-    const checkSessionAndFetch = async (session: any) => {
+    const checkSessionAndFetch = async (session: Session | null) => {
       if (session?.user?.email === ADMIN_EMAIL) {
         setIsAdmin(true);
         const { data, error } = await supabase
@@ -183,12 +184,14 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
           .order('created_at', { ascending: false });
 
         if (!error && data) {
-          const mapped: NoteMetadata[] = data.map((note: any) => ({
-            slug: `${note.category}/${note.id}`,
-            title: note.title,
-            category: note.category,
-            date: note.created_at,
-          }));
+          const mapped: NoteMetadata[] = data.map(
+            (note: { id: string; title: string; category: string; created_at: string }) => ({
+              slug: `${note.category}/${note.id}`,
+              title: note.title,
+              category: note.category,
+              date: note.created_at,
+            }),
+          );
           setPrivateNotes(mapped);
         }
       } else {

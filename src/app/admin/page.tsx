@@ -19,8 +19,10 @@ import {
   TabsTrigger,
   Textarea,
 } from '@gv-tech/ui-web';
+import { Session } from '@supabase/supabase-js';
 import { Check, Copy, Edit2, ExternalLink, Key, Lock, LogOut, Mail, Plus, Trash2 } from 'lucide-react';
 import { marked } from 'marked';
+import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || '';
@@ -43,7 +45,7 @@ interface PrivateNote {
 }
 
 export default function AdminPage() {
-  const [session, setSession] = useState<any>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState('');
   const [loginMsg, setLoginMsg] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -126,7 +128,7 @@ export default function AdminPage() {
 
   // Fetch letters & notes when logged in as admin
   useEffect(() => {
-    if (session && session.user.email === ADMIN_EMAIL) {
+    if (session && session.user?.email === ADMIN_EMAIL) {
       fetchCoverLetters();
       fetchPrivateNotes();
     }
@@ -344,7 +346,7 @@ export default function AdminPage() {
   }
 
   // Logged in but not Admin Email
-  if (session.user.email !== ADMIN_EMAIL) {
+  if (session?.user?.email !== ADMIN_EMAIL) {
     return (
       <div className="flex min-h-screen flex-col">
         <Header />
@@ -356,7 +358,7 @@ export default function AdminPage() {
               </div>
               <CardTitle className="font-outfit text-2xl font-bold">Access Denied</CardTitle>
               <CardDescription>
-                Your account ({session.user.email}) is not authorized to access this administration page.
+                Your account ({session?.user?.email}) is not authorized to access this administration page.
               </CardDescription>
             </CardHeader>
             <CardContent className="flex justify-center">
@@ -381,15 +383,15 @@ export default function AdminPage() {
           <div className="border-border/50 mb-8 flex flex-col justify-between gap-4 border-b pb-6 sm:flex-row sm:items-center">
             <div>
               <h1 className="font-outfit text-3xl font-extrabold tracking-tight lg:text-4xl">Admin Control Panel</h1>
-              <p className="text-muted-foreground mt-1">Logged in as {session.user.email}</p>
+              <p className="text-muted-foreground mt-1">Logged in as {session?.user?.email}</p>
             </div>
             <div className="flex items-center gap-3">
-              <a
+              <Link
                 href="/notes/private"
                 className="border-border hover:bg-muted inline-flex h-9 items-center justify-center rounded-lg border px-4 text-sm font-semibold transition-colors"
               >
                 View Private Notes
-              </a>
+              </Link>
               <Button onClick={handleLogout} variant="outline" className="flex items-center gap-2">
                 <LogOut className="h-4 w-4" /> Log Out
               </Button>

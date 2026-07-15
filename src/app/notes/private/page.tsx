@@ -5,6 +5,7 @@ import { MobileTOC } from '@/components/mobile-sub-header';
 import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
 import { supabase } from '@/lib/supabase';
 import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, SidebarTrigger } from '@gv-tech/ui-web';
+import { Session } from '@supabase/supabase-js';
 import { Calendar, Folder, Lock } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
@@ -102,7 +103,7 @@ function SimpleMarkdown({ content }: { content: string }) {
 }
 
 function PrivateNotesContent() {
-  const [session, setSession] = useState<any>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
   const [notes, setNotes] = useState<PrivateNote[]>([]);
   const searchParams = useSearchParams();
@@ -124,7 +125,7 @@ function PrivateNotesContent() {
   }, []);
 
   useEffect(() => {
-    if (session && session.user.email === ADMIN_EMAIL) {
+    if (session && session.user?.email === ADMIN_EMAIL) {
       fetchNotes();
     }
   }, [session]);
@@ -147,7 +148,7 @@ function PrivateNotesContent() {
   }
 
   // Not logged in or not admin
-  if (!session || session.user.email !== ADMIN_EMAIL) {
+  if (!session || session.user?.email !== ADMIN_EMAIL) {
     return (
       <div className="flex w-full max-w-4xl justify-center px-4 py-16">
         <Card className="border-border w-full max-w-md shadow-xl">
