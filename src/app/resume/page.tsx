@@ -1,11 +1,11 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { ArrowLeft, Printer } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
-import { cn } from '@/lib/utils';
 
 interface ResumeHeaderProps {
   activeTab: 'resume' | 'cv';
@@ -23,7 +23,7 @@ function ResumeHeader({ activeTab, setActiveTab }: ResumeHeaderProps) {
 
   return (
     <div className="no-print dark:bg-brand-gray900 sticky top-0 z-50 border-b border-gray-200 bg-white py-3 shadow-sm dark:border-gray-800 print:hidden">
-      <div className="mx-auto flex flex-col gap-3 px-4 sm:px-6 lg:px-8 md:flex-row md:items-center md:justify-between max-w-5xl">
+      <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <div id="dynamic-links" className="flex items-center gap-4">
           <Link
             href="/"
@@ -47,13 +47,13 @@ function ResumeHeader({ activeTab, setActiveTab }: ResumeHeaderProps) {
 
         {/* Tab Toggle Controls */}
         <div className="flex justify-center">
-          <div className="flex rounded-lg border border-gray-200 bg-gray-50 p-0.5 dark:border-gray-800 dark:bg-brand-gray950">
+          <div className="dark:bg-brand-gray950 flex rounded-lg border border-gray-200 bg-gray-50 p-0.5 dark:border-gray-800">
             <button
               onClick={() => setActiveTab('resume')}
               className={cn(
                 'rounded-md px-4 py-1.5 text-xs font-bold transition-all duration-200',
                 activeTab === 'resume'
-                  ? 'bg-brand-blue-light text-white shadow-sm dark:bg-brand-blue-dark'
+                  ? 'bg-brand-blue-light dark:bg-brand-blue-dark text-white shadow-sm'
                   : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100',
               )}
             >
@@ -64,7 +64,7 @@ function ResumeHeader({ activeTab, setActiveTab }: ResumeHeaderProps) {
               className={cn(
                 'rounded-md px-4 py-1.5 text-xs font-bold transition-all duration-200',
                 activeTab === 'cv'
-                  ? 'bg-brand-blue-light text-white shadow-sm dark:bg-brand-blue-dark'
+                  ? 'bg-brand-blue-light dark:bg-brand-blue-dark text-white shadow-sm'
                   : 'text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100',
               )}
             >
@@ -341,22 +341,23 @@ export default function ResumePage() {
                     </div>
                     <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
                       <li>
-                        <strong>Mobile Design System</strong>: Architected and built a custom multi-platform mobile design
-                        system from the ground up, starting from a foundation of shadcn/ui and{' '}
+                        <strong>Mobile Design System</strong>: Architected and built a custom multi-platform mobile
+                        design system from the ground up, starting from a foundation of shadcn/ui and{' '}
                         <code>reactnative-reusables</code>, customized for brand identity and developer ergonomics.
                       </li>
                       <li>
-                        <strong>Design-to-Code Handoff</strong>: Bridged the product development lifecycle by establishing
-                        the mobile design system portfolio while continuously enhancing the desktop library, accelerating
-                        velocity across engineering and product teams.
+                        <strong>Design-to-Code Handoff</strong>: Bridged the product development lifecycle by
+                        establishing the mobile design system portfolio while continuously enhancing the desktop
+                        library, accelerating velocity across engineering and product teams.
                       </li>
                       <li>
-                        <strong>Enterprise Scale</strong>: Scaled application architecture and component systems to serve
-                        7,000+ active internal users, supporting staff from field engineers to executive leadership.
+                        <strong>Enterprise Scale</strong>: Scaled application architecture and component systems to
+                        serve 7,000+ active internal users, supporting staff from field engineers to executive
+                        leadership.
                       </li>
                       <li>
-                        <strong>AI Enablement</strong>: Designed and delivered an AI-powered feedback sanitization engine
-                        to process and validate downstream customer and reseller messages.
+                        <strong>AI Enablement</strong>: Designed and delivered an AI-powered feedback sanitization
+                        engine to process and validate downstream customer and reseller messages.
                       </li>
                       <li>
                         <strong>Technical Roadmaps</strong>: Acted as primary engineering lead on large-scale features,
@@ -393,14 +394,15 @@ export default function ResumePage() {
                         production hotfixes within a strict 24-hour turnaround.
                       </li>
                       <li>
-                        <strong>CI/CD & Developer Experience</strong>: Streamlined pipeline integrations, enhanced testing
-                        tooling, and promoted code quality standards (such as untyped Go constants) during developer
-                        chapter calls.
+                        <strong>CI/CD & Developer Experience</strong>: Streamlined pipeline integrations, enhanced
+                        testing tooling, and promoted code quality standards (such as untyped Go constants) during
+                        developer chapter calls.
                       </li>
                       <li>
-                        <strong>Open-Source Design Systems (Extra Initiative)</strong>: Core maintainer of the IBM Carbon
-                        Design System&apos;s <code>gatsby-theme-carbon</code> project, leading Gatsby major upgrades,
-                        fixing theme bugs, and maintaining strict WCAG/a11y compatibility for hundreds of global portals.
+                        <strong>Open-Source Design Systems (Extra Initiative)</strong>: Core maintainer of the IBM
+                        Carbon Design System&apos;s <code>gatsby-theme-carbon</code> project, leading Gatsby major
+                        upgrades, fixing theme bugs, and maintaining strict WCAG/a11y compatibility for hundreds of
+                        global portals.
                       </li>
                     </ul>
                   </div>
@@ -423,9 +425,9 @@ export default function ResumePage() {
                     </div>
                     <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
                       <li>
-                        <strong>Go Migration Utility</strong>: Built, architected, and expanded a CLI-based migration tool
-                        written in Go to transition enterprise client data seamlessly between major versions of IBM API
-                        Connect.
+                        <strong>Go Migration Utility</strong>: Built, architected, and expanded a CLI-based migration
+                        tool written in Go to transition enterprise client data seamlessly between major versions of IBM
+                        API Connect.
                       </li>
                       <li>
                         <strong>Internationalization</strong>: Spearheaded architectural changes to translate and
@@ -480,8 +482,8 @@ export default function ResumePage() {
                     </div>
                     <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
                       <li>
-                        <strong>Level 3 Support</strong>: Audited customer codebases, diagnosed runtime bugs, and deployed
-                        core software patches to MobileFirst foundation modules.
+                        <strong>Level 3 Support</strong>: Audited customer codebases, diagnosed runtime bugs, and
+                        deployed core software patches to MobileFirst foundation modules.
                       </li>
                       <li>
                         <strong>Technical Content</strong>: Created end-to-end integration push notification samples and
@@ -609,7 +611,8 @@ export default function ResumePage() {
                       Author
                     </p>
                     <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 print:text-black">
-                      Cross-platform mobile applications developed with Flutter, Firebase, and design token architectures.
+                      Cross-platform mobile applications developed with Flutter, Firebase, and design token
+                      architectures.
                     </p>
                   </div>
                 </div>
@@ -673,10 +676,10 @@ export default function ResumePage() {
                 Curriculum Vitae — Comprehensive Timeline
               </h2>
 
-              <div className="relative border-l-2 border-gray-200 pl-6 dark:border-gray-800 ml-4 space-y-10">
+              <div className="relative ml-4 space-y-10 border-l-2 border-gray-200 pl-6 dark:border-gray-800">
                 {/* 2026 Q2 */}
                 <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -690,14 +693,15 @@ export default function ResumePage() {
                       Q2 2026
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Earned Google AI Essentials V1 credential (verifiable on Credly), focusing on prompt engineering, generative AI applications, and ethical AI development guidelines.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Earned Google AI Essentials V1 credential (verifiable on Credly), focusing on prompt engineering,
+                    generative AI applications, and ethical AI development guidelines.
                   </p>
                 </div>
 
                 {/* 2026 Q1 */}
                 <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -711,15 +715,18 @@ export default function ResumePage() {
                       Q1 2026
                     </span>
                   </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    <li>Refined cross-platform design token configurations and monorepo release pipelines (Nx) to align web and mobile packages.</li>
+                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    <li>
+                      Refined cross-platform design token configurations and monorepo release pipelines (Nx) to align
+                      web and mobile packages.
+                    </li>
                     <li>Established strict system boundaries and interface contracts across monorepo packages.</li>
                   </ul>
                 </div>
 
                 {/* 2025 Q3 */}
                 <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -733,14 +740,16 @@ export default function ResumePage() {
                       Q3 2025
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Designed, architected, and built an AI-powered feedback sanitization engine to automatically process customer comments and reseller reviews for downstream ingestion. Utilized large language models to sanitize sensitive customer data and extract structured sentiments.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Designed, architected, and built an AI-powered feedback sanitization engine to automatically process
+                    customer comments and reseller reviews for downstream ingestion. Utilized large language models to
+                    sanitize sensitive customer data and extract structured sentiments.
                   </p>
                 </div>
 
                 {/* 2025 Q1 */}
                 <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -754,15 +763,18 @@ export default function ResumePage() {
                       Q1 2025
                     </span>
                   </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    <li>Scaled the custom mobile design system (built with shadcn/ui and NativeWind) to support an internal user base of 7,000+ active users from field engineers to executive leadership.</li>
+                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    <li>
+                      Scaled the custom mobile design system (built with shadcn/ui and NativeWind) to support an
+                      internal user base of 7,000+ active users from field engineers to executive leadership.
+                    </li>
                     <li>Conducted performance benchmarking on rendering design tokens on legacy Android devices.</li>
                   </ul>
                 </div>
 
                 {/* 2024 Q3 */}
                 <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -776,14 +788,16 @@ export default function ResumePage() {
                       Q3 2024
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Launched the first version of the mobile platform design system, successfully bridging the design-to-code gap and streamlining developer handoffs. Accelerated initial UI prototype builds by over 40% across native teams.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Launched the first version of the mobile platform design system, successfully bridging the
+                    design-to-code gap and streamlining developer handoffs. Accelerated initial UI prototype builds by
+                    over 40% across native teams.
                   </p>
                 </div>
 
                 {/* 2024 Q1 */}
                 <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -797,14 +811,15 @@ export default function ResumePage() {
                       Q1 2024
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Appointed as Principal Engineer - Systems Architect at Verizon to lead the next-generation cross-platform component framework and layout infrastructure.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Appointed as Principal Engineer - Systems Architect at Verizon to lead the next-generation
+                    cross-platform component framework and layout infrastructure.
                   </p>
                 </div>
 
                 {/* 2023 Q4 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -818,14 +833,15 @@ export default function ResumePage() {
                       Q4 2023
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Continued leading engineering efforts for IBM Quote-to-Cash core sales services prior to transition to Verizon.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Continued leading engineering efforts for IBM Quote-to-Cash core sales services prior to transition
+                    to Verizon.
                   </p>
                 </div>
 
                 {/* 2023 Q3 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -839,15 +855,18 @@ export default function ResumePage() {
                       Q3 2023
                     </span>
                   </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
+                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
                     <li>Earned the Developer Profession - Level 3 Expert badge.</li>
-                    <li>Received peer and manager awards for going above and beyond responsibilities, helping cross-team members set up complex development environments.</li>
+                    <li>
+                      Received peer and manager awards for going above and beyond responsibilities, helping cross-team
+                      members set up complex development environments.
+                    </li>
                   </ul>
                 </div>
 
                 {/* 2023 Q2 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -861,14 +880,15 @@ export default function ResumePage() {
                       Q2 2023
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Spoke on global Developer Chapter calls discussing Go repository standards, advocating for untyped constants to enhance package usability and flexibility.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Spoke on global Developer Chapter calls discussing Go repository standards, advocating for untyped
+                    constants to enhance package usability and flexibility.
                   </p>
                 </div>
 
                 {/* 2023 Q1 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -882,15 +902,21 @@ export default function ResumePage() {
                       Q1 2023
                     </span>
                   </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    <li>Resolved print-logging security vulnerabilities (which printed API keys and secrets to standard log streams) within a 24-hour turnaround including production hotfix.</li>
-                    <li>Optimized constants for high-throughput micro backend services by converting to unsigned constants.</li>
+                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    <li>
+                      Resolved print-logging security vulnerabilities (which printed API keys and secrets to standard
+                      log streams) within a 24-hour turnaround including production hotfix.
+                    </li>
+                    <li>
+                      Optimized constants for high-throughput micro backend services by converting to unsigned
+                      constants.
+                    </li>
                   </ul>
                 </div>
 
                 {/* 2022 Q4 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -904,8 +930,11 @@ export default function ResumePage() {
                       Q4 2022
                     </span>
                   </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    <li>Joined Carbon Design System maintainers team and became a core maintainer of `gatsby-theme-carbon`.</li>
+                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    <li>
+                      Joined Carbon Design System maintainers team and became a core maintainer of
+                      `gatsby-theme-carbon`.
+                    </li>
                     <li>Participated in IBM 2022 CIO Hackathon.</li>
                     <li>Earned IBM Agile Explorer credential.</li>
                   </ul>
@@ -913,7 +942,7 @@ export default function ResumePage() {
 
                 {/* 2021 Q3 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -927,14 +956,15 @@ export default function ResumePage() {
                       Q3 2021
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Promoted to Senior Full Stack Developer (July 2021) in recognition of technical leadership and contribution to internal business platforms.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Promoted to Senior Full Stack Developer (July 2021) in recognition of technical leadership and
+                    contribution to internal business platforms.
                   </p>
                 </div>
 
                 {/* 2020 Q1 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -948,7 +978,7 @@ export default function ResumePage() {
                       Q1 2020
                     </span>
                   </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
+                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
                     <li>Promoted to Staff Software Engineer (January 2020).</li>
                     <li>Earned IBM Cloud Kubernetes Service validation.</li>
                   </ul>
@@ -956,7 +986,7 @@ export default function ResumePage() {
 
                 {/* 2019 Q3 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -970,14 +1000,15 @@ export default function ResumePage() {
                       Q3 2019
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Earned Carbon Design System Developer Essentials - React badge, confirming deep competency in React component libraries and design tokens.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Earned Carbon Design System Developer Essentials - React badge, confirming deep competency in React
+                    component libraries and design tokens.
                   </p>
                 </div>
 
                 {/* 2017 Q1 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -991,15 +1022,18 @@ export default function ResumePage() {
                       Q1 2017
                     </span>
                   </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
+                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
                     <li>Promoted to Staff Software Engineer (February 2017).</li>
-                    <li>Authored MobileFirst Platform Android Push notification and iOS Push notification (Swift) reusable tutorials and sample applications.</li>
+                    <li>
+                      Authored MobileFirst Platform Android Push notification and iOS Push notification (Swift) reusable
+                      tutorials and sample applications.
+                    </li>
                   </ul>
                 </div>
 
                 {/* 2016 Q3 */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -1013,14 +1047,15 @@ export default function ResumePage() {
                       Q3 2016
                     </span>
                   </div>
-                  <p className="text-sm mt-2 text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
-                    Earned Enterprise Design Thinking Practitioner badge, validating competency in customer-centric UX design paradigms.
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                    Earned Enterprise Design Thinking Practitioner badge, validating competency in customer-centric UX
+                    design paradigms.
                   </p>
                 </div>
 
                 {/* 2015 Jul - Oct */}
                 <div className="relative">
-                  <div className="bg-gray-300 dark:bg-gray-700 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white dark:border-brand-gray900"></div>
+                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
                   <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                     <div>
                       <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -1034,9 +1069,12 @@ export default function ResumePage() {
                       2015
                     </span>
                   </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black leading-relaxed">
+                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
                     <li>Joined IBM as a Software Engineer (July 2015).</li>
-                    <li>Graduated with a Bachelor of Science (B.S.) in Mobile Development from Full Sail University (October 2015).</li>
+                    <li>
+                      Graduated with a Bachelor of Science (B.S.) in Mobile Development from Full Sail University
+                      (October 2015).
+                    </li>
                   </ul>
                 </div>
               </div>
