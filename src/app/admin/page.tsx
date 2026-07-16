@@ -313,7 +313,7 @@ export default function AdminPage() {
   };
 
   const copySharingLink = (slug: string) => {
-    const link = `${window.location.origin}/cover-letter/${slug}`;
+    const link = `${window.location.origin}/cover-letter?slug=${slug}`;
     navigator.clipboard.writeText(link).then(() => {
       setCopiedId(slug);
       setTimeout(() => setCopiedId(null), 2000);
@@ -510,7 +510,7 @@ export default function AdminPage() {
                                 )}
                               </Button>
                               <a
-                                href={`/cover-letter/${letter.slug}`}
+                                href={`/cover-letter?slug=${letter.slug}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:bg-muted text-muted-foreground hover:text-foreground inline-flex h-8 w-8 items-center justify-center rounded-md"
