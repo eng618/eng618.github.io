@@ -1,0 +1,307 @@
+{
+  "personal": {
+    "name": "Eric Garcia",
+    "title": "Senior Software Engineer & Systems Architect",
+    "email": "eng618@garciaericn.com",
+    "phone": "407-536-9513",
+    "website": "www.garciaericn.com",
+    "github": "github.com/eng618",
+    "linkedin": "linkedin.com/in/eng618",
+    "summary": "A results-oriented Senior Software Engineer and Systems Architect with over 11 years of professional experience designing, building, and scaling cross-platform design systems and cloud-native enterprise architectures. Deeply experienced in bridging the gap between design and engineering, maintaining open-source software, and driving the adoption of accessible (a11y) component libraries. Proficient in React, React Native, TypeScript, Node.js, and Go, with a track record of leading critical migrations and architecting high-performance UI systems for over 7,000+ active users."
+  },
+  "experiences": [
+    {
+      "company": "Verizon",
+      "role": "Principal Engineer - Systems Architect",
+      "period": "Jan 2024 – Present",
+      "showOnResume": true,
+      "bullets": [
+        "**Mobile Design System**: Architected and built a custom multi-platform mobile design system from the ground up, starting from a foundation of shadcn/ui and `reactnative-reusables`, customized for brand identity and developer ergonomics.",
+        "**Design-to-Code Handoff**: Bridged the product development lifecycle by establishing the mobile design system portfolio while continuously enhancing the desktop library, accelerating velocity across engineering and product teams.",
+        "**Enterprise Scale**: Scaled application architecture and component systems to serve 7,000+ active internal users, supporting staff from field engineers to leadership.",
+        "**AI Enablement**: Designed and delivered an AI-powered feedback sanitization engine to process and validate downstream customer and reseller messages.",
+        "**Technical Roadmaps**: Acted as primary engineering lead on large-scale features, defining development scope, scoping architectures, and conducting reviews."
+      ]
+    },
+    {
+      "company": "IBM Corp.",
+      "role": "Advisory Software Engineer (Quote to Cash)",
+      "period": "Jul 2021 – Jan 2024",
+      "showOnResume": true,
+      "bullets": [
+        "**Microservices & API Architecture**: Led the development and maintenance of core sales deal microservices (Go, React, TypeScript) on the Quote-to-Cash (Q2C) platform, driving database performance improvements and legacy system modernizations.",
+        "**Security Engineering**: Triaged and resolved critical high-priority security vulnerabilities (e.g. logging and watcher leaks of config keys and API secrets), executing production hotfixes within a strict 24-hour turnaround.",
+        "**CI/CD & Developer Experience**: Streamlined pipeline integrations, enhanced testing tooling, and promoted code quality standards (such as untyped Go constants) during developer chapter calls.",
+        "**Open-Source Design Systems (Extra Initiative)**: Core maintainer of the IBM Carbon Design System's `gatsby-theme-carbon` project, leading Gatsby major upgrades, fixing theme bugs, and maintaining strict WCAG/a11y compatibility for hundreds of global portals."
+      ]
+    },
+    {
+      "company": "IBM Corp.",
+      "role": "Staff Software Engineer (Migration & Analytics)",
+      "period": "Jan 2020 – Jul 2021",
+      "showOnResume": true,
+      "bullets": [
+        "**Go Migration Utility**: Built, architected, and expanded a CLI-based migration tool written in Go to transition enterprise client data seamlessly between major versions of IBM API Connect.",
+        "**Internationalization**: Spearheaded architectural changes to translate and globalize the CLI tool, addressing client specifications directly."
+      ]
+    },
+    {
+      "company": "IBM Corp.",
+      "role": "Staff Software Engineer (API Connect)",
+      "period": "Feb 2017 – Jan 2020",
+      "showOnResume": true,
+      "bullets": [
+        "**Enterprise Analytics**: Developed telemetry, analytics, and enterprise data integration endpoints for a cloud-native API management portal.",
+        "**Collaboration**: Partnered across design and engineering silos to preserve component stability and ensure performance under high workloads."
+      ]
+    },
+    {
+      "company": "IBM Corp.",
+      "role": "Software Engineer (MobileFirst Support)",
+      "period": "Jul 2015 – Feb 2017",
+      "showOnResume": true,
+      "bullets": [
+        "**Level 3 Support**: Audited customer codebases, diagnosed runtime bugs, and deployed core software patches to MobileFirst foundation modules.",
+        "**Technical Content**: Created end-to-end integration push notification samples and developer guides in Swift, Java, and Objective-C."
+      ]
+    },
+    {
+      "company": "Echo Interaction Group",
+      "role": "Mobile Application Developer",
+      "period": "Jun 2015",
+      "showOnResume": false,
+      "bullets": [
+        "Specialized in Android and iOS mobile application development, assisting in the enhancement of existing applications and the development of new applications."
+      ]
+    },
+    {
+      "company": "Teeps",
+      "role": "Mobile Applications Developer",
+      "period": "Mar 2015",
+      "showOnResume": false,
+      "bullets": [
+        "Updated and improved the UI/UX of an existing native iOS application."
+      ]
+    },
+    {
+      "company": "Florida Hospital",
+      "role": "Benefits Representative",
+      "period": "Apr 2011 – Mar 2015",
+      "showOnResume": false,
+      "bullets": [
+        "Ensured patient demographics and account details were accurate and appropriate for billing and processing.",
+        "Provided clear, thorough financial assessments and obtained necessary insurance authorizations or pre-certifications.",
+        "Maintained cooperative, productive relationships among team members and patients through clear communication and problem-solving."
+      ]
+    },
+    {
+      "company": "Mitsubishi Power Systems Americas",
+      "role": "Tig Welder",
+      "period": "Aug 2010 – Feb 2011",
+      "showOnResume": false,
+      "bullets": [
+        "Performed component setup and basic digital programming on advanced welding equipment controls.",
+        "Set up parts and major components from blueprints and drawings using precision cutting and abrasive devices.",
+        "Conducted detailed surface inspections and quality assurance checks using non-destructive testing (red-dye penetrant)."
+      ]
+    },
+    {
+      "company": "Wheeled Coach",
+      "role": "Ambulance Fabricator / Welder",
+      "period": "Feb 2006 – Aug 2010",
+      "showOnResume": false,
+      "bullets": [
+        "Set up and adjusted machinery to regulate temperature, pressure, and flow rates for custom structural fabrications.",
+        "Assembled and welded high-quality aluminum and steel structures (walls, roofs, cabinets) according to detailed blueprints.",
+        "Maintained digital logs of instrument readings, test results, and shift output to ensure regulatory and safety compliance."
+      ]
+    }
+  ],
+  "cvTimeline": [
+    {
+      "title": "Google AI Essentials Certification",
+      "organization": "Credential / Training",
+      "period": "Q2 2026",
+      "description": "Earned Google AI Essentials V1 credential (verifiable on Credly), focusing on prompt engineering, generative AI applications, and ethical AI development guidelines."
+    },
+    {
+      "title": "Principal Engineer - Systems Architect",
+      "organization": "Verizon",
+      "period": "Q1 2026",
+      "description": "Refined cross-platform design token configurations and monorepo release pipelines (Nx) to align web and mobile packages. Established strict system boundaries and interface contracts across monorepo packages."
+    },
+    {
+      "title": "AI Feedback Sanitization Engine",
+      "organization": "Verizon",
+      "period": "Q3 2025",
+      "description": "Designed, architected, and built an AI-powered feedback sanitization engine to automatically process customer comments and reseller reviews for downstream ingestion. Utilized large language models to sanitize sensitive customer data and extract structured sentiments."
+    },
+    {
+      "title": "Scaling the Mobile Design System",
+      "organization": "Verizon",
+      "period": "Q1 2025",
+      "description": "Scaled the custom mobile design system (built with shadcn/ui and NativeWind) to support an internal user base of 7,000+ active users from field engineers to executive leadership. Conducted performance benchmarking on rendering design tokens on legacy Android devices."
+    },
+    {
+      "title": "Mobile Platform Design System Launch",
+      "organization": "Verizon",
+      "period": "Q3 2024",
+      "description": "Launched the first version of the mobile platform design system, successfully bridging the design-to-code gap and streamlining developer handoffs. Accelerated initial UI prototype builds by over 40% across native teams."
+    },
+    {
+      "title": "Principal Systems Architect Appointment",
+      "organization": "Verizon",
+      "period": "Q1 2024",
+      "description": "Appointed as Principal Engineer - Systems Architect at Verizon to lead the next-generation cross-platform component framework and layout infrastructure."
+    },
+    {
+      "title": "Senior Full Stack Developer (Quote to Cash)",
+      "organization": "IBM Corp.",
+      "period": "Q4 2023",
+      "description": "Continued leading engineering efforts for IBM Quote-to-Cash core sales services prior to transition to Verizon."
+    },
+    {
+      "title": "IBM Level 3 Expert Credential & Recognition Award",
+      "organization": "IBM Corp. / Credential",
+      "period": "Q3 2023",
+      "description": "Earned the Developer Profession - Level 3 Expert badge. Received peer and manager awards for going above and beyond responsibilities, helping cross-team members set up complex development environments."
+    },
+    {
+      "title": "Chapter Presentation on Go Typings",
+      "organization": "IBM Corp. / Speaking Engagement",
+      "period": "Q2 2023",
+      "description": "Spoke on global Developer Chapter calls discussing Go repository standards, advocating for untyped constants to enhance package usability and flexibility."
+    },
+    {
+      "title": "Security Incident Response & Optimization",
+      "organization": "IBM Corp.",
+      "period": "Q1 2023",
+      "description": "Resolved print-logging security vulnerabilities (which printed API keys and secrets to standard log streams) within a 24-hour turnaround including production hotfix. Optimized constants for high-throughput micro backend services by converting to unsigned constants."
+    },
+    {
+      "title": "Carbon Design System Maintainer & CIO Hackathon",
+      "organization": "IBM Corp. / Open Source",
+      "period": "Q4 2022",
+      "description": "Joined Carbon Design System maintainers team and became a core maintainer of `gatsby-theme-carbon`. Participated in IBM 2022 CIO Hackathon. Earned IBM Agile Explorer credential."
+    },
+    {
+      "title": "Promotion to Senior Full Stack Developer",
+      "organization": "IBM Corp.",
+      "period": "Q3 2021",
+      "description": "Promoted to Senior Full Stack Developer (July 2021) in recognition of technical leadership and contribution to internal business platforms."
+    },
+    {
+      "title": "Staff Engineer Promotion & Kubernetes Certification",
+      "organization": "IBM Corp.",
+      "period": "Q1 2020",
+      "description": "Promoted to Staff Software Engineer (January 2020). Earned IBM Cloud Kubernetes Service validation."
+    },
+    {
+      "title": "Carbon Design System React Essentials",
+      "organization": "IBM Corp. / Credential",
+      "period": "Q3 2019",
+      "description": "Earned Carbon Design System Developer Essentials - React badge, confirming deep competency in React component libraries and design tokens."
+    },
+    {
+      "title": "Staff Engineer Promotion & Android/iOS Push Assets",
+      "organization": "IBM Corp.",
+      "period": "Q1 2017",
+      "description": "Promoted to Staff Software Engineer (February 2017). Authored MobileFirst Platform Android Push notification and iOS Push notification (Swift) reusable tutorials and sample applications."
+    },
+    {
+      "title": "Design Thinking Practitioner",
+      "organization": "IBM Corp. / Training",
+      "period": "Q3 2016",
+      "description": "Earned Enterprise Design Thinking Practitioner badge, validating competency in customer-centric UX design paradigms."
+    },
+    {
+      "title": "Career Launch & Graduation",
+      "organization": "Full Sail University / IBM Corp.",
+      "period": "2015",
+      "description": "Joined IBM as a Software Engineer (July 2015). Graduated with a Bachelor of Science (B.S.) in Mobile Development from Full Sail University (October 2015)."
+    },
+    {
+      "title": "Mobile App Developer Contract",
+      "organization": "Echo Interaction Group",
+      "period": "2015",
+      "description": "Specialized in Android and iOS mobile application development, assisting in the enhancement of existing applications."
+    },
+    {
+      "title": "Mobile App Developer Contract",
+      "organization": "Teeps",
+      "period": "2015",
+      "description": "Updated and polished UI/UX workflows for native iOS applications."
+    },
+    {
+      "title": "Benefits Representative",
+      "organization": "Florida Hospital",
+      "period": "2011 – 2015",
+      "description": "Provided financial assessments, patient account audits, and coordinated pre-certifications."
+    },
+    {
+      "title": "Tig Welder",
+      "organization": "Mitsubishi Power Systems Americas",
+      "period": "2010 – 2011",
+      "description": "Component setup and basic digital programming on welding controls. Practiced blueprint parsing and non-destructive surface testing."
+    },
+    {
+      "title": "Ambulance Fabricator / Welder",
+      "organization": "Wheeled Coach",
+      "period": "2006 – 2010",
+      "description": "Assembled and custom-fabricated structures according to detailed blueprint schematics. Maintained digital production logs."
+    },
+    {
+      "title": "Welding Certification",
+      "organization": "Mid Florida Tech",
+      "period": "2005",
+      "description": "Earned technical credentials and certifications in Welding Technology."
+    },
+    {
+      "title": "High School Graduation",
+      "organization": "Winter Park High School",
+      "period": "2005",
+      "description": "Graduated General Education."
+    }
+  ],
+  "skills": {
+    "languages": ["TypeScript", "JavaScript", "Go", "Swift", "Java", "Kotlin", "Objective-C", "English"],
+    "frameworks": ["React (DOM)", "React Native", "Next.js", "Gatsby", "Storybook", "Radix UI", "NativeWind"],
+    "tooling": ["Monorepos (Nx)", "GraphQL", "REST APIs", "Kubernetes", "Docker", "CI/CD"],
+    "standards": ["WCAG / a11y", "Design Tokens", "UX/UI Patterns", "TIG Welding", "Metal Fabrication"]
+  },
+  "projects": [
+    {
+      "name": "gvtech-design",
+      "role": "Author & Maintainer",
+      "description": "Multi-platform React & React Native monorepo powered by Nx. Serves as component baseline for personal & customer platforms."
+    },
+    {
+      "name": "gatsby-theme-carbon",
+      "role": "Core Maintainer",
+      "description": "Accessible Gatsby documentation framework for the IBM Carbon Design System. Led major core library upgrades."
+    },
+    {
+      "name": "HomeHarmony / Parable Bloom",
+      "role": "Author",
+      "description": "Cross-platform mobile applications developed with Flutter, Firebase, and design token architectures."
+    }
+  ],
+  "education": {
+    "institution": "Full Sail University",
+    "degree": "B.S. in Mobile Development",
+    "period": "Graduated 10/2015 · Winter Park, FL",
+    "description": "Focused on native mobile application development, visual assets, scalable infrastructures, and cross-platform layouts."
+  },
+  "certifications": [
+    { "title": "Google AI Essentials Specialization", "sub": "Google / Coursera · May 2026" },
+    { "title": "Developer Profession - Level 3 Expert", "sub": "IBM Credential · Sep 2023" },
+    { "title": "Carbon Design System Developer Essentials", "sub": "IBM Credential - React · Jul 2019" },
+    { "title": "IBM Cloud Kubernetes Service", "sub": "IBM Credential · Jan 2020" },
+    { "title": "Enterprise Design Thinking Practitioner", "sub": "IBM Credential · 2016" },
+    { "title": "iOS App Development with Swift Essential Training", "sub": "LinkedIn Certification" },
+    { "title": "iOS Game Development with Sprite Kit", "sub": "LinkedIn Certification" },
+    { "title": "Comparing Swift and Objective-C", "sub": "LinkedIn Certification" },
+    { "title": "Android Studio First Look", "sub": "LinkedIn Certification" },
+    { "title": "Use AI Responsibly", "sub": "LinkedIn Certification" }
+  ]
+}

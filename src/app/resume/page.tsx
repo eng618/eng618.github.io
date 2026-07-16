@@ -1,5 +1,6 @@
 'use client';
 
+import careerData from '@/data/career.json';
 import { cn } from '@/lib/utils';
 import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { ArrowLeft, Printer } from 'lucide-react';
@@ -120,6 +121,20 @@ function ResumeHeader({ activeTab, setActiveTab }: ResumeHeaderProps) {
   );
 }
 
+// Simple helper to parse bold and code snippets in markdown text
+function parseFormattedText(text: string) {
+  const parts = text.split(/(\*\*.*?\*\*|`.*?`)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+    if (part.startsWith('`') && part.endsWith('`')) {
+      return <code key={index}>{part.slice(1, -1)}</code>;
+    }
+    return part;
+  });
+}
+
 export default function ResumePage() {
   const [activeTab, setActiveTab] = useState<'resume' | 'cv'>('resume');
 
@@ -207,10 +222,10 @@ export default function ResumePage() {
           <div className="flex flex-col gap-4">
             <div>
               <h1 className="font-outfit text-brand-oxford print-text-dark text-4xl font-extrabold tracking-tight sm:text-5xl dark:text-white print:text-black">
-                Eric Garcia
+                {careerData.personal.name}
               </h1>
               <p className="text-brand-blue-light dark:text-brand-blue-dark font-outfit print-text-primary print:text-primary mt-2 text-xl font-semibold">
-                Senior Software Engineer & Systems Architect
+                {careerData.personal.title}
               </p>
               <p className="text-md print-text-muted mt-2 max-w-3xl font-normal text-gray-500 dark:text-gray-400 print:text-gray-700">
                 Specializing in cross-platform design systems, developer platforms, and robust cloud-native
@@ -221,9 +236,12 @@ export default function ResumePage() {
             {/* Contact Info Row */}
             <div className="print-text-dark mt-2 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-gray-600 dark:text-gray-300 print:text-black">
               <a
-                href="mailto:eng618@garciaericn.com"
+                href={`mailto:${careerData.personal.email}`}
                 onClick={() =>
-                  trackEvent('Resume Contact Click', { channel: 'email', link_url: 'mailto:eng618@garciaericn.com' })
+                  trackEvent('Resume Contact Click', {
+                    channel: 'email',
+                    link_url: `mailto:${careerData.personal.email}`,
+                  })
                 }
                 className="hover:text-brand-blue-light dark:hover:text-brand-blue-dark flex items-center gap-2 whitespace-nowrap transition-colors"
               >
@@ -242,7 +260,7 @@ export default function ResumePage() {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   />
                 </svg>
-                eng618@garciaericn.com
+                {careerData.personal.email}
               </a>
               <span className="flex items-center gap-2 whitespace-nowrap">
                 <svg
@@ -260,14 +278,17 @@ export default function ResumePage() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                407-536-9513
+                {careerData.personal.phone}
               </span>
               <a
-                href="http://www.garciaericn.com"
+                href={`http://${careerData.personal.website}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent('Resume Contact Click', { channel: 'website', link_url: 'http://www.garciaericn.com' })
+                  trackEvent('Resume Contact Click', {
+                    channel: 'website',
+                    link_url: `http://${careerData.personal.website}`,
+                  })
                 }
                 className="hover:text-brand-blue-light dark:hover:text-brand-blue-dark flex items-center gap-2 whitespace-nowrap transition-colors"
               >
@@ -286,14 +307,17 @@ export default function ResumePage() {
                     d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9h18"
                   />
                 </svg>
-                www.garciaericn.com
+                {careerData.personal.website}
               </a>
               <a
-                href="https://github.com/eng618"
+                href={`https://${careerData.personal.github}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
-                  trackEvent('Resume Contact Click', { channel: 'github', link_url: 'https://github.com/eng618' })
+                  trackEvent('Resume Contact Click', {
+                    channel: 'github',
+                    link_url: `https://${careerData.personal.github}`,
+                  })
                 }
                 className="hover:text-brand-blue-light dark:hover:text-brand-blue-dark flex items-center gap-2 whitespace-nowrap transition-colors"
               >
@@ -310,16 +334,16 @@ export default function ResumePage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                github.com/eng618
+                {careerData.personal.github}
               </a>
               <a
-                href="https://linkedin.com/in/eng618"
+                href={`https://${careerData.personal.linkedin}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() =>
                   trackEvent('Resume Contact Click', {
                     channel: 'linkedin',
-                    link_url: 'https://linkedin.com/in/eng618',
+                    link_url: `https://${careerData.personal.linkedin}`,
                   })
                 }
                 className="hover:text-brand-blue-light dark:hover:text-brand-blue-dark flex items-center gap-2 whitespace-nowrap transition-colors"
@@ -337,24 +361,20 @@ export default function ResumePage() {
                     clipRule="evenodd"
                   />
                 </svg>
-                linkedin.com/in/eng618
+                {careerData.personal.linkedin}
               </a>
             </div>
           </div>
 
           <hr className="print-border my-6 border-gray-200 dark:border-gray-800" />
 
+          {/* Professional Summary */}
           <div>
             <h2 className="print-text-primary mb-2 text-sm font-semibold tracking-wider text-gray-400 uppercase">
               Professional Summary
             </h2>
             <p className="text-md print-text-dark leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-              A results-oriented Senior Software Engineer and Systems Architect with over 11 years of professional
-              experience designing, building, and scaling cross-platform design systems and cloud-native enterprise
-              architectures. Deeply experienced in bridging the gap between design and engineering, maintaining
-              open-source software, and driving the adoption of accessible (a11y) component libraries. Proficient in
-              React, React Native, TypeScript, Node.js, and Go, with a track record of leading critical migrations and
-              architecting high-performance UI systems for over 7,000+ active users.
+              {careerData.personal.summary}
             </p>
           </div>
         </div>
@@ -369,174 +389,44 @@ export default function ResumePage() {
                 </h2>
 
                 <div className="space-y-8">
-                  {/* Verizon */}
-                  <div className="border-brand-blue-light dark:border-brand-blue-dark relative border-l-2 pl-6">
-                    <div className="bg-brand-blue-light dark:bg-brand-blue-dark absolute top-1.5 -left-1.5 h-3 w-3 rounded-full"></div>
-                    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                          Principal Engineer - Systems Architect
-                        </h3>
-                        <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                          Verizon
-                        </p>
+                  {careerData.experiences
+                    .filter((exp) => exp.showOnResume)
+                    .map((exp, idx) => (
+                      <div
+                        key={idx}
+                        className={cn(
+                          'relative border-l-2 pl-6',
+                          idx === 0
+                            ? 'border-brand-blue-light dark:border-brand-blue-dark'
+                            : 'border-gray-300 dark:border-gray-700',
+                        )}
+                      >
+                        <div
+                          className={cn(
+                            'absolute top-1.5 -left-1.5 h-3 w-3 rounded-full',
+                            idx === 0 ? 'bg-brand-blue-light dark:bg-brand-blue-dark' : 'bg-gray-300 dark:bg-gray-700',
+                          )}
+                        ></div>
+                        <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                          <div>
+                            <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
+                              {exp.role}
+                            </h3>
+                            <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
+                              {exp.company}
+                            </p>
+                          </div>
+                          <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
+                            {exp.period}
+                          </span>
+                        </div>
+                        <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
+                          {exp.bullets.map((bullet, bIdx) => (
+                            <li key={bIdx}>{parseFormattedText(bullet)}</li>
+                          ))}
+                        </ul>
                       </div>
-                      <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                        Jan 2024 – Present
-                      </span>
-                    </div>
-                    <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
-                      <li>
-                        <strong>Mobile Design System</strong>: Architected and built a custom multi-platform mobile
-                        design system from the ground up, starting from a foundation of shadcn/ui and{' '}
-                        <code>reactnative-reusables</code>, customized for brand identity and developer ergonomics.
-                      </li>
-                      <li>
-                        <strong>Design-to-Code Handoff</strong>: Bridged the product development lifecycle by
-                        establishing the mobile design system portfolio while continuously enhancing the desktop
-                        library, accelerating velocity across engineering and product teams.
-                      </li>
-                      <li>
-                        <strong>Enterprise Scale</strong>: Scaled application architecture and component systems to
-                        serve 7,000+ active internal users, supporting staff from field engineers to executive
-                        leadership.
-                      </li>
-                      <li>
-                        <strong>AI Enablement</strong>: Designed and delivered an AI-powered feedback sanitization
-                        engine to process and validate downstream customer and reseller messages.
-                      </li>
-                      <li>
-                        <strong>Technical Roadmaps</strong>: Acted as primary engineering lead on large-scale features,
-                        defining development scope, scoping architectures, and conducting reviews.
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* IBM Senior Full Stack */}
-                  <div className="relative border-l-2 border-gray-300 pl-6 dark:border-gray-700">
-                    <div className="absolute top-1.5 -left-1.5 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-700"></div>
-                    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                          Senior Full Stack Developer (Quote to Cash)
-                        </h3>
-                        <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                          IBM Corp.
-                        </p>
-                      </div>
-                      <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                        Jul 2021 – Dec 2023
-                      </span>
-                    </div>
-                    <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
-                      <li>
-                        <strong>Microservices & API Architecture</strong>: Led the development and maintenance of core
-                        sales deal microservices (Go, React, TypeScript) on the Quote-to-Cash (Q2C) platform, driving
-                        database performance improvements and legacy system modernizations.
-                      </li>
-                      <li>
-                        <strong>Security Engineering</strong>: Triaged and resolved critical high-priority security
-                        vulnerabilities (e.g. logging and watcher leaks of config keys and API secrets), executing
-                        production hotfixes within a strict 24-hour turnaround.
-                      </li>
-                      <li>
-                        <strong>CI/CD & Developer Experience</strong>: Streamlined pipeline integrations, enhanced
-                        testing tooling, and promoted code quality standards (such as untyped Go constants) during
-                        developer chapter calls.
-                      </li>
-                      <li>
-                        <strong>Open-Source Design Systems (Extra Initiative)</strong>: Core maintainer of the IBM
-                        Carbon Design System&apos;s <code>gatsby-theme-carbon</code> project, leading Gatsby major
-                        upgrades, fixing theme bugs, and maintaining strict WCAG/a11y compatibility for hundreds of
-                        global portals.
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* IBM Staff SE Go */}
-                  <div className="relative border-l-2 border-gray-300 pl-6 dark:border-gray-700">
-                    <div className="absolute top-1.5 -left-1.5 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-700"></div>
-                    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                          Staff Software Engineer (Migration & Analytics)
-                        </h3>
-                        <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                          IBM Corp.
-                        </p>
-                      </div>
-                      <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                        Jan 2020 – Jun 2021
-                      </span>
-                    </div>
-                    <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
-                      <li>
-                        <strong>Go Migration Utility</strong>: Built, architected, and expanded a CLI-based migration
-                        tool written in Go to transition enterprise client data seamlessly between major versions of IBM
-                        API Connect.
-                      </li>
-                      <li>
-                        <strong>Internationalization</strong>: Spearheaded architectural changes to translate and
-                        globalize the CLI tool, addressing client specifications directly.
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* IBM Staff SE Analytics */}
-                  <div className="relative border-l-2 border-gray-300 pl-6 dark:border-gray-700">
-                    <div className="absolute top-1.5 -left-1.5 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-700"></div>
-                    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                          Staff Software Engineer (API Connect)
-                        </h3>
-                        <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                          IBM Corp.
-                        </p>
-                      </div>
-                      <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                        Feb 2017 – Dec 2019
-                      </span>
-                    </div>
-                    <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
-                      <li>
-                        <strong>Enterprise Analytics</strong>: Developed telemetry, analytics, and enterprise data
-                        integration endpoints for a cloud-native API management portal.
-                      </li>
-                      <li>
-                        <strong>Collaboration</strong>: Partnered across design and engineering silos to preserve
-                        component stability and ensure performance under high workloads.
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* IBM SE MobileFirst */}
-                  <div className="relative border-l-2 border-gray-300 pl-6 dark:border-gray-700">
-                    <div className="absolute top-1.5 -left-1.5 h-3 w-3 rounded-full bg-gray-300 dark:bg-gray-700"></div>
-                    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                      <div>
-                        <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                          Software Engineer (MobileFirst Support)
-                        </h3>
-                        <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                          IBM Corp.
-                        </p>
-                      </div>
-                      <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                        Jul 2015 – Feb 2017
-                      </span>
-                    </div>
-                    <ul className="print-text-dark mt-4 list-outside list-disc space-y-2.5 pl-4 text-sm text-gray-600 dark:text-gray-300 print:text-black">
-                      <li>
-                        <strong>Level 3 Support</strong>: Audited customer codebases, diagnosed runtime bugs, and
-                        deployed core software patches to MobileFirst foundation modules.
-                      </li>
-                      <li>
-                        <strong>Technical Content</strong>: Created end-to-end integration push notification samples and
-                        developer guides in Swift, Java, and Objective-C.
-                      </li>
-                    </ul>
-                  </div>
+                    ))}
                 </div>
               </div>
             </div>
@@ -554,7 +444,7 @@ export default function ResumePage() {
                       Languages
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {['TypeScript', 'JavaScript', 'Go', 'Swift', 'Java', 'Kotlin', 'Objective-C'].map((lang) => (
+                      {careerData.skills.languages.map((lang) => (
                         <span
                           key={lang}
                           className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
@@ -570,16 +460,14 @@ export default function ResumePage() {
                       Frameworks & Design Systems
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {['React (DOM)', 'React Native', 'Next.js', 'Gatsby', 'Storybook', 'Radix UI', 'NativeWind'].map(
-                        (framework) => (
-                          <span
-                            key={framework}
-                            className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
-                          >
-                            {framework}
-                          </span>
-                        ),
-                      )}
+                      {careerData.skills.frameworks.map((framework) => (
+                        <span
+                          key={framework}
+                          className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
+                        >
+                          {framework}
+                        </span>
+                      ))}
                     </div>
                   </div>
 
@@ -588,7 +476,7 @@ export default function ResumePage() {
                       Tooling & Infrastructure
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {['Monorepos (Nx)', 'GraphQL', 'REST APIs', 'Kubernetes', 'Docker', 'CI/CD'].map((tool) => (
+                      {careerData.skills.tooling.map((tool) => (
                         <span
                           key={tool}
                           className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
@@ -604,7 +492,7 @@ export default function ResumePage() {
                       Standards
                     </h3>
                     <div className="flex flex-wrap gap-2">
-                      {['WCAG / a11y', 'Design Tokens', 'UX/UI Patterns'].map((standard) => (
+                      {careerData.skills.standards.map((standard) => (
                         <span
                           key={standard}
                           className="print-bg-transparent print-border print-text-dark rounded-md border border-gray-200 bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300 print:border-gray-300 print:text-black"
@@ -623,44 +511,19 @@ export default function ResumePage() {
                   Open Source Projects
                 </h2>
                 <div className="print-text-dark space-y-4 text-sm print:text-black">
-                  <div>
-                    <h3 className="print-text-dark font-bold text-gray-800 dark:text-gray-200 print:text-black">
-                      gvtech-design
-                    </h3>
-                    <p className="print-text-muted mt-0.5 text-xs text-gray-500 dark:text-gray-400 print:text-gray-600">
-                      Author & Maintainer
-                    </p>
-                    <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 print:text-black">
-                      Multi-platform React & React Native monorepo powered by Nx. Serves as component baseline for
-                      personal & customer platforms.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="print-text-dark font-bold text-gray-800 dark:text-gray-200 print:text-black">
-                      gatsby-theme-carbon
-                    </h3>
-                    <p className="print-text-muted mt-0.5 text-xs text-gray-500 dark:text-gray-400 print:text-gray-600">
-                      Core Maintainer
-                    </p>
-                    <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 print:text-black">
-                      Accessible Gatsby documentation framework for the IBM Carbon Design System. Led major core library
-                      upgrades.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="print-text-dark font-bold text-gray-800 dark:text-gray-200 print:text-black">
-                      HomeHarmony / Parable Bloom
-                    </h3>
-                    <p className="print-text-muted mt-0.5 text-xs text-gray-500 dark:text-gray-400 print:text-gray-600">
-                      Author
-                    </p>
-                    <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 print:text-black">
-                      Cross-platform mobile applications developed with Flutter, Firebase, and design token
-                      architectures.
-                    </p>
-                  </div>
+                  {careerData.projects.map((proj, idx) => (
+                    <div key={idx}>
+                      <h3 className="print-text-dark font-bold text-gray-800 dark:text-gray-200 print:text-black">
+                        {proj.name}
+                      </h3>
+                      <p className="print-text-muted mt-0.5 text-xs text-gray-500 dark:text-gray-400 print:text-gray-600">
+                        {proj.role}
+                      </p>
+                      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 print:text-black">
+                        {proj.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
@@ -671,17 +534,16 @@ export default function ResumePage() {
                 </h2>
                 <div className="print-text-dark text-sm print:text-black">
                   <h3 className="print-text-dark font-bold text-gray-800 dark:text-gray-200 print:text-black">
-                    Full Sail University
+                    {careerData.education.institution}
                   </h3>
                   <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary mt-0.5 text-xs font-semibold">
-                    B.S. in Mobile Development
+                    {careerData.education.degree}
                   </p>
                   <p className="print-text-muted mt-0.5 text-xs text-gray-500 dark:text-gray-400 print:text-gray-600">
-                    Graduated 10/2015 · Winter Park, FL
+                    {careerData.education.period}
                   </p>
                   <p className="mt-2 text-xs text-gray-600 dark:text-gray-400 print:text-black">
-                    Focused on native mobile application development, visual assets, scalable infrastructures, and
-                    cross-platform layouts.
+                    {careerData.education.description}
                   </p>
                 </div>
               </div>
@@ -692,13 +554,7 @@ export default function ResumePage() {
                   Certifications & Badges
                 </h2>
                 <ul className="print-text-dark list-none space-y-3 pl-1 text-xs text-gray-600 dark:text-gray-300 print:text-black">
-                  {[
-                    { title: 'Google AI Essentials Specialization', sub: 'Google / Coursera · May 2026' },
-                    { title: 'Developer Profession - Level 3 Expert', sub: 'IBM Credential · Sep 2023' },
-                    { title: 'Carbon Design System Developer Essentials', sub: 'IBM Credential - React · Jul 2019' },
-                    { title: 'IBM Cloud Kubernetes Service', sub: 'IBM Credential · Jan 2020' },
-                    { title: 'Enterprise Design Thinking Practitioner', sub: 'IBM Credential · 2016' },
-                  ].map((cert, idx) => (
+                  {careerData.certifications.map((cert, idx) => (
                     <li key={idx} className="flex items-start gap-2">
                       <span className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary mt-0.5 font-bold">
                         •
@@ -723,406 +579,55 @@ export default function ResumePage() {
               </h2>
 
               <div className="relative ml-4 space-y-10 border-l-2 border-gray-200 pl-6 dark:border-gray-800">
-                {/* 2026 Q2 */}
-                <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Google AI Essentials Certification
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        Credential / Training
-                      </p>
+                {careerData.cvTimeline.map((item, idx) => {
+                  const isMainRole =
+                    item.organization === 'Verizon' ||
+                    item.organization === 'IBM Corp.' ||
+                    item.organization.includes('Full Sail');
+                  return (
+                    <div key={idx} className="relative">
+                      <div
+                        className={cn(
+                          'dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white',
+                          isMainRole ? 'bg-brand-blue-light dark:bg-brand-blue-dark' : 'bg-gray-300 dark:bg-gray-700',
+                        )}
+                      ></div>
+                      <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                        <div>
+                          <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
+                            {item.title}
+                          </h3>
+                          <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
+                            {item.organization}
+                          </p>
+                        </div>
+                        <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
+                          {item.period}
+                        </span>
+                      </div>
+                      {item.description.includes('\n') ||
+                      item.description.startsWith('-') ||
+                      item.description.includes('<li>') ? (
+                        <div className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                          {/* If timeline item has sub-points split by bullet points, parse them */}
+                          <ul className="list-outside list-disc space-y-1.5 pl-4">
+                            {item.description
+                              .split('\n')
+                              .filter((line) => line.trim().length > 0)
+                              .map((line, lIdx) => {
+                                const cleanLine = line.replace(/^\s*-\s*/, '');
+                                return <li key={lIdx}>{parseFormattedText(cleanLine)}</li>;
+                              })}
+                          </ul>
+                        </div>
+                      ) : (
+                        <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
+                          {parseFormattedText(item.description)}
+                        </p>
+                      )}
                     </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q2 2026
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Earned Google AI Essentials V1 credential (verifiable on Credly), focusing on prompt engineering,
-                    generative AI applications, and ethical AI development guidelines.
-                  </p>
-                </div>
-
-                {/* 2026 Q1 */}
-                <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Principal Engineer - Systems Architect
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        Verizon
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q1 2026
-                    </span>
-                  </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    <li>
-                      Refined cross-platform design token configurations and monorepo release pipelines (Nx) to align
-                      web and mobile packages.
-                    </li>
-                    <li>Established strict system boundaries and interface contracts across monorepo packages.</li>
-                  </ul>
-                </div>
-
-                {/* 2025 Q3 */}
-                <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        AI Feedback Sanitization Engine
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        Verizon
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q3 2025
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Designed, architected, and built an AI-powered feedback sanitization engine to automatically process
-                    customer comments and reseller reviews for downstream ingestion. Utilized large language models to
-                    sanitize sensitive customer data and extract structured sentiments.
-                  </p>
-                </div>
-
-                {/* 2025 Q1 */}
-                <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Scaling the Mobile Design System
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        Verizon
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q1 2025
-                    </span>
-                  </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    <li>
-                      Scaled the custom mobile design system (built with shadcn/ui and NativeWind) to support an
-                      internal user base of 7,000+ active users from field engineers to executive leadership.
-                    </li>
-                    <li>Conducted performance benchmarking on rendering design tokens on legacy Android devices.</li>
-                  </ul>
-                </div>
-
-                {/* 2024 Q3 */}
-                <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Mobile Platform Design System Launch
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        Verizon
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q3 2024
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Launched the first version of the mobile platform design system, successfully bridging the
-                    design-to-code gap and streamlining developer handoffs. Accelerated initial UI prototype builds by
-                    over 40% across native teams.
-                  </p>
-                </div>
-
-                {/* 2024 Q1 */}
-                <div className="relative">
-                  <div className="bg-brand-blue-light dark:bg-brand-blue-dark dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Principal Systems Architect Appointment
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        Verizon
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q1 2024
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Appointed as Principal Engineer - Systems Architect at Verizon to lead the next-generation
-                    cross-platform component framework and layout infrastructure.
-                  </p>
-                </div>
-
-                {/* 2023 Q4 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Senior Full Stack Developer (Quote to Cash)
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp.
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q4 2023
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Continued leading engineering efforts for IBM Quote-to-Cash core sales services prior to transition
-                    to Verizon.
-                  </p>
-                </div>
-
-                {/* 2023 Q3 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        IBM Level 3 Expert Credential & Recognition Award
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp. / Credential
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q3 2023
-                    </span>
-                  </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    <li>Earned the Developer Profession - Level 3 Expert badge.</li>
-                    <li>
-                      Received peer and manager awards for going above and beyond responsibilities, helping cross-team
-                      members set up complex development environments.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* 2023 Q2 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Chapter Presentation on Go Typings
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp. / Speaking Engagement
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q2 2023
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Spoke on global Developer Chapter calls discussing Go repository standards, advocating for untyped
-                    constants to enhance package usability and flexibility.
-                  </p>
-                </div>
-
-                {/* 2023 Q1 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Security Incident Response & Optimization
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp.
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q1 2023
-                    </span>
-                  </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    <li>
-                      Resolved print-logging security vulnerabilities (which printed API keys and secrets to standard
-                      log streams) within a 24-hour turnaround including production hotfix.
-                    </li>
-                    <li>
-                      Optimized constants for high-throughput micro backend services by converting to unsigned
-                      constants.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* 2022 Q4 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Carbon Design System Maintainer & CIO Hackathon
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp. / Open Source
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q4 2022
-                    </span>
-                  </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    <li>
-                      Joined Carbon Design System maintainers team and became a core maintainer of
-                      `gatsby-theme-carbon`.
-                    </li>
-                    <li>Participated in IBM 2022 CIO Hackathon.</li>
-                    <li>Earned IBM Agile Explorer credential.</li>
-                  </ul>
-                </div>
-
-                {/* 2021 Q3 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Promotion to Senior Full Stack Developer
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp.
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q3 2021
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Promoted to Senior Full Stack Developer (July 2021) in recognition of technical leadership and
-                    contribution to internal business platforms.
-                  </p>
-                </div>
-
-                {/* 2020 Q1 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Staff Engineer Promotion & Kubernetes Certification
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp.
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q1 2020
-                    </span>
-                  </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    <li>Promoted to Staff Software Engineer (January 2020).</li>
-                    <li>Earned IBM Cloud Kubernetes Service validation.</li>
-                  </ul>
-                </div>
-
-                {/* 2019 Q3 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Carbon Design System React Essentials
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp. / Credential
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q3 2019
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Earned Carbon Design System Developer Essentials - React badge, confirming deep competency in React
-                    component libraries and design tokens.
-                  </p>
-                </div>
-
-                {/* 2017 Q1 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Staff Engineer Promotion & Android/iOS Push Assets
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp.
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q1 2017
-                    </span>
-                  </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    <li>Promoted to Staff Software Engineer (February 2017).</li>
-                    <li>
-                      Authored MobileFirst Platform Android Push notification and iOS Push notification (Swift) reusable
-                      tutorials and sample applications.
-                    </li>
-                  </ul>
-                </div>
-
-                {/* 2016 Q3 */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Design Thinking Practitioner
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        IBM Corp. / Training
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      Q3 2016
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    Earned Enterprise Design Thinking Practitioner badge, validating competency in customer-centric UX
-                    design paradigms.
-                  </p>
-                </div>
-
-                {/* 2015 Jul - Oct */}
-                <div className="relative">
-                  <div className="dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white bg-gray-300 dark:bg-gray-700"></div>
-                  <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-                    <div>
-                      <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
-                        Career Launch & Graduation
-                      </h3>
-                      <p className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary text-sm font-medium">
-                        Full Sail University / IBM Corp.
-                      </p>
-                    </div>
-                    <span className="print-bg-transparent print-text-muted rounded-full bg-gray-100 px-2.5 py-1 text-xs font-semibold whitespace-nowrap text-gray-500 dark:bg-gray-800 dark:text-gray-400 print:text-gray-600">
-                      2015
-                    </span>
-                  </div>
-                  <ul className="print-text-dark mt-2 list-outside list-disc space-y-1.5 pl-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 print:text-black">
-                    <li>Joined IBM as a Software Engineer (July 2015).</li>
-                    <li>
-                      Graduated with a Bachelor of Science (B.S.) in Mobile Development from Full Sail University
-                      (October 2015).
-                    </li>
-                  </ul>
-                </div>
+                  );
+                })}
               </div>
             </div>
           </div>
