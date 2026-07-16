@@ -511,19 +511,21 @@ export default function ResumePage() {
                   Open Source Projects
                 </h2>
                 <div className="print-text-dark space-y-4 text-sm print:text-black">
-                  {careerData.projects.map((proj, idx) => (
-                    <div key={idx}>
-                      <h3 className="print-text-dark font-bold text-gray-800 dark:text-gray-200 print:text-black">
-                        {proj.name}
-                      </h3>
-                      <p className="print-text-muted mt-0.5 text-xs text-gray-500 dark:text-gray-400 print:text-gray-600">
-                        {proj.role}
-                      </p>
-                      <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 print:text-black">
-                        {proj.description}
-                      </p>
-                    </div>
-                  ))}
+                  {careerData.projects
+                    .filter((p) => p.showOnResume)
+                    .map((proj, idx) => (
+                      <div key={idx}>
+                        <h3 className="print-text-dark font-bold text-gray-800 dark:text-gray-200 print:text-black">
+                          {proj.name}
+                        </h3>
+                        <p className="print-text-muted mt-0.5 text-xs text-gray-500 dark:text-gray-400 print:text-gray-600">
+                          {proj.role}
+                        </p>
+                        <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 print:text-black">
+                          {proj.description}
+                        </p>
+                      </div>
+                    ))}
                 </div>
               </div>
 
@@ -554,19 +556,21 @@ export default function ResumePage() {
                   Certifications & Badges
                 </h2>
                 <ul className="print-text-dark list-none space-y-3 pl-1 text-xs text-gray-600 dark:text-gray-300 print:text-black">
-                  {careerData.certifications.map((cert, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <span className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary mt-0.5 font-bold">
-                        •
-                      </span>
-                      <div>
-                        <strong>{cert.title}</strong>
-                        <p className="print-text-muted mt-0.5 text-[10px] text-gray-500 dark:text-gray-400 print:text-gray-600">
-                          {cert.sub}
-                        </p>
-                      </div>
-                    </li>
-                  ))}
+                  {careerData.certifications
+                    .filter((c) => c.showOnResume)
+                    .map((cert, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-brand-blue-light dark:text-brand-blue-dark print-text-primary print:text-primary mt-0.5 font-bold">
+                          •
+                        </span>
+                        <div>
+                          <strong>{cert.resumeTitle}</strong>
+                          <p className="print-text-muted mt-0.5 text-[10px] text-gray-500 dark:text-gray-400 print:text-gray-600">
+                            {cert.resumeSub}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
                 </ul>
               </div>
             </div>

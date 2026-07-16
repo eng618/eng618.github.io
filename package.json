@@ -4,9 +4,9 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "next build",
+    "build": "bun run scripts/sync-career-data.ts && next build",
     "clean": "rm -rf .next",
-    "dev": "next dev",
+    "dev": "bun run scripts/sync-career-data.ts && next dev",
     "format": "prettier --write .",
     "format:ci": "prettier --check .",
     "lint": "eslint . --cache",

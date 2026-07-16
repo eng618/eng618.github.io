@@ -6,6 +6,11 @@ const fix = args.includes('--fix');
 
 const steps = [
   {
+    name: 'Sync & Validate Data',
+    cmd: 'bun',
+    args: ['run', 'scripts/sync-career-data.ts'],
+  },
+  {
     name: 'Format',
     cmd: 'bun',
     args: fix ? ['run', 'format'] : ['run', 'format:ci'],

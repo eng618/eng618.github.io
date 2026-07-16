@@ -5,69 +5,12 @@ import { CertsSection } from '@/components/certs-section';
 import { CoursesSection } from '@/components/courses-section';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
+import careerData from '@/data/career.json';
 import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web';
 import { motion } from 'framer-motion';
 
-const featuredProjects = [
-  {
-    title: 'HomeHarmony',
-    description: 'Family management app',
-    content:
-      'A Flutter & Firebase app for parents to manage rules, chores, rewards, and consequences. Fosters family cooperation and accountability.',
-  },
-  {
-    title: 'Parable Bloom',
-    description: 'Serene puzzle game',
-    content:
-      "A serene Flutter puzzle game where sliding vines to bloom unlocks Jesus' parables and Bible verses for spiritual growth.",
-  },
-  {
-    title: 'ENG CLI',
-    description: 'Personal workflow CLI tool',
-    content: 'A personal CLI tool built with Go to facilitate normal workflow tasks, based on the cobra CLI program.',
-  },
-];
-
-const githubProjects = [
-  {
-    title: 'gvtech-design',
-    description: 'Garcia Enterprise Design System',
-    content: 'A comprehensive design system for Garcia Enterprise applications, built with TypeScript and Storybook.',
-    stars: 2,
-    forks: 1,
-    issues: 4,
-    url: 'https://github.com/Garcia-Ventures/gvtech-design',
-  },
-  {
-    title: 'eslint-config',
-    description: 'Standardized ESLint Configuration',
-    content:
-      'A standardized ESLint configuration using the modern flat config style for consistent code quality across projects.',
-    stars: 0,
-    forks: 0,
-    issues: 2,
-    url: 'https://github.com/Garcia-Ventures/eslint-config',
-  },
-  {
-    title: 'gvtravel',
-    description: "GV Travel's Website",
-    content: 'The official website for GV Travel, built with TypeScript for a modern web experience.',
-    stars: 0,
-    forks: 0,
-    issues: 0,
-    url: 'https://github.com/Garcia-Ventures/gvtravel',
-  },
-  {
-    title: 'gatsby-theme-carbon',
-    description: 'A Carbon Inspired Gatsby Theme',
-    content:
-      'A Gatsby theme inspired by the Carbon Design System, providing a consistent and accessible design foundation for web applications.',
-    stars: 358,
-    forks: 279,
-    issues: 70,
-    url: 'https://github.com/carbon-design-system/gatsby-theme-carbon',
-  },
-];
+const featuredProjects = careerData.projects.filter((p) => p.category === 'featured');
+const githubProjects = careerData.projects.filter((p) => p.category === 'github');
 
 export default function PortfolioPage() {
   return (
@@ -152,7 +95,7 @@ export default function PortfolioPage() {
             >
               {featuredProjects.map((project) => (
                 <motion.div
-                  key={project.title}
+                  key={project.name}
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 },
@@ -163,11 +106,11 @@ export default function PortfolioPage() {
                 >
                   <Card className="border-border bg-card h-full overflow-hidden">
                     <CardHeader>
-                      <CardTitle className="font-outfit text-2xl font-bold">{project.title}</CardTitle>
-                      <CardDescription>{project.description}</CardDescription>
+                      <CardTitle className="font-outfit text-2xl font-bold">{project.name}</CardTitle>
+                      <CardDescription>{project.role}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground">{project.content}</p>
+                      <p className="text-muted-foreground">{project.description}</p>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -220,7 +163,7 @@ export default function PortfolioPage() {
             >
               {githubProjects.map((project) => (
                 <motion.div
-                  key={project.title}
+                  key={project.name}
                   variants={{
                     hidden: { opacity: 0, y: 20 },
                     visible: { opacity: 1, y: 0 },
@@ -231,11 +174,11 @@ export default function PortfolioPage() {
                 >
                   <Card className="border-border bg-card h-full overflow-hidden">
                     <CardHeader>
-                      <CardTitle className="font-outfit text-xl font-bold">{project.title}</CardTitle>
-                      <CardDescription>{project.description}</CardDescription>
+                      <CardTitle className="font-outfit text-xl font-bold">{project.name}</CardTitle>
+                      <CardDescription>{project.role}</CardDescription>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground mb-4">{project.content}</p>
+                      <p className="text-muted-foreground mb-4">{project.description}</p>
                       <div className="flex items-center gap-2">
                         <Badge variant="outline">⭐ {project.stars} stars</Badge>
                         <Badge variant="outline">🍴 {project.forks} forks</Badge>

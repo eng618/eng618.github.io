@@ -125,6 +125,12 @@
       "description": "Earned Google AI Essentials V1 credential (verifiable on Credly), focusing on prompt engineering, generative AI applications, and ethical AI development guidelines."
     },
     {
+      "title": "Use AI Responsibly Certification",
+      "organization": "LinkedIn / Coursera",
+      "period": "May 2026",
+      "description": "Earned certification in responsible AI development, prompt scoping, bias prevention, and ethical deployment of generative technologies."
+    },
+    {
       "title": "Principal Engineer - Systems Architect",
       "organization": "Verizon",
       "period": "Q1 2026",
@@ -185,6 +191,12 @@
       "description": "Joined Carbon Design System maintainers team and became a core maintainer of `gatsby-theme-carbon`. Participated in IBM 2022 CIO Hackathon. Earned IBM Agile Explorer credential."
     },
     {
+      "title": "IBM Agile Explorer Certification",
+      "organization": "IBM / Credential",
+      "period": "Q4 2022",
+      "description": "Credential validating foundational competency in Agile values, practices, scrum ceremonies, and lean delivery methodologies."
+    },
+    {
       "title": "Promotion to Senior Full Stack Developer",
       "organization": "IBM Corp.",
       "period": "Q3 2021",
@@ -227,10 +239,34 @@
       "description": "Specialized in Android and iOS mobile application development, assisting in the enhancement of existing applications."
     },
     {
+      "title": "iOS App Development with Swift Essential Training",
+      "organization": "LinkedIn / Lynda.com",
+      "period": "Apr 2015",
+      "description": "Completed essential training on native iOS application development with Swift, covering storyboard design, controller lifecycles, and core platform patterns."
+    },
+    {
+      "title": "iOS Game Development with Sprite Kit",
+      "organization": "LinkedIn / Lynda.com",
+      "period": "Apr 2015",
+      "description": "Learned Sprite Kit framework parameters to construct dynamic native 2D game layouts, rendering controls, and state logic."
+    },
+    {
+      "title": "Comparing Swift and Objective-C",
+      "organization": "LinkedIn / Lynda.com",
+      "period": "Apr 2015",
+      "description": "Acquired comprehensive understanding of syntax mapping, interop strategies, and code comparison rules between Objective-C and Swift."
+    },
+    {
       "title": "Mobile App Developer Contract",
       "organization": "Teeps",
       "period": "2015",
       "description": "Updated and polished UI/UX workflows for native iOS applications."
+    },
+    {
+      "title": "Android Studio First Look Certification",
+      "organization": "LinkedIn / Lynda.com",
+      "period": "May 2014",
+      "description": "Earned early certification in Android Studio IDE usage, build systems, structure layout, and SDK debugging tools."
     },
     {
       "title": "Benefits Representative",
@@ -264,26 +300,117 @@
     }
   ],
   "skills": {
-    "languages": ["TypeScript", "JavaScript", "Go", "Swift", "Java", "Kotlin", "Objective-C", "English"],
-    "frameworks": ["React (DOM)", "React Native", "Next.js", "Gatsby", "Storybook", "Radix UI", "NativeWind"],
-    "tooling": ["Monorepos (Nx)", "GraphQL", "REST APIs", "Kubernetes", "Docker", "CI/CD"],
-    "standards": ["WCAG / a11y", "Design Tokens", "UX/UI Patterns", "TIG Welding", "Metal Fabrication"]
+    "languages": [
+      "TypeScript",
+      "JavaScript",
+      "Go",
+      "Swift",
+      "Java",
+      "Kotlin",
+      "Objective-C",
+      "English"
+    ],
+    "frameworks": [
+      "React (DOM)",
+      "React Native",
+      "Next.js",
+      "Gatsby",
+      "Storybook",
+      "Radix UI",
+      "NativeWind"
+    ],
+    "tooling": [
+      "Monorepos (Nx)",
+      "GraphQL",
+      "REST APIs",
+      "Kubernetes",
+      "Docker",
+      "CI/CD"
+    ],
+    "standards": [
+      "WCAG / a11y",
+      "Design Tokens",
+      "UX/UI Patterns",
+      "TIG Welding",
+      "Metal Fabrication"
+    ]
   },
   "projects": [
     {
-      "name": "gvtech-design",
-      "role": "Author & Maintainer",
-      "description": "Multi-platform React & React Native monorepo powered by Nx. Serves as component baseline for personal & customer platforms."
+      "name": "HomeHarmony",
+      "role": "Author",
+      "description": "A Flutter & Firebase app for parents to manage rules, chores, rewards, and consequences. Fosters family cooperation and accountability.",
+      "category": "featured",
+      "url": "",
+      "showOnResume": false
     },
     {
-      "name": "gatsby-theme-carbon",
-      "role": "Core Maintainer",
-      "description": "Accessible Gatsby documentation framework for the IBM Carbon Design System. Led major core library upgrades."
+      "name": "Parable Bloom",
+      "role": "Author",
+      "description": "A serene Flutter puzzle game where sliding vines to bloom unlocks Jesus' parables and Bible verses for spiritual growth.",
+      "category": "featured",
+      "url": "",
+      "showOnResume": false
+    },
+    {
+      "name": "ENG CLI",
+      "role": "Author",
+      "description": "A personal CLI tool built with Go to facilitate normal workflow tasks, based on the cobra CLI program.",
+      "category": "featured",
+      "url": "",
+      "showOnResume": false
     },
     {
       "name": "HomeHarmony / Parable Bloom",
       "role": "Author",
-      "description": "Cross-platform mobile applications developed with Flutter, Firebase, and design token architectures."
+      "description": "Cross-platform mobile applications developed with Flutter, Firebase, and design token architectures.",
+      "category": "featured",
+      "url": "",
+      "showOnResume": true
+    },
+    {
+      "name": "gvtech-design",
+      "role": "Author & Maintainer",
+      "description": "A comprehensive design system for Garcia Enterprise applications, built with TypeScript and Storybook.",
+      "category": "github",
+      "stars": 2,
+      "forks": 1,
+      "issues": 4,
+      "url": "https://github.com/Garcia-Ventures/gvtech-design",
+      "showOnResume": true
+    },
+    {
+      "name": "eslint-config",
+      "role": "Author & Maintainer",
+      "description": "A standardized ESLint configuration using the modern flat config style for consistent code quality across projects.",
+      "category": "github",
+      "stars": 0,
+      "forks": 0,
+      "issues": 2,
+      "url": "https://github.com/Garcia-Ventures/eslint-config",
+      "showOnResume": false
+    },
+    {
+      "name": "gvtravel",
+      "role": "Author",
+      "description": "The official website for GV Travel, built with TypeScript for a modern web experience.",
+      "category": "github",
+      "stars": 0,
+      "forks": 0,
+      "issues": 0,
+      "url": "https://github.com/Garcia-Ventures/gvtravel",
+      "showOnResume": false
+    },
+    {
+      "name": "gatsby-theme-carbon",
+      "role": "Core Maintainer",
+      "description": "A Gatsby theme inspired by the Carbon Design System, providing a consistent and accessible design foundation for web applications.",
+      "category": "github",
+      "stars": 358,
+      "forks": 279,
+      "issues": 70,
+      "url": "https://github.com/carbon-design-system/gatsby-theme-carbon",
+      "showOnResume": true
     }
   ],
   "education": {
@@ -293,15 +420,541 @@
     "description": "Focused on native mobile application development, visual assets, scalable infrastructures, and cross-platform layouts."
   },
   "certifications": [
-    { "title": "Google AI Essentials Specialization", "sub": "Google / Coursera · May 2026" },
-    { "title": "Developer Profession - Level 3 Expert", "sub": "IBM Credential · Sep 2023" },
-    { "title": "Carbon Design System Developer Essentials", "sub": "IBM Credential - React · Jul 2019" },
-    { "title": "IBM Cloud Kubernetes Service", "sub": "IBM Credential · Jan 2020" },
-    { "title": "Enterprise Design Thinking Practitioner", "sub": "IBM Credential · 2016" },
-    { "title": "iOS App Development with Swift Essential Training", "sub": "LinkedIn Certification" },
-    { "title": "iOS Game Development with Sprite Kit", "sub": "LinkedIn Certification" },
-    { "title": "Comparing Swift and Objective-C", "sub": "LinkedIn Certification" },
-    { "title": "Android Studio First Look", "sub": "LinkedIn Certification" },
-    { "title": "Use AI Responsibly", "sub": "LinkedIn Certification" }
+    {
+      "title": "Google AI Essentials V1",
+      "authority": "Google",
+      "completedDate": "2026-05",
+      "description": "Demonstrated competence in integrating generative AI tools into workplace tasks, writing effective prompts, and applying AI responsibly.",
+      "url": "https://www.credly.com/badges/be109b7d-af75-4b50-a502-b1b69a310272",
+      "image": "/credly/google-ai-essentials-v1.png",
+      "type": "badge",
+      "showOnResume": false,
+      "resumeTitle": "Google AI Essentials V1",
+      "resumeSub": ""
+    },
+    {
+      "title": "Developer Profession - Level 3: Expert",
+      "authority": "IBM",
+      "completedDate": "2023-09",
+      "description": "Expert level recognition within the IBM Developer Profession, demonstrating mastery in software development practices, architecture, and technical leadership.",
+      "url": "https://www.credly.com/org/ibm/badge/developer-profession-level-3-expert",
+      "image": "/credly/developer-profession-level-3-expert.png",
+      "type": "badge",
+      "showOnResume": true,
+      "resumeTitle": "Developer Profession - Level 3 Expert",
+      "resumeSub": "IBM Credential · Sep 2023"
+    },
+    {
+      "title": "Enterprise Design Thinking Practitioner",
+      "authority": "IBM",
+      "completedDate": "2016-01",
+      "description": "Practical application of Enterprise Design Thinking to solve complex problems at scale, focusing on user outcomes and cross-functional collaboration.",
+      "url": "https://www.credly.com/badges/36ddd342-c057-4624-9738-504cd982d585/public_url",
+      "image": "/credly/enterprise-design-thinking-practitioner.png",
+      "type": "badge",
+      "showOnResume": true,
+      "resumeTitle": "Enterprise Design Thinking Practitioner",
+      "resumeSub": "IBM Credential · 2016"
+    },
+    {
+      "title": "IBM Carbon Design System Developer Essentials - React",
+      "authority": "IBM",
+      "completedDate": "2019-07",
+      "description": "Essential knowledge and skills for building accessible, high-quality user interfaces using the IBM Carbon Design System with React.",
+      "url": "https://www.credly.com/badges/de8ea4d0-1d49-4084-bc16-3b0a5366d354/public_url",
+      "image": "/credly/ibm-carbon-design-system-developer-essentials-react.png",
+      "type": "badge",
+      "showOnResume": true,
+      "resumeTitle": "Carbon Design System Developer Essentials",
+      "resumeSub": "IBM Credential - React · Jul 2019"
+    },
+    {
+      "title": "IBM Cloud Kubernetes Service",
+      "authority": "IBM",
+      "completedDate": "2020-01",
+      "description": "Understanding core concepts of Kubernetes on IBM Cloud, including container orchestration, pods, resources, and architectural models.",
+      "url": "https://www.credly.com/badges/836c8f8f-fdd6-41aa-a310-ca38c0a6e54e/public_url",
+      "image": "/credly/ibm-cloud-kubernetes-service.png",
+      "type": "badge",
+      "showOnResume": true,
+      "resumeTitle": "IBM Cloud Kubernetes Service",
+      "resumeSub": "IBM Credential · Jan 2020"
+    },
+    {
+      "title": "IBM Agile Explorer",
+      "authority": "IBM",
+      "completedDate": "2022-10",
+      "description": "Exploration and application of Agile principles and values to improve teamwork, efficiency, and delivery of user value.",
+      "url": "https://www.credly.com/badges/84c7f84c-eb57-489a-93ce-f0701008b7e3/public_url",
+      "image": "/credly/ibm-agile-explorer.png",
+      "type": "badge",
+      "showOnResume": false,
+      "resumeTitle": "IBM Agile Explorer",
+      "resumeSub": ""
+    },
+    {
+      "title": "Google AI Essentials",
+      "authority": "Google",
+      "completedDate": "2026-05",
+      "description": "Professional Specialization credential certifying mastery of generative AI tools, prompt engineering, responsible AI application, and strategies to stay ahead in the emerging AI landscape.",
+      "url": "/coursera/cirtificates/Coursera 7OILY7UNYA5A.pdf",
+      "image": "/images/google-ai-essentials-specialization.png",
+      "type": "certificate",
+      "showOnResume": true,
+      "resumeTitle": "Google AI Essentials Specialization",
+      "resumeSub": "Google / Coursera · May 2026"
+    },
+    {
+      "title": "Stay Ahead of the AI Curve",
+      "authority": "Google / Coursera",
+      "completedDate": "2026-05",
+      "url": "/coursera/Coursera 46DKSTLR2YJL.pdf",
+      "certificateNumber": "46DKSTLR2YJL",
+      "category": "AI",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Maximize Productivity With AI Tools",
+      "authority": "Google / Coursera",
+      "completedDate": "2026-05",
+      "url": "/coursera/Coursera 311YAABU3YI4.pdf",
+      "certificateNumber": "311YAABU3YI4",
+      "category": "AI",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Introduction to AI",
+      "authority": "Google / Coursera",
+      "completedDate": "2026-05",
+      "url": "/coursera/Coursera DFDBMLMNBPWM.pdf",
+      "certificateNumber": "DFDBMLMNBPWM",
+      "category": "AI",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Use AI Responsibly",
+      "authority": "Google / Coursera",
+      "completedDate": "2026-05",
+      "url": "/coursera/Coursera TBKM60SM2Z6U.pdf",
+      "certificateNumber": "TBKM60SM2Z6U",
+      "category": "AI",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Discover the Art of Prompting",
+      "authority": "Google / Coursera",
+      "completedDate": "2026-05",
+      "url": "/coursera/Coursera WCQIA6Y7X3IV.pdf",
+      "certificateNumber": "WCQIA6Y7X3IV",
+      "category": "AI",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Computer Science 101: Master the Theory Behind Programming",
+      "authority": "Udemy.com",
+      "completedDate": "2021-06",
+      "url": "ude.my/UC-199d2b50-3884-4267-991c-69af71c90f90",
+      "certificateNumber": "UC-199d2b50-3884-4267-991c-69af71c90f90",
+      "length": "11h",
+      "category": "Computer Science",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "GraphQL Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2019-11",
+      "url": "https://www.lynda.com/ViewCertificate/64550FC016E645FF822CB7C3EEC0372D?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "64550FC016E645FF822CB7C3EEC0372D",
+      "length": "1h 54m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "React.js Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2019-06",
+      "url": "https://www.lynda.com/ViewCertificate/2A935679BD1B4E2F86E9AE1E6CC0B4B5?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "2A935679BD1B4E2F86E9AE1E6CC0B4B5",
+      "length": "1h 25m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "React: Components, Context, and Accessibility",
+      "authority": "Lynda.com",
+      "completedDate": "2019-03",
+      "url": "https://www.lynda.com/ViewCertificate/65E61BA935D34114B47ABC0A1D29712B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "65E61BA935D34114B47ABC0A1D29712B",
+      "length": "1h 10m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Learning Google Flutter for Mobile Developers",
+      "authority": "Lynda.com",
+      "completedDate": "2019-01",
+      "url": "https://www.lynda.com/ViewCertificate/13354C111E0A426EA0F1DD09978C4F2D?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "13354C111E0A426EA0F1DD09978C4F2D",
+      "length": "1h 25m",
+      "category": "Mobile",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Kubernetes: Native Tools",
+      "authority": "Lynda.com",
+      "completedDate": "2018-09",
+      "url": "https://www.lynda.com/ViewCertificate/E822645214C3464DA58018F7E70A2444?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "E822645214C3464DA58018F7E70A2444",
+      "length": "46m 13s",
+      "category": "Development",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Learning REST APIs",
+      "authority": "Lynda.com",
+      "completedDate": "2018-07",
+      "url": "https://www.lynda.com/ViewCertificate/A4C4EAEF2A904831BF5C52B7D6AA3EAE?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "A4C4EAEF2A904831BF5C52B7D6AA3EAE",
+      "length": "1h 8m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Swift 4 Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2018-03",
+      "url": "https://www.lynda.com/ViewCertificate/A7DE40A37EFE4698AF9F3296297EA3FA?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "A7DE40A37EFE4698AF9F3296297EA3FA",
+      "length": "3h 15m",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Learning React.js",
+      "authority": "Lynda.com",
+      "completedDate": "2018-02",
+      "url": "https://www.lynda.com/ViewCertificate/0A0B5740E3C2437AABE8B3AD2C14F98E?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "0A0B5740E3C2437AABE8B3AD2C14F98E",
+      "length": "1h 24m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Angular: Progressive Web Apps",
+      "authority": "Lynda.com",
+      "completedDate": "2018-01",
+      "url": "https://www.lynda.com/ViewCertificate/14C929D8194E45959D590EBD9095225C?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "14C929D8194E45959D590EBD9095225C",
+      "length": "4h 40m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "iOS App development: Test-Driven Development",
+      "authority": "Lynda.com",
+      "completedDate": "2017-08",
+      "url": "https://www.lynda.com/ViewCertificate/E9C05DEACF60498799FA4794D18565E3?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "E9C05DEACF60498799FA4794D18565E3",
+      "length": "2h 14m",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "AngularJS 1: Adding Registration to Your Application",
+      "authority": "Lynda.com",
+      "completedDate": "2017-04",
+      "url": "https://www.lynda.com/ViewCertificate/84D90C33E84441B1BB9B0EAD19DE47B4?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "84D90C33E84441B1BB9B0EAD19DE47B4",
+      "length": "2h 19m",
+      "category": "Developer",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Docker: The Basics",
+      "authority": "Lynda.com",
+      "completedDate": "2017-02",
+      "url": "https://www.lynda.com/Docker-tutorials/Docker-Basics/485649-2.html?utm_source=linkedin&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "8D428010F0BA4B9EBA85402CE6A5E5C6",
+      "length": "2h 19m",
+      "category": "Developer",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Computer Science Principles: Programming",
+      "authority": "Lynda.com",
+      "completedDate": "2017-01",
+      "url": "https://www.lynda.com/ViewCertificate/4D2F91302BB04E1B86CB6BB39D7CA791?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "4D2F91302BB04E1B86CB6BB39D7CA791",
+      "length": "1h 25m",
+      "category": "Programming",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Building a Mobile App with AngularJS 1 and Ionic",
+      "authority": "Lynda.com",
+      "completedDate": "2016-09",
+      "url": "https://www.lynda.com/ViewCertificate/2D5E69C89D94417D9DE8A08E544E0074?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "2D5E69C89D94417D9DE8A08E544E0074",
+      "length": "3h 31m",
+      "category": "Mobile",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Up and Running with Node.js",
+      "authority": "Lynda.com",
+      "completedDate": "2016-09",
+      "url": "https://www.lynda.com/ViewCertificate/570144E439FB4406B8FE8131D994BDBF?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "570144E439FB4406B8FE8131D994BDBF",
+      "length": "57m 40s",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Up and Running with AngularJS 1",
+      "authority": "Lynda.com",
+      "completedDate": "2016-08",
+      "url": "https://www.lynda.com/ViewCertificate/8C74862D9EED4119961BE05F732F305A?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "8C74862D9EED4119961BE05F732F305A",
+      "length": "1h 20m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Jekyll for Web Designers",
+      "authority": "Lynda.com",
+      "completedDate": "2016-05",
+      "url": "https://www.lynda.com/ViewCertificate/41E568CDCD3B48E9BF8D323D04E76B65?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "41E568CDCD3B48E9BF8D323D04E76B65",
+      "length": "4h 27m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Comparing Swift and Objective-C",
+      "authority": "Lynda.com",
+      "completedDate": "2015-04",
+      "url": "https://www.lynda.com/ViewCertificate/23A244139E9740F58EAA3C1A32866EB4?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "23A244139E9740F58EAA3C1A32866EB4",
+      "length": "1h 30m",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "iOS Game Development with Sprite Kit",
+      "authority": "Lynda.com",
+      "completedDate": "2015-04",
+      "url": "https://www.lynda.com/ViewCertificate/6BAB011EED0B4E0CB9193362E2A6F4D7?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "6BAB011EED0B4E0CB9193362E2A6F4D7",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "iOS 8 App Development with Swift 1 Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2015-04",
+      "url": "https://www.lynda.com/ViewCertificate/BD743650193545F7BAE369E4F23D528E?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "BD743650193545F7BAE369E4F23D528E",
+      "length": "5h 48m",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Swift Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2015-02",
+      "url": "https://www.lynda.com/ViewCertificate/592039F285AF4F7F919B3AFB44C3424C?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "592039F285AF4F7F919B3AFB44C3424C",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Building Adaptive Android Apps with Fragments",
+      "authority": "Lynda.com",
+      "completedDate": "2014-09",
+      "url": "https://www.lynda.com/ViewCertificate/18574CC82526417996A09C09934D1273?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "18574CC82526417996A09C09934D1273",
+      "length": "2h 8m",
+      "category": "Android",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Foundations of Programming: Object-Oriented Design",
+      "authority": "Lynda.com",
+      "completedDate": "2014-06",
+      "url": "https://www.lynda.com/ViewCertificate/9613AAE8699C43BBA3B4CA4394DA6D23?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "9613AAE8699C43BBA3B4CA4394DA6D23",
+      "length": "3h 1m",
+      "category": "Programming",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Android Studio First Look",
+      "authority": "Lynda.com",
+      "completedDate": "2014-05",
+      "url": "https://www.lynda.com/ViewCertificate/322144B3357641608DA61B1DD3646719?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "322144B3357641608DA61B1DD3646719",
+      "length": "2h 22m",
+      "category": "Android",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Android SDK Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2014-05",
+      "url": "https://www.lynda.com/ViewCertificate/8D5EDF97406043BC8E590B74CD03A5C9?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "8D5EDF97406043BC8E590B74CD03A5C9",
+      "length": "5h 10m",
+      "category": "Android",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "iOS App Development Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2014-03",
+      "url": "https://www.lynda.com/ViewCertificate/E2F940CE043743BCAD6D6185BF608C5B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "E2F940CE043743BCAD6D6185BF608C5B",
+      "length": "6h 16m",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Objective-C Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2013-12",
+      "url": "https://www.lynda.com/ViewCertificate/9EFE4322BAF84413A27A2A0FAEEE38B5?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "9EFE4322BAF84413A27A2A0FAEEE38B5",
+      "length": "6h 2m",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "UX Design Techniques: Overview (2013)",
+      "authority": "Lynda.com",
+      "completedDate": "2013-12",
+      "url": "https://www.lynda.com/ViewCertificate/776F7A713AB4417F963E769E97283D5E?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "776F7A713AB4417F963E769E97283D5E",
+      "length": "13m 53s",
+      "category": "UI/UX",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Objective-C Essential Training (2011)",
+      "authority": "Lynda.com",
+      "completedDate": "2013-12",
+      "url": "https://www.lynda.com/ViewCertificate/E3770FA28D474D50A21CCD68075DE7A5?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "E3770FA28D474D50A21CCD68075DE7A5",
+      "category": "iOS",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Foundations of Programming: Software Quality Assurance",
+      "authority": "Lynda.com",
+      "completedDate": "2013-11",
+      "url": "https://www.lynda.com/ViewCertificate/44DE18E59DA34ECDA70379B5F6C5F46B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "44DE18E59DA34ECDA70379B5F6C5F46B",
+      "length": "1h 24m",
+      "category": "Programming",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Bridge CC for Photographers",
+      "authority": "Lynda.com",
+      "completedDate": "2013-10",
+      "url": "https://www.lynda.com/ViewCertificate/0D6BE191DBB84A8F962133538D29D836?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "0D6BE191DBB84A8F962133538D29D836",
+      "length": "1h 50m",
+      "category": "Design",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Creating a Responsive Web Design (2012)",
+      "authority": "Lynda.com",
+      "completedDate": "2013-09",
+      "url": "https://www.lynda.com/ViewCertificate/D3620AEDF1174E568B9DB4F4CE3B208B?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "D3620AEDF1174E568B9DB4F4CE3B208B",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Managing Your Time",
+      "authority": "Lynda.com",
+      "completedDate": "2013-08",
+      "url": "https://www.lynda.com/ViewCertificate/B3B5D2B336794B55B6BA6135583ED077?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "B3B5D2B336794B55B6BA6135583ED077",
+      "length": "11m 11s",
+      "category": "Personal",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "JavaScript Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2013-05",
+      "url": "https://www.lynda.com/ViewCertificate/859995B908B04B29B288E9001F4FA911?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "859995B908B04B29B288E9001F4FA911",
+      "length": "5h 31m",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "jQuery Mobile Essential Training",
+      "authority": "Lynda.com",
+      "completedDate": "2013-05",
+      "url": "https://www.lynda.com/ViewCertificate/914B153E40894F7697874B3490765F6D?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "914B153E40894F7697874B3490765F6D",
+      "category": "Web",
+      "type": "course",
+      "showOnResume": false
+    },
+    {
+      "title": "Photoshop CS6 One-on-One: Fundamentals",
+      "authority": "Lynda.com",
+      "completedDate": "2012-10",
+      "url": "https://www.lynda.com/ViewCertificate/3B9BEF1B14B146AE889032A008217EB6?utm_source=directlink&utm_medium=sharing&utm_campaign=certificate",
+      "certificateNumber": "3B9BEF1B14B146AE889032A008217EB6",
+      "length": "6h 39m",
+      "category": "Design",
+      "type": "course",
+      "showOnResume": false
+    }
   ]
 }
