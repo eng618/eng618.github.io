@@ -39,10 +39,10 @@
       "label": "Connect on LinkedIn"
     },
     {
-      "name": "Twitter",
-      "icon": "twitter",
-      "url": "https://twitter.com/garciaericn",
-      "label": "Follow on Twitter"
+      "name": "X",
+      "icon": "x",
+      "url": "https://x.com/garciaericn",
+      "label": "Follow on X"
     }
   ]
 }

@@ -7,7 +7,7 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/eng618',
     linkedin: 'https://linkedin.com/in/garciaericn/',
-    twitter: 'https://twitter.com/eng618',
+    x: 'https://x.com/eng618',
   },
   navItems: [
     { title: 'Work', href: '/portfolio' },
