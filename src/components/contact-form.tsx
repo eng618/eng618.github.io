@@ -72,8 +72,10 @@ export function ContactForm() {
       className="border-border bg-card/50 mx-auto w-full max-w-2xl rounded-2xl border p-8 backdrop-blur-sm"
     >
       <div className="mb-8">
-        <h2 className="font-outfit text-3xl font-bold">Get in Touch</h2>
-        <p className="text-muted-foreground">Have a project in mind or just want to say hi?</p>
+        <h2 className="font-outfit text-3xl font-bold">Get in touch</h2>
+        <p className="text-muted-foreground">
+          Tell me about the role, team, or problem — a few specifics help me respond faster.
+        </p>
       </div>
 
       <Form {...uiForm}>
@@ -129,7 +131,7 @@ export function ContactForm() {
                 <FormLabel>Message</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Tell me more about your inquiry..."
+                    placeholder="Role, team, problem space, timeline — whatever helps me help you..."
                     rows={6}
                     suppressHydrationWarning
                     {...field}

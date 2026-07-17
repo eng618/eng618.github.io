@@ -9,13 +9,14 @@ const goProjects = [
   {
     title: 'eng',
     description:
-      'A command line interface (cli), based on spf13/cobra. The primary purpose of it is to facilitate my normal workflow. There are commands to help me maintain my system dot files. As well has other useful commands to kill processes, and more to come.',
+      'A Cobra-based CLI for daily workflow automation — dotfile maintenance, process management, and other practical commands I use every day. Published as a Go package and still growing.',
     packageUrl: 'https://pkg.go.dev/github.com/eng618/eng',
     repoUrl: 'https://github.com/eng618/eng',
   },
   {
     title: 'eng-go',
-    description: 'This package is a learning package used to test various data algorithms for programming in Go.',
+    description:
+      'A learning package for data structures and algorithms in Go — a sandbox for testing patterns before they land in production tools.',
     packageUrl: 'https://pkg.go.dev/github.com/eng618/go-eng',
     repoUrl: 'https://github.com/eng618/go-eng',
   },
@@ -68,9 +69,11 @@ export function GoProjectsSection() {
   return (
     <section className="py-20 lg:py-32">
       <div className="container mx-auto px-4 lg:px-8">
-        <h1 className="font-outfit mb-6 text-4xl font-bold lg:text-5xl">Go Projects</h1>
+        <p className="text-primary mb-3 text-sm font-medium tracking-wide uppercase">Work</p>
+        <h1 className="font-outfit mb-6 text-4xl font-bold lg:text-5xl">Go projects</h1>
         <p className="text-muted-foreground mb-12 max-w-2xl text-xl">
-          A collection of tools and libraries built with the Go programming language.
+          CLI tools and libraries built with Go for daily workflows and deliberate practice. Full case studies live
+          under Work.
         </p>
 
         <Suspense fallback={<ProjectsGridFallback />}>

@@ -8,8 +8,14 @@ test('renders Hero with correct name', () => {
   expect(nameElement).toBeInTheDocument();
 });
 
-test('renders greeting text', () => {
+test('renders role eyebrow and Version B tagline', () => {
   render(<Hero />);
-  const greetingElement = screen.getByText(/Hello, I'm/i);
-  expect(greetingElement).toBeInTheDocument();
+  expect(screen.getByText(/Principal Engineer · Systems Architect · Design Systems/i)).toBeInTheDocument();
+  expect(screen.getByText(/Eleven years building enterprise software/i)).toBeInTheDocument();
+});
+
+test('renders primary CTAs', () => {
+  render(<Hero />);
+  expect(screen.getByRole('link', { name: /View selected work/i })).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: /Get in touch/i })).toBeInTheDocument();
 });

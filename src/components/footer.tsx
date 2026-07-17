@@ -55,7 +55,8 @@ export function Footer({ className }: { className?: string } = {}) {
           <div className="flex flex-col gap-4">
             <h2 className="text-lg font-semibold">{siteConfig.name}</h2>
             <p className="text-muted-foreground text-sm">
-              System Architect with a passion for building scalable solutions.
+              Principal Engineer and Systems Architect. Eleven years building enterprise software that survives
+              production.
             </p>
             {/* Social Media Icons */}
             <div className="flex gap-4">

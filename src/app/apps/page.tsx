@@ -14,8 +14,15 @@ export default function AppsIndexPage() {
       <main className="bg-background flex-grow pb-20">
         <section className="py-16 lg:py-24">
           <div className="container mx-auto px-4 lg:px-8">
+            <p className="text-primary mb-3 text-sm font-medium tracking-wide uppercase">Work</p>
             <h1 className="font-outfit mb-4 text-4xl font-bold lg:text-5xl">Apps</h1>
-            <p className="text-muted-foreground max-w-2xl text-xl">A showcase of my mobile and web applications.</p>
+            <p className="text-muted-foreground max-w-2xl text-xl">
+              Product experiments and shipped mobile apps. Enterprise case studies live under{' '}
+              <Link href="/portfolio" className="text-primary hover:underline">
+                Work
+              </Link>
+              .
+            </p>
           </div>
         </section>
 

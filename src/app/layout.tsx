@@ -16,8 +16,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: 'Eric N. Garcia | System Architect',
-  description: 'Personal portfolio of Eric N. Garcia, System Architect at Verizon.',
+  title: 'Eric N. Garcia | Principal Engineer & Systems Architect',
+  description:
+    'Principal Engineer and Systems Architect. Eleven years building enterprise software — design systems, cloud-native services, and production-ready platforms.',
 };
 
 export default function RootLayout({

@@ -1,6 +1,6 @@
 # Eric Garcia
 
-**Senior Software Engineer & Systems Architect**
+**Principal Engineer & Systems Architect**
 
 407-536-9513 | [eng618@garciaericn.com](mailto:eng618@garciaericn.com) | [www.garciaericn.com](http://www.garciaericn.com)
 [GitHub (eng618)](https://github.com/eng618) | [LinkedIn (eng618)](https://linkedin.com/in/eng618) | Orlando, FL (Remote Friendly)
@@ -9,7 +9,7 @@
 
 ## Professional Summary
 
-A results-driven Senior Software Engineer and Systems Architect with over 11 years of professional experience designing, building, and scaling cross-platform design systems and cloud-native enterprise architectures. Proven track record in bridging the gap between design and engineering, maintaining open-source software, and driving the adoption of accessible (a11y) component libraries. Proficient in React, React Native, TypeScript, Node.js, and Go, with deep experience building reusable UI frameworks and leading complex upgrades supporting over 7,000+ active enterprise users.
+Principal Engineer and Systems Architect with over 11 years building enterprise software — from mobile platforms and Go services to AI-assisted workflows and systems that survive production. Track record designing cross-platform design systems for 7,000+ users, shipping secure microservices under tight SLAs, and maintaining open-source design-system tooling (Carbon). Proficient in React, React Native, TypeScript, Node.js, and Go.
 
 ---
 

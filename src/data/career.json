@@ -1,13 +1,13 @@
 {
   "personal": {
     "name": "Eric Garcia",
-    "title": "Senior Software Engineer & Systems Architect",
+    "title": "Principal Engineer & Systems Architect",
     "email": "eng618@garciaericn.com",
     "phone": "407-536-9513",
     "website": "www.garciaericn.com",
     "github": "github.com/eng618",
     "linkedin": "linkedin.com/in/eng618",
-    "summary": "A results-oriented Senior Software Engineer and Systems Architect with over 11 years of professional experience designing, building, and scaling cross-platform design systems and cloud-native enterprise architectures. Deeply experienced in bridging the gap between design and engineering, maintaining open-source software, and driving the adoption of accessible (a11y) component libraries. Proficient in React, React Native, TypeScript, Node.js, and Go, with a track record of leading critical migrations and architecting high-performance UI systems for over 7,000+ active users."
+    "summary": "Principal Engineer and Systems Architect with over 11 years building enterprise software — from mobile platforms and Go services to AI-assisted workflows and systems that survive production. Track record designing cross-platform design systems for 7,000+ users, shipping secure microservices under tight SLAs, and maintaining open-source design-system tooling (Carbon). Proficient in React, React Native, TypeScript, Node.js, and Go."
   },
   "experiences": [
     {
@@ -339,7 +339,7 @@
     {
       "name": "HomeHarmony",
       "role": "Author",
-      "description": "A Flutter & Firebase app for parents to manage rules, chores, rewards, and consequences. Fosters family cooperation and accountability.",
+      "description": "Flutter and Firebase app for parents to manage rules, chores, rewards, and consequences — built for family accountability.",
       "category": "featured",
       "url": "",
       "showOnResume": false
@@ -347,23 +347,23 @@
     {
       "name": "Parable Bloom",
       "role": "Author",
-      "description": "A serene Flutter puzzle game where sliding vines to bloom unlocks Jesus' parables and Bible verses for spiritual growth.",
+      "description": "Cross-platform Flutter puzzle game: calm garden puzzles that unlock parables and reflection. Web live; Android in testing.",
       "category": "featured",
-      "url": "",
+      "url": "https://parable-bloom.web.app/",
       "showOnResume": false
     },
     {
       "name": "ENG CLI",
       "role": "Author",
-      "description": "A personal CLI tool built with Go to facilitate normal workflow tasks, based on the cobra CLI program.",
+      "description": "Cobra-based Go CLI for daily workflow automation — dotfiles, process management, and practical system commands.",
       "category": "featured",
-      "url": "",
+      "url": "https://github.com/eng618/eng",
       "showOnResume": false
     },
     {
       "name": "HomeHarmony / Parable Bloom",
       "role": "Author",
-      "description": "Cross-platform mobile applications developed with Flutter, Firebase, and design token architectures.",
+      "description": "Cross-platform mobile applications with Flutter, Firebase, and design-token architectures.",
       "category": "featured",
       "url": "",
       "showOnResume": true
@@ -371,7 +371,7 @@
     {
       "name": "gvtech-design",
       "role": "Author & Maintainer",
-      "description": "A comprehensive design system for Garcia Enterprise applications, built with TypeScript and Storybook.",
+      "description": "Multi-platform React and React Native design system monorepo (Nx, TypeScript, Storybook) powering Garcia Ventures apps.",
       "category": "github",
       "stars": 2,
       "forks": 1,
@@ -382,7 +382,7 @@
     {
       "name": "eslint-config",
       "role": "Author & Maintainer",
-      "description": "A standardized ESLint configuration using the modern flat config style for consistent code quality across projects.",
+      "description": "Shared ESLint flat configs for consistent code quality across personal and enterprise projects.",
       "category": "github",
       "stars": 0,
       "forks": 0,
@@ -393,7 +393,7 @@
     {
       "name": "gvtravel",
       "role": "Author",
-      "description": "The official website for GV Travel, built with TypeScript for a modern web experience.",
+      "description": "Official GV Travel website built with TypeScript for a modern web experience.",
       "category": "github",
       "stars": 0,
       "forks": 0,
@@ -404,7 +404,7 @@
     {
       "name": "gatsby-theme-carbon",
       "role": "Core Maintainer",
-      "description": "A Gatsby theme inspired by the Carbon Design System, providing a consistent and accessible design foundation for web applications.",
+      "description": "Official Carbon Design System Gatsby theme — accessible foundations for hundreds of global portals.",
       "category": "github",
       "stars": 358,
       "forks": 279,

@@ -3,18 +3,18 @@
     {
       "title": "Navigation",
       "links": [
+        { "label": "Work", "href": "/portfolio" },
         { "label": "About", "href": "/about" },
-        { "label": "Portfolio", "href": "/portfolio" },
-        { "label": "Apps", "href": "/apps" }
+        { "label": "Notes", "href": "/code-notes" },
+        { "label": "Contact", "href": "/contact" }
       ]
     },
     {
       "title": "Resources",
       "links": [
         { "label": "Resume", "href": "/resume" },
-        { "label": "Code Notes", "href": "/code-notes" },
-        { "label": "Go Projects", "href": "/go-projects" },
-        { "label": "Contact", "href": "/contact" }
+        { "label": "Apps", "href": "/apps" },
+        { "label": "Go Projects", "href": "/go-projects" }
       ]
     },
     {

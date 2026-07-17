@@ -1,7 +1,10 @@
 'use client';
 
+import { Button } from '@gv-tech/ui-web';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -16,9 +19,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-muted-foreground mb-2 font-sans text-xl tracking-wider"
+              className="text-muted-foreground mb-2 font-sans text-sm tracking-wider uppercase sm:text-base"
             >
-              Hello, I&apos;m
+              Principal Engineer · Systems Architect · Design Systems
             </motion.p>
 
             <motion.h1
@@ -30,7 +33,7 @@ export function Hero() {
                 type: 'spring',
                 stiffness: 100,
               }}
-              className="font-outfit mb-8 text-5xl leading-tight font-extrabold tracking-tight sm:text-7xl lg:text-8xl"
+              className="font-outfit mb-6 text-5xl leading-tight font-extrabold tracking-tight sm:text-7xl lg:text-8xl"
             >
               <span className="from-foreground via-foreground/90 to-primary bg-gradient-to-br bg-clip-text text-transparent drop-shadow-[0_0_40px_rgb(var(--primary)_/_0.15)]">
                 Eric N. Garcia
@@ -41,11 +44,32 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-muted-foreground max-w-xl text-xl leading-relaxed lg:text-2xl"
+              className="text-muted-foreground mb-8 max-w-2xl text-xl leading-relaxed lg:text-2xl"
             >
-              System Architect at Verizon with over a decade of experience designing and implementing complex, scalable
-              enterprise solutions.
+              Eleven years building enterprise software — from mobile platforms and Go services to AI-assisted workflows
+              and systems that survive production.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.55 }}
+              className="flex flex-wrap items-center gap-4"
+            >
+              <Button size="lg" asChild>
+                <Link href="/portfolio">
+                  View selected work <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/contact">Get in touch</Link>
+              </Button>
+              <Button size="lg" variant="link" className="px-0" asChild>
+                <a href="/resume" target="_blank" rel="noopener noreferrer">
+                  Resume
+                </a>
+              </Button>
+            </motion.div>
           </div>
 
           <div className="lg:col-span-4 lg:flex lg:justify-center">
@@ -56,7 +80,6 @@ export function Hero() {
               className="relative aspect-square w-full max-w-[400px]"
             >
               <div className="bg-primary/10 absolute inset-0 rounded-full blur-[60px]" />
-              {/* Note: In a real migration, we'd use the actual vector/image */}
               <div className="border-border bg-card/50 relative flex h-full w-full items-center justify-center overflow-hidden rounded-2xl border backdrop-blur-sm">
                 <div className="relative h-full w-full">
                   <Image
