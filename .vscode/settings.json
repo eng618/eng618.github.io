@@ -12,12 +12,19 @@
     "statusBar.background": "#663399",
     "statusBar.foreground": "#e7e7e7",
     "statusBarItem.hoverBackground": "#7f40bf",
-    "statusBarItem.remoteBackground": "#663399",
+    "statusBarItem.remoteBackground": "#a77038",
     "statusBarItem.remoteForeground": "#e7e7e7",
     "titleBar.activeBackground": "#663399",
     "titleBar.activeForeground": "#e7e7e7",
     "titleBar.inactiveBackground": "#66339999",
-    "titleBar.inactiveForeground": "#e7e7e799"
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "activityBarTop.activeBackground": "#7f40bf",
+    "activityBarTop.background": "#7f40bf",
+    "activityBarTop.foreground": "#e7e7e7",
+    "activityBarTop.inactiveForeground": "#e7e7e799",
+    "commandCenter.foreground": "#e7e7e7",
+    "statusBar.debuggingBackground": "#663399",
+    "statusBar.debuggingForeground": "#e7e7e7"
   },
   "peacock.color": "#663399",
   "chat.tools.terminal.autoApprove": {
