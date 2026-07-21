@@ -123,8 +123,12 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
     }
 
     items.sort((a, b) => {
-      if (a.pinned && !b.pinned) return -1;
-      if (!a.pinned && b.pinned) return 1;
+      if (a.pinned && !b.pinned) {
+        return -1;
+      }
+      if (!a.pinned && b.pinned) {
+        return 1;
+      }
 
       if (sortBy === 'title') {
         return (a.title || '').localeCompare(b.title || '');
@@ -278,11 +282,15 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
   };
 
   useEffect(() => {
-    if (editing || loading || filtered.length === 0) return;
-    
+    if (editing || loading || filtered.length === 0) {
+      return;
+    }
+
     const handleKeyDown = (e: KeyboardEvent) => {
       // Ignore if typing in an input
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+        return;
+      }
 
       if (e.key === 'j' || e.key === 'ArrowDown') {
         e.preventDefault();
@@ -472,14 +480,14 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
             </Card>
           ) : (
             filtered.map((note, index) => (
-              <Card 
-                key={note.id} 
+              <Card
+                key={note.id}
                 className={`border-border flex flex-col justify-between transition-shadow ${index === selectedIndex ? 'ring-primary ring-2' : ''}`}
               >
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      {note.pinned && <Pin className="h-4 w-4 text-amber-500 shrink-0" />}
+                      {note.pinned && <Pin className="h-4 w-4 shrink-0 text-amber-500" />}
                       <CardTitle className="font-outfit text-lg">{note.title}</CardTitle>
                     </div>
                     <span className="bg-primary/10 text-primary rounded-full px-2.5 py-0.5 text-xs font-semibold whitespace-nowrap">
@@ -509,19 +517,19 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
                         <ExternalLink className="mr-1 h-3.5 w-3.5" /> View
                       </Link>
                     </Button>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      className="h-8 w-8 p-0" 
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 w-8 p-0"
                       onClick={() => togglePin(note.id, !!note.pinned)}
                       title={note.pinned ? 'Unpin' : 'Pin'}
                     >
                       {note.pinned ? <PinOff className="h-3.5 w-3.5" /> : <Pin className="h-3.5 w-3.5" />}
                     </Button>
-                    <Button 
-                      variant="ghost" 
-                      size="sm" 
-                      className="h-8 w-8 p-0" 
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-8 w-8 p-0"
                       onClick={() => exportNote(note)}
                       title="Export Markdown"
                     >

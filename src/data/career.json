@@ -119,6 +119,12 @@
   ],
   "cvTimeline": [
     {
+      "title": "AI Fundamentals Certification",
+      "organization": "Google / Coursera",
+      "period": "Jul 2026",
+      "description": "Completed the Google AI Fundamentals course, focusing on generative AI core concepts, prompt engineering foundations, and responsible AI application."
+    },
+    {
       "title": "Google AI Essentials Certification",
       "organization": "Credential / Training",
       "period": "Q2 2026",
@@ -421,6 +427,18 @@
   },
   "certifications": [
     {
+      "title": "Google AI Fundamentals",
+      "authority": "Google",
+      "completedDate": "2026-07",
+      "description": "Those who earn the AI Fundamentals badge from Google have adopted the \"AI as a Collaborator\" mindset and developed an understanding of the AI ecosystem, including models, features, and applications. They are familiar with AI strengths, limitations and risks. They have mastered prompting and have practiced advanced techniques. They have demonstrated the ability to use AI responsibly by applying the ACT framework (Ask, Check, Tell) to evaluate outputs for accuracy, bias, and privacy risks.",
+      "url": "https://www.credly.com/badges/7417c11a-b41e-4855-b2fc-55010aabf5ae/public_url",
+      "image": "/credly/google-ai-fundamentals.png",
+      "type": "badge",
+      "showOnResume": false,
+      "resumeTitle": "Google AI Fundamentals",
+      "resumeSub": ""
+    },
+    {
       "title": "Google AI Essentials V1",
       "authority": "Google",
       "completedDate": "2026-05",
@@ -503,6 +521,16 @@
       "showOnResume": true,
       "resumeTitle": "Google AI Essentials Specialization",
       "resumeSub": "Google / Coursera · May 2026"
+    },
+    {
+      "title": "AI Fundamentals",
+      "authority": "Google / Coursera",
+      "completedDate": "2026-07",
+      "url": "/coursera/Coursera REXJEORF6X5B.pdf",
+      "certificateNumber": "REXJEORF6X5B",
+      "category": "AI",
+      "type": "course",
+      "showOnResume": false
     },
     {
       "title": "Stay Ahead of the AI Curve",

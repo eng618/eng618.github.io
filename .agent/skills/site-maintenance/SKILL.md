@@ -29,3 +29,9 @@ This skill provides guidance on maintaining the Next.js foundation of the site.
    - The site is deployed via **Cloudflare Pages** with auto‑deploys on commit to `develop` (and other branches as configured).
    - Keep an eye on any build environment variables or settings in the Cloudflare dashboard.
    - For serverless logic (route handlers), maintain files under `src/app/api/` following Next.js 16 App Router conventions.
+
+5. **Career and Certifications Data**:
+   - The master source of truth for all career details, education, skills, projects, and certifications (including badges, certificates, and courses) is `src/data/career.json`.
+   - Do NOT edit derived JSON files like `src/data/badges.json`, `src/data/certs.json`, or `src/data/courses.json` directly.
+   - When updating career or certification records, also update the static markdown CV at `public/assets/GarciaEricN_Resume.md` and the `cvTimeline` section inside `career.json` to keep them in sync.
+   - Run `bun run validate` or `bun run validate --fix` to synchronize the derived files and perform general validation (lint, formatting, tests, build).

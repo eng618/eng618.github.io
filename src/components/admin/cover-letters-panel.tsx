@@ -304,10 +304,14 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
   };
 
   useEffect(() => {
-    if (editing || loading || filtered.length === 0) return;
-    
+    if (editing || loading || filtered.length === 0) {
+      return;
+    }
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+        return;
+      }
 
       if (e.key === 'j' || e.key === 'ArrowDown') {
         e.preventDefault();
@@ -568,8 +572,8 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
             filtered.map((letter, index) => {
               const status = (letter.status || 'active') as CoverLetterStatus;
               return (
-                <Card 
-                  key={letter.id} 
+                <Card
+                  key={letter.id}
                   className={`border-border flex flex-col justify-between transition-shadow ${index === selectedIndex ? 'ring-primary ring-2' : ''}`}
                 >
                   <CardHeader className="pb-3">
