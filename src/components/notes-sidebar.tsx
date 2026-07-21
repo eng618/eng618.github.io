@@ -1,5 +1,6 @@
 'use client';
 
+import { ADMIN_EMAIL } from '@/lib/admin';
 import type { NoteMetadata } from '@/lib/notes';
 import { supabase } from '@/lib/supabase';
 import { cn } from '@/lib/utils';
@@ -173,8 +174,6 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
       return;
     }
 
-    const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || '';
-
     const checkSessionAndFetch = async (session: Session | null) => {
       if (session?.user?.email === ADMIN_EMAIL) {
         setIsAdmin(true);
@@ -186,9 +185,9 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
         if (!error && data) {
           const mapped: NoteMetadata[] = data.map(
             (note: { id: string; title: string; category: string; created_at: string }) => ({
-              slug: `${note.category}/${note.id}`,
+              slug: `${note.category || 'General'}/${note.id}`,
               title: note.title,
-              category: note.category,
+              category: note.category || 'General',
               date: note.created_at,
             }),
           );

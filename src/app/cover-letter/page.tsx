@@ -1,5 +1,6 @@
 'use client';
 
+import { MarkdownContent } from '@/components/markdown-content';
 import { supabase } from '@/lib/supabase';
 import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { AlertTriangle, ArrowLeft, Printer } from 'lucide-react';
@@ -13,79 +14,9 @@ interface CoverLetter {
   recipient: string;
   subject: string;
   content: string;
+  company?: string | null;
+  role_title?: string | null;
   created_at: string;
-}
-
-// Simple Markdown parser for client-side rendering
-function Markdown({ content }: { content: string }) {
-  if (!content) {
-    return null;
-  }
-
-  const lines = content.split('\n');
-  return (
-    <div className="text-md space-y-6 leading-relaxed">
-      {lines.map((line, idx) => {
-        const trimmed = line.trim();
-
-        // Headers
-        if (trimmed.startsWith('# ')) {
-          return (
-            <h1
-              key={idx}
-              className="font-outfit text-foreground border-border/50 mt-8 mb-4 border-b pb-2 text-3xl font-extrabold"
-            >
-              {trimmed.slice(2)}
-            </h1>
-          );
-        }
-        if (trimmed.startsWith('## ')) {
-          return (
-            <h2 key={idx} className="font-outfit text-foreground mt-6 mb-3 text-2xl font-bold">
-              {trimmed.slice(3)}
-            </h2>
-          );
-        }
-        if (trimmed.startsWith('### ')) {
-          return (
-            <h3 key={idx} className="font-outfit text-foreground mt-5 mb-2 text-xl font-semibold">
-              {trimmed.slice(4)}
-            </h3>
-          );
-        }
-
-        // Bullet points
-        if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
-          return (
-            <ul key={idx} className="text-muted-foreground my-2 list-outside list-disc space-y-2 pl-6">
-              <li>{trimmed.slice(2)}</li>
-            </ul>
-          );
-        }
-
-        // Empty lines
-        if (trimmed === '') {
-          return <div key={idx} className="h-2" />;
-        }
-
-        // Blockquotes
-        if (trimmed.startsWith('> ')) {
-          return (
-            <blockquote key={idx} className="border-primary/50 text-muted-foreground my-3 border-l-4 pl-4 italic">
-              {trimmed.slice(2)}
-            </blockquote>
-          );
-        }
-
-        // Standard Paragraph
-        return (
-          <p key={idx} className="text-muted-foreground">
-            {trimmed}
-          </p>
-        );
-      })}
-    </div>
-  );
 }
 
 function CoverLetterLoader() {
@@ -129,8 +60,8 @@ function CoverLetterLoader() {
   if (loading) {
     return (
       <div className="flex min-h-[400px] flex-col items-center justify-center">
-        <div className="border-primary mx-auto h-8 w-8 animate-spin rounded-full border-4 border-t-transparent"></div>
-        <p className="text-muted-foreground font-outfit mt-4">Retrieving cover letter...</p>
+        <div className="border-primary mx-auto h-8 w-8 animate-spin rounded-full border-4 border-t-transparent" />
+        <p className="text-muted-foreground font-outfit mt-4">Retrieving cover letter…</p>
       </div>
     );
   }
@@ -141,11 +72,11 @@ function CoverLetterLoader() {
         <div className="bg-destructive/10 text-destructive mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full">
           <AlertTriangle className="h-6 w-6" />
         </div>
-        <h2 className="font-outfit mb-2 text-xl font-bold">Retrieval Failed</h2>
+        <h2 className="font-outfit mb-2 text-xl font-bold">Retrieval failed</h2>
         <p className="text-muted-foreground mb-6 text-sm">{error}</p>
         <Link href="/">
           <Button variant="outline" className="mx-auto flex items-center gap-2">
-            <ArrowLeft className="h-4 w-4" /> Back to Home
+            <ArrowLeft className="h-4 w-4" /> Back to home
           </Button>
         </Link>
       </div>
@@ -156,9 +87,12 @@ function CoverLetterLoader() {
     return null;
   }
 
+  const recipientLine = letter.company
+    ? [letter.company, letter.recipient].filter(Boolean).join(' — ')
+    : letter.recipient;
+
   return (
     <article className="w-full">
-      {/* Top Header Card */}
       <div className="border-border/50 bg-card mb-8 rounded-2xl border p-6 shadow-sm sm:p-8 print:border-gray-200 print:bg-transparent print:shadow-none">
         <div className="flex flex-col gap-4">
           <div>
@@ -166,11 +100,10 @@ function CoverLetterLoader() {
               Eric Garcia
             </h1>
             <p className="text-primary font-outfit print:text-primary mt-1 text-lg font-semibold">
-              Senior Software Engineer & Systems Architect
+              Principal Engineer & Systems Architect
             </p>
           </div>
 
-          {/* Contact Row */}
           <div className="text-muted-foreground flex flex-wrap gap-x-6 gap-y-2 text-sm print:text-black">
             <span>eng618@garciaericn.com</span>
             <span>407-536-9513</span>
@@ -179,10 +112,8 @@ function CoverLetterLoader() {
         </div>
       </div>
 
-      {/* Main Cover Letter Container */}
       <div className="border-border/50 bg-card rounded-2xl border p-6 shadow-sm sm:p-8 print:border-none print:shadow-none">
         <div className="mx-auto max-w-3xl">
-          {/* Metadata Header */}
           <div className="text-muted-foreground mb-6 space-y-1 font-medium print:text-black">
             <p className="text-foreground font-semibold print:text-black">
               {new Date(letter.created_at).toLocaleDateString(undefined, {
@@ -192,26 +123,33 @@ function CoverLetterLoader() {
               })}
             </p>
             <div className="pt-2">
-              <p className="text-foreground font-bold print:text-black">{letter.recipient}</p>
+              <p className="text-foreground font-bold print:text-black">{recipientLine}</p>
+              {letter.role_title && (
+                <p className="text-muted-foreground text-sm print:text-black">{letter.role_title}</p>
+              )}
             </div>
           </div>
 
-          {/* Subject Line */}
           {letter.subject && (
             <div className="border-border/50 mb-6 border-b pb-4">
               <h2 className="text-primary text-md font-bold print:text-black">Subject: {letter.subject}</h2>
             </div>
           )}
 
-          {/* Content */}
           <div className="print:text-black">
-            <Markdown content={letter.content} />
+            <MarkdownContent
+              content={letter.content}
+              className="prose-p:text-muted-foreground print:prose-p:text-black"
+            />
           </div>
 
-          <div className="space-y-1 pt-8 print:text-black">
-            <p className="text-muted-foreground print:text-black">Sincerely,</p>
-            <p className="font-outfit text-foreground pt-2 text-lg font-bold print:text-black">Eric Garcia</p>
-          </div>
+          {/* Signature only if content doesn't already end with a closing */}
+          {!/sincerely|best regards|respectfully/i.test(letter.content.slice(-200)) && (
+            <div className="space-y-1 pt-8 print:text-black">
+              <p className="text-muted-foreground print:text-black">Sincerely,</p>
+              <p className="font-outfit text-foreground pt-2 text-lg font-bold print:text-black">Eric Garcia</p>
+            </div>
+          )}
         </div>
       </div>
     </article>
@@ -242,7 +180,7 @@ function CoverLetterHeader() {
                 href={`/resume?cl=${slug}`}
                 className="text-primary flex items-center text-sm font-semibold hover:underline"
               >
-                View Resume
+                View resume
               </Link>
             </>
           )}
@@ -255,7 +193,7 @@ function CoverLetterHeader() {
           )}
           <Button onClick={() => window.print()} className="flex items-center gap-2 font-semibold">
             <Printer className="h-4 w-4" />
-            Print Cover Letter
+            Print cover letter
           </Button>
         </div>
       </div>
@@ -287,8 +225,8 @@ export default function CoverLetterPage() {
         <Suspense
           fallback={
             <div className="flex min-h-[400px] flex-col items-center justify-center">
-              <div className="border-primary mx-auto h-8 w-8 animate-spin rounded-full border-4 border-t-transparent"></div>
-              <p className="text-muted-foreground font-outfit mt-4">Loading...</p>
+              <div className="border-primary mx-auto h-8 w-8 animate-spin rounded-full border-4 border-t-transparent" />
+              <p className="text-muted-foreground font-outfit mt-4">Loading…</p>
             </div>
           }
         >
@@ -298,7 +236,7 @@ export default function CoverLetterPage() {
 
       <footer className="border-border/50 bg-background text-muted-foreground border-t py-8 text-center text-xs print:hidden">
         <div className="mx-auto max-w-5xl px-4">
-          <p>© 2026 Eric Garcia. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Eric Garcia. All rights reserved.</p>
         </div>
       </footer>
     </div>
