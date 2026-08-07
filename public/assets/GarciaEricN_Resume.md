@@ -87,6 +87,7 @@ _Bachelor of Science in Mobile Development_ (Graduated 10/2015)
 
 ## Certifications & Digital Badges
 
+- **Google AI for Brainstorming and Planning** (Google / Coursera, Aug 2026)
 - **AI Fundamentals** (Google / Coursera, Jul 2026)
 - **Google AI Essentials Specialization** (Google / Coursera, May 2026)
 - **Developer Profession - Level 3: Expert** (IBM, Sep 2023)

@@ -157,13 +157,13 @@ function sync() {
     }));
 
   // Write files
-  fs.writeFileSync(path.join(DATA_DIR, 'badges.json'), JSON.stringify(badges, null, 2), 'utf8');
+  fs.writeFileSync(path.join(DATA_DIR, 'badges.json'), JSON.stringify(badges, null, 2) + '\n', 'utf8');
   console.log(`💾 Generated ${badges.length} badges in src/data/badges.json`);
 
-  fs.writeFileSync(path.join(DATA_DIR, 'certs.json'), JSON.stringify(certs, null, 2), 'utf8');
+  fs.writeFileSync(path.join(DATA_DIR, 'certs.json'), JSON.stringify(certs, null, 2) + '\n', 'utf8');
   console.log(`💾 Generated ${certs.length} certificates in src/data/certs.json`);
 
-  fs.writeFileSync(path.join(DATA_DIR, 'courses.json'), JSON.stringify(courses, null, 2), 'utf8');
+  fs.writeFileSync(path.join(DATA_DIR, 'courses.json'), JSON.stringify(courses, null, 2) + '\n', 'utf8');
   console.log(`💾 Generated ${courses.length} courses in src/data/courses.json`);
 
   console.log('🎉 Data synchronization completed successfully!');

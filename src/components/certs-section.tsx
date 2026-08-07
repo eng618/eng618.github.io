@@ -1,14 +1,28 @@
+'use client';
+
 import { CertCard } from '@/components/cert-card';
+import { CertLightbox } from '@/components/cert-lightbox';
 import certsData from '@/data/certs.json';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 
 function CertsGrid() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {certsData.map((cert) => (
-        <CertCard key={cert.title} cert={cert} />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {certsData.map((cert, idx) => (
+          <CertCard key={cert.title} cert={cert} onOpenLightbox={() => setSelectedIndex(idx)} />
+        ))}
+      </div>
+
+      <CertLightbox
+        items={certsData}
+        currentIndex={selectedIndex}
+        onClose={() => setSelectedIndex(null)}
+        onSelectIndex={(index) => setSelectedIndex(index)}
+      />
+    </>
   );
 }
 
@@ -40,7 +54,9 @@ export function CertsSection() {
     <section className="bg-muted/5 py-20">
       <div className="container mx-auto px-4 lg:px-8">
         <h2 className="font-outfit mb-4 text-3xl font-bold">Professional Certifications</h2>
-        <p className="text-muted-foreground mb-12">Verified specializations and comprehensive educational programs.</p>
+        <p className="text-muted-foreground mb-12">
+          Verified specializations and comprehensive educational programs. Click any certificate for full gallery view.
+        </p>
         <Suspense fallback={<CertsGridFallback />}>
           <CertsGrid />
         </Suspense>

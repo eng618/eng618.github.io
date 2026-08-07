@@ -119,6 +119,12 @@
   ],
   "cvTimeline": [
     {
+      "title": "Google AI for Brainstorming and Planning",
+      "organization": "Google / Coursera",
+      "period": "Aug 2026",
+      "description": "Earned the Google AI for Brainstorming and Planning badge from Google, demonstrating skills in using AI as a thought partner to transform abstract ideas into actionable project plans, conduct cost-benefit analyses, and automate routine project management tasks."
+    },
+    {
       "title": "AI Fundamentals Certification",
       "organization": "Google / Coursera",
       "period": "Jul 2026",
@@ -427,6 +433,18 @@
   },
   "certifications": [
     {
+      "title": "Google AI for Brainstorming and Planning",
+      "authority": "Google",
+      "completedDate": "2026-08",
+      "description": "Those who earn the AI for Brainstorming and Planning badge from Google can transform abstract ideas into actionable project plans using AI. They have demonstrated the ability to use AI as a thought partner to brainstorm business concepts, conduct cost-benefit analyses, and identify project risks and dependencies. They are skilled in creating centralized project hubs to keep stakeholders informed and using scheduled actions to automate routine project management tasks.",
+      "url": "https://www.credly.com/badges/707f31e1-d1ea-46cf-b28f-d8d125f2f07b/public_url",
+      "image": "/credly/google-ai-for-brainstorming-and-planning.png",
+      "type": "badge",
+      "showOnResume": false,
+      "resumeTitle": "Google AI for Brainstorming and Planning",
+      "resumeSub": ""
+    },
+    {
       "title": "Google AI Fundamentals",
       "authority": "Google",
       "completedDate": "2026-07",
@@ -521,6 +539,16 @@
       "showOnResume": true,
       "resumeTitle": "Google AI Essentials Specialization",
       "resumeSub": "Google / Coursera · May 2026"
+    },
+    {
+      "title": "AI for Brainstorming and Planning",
+      "authority": "Google / Coursera",
+      "completedDate": "2026-08",
+      "url": "https://coursera.org/share/d2f58324c0f638aa89c133e45d2384d6",
+      "certificateNumber": "VH319S4W5WRH",
+      "category": "AI",
+      "type": "course",
+      "showOnResume": false
     },
     {
       "title": "AI Fundamentals",
