@@ -1,31 +1,13 @@
 'use client';
 
 import careerData from '@/data/career.json';
+import { trackEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { ArrowLeft, Printer } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
-
-// Analytics helper to safely send events to Plausible
-const trackEvent = (eventName: string, props?: Record<string, string | number | boolean>) => {
-  const formattedProps: Record<string, string> = {};
-  if (props) {
-    Object.entries(props).forEach(([key, val]) => {
-      formattedProps[key] = String(val);
-    });
-  }
-
-  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-    console.log(`[Analytics Dev] Event: ${eventName}`, formattedProps);
-    return;
-  }
-
-  if (typeof window !== 'undefined' && window.plausible) {
-    window.plausible(eventName, { props: formattedProps });
-  }
-};
 
 interface ResumeHeaderProps {
   activeTab: 'resume' | 'cv';

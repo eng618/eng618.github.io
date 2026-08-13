@@ -6,11 +6,11 @@ This document provides a comprehensive reference of all analytics tracking, inst
 
 ## 1. Core Analytics Engine
 
-The site integrates **Plausible Analytics**, a privacy-friendly, lightweight, cookie-less web analytics service.
+The site is currently in a transition phase running **Plausible Analytics** and **OpenPanel** in parallel via a unified analytics abstraction (`src/lib/analytics.ts`).
 
-- **Dependencies**: `@plausible-analytics/tracker` (v0.4.5)
-- **Initialization**: Managed dynamically on client mount in `PlausibleProvider` (`src/components/plausible-provider.tsx`).
-- **Endpoint**: Configured through a custom proxy mapping to `stats.garciaericn.com/api/event` to minimize ad-blocker suppression.
+- **Unified Layer**: `src/lib/analytics.ts` (`trackEvent`) dispatches custom metrics, user interactions, and Web Vitals to both analytics services simultaneously while suppressing telemetry in `localhost`.
+- **OpenPanel**: Integrated via `@openpanel/nextjs` (`src/components/openpanel-provider.tsx`), configured with `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` and `NEXT_PUBLIC_OPENPANEL_API_URL`.
+- **Plausible**: Integrated via `@plausible-analytics/tracker` (`src/components/plausible-provider.tsx`), configured with proxy endpoint `stats.garciaericn.com/api/event`.
 - **Opt-Out Control**: Honors visitor privacy opt-out actions managed through `/privacy` or setting `localStorage.plausible_ignore = "true"`.
 
 ---

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 // Extend window interface to support Plausible custom types safely
 declare global {
@@ -44,9 +45,7 @@ export function PlausibleProvider() {
           const newTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
           if (newTheme !== currentTheme) {
             currentTheme = newTheme;
-            track('Theme Change', {
-              props: { theme: newTheme },
-            });
+            trackEvent('Theme Change', { theme: newTheme });
           }
         });
 
@@ -69,11 +68,9 @@ export function PlausibleProvider() {
 
           // Track digital badge verification clicks
           if (href.includes('credly.com')) {
-            track('Badge Verification Click', {
-              props: {
-                badge_title: text,
-                url: href,
-              },
+            trackEvent('Badge Verification Click', {
+              badge_title: text,
+              url: href,
             });
           }
 
@@ -83,22 +80,18 @@ export function PlausibleProvider() {
             href.includes('coursera.org/verify') || href.includes('lynda.com') || href.includes('udemy');
 
           if (isLocalPdf || isVerificationLink) {
-            track('Certificate View', {
-              props: {
-                course_title: text,
-                type: isLocalPdf ? 'PDF Download/View' : 'Official Verification',
-                url: href,
-              },
+            trackEvent('Certificate View', {
+              course_title: text,
+              type: isLocalPdf ? 'PDF Download/View' : 'Official Verification',
+              url: href,
             });
           }
 
           // Track external social and repository clicks
           if (href.startsWith('http') && !href.includes(window.location.hostname)) {
-            track('Outbound Link Click', {
-              props: {
-                target_url: href,
-                link_text: text,
-              },
+            trackEvent('Outbound Link Click', {
+              target_url: href,
+              link_text: text,
             });
           }
         };

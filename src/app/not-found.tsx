@@ -2,29 +2,11 @@
 
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
+import { trackEvent } from '@/lib/analytics';
 import { Button, Card, CardContent, CardHeader, CardTitle, Label, Separator } from '@gv-tech/ui-web';
 import { Terminal } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
-// Analytics helper to safely send events to Plausible
-const trackEvent = (eventName: string, props?: Record<string, string | number | boolean>) => {
-  const formattedProps: Record<string, string> = {};
-  if (props) {
-    Object.entries(props).forEach(([key, val]) => {
-      formattedProps[key] = String(val);
-    });
-  }
-
-  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-    console.log(`[Analytics Dev] Event: ${eventName}`, formattedProps);
-    return;
-  }
-
-  if (typeof window !== 'undefined' && window.plausible) {
-    window.plausible(eventName, { props: formattedProps });
-  }
-};
 
 class SoundSynth {
   private ctx: AudioContext | null = null;
