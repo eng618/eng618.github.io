@@ -32,7 +32,9 @@ export function trackEvent(eventName: string, props?: Record<string, string | nu
   }
 
   // 2. OpenPanel Track
-  const win = window as unknown as { op?: (action: string, name?: string, properties?: Record<string, unknown>) => void };
+  const win = window as unknown as {
+    op?: (action: string, name?: string, properties?: Record<string, unknown>) => void;
+  };
   if (win.op) {
     try {
       win.op('track', eventName, formattedProps);

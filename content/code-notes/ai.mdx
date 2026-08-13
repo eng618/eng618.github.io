@@ -44,77 +44,115 @@ This is a curated list of resources, courses, and structured guidance to take yo
     </CardContent>
   </Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>AI Python for Beginners</CardTitle>
-      <CardDescription><a href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/" target="_blank" rel="noopener noreferrer">DeepLearning.AI (Andrew Ng)</a></CardDescription>
-    </CardHeader>
-    <CardContent>
-      Master Python programming through interactive AI applications, API requests, and data manipulation.
-      <div className="mt-2 text-xs text-muted-foreground">
-        <strong>Who it's for:</strong> Beginners needing core coding skills for AI.<br/>
-        <strong>Why it matters for agents:</strong> Agents run code and make REST/gRPC calls; foundational Python scripting is required to glue agent components together.
-      </div>
-      <div className="mt-4 flex gap-2">
-        <Badge>Python Basics</Badge>
-        <Badge variant="secondary">Free</Badge>
-      </div>
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>AI Python for Beginners</CardTitle>
+    <CardDescription>
+      <a
+        href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        DeepLearning.AI (Andrew Ng)
+      </a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    Master Python programming through interactive AI applications, API requests, and data manipulation.
+    <div className="text-muted-foreground mt-2 text-xs">
+      <strong>Who it's for:</strong> Beginners needing core coding skills for AI.
+      <br />
+      <strong>Why it matters for agents:</strong> Agents run code and make REST/gRPC calls; foundational Python
+      scripting is required to glue agent components together.
+    </div>
+    <div className="mt-4 flex gap-2">
+      <Badge>Python Basics</Badge>
+      <Badge variant="secondary">Free</Badge>
+    </div>
+  </CardContent>
+</Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>Building Systems with the ChatGPT API</CardTitle>
-      <CardDescription><a href="https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/" target="_blank" rel="noopener noreferrer">DeepLearning.AI & OpenAI</a></CardDescription>
-    </CardHeader>
-    <CardContent>
-      Build complex multi-stage workflows using chained prompts, input/output moderation, and contextual state management.
-      <div className="mt-2 text-xs text-muted-foreground">
-        <strong>Who it's for:</strong> Intermediate learners moving past single prompts.<br/>
-        <strong>Why it matters for agents:</strong> Introduces multi-step pipelines and task decomposition—the baseline for autonomous agents.
-      </div>
-      <div className="mt-4 flex gap-2">
-        <Badge>Systems Design</Badge>
-        <Badge variant="secondary">Free</Badge>
-      </div>
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>Building Systems with the ChatGPT API</CardTitle>
+    <CardDescription>
+      <a
+        href="https://www.deeplearning.ai/short-courses/building-systems-with-chatgpt/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        DeepLearning.AI & OpenAI
+      </a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    Build complex multi-stage workflows using chained prompts, input/output moderation, and contextual state management.
+    <div className="text-muted-foreground mt-2 text-xs">
+      <strong>Who it's for:</strong> Intermediate learners moving past single prompts.
+      <br />
+      <strong>Why it matters for agents:</strong> Introduces multi-step pipelines and task decomposition—the baseline
+      for autonomous agents.
+    </div>
+    <div className="mt-4 flex gap-2">
+      <Badge>Systems Design</Badge>
+      <Badge variant="secondary">Free</Badge>
+    </div>
+  </CardContent>
+</Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>AI Agentic Design Patterns with AutoGen</CardTitle>
-      <CardDescription><a href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/" target="_blank" rel="noopener noreferrer">DeepLearning.AI & Microsoft</a></CardDescription>
-    </CardHeader>
-    <CardContent>
-      Learn multi-agent collaboration, reflection loops, planning modules, and automated tool execution using Microsoft AutoGen.
-      <div className="mt-2 text-xs text-muted-foreground">
-        <strong>Who it's for:</strong> Developers ready to build multi-agent software systems.<br/>
-        <strong>Why it matters for agents:</strong> Teaches production agent design patterns: Reflection, Tool Use, Planning, and Multi-Agent Collaboration.
-      </div>
-      <div className="mt-4 flex gap-2">
-        <Badge>Agent Patterns</Badge>
-        <Badge variant="secondary">Free</Badge>
-      </div>
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>AI Agentic Design Patterns with AutoGen</CardTitle>
+    <CardDescription>
+      <a
+        href="https://www.deeplearning.ai/short-courses/ai-agentic-design-patterns-with-autogen/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        DeepLearning.AI & Microsoft
+      </a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    Learn multi-agent collaboration, reflection loops, planning modules, and automated tool execution using Microsoft
+    AutoGen.
+    <div className="text-muted-foreground mt-2 text-xs">
+      <strong>Who it's for:</strong> Developers ready to build multi-agent software systems.
+      <br />
+      <strong>Why it matters for agents:</strong> Teaches production agent design patterns: Reflection, Tool Use,
+      Planning, and Multi-Agent Collaboration.
+    </div>
+    <div className="mt-4 flex gap-2">
+      <Badge>Agent Patterns</Badge>
+      <Badge variant="secondary">Free</Badge>
+    </div>
+  </CardContent>
+</Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>Claude Code in Action</CardTitle>
-      <CardDescription><a href="https://anthropic.skilljar.com/claude-code-in-action" target="_blank" rel="noopener noreferrer">Anthropic</a></CardDescription>
-    </CardHeader>
-    <CardContent>
-      Learn how to effectively utilize Claude Code for terminal-driven agentic coding, workflows, tool execution, and developer productivity.
-      <div className="mt-2 text-xs text-muted-foreground">
-        <strong>Who it's for:</strong> Developers and technical leads.<br/>
-        <strong>Why it matters for agents:</strong> Demonstrates real-world state-of-the-art terminal coding agents in action.
-      </div>
-      <div className="mt-4 flex gap-2">
-        <Badge>Hands-on</Badge>
-        <Badge variant="secondary">Free</Badge>
-      </div>
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>Claude Code in Action</CardTitle>
+    <CardDescription>
+      <a href="https://anthropic.skilljar.com/claude-code-in-action" target="_blank" rel="noopener noreferrer">
+        Anthropic
+      </a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    Learn how to effectively utilize Claude Code for terminal-driven agentic coding, workflows, tool execution, and
+    developer productivity.
+    <div className="text-muted-foreground mt-2 text-xs">
+      <strong>Who it's for:</strong> Developers and technical leads.
+      <br />
+      <strong>Why it matters for agents:</strong> Demonstrates real-world state-of-the-art terminal coding agents in
+      action.
+    </div>
+    <div className="mt-4 flex gap-2">
+      <Badge>Hands-on</Badge>
+      <Badge variant="secondary">Free</Badge>
+    </div>
+  </CardContent>
+</Card>
 
   <Card>
     <CardHeader>
@@ -143,31 +181,36 @@ Prompt engineering is the art of communicating intent to generative models. Movi
   <AccordionItem value="item-1">
     <AccordionTrigger>Be Specific, Clear, and Constrained</AccordionTrigger>
     <AccordionContent>
-      Set explicit boundaries, targets, formats, and edge-case behaviors. State what the model <em>must</em> do, what it <em>must not</em> do, and exact schema requirements (e.g., JSON output).
+      Set explicit boundaries, targets, formats, and edge-case behaviors. State what the model <em>must</em> do, what it{' '}
+      <em>must not</em> do, and exact schema requirements (e.g., JSON output).
     </AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-2">
     <AccordionTrigger>Provide Context & System Roles</AccordionTrigger>
     <AccordionContent>
-      Anchor the model with persona, operating parameters, and domain context: <code>"Act as a staff security auditor reviewing Terraform manifests for compliance..."</code>
+      Anchor the model with persona, operating parameters, and domain context:{' '}
+      <code>"Act as a staff security auditor reviewing Terraform manifests for compliance..."</code>
     </AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-3">
     <AccordionTrigger>Few-Shot Prompting (In-Context Learning)</AccordionTrigger>
     <AccordionContent>
-      Provide concrete input/output pairings directly inside the prompt. Showing 2-3 accurate examples drastically reduces formatting drift and logic failures.
+      Provide concrete input/output pairings directly inside the prompt. Showing 2-3 accurate examples drastically
+      reduces formatting drift and logic failures.
     </AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-4">
     <AccordionTrigger>Chain-of-Thought (CoT) Reasoning</AccordionTrigger>
     <AccordionContent>
-      Ask the model to think step-by-step before producing a final answer. Forcing explicit reasoning steps reduces hallucinations and improves complex problem solving.
+      Ask the model to think step-by-step before producing a final answer. Forcing explicit reasoning steps reduces
+      hallucinations and improves complex problem solving.
     </AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-5">
     <AccordionTrigger>Common Pitfalls to Avoid</AccordionTrigger>
     <AccordionContent>
-      Avoid underspecified prompts, assuming implicit state between stateless API calls, overloading single prompts with conflicting responsibilities, and omitting negative constraints.
+      Avoid underspecified prompts, assuming implicit state between stateless API calls, overloading single prompts with
+      conflicting responsibilities, and omitting negative constraints.
     </AccordionContent>
   </AccordionItem>
 </Accordion>
@@ -186,23 +229,25 @@ When entering the AI space, focus on principles that yield maximum practical cap
     </CardContent>
   </Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>2. Decomposition Over Monoliths</CardTitle>
-    </CardHeader>
-    <CardContent>
-      Do not expect a single prompt to solve a massive task. Break complex workflows into small, chainable steps where each prompt does one thing reliably.
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>2. Decomposition Over Monoliths</CardTitle>
+  </CardHeader>
+  <CardContent>
+    Do not expect a single prompt to solve a massive task. Break complex workflows into small, chainable steps where
+    each prompt does one thing reliably.
+  </CardContent>
+</Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>3. Tool Calling & Grounding</CardTitle>
-    </CardHeader>
-    <CardContent>
-      Ground models in truth using real-time tool execution (database queries, web search, API calls) rather than relying solely on parametric training memory.
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>3. Tool Calling & Grounding</CardTitle>
+  </CardHeader>
+  <CardContent>
+    Ground models in truth using real-time tool execution (database queries, web search, API calls) rather than relying
+    solely on parametric training memory.
+  </CardContent>
+</Card>
 
   <Card>
     <CardHeader>
@@ -245,15 +290,16 @@ graph LR
 
 Understanding how agentic systems differ from standard conversational LLMs is critical for system architecture:
 
-| Dimension | Standard Prompting | Agentic Workflow |
-| :--- | :--- | :--- |
-| **Execution** | Single turn (input -> output) | Iterative loop (Plan -> Act -> Observe -> Re-evaluate) |
-| **Tool Access** | Text response only | Dynamic access to APIs, shell, databases, web search |
-| **Planning** | Immediate generation | Task breakdown, sub-goal generation, dynamic replanning |
-| **State** | Stateless or static context window | Stateful memory, environment updates, artifact tracking |
-| **Evaluation** | Human reads output | Automated feedback, reflection, test execution, retry loops |
+| Dimension       | Standard Prompting                 | Agentic Workflow                                            |
+| :-------------- | :--------------------------------- | :---------------------------------------------------------- |
+| **Execution**   | Single turn (input -> output)      | Iterative loop (Plan -> Act -> Observe -> Re-evaluate)      |
+| **Tool Access** | Text response only                 | Dynamic access to APIs, shell, databases, web search        |
+| **Planning**    | Immediate generation               | Task breakdown, sub-goal generation, dynamic replanning     |
+| **State**       | Stateless or static context window | Stateful memory, environment updates, artifact tracking     |
+| **Evaluation**  | Human reads output                 | Automated feedback, reflection, test execution, retry loops |
 
 ### Core Agent Building Blocks
+
 - **Planner:** Decomposes complex user intent into sub-tasks.
 - **Executor / Tools:** Interacts with the real world (code runtime, search tools, API calls).
 - **Reflection / Reviewer:** Evaluates execution results against acceptance criteria and triggers re-tries on failure.
@@ -267,13 +313,16 @@ Building reliable AI systems requires rigorous evaluation and error management:
   <AccordionItem value="item-eval-1">
     <AccordionTrigger>Iterative Feedback Loops (Reflection)</AccordionTrigger>
     <AccordionContent>
-      Implement self-correction by feeding compiler errors, linter output, or validation test failures back into the agent prompt context.
+      Implement self-correction by feeding compiler errors, linter output, or validation test failures back into the
+      agent prompt context.
     </AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-eval-2">
     <AccordionTrigger>Recognizing Failure Modes</AccordionTrigger>
     <AccordionContent>
-      Common agent failure patterns include: <strong>Infinite loops</strong> (agent repeating failed tool call), <strong>context drift</strong> (forgetting original goal after 10+ turns), <strong>hallucinated tool parameters</strong>, and <strong>tool misfiring</strong>.
+      Common agent failure patterns include: <strong>Infinite loops</strong> (agent repeating failed tool call),{' '}
+      <strong>context drift</strong> (forgetting original goal after 10+ turns),{' '}
+      <strong>hallucinated tool parameters</strong>, and <strong>tool misfiring</strong>.
     </AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-eval-3">
@@ -281,9 +330,17 @@ Building reliable AI systems requires rigorous evaluation and error management:
     <AccordionContent>
       Move beyond manual vibe checks:
       <ul>
-        <li><strong>Unit Evals:</strong> Test specific tool-calling prompts for JSON schema accuracy.</li>
-        <li><strong>Trajectory Evals:</strong> Evaluate whether an agent reached the correct goal within acceptable tool-call steps.</li>
-        <li><strong>LLM-as-a-Judge:</strong> Use a stronger model (e.g. GPT-4o / Claude 3.5 Sonnet) to grade output quality against explicit rubrics.</li>
+        <li>
+          <strong>Unit Evals:</strong> Test specific tool-calling prompts for JSON schema accuracy.
+        </li>
+        <li>
+          <strong>Trajectory Evals:</strong> Evaluate whether an agent reached the correct goal within acceptable
+          tool-call steps.
+        </li>
+        <li>
+          <strong>LLM-as-a-Judge:</strong> Use a stronger model (e.g. GPT-4o / Claude 3.5 Sonnet) to grade output
+          quality against explicit rubrics.
+        </li>
       </ul>
     </AccordionContent>
   </AccordionItem>
@@ -326,45 +383,63 @@ Week 2: Autonomous Agents & Workflows
     </CardContent>
   </Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>Andrej Karpathy</CardTitle>
-      <CardDescription><a href="https://x.com/karpathy" target="_blank" rel="noopener noreferrer">@karpathy</a></CardDescription>
-    </CardHeader>
-    <CardContent>
-      Former Director of AI at Tesla and OpenAI co-founder. Offers masterclass explanations on neural nets and LLM systems.
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>Andrej Karpathy</CardTitle>
+    <CardDescription>
+      <a href="https://x.com/karpathy" target="_blank" rel="noopener noreferrer">
+        @karpathy
+      </a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    Former Director of AI at Tesla and OpenAI co-founder. Offers masterclass explanations on neural nets and LLM
+    systems.
+  </CardContent>
+</Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>Harrison Chase</CardTitle>
-      <CardDescription><a href="https://x.com/hwchase17" target="_blank" rel="noopener noreferrer">@hwchase17</a></CardDescription>
-    </CardHeader>
-    <CardContent>
-      Creator of LangChain and LangGraph. Follow for state-of-the-art updates on agent architecture and memory systems.
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>Harrison Chase</CardTitle>
+    <CardDescription>
+      <a href="https://x.com/hwchase17" target="_blank" rel="noopener noreferrer">
+        @hwchase17
+      </a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    Creator of LangChain and LangGraph. Follow for state-of-the-art updates on agent architecture and memory systems.
+  </CardContent>
+</Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>Yann LeCun</CardTitle>
-      <CardDescription><a href="https://x.com/ylecun" target="_blank" rel="noopener noreferrer">@ylecun</a></CardDescription>
-    </CardHeader>
-    <CardContent>
-      VP & Chief AI Scientist at Meta. Turing Award Laureate. Great for foundational vision and technical industry perspectives.
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>Yann LeCun</CardTitle>
+    <CardDescription>
+      <a href="https://x.com/ylecun" target="_blank" rel="noopener noreferrer">
+        @ylecun
+      </a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    VP & Chief AI Scientist at Meta. Turing Award Laureate. Great for foundational vision and technical industry
+    perspectives.
+  </CardContent>
+</Card>
 
-  <Card>
-    <CardHeader>
-      <CardTitle>Lex Fridman</CardTitle>
-      <CardDescription><a href="https://x.com/lexfridman" target="_blank" rel="noopener noreferrer">@lexfridman</a></CardDescription>
-    </CardHeader>
-    <CardContent>
-      Host of the Lex Fridman Podcast, interviewing top leaders in AI, robotics, and computer science.
-    </CardContent>
-  </Card>
+<Card>
+  <CardHeader>
+    <CardTitle>Lex Fridman</CardTitle>
+    <CardDescription>
+      <a href="https://x.com/lexfridman" target="_blank" rel="noopener noreferrer">
+        @lexfridman
+      </a>
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+    Host of the Lex Fridman Podcast, interviewing top leaders in AI, robotics, and computer science.
+  </CardContent>
+</Card>
 
   <Card>
     <CardHeader>
@@ -376,4 +451,3 @@ Week 2: Autonomous Agents & Workflows
     </CardContent>
   </Card>
 </div>
-

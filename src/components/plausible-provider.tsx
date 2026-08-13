@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
 import { trackEvent } from '@/lib/analytics';
+import { useEffect } from 'react';
 
 // Extend window interface to support Plausible custom types safely
 declare global {
