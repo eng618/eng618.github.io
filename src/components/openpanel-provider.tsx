@@ -5,6 +5,7 @@ import { OpenPanelComponent } from '@openpanel/nextjs';
 export function OpenPanelProvider() {
   const clientId = process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID;
   const apiUrl = process.env.NEXT_PUBLIC_OPENPANEL_API_URL;
+  const scriptUrl = process.env.NEXT_PUBLIC_OPENPANEL_SCRIPT_URL;
 
   if (!clientId) {
     return null;
@@ -14,6 +15,7 @@ export function OpenPanelProvider() {
     <OpenPanelComponent
       clientId={clientId}
       apiUrl={apiUrl}
+      scriptUrl={scriptUrl}
       trackScreenViews={true}
       trackOutgoingLinks={true}
       trackAttributes={true}
