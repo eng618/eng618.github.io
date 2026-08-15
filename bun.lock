@@ -11,7 +11,6 @@
         "@gv-tech/ui-web": "^2.26.2",
         "@hookform/resolvers": "^5.2.2",
         "@openpanel/nextjs": "^1.5.1",
-        "@plausible-analytics/tracker": "^0.4.5",
         "@supabase/supabase-js": "^2.110.7",
         "@tailwindcss/typography": "^0.5.20",
         "class-variance-authority": "^0.7.1",
@@ -367,8 +366,6 @@
     "@paralleldrive/cuid2": ["@paralleldrive/cuid2@3.3.0", "", { "dependencies": { "@noble/hashes": "^2.0.1", "bignumber.js": "^9.3.1", "error-causes": "^3.0.2" }, "bin": { "cuid2": "bin/cuid2.js" } }, "sha512-OqiFvSOF0dBSesELYY2CAMa4YINvlLpvKOz/rv6NeZEqiyttlHgv98Juwv4Ch+GrEV7IZ8jfI2VcEoYUjXXCjw=="],
 
     "@pkgr/core": ["@pkgr/core@0.2.9", "", {}, "sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA=="],
-
-    "@plausible-analytics/tracker": ["@plausible-analytics/tracker@0.4.5", "", {}, "sha512-6BfAGejXY+YA3Cw6LYT2Zpn4hTxDtPQAawFsYUsQCOg78wIS5C4deAGXTfJffa5VleMWITv5lpJ/EYuQBl1tPA=="],
 
     "@prisma/prisma-schema-wasm": ["@prisma/prisma-schema-wasm@4.17.0-26.6b0aef69b7cdfc787f822ecd7cdc76d5f1991584", "", {}, "sha512-JFdsnSgBPN8reDTLOI9Vh/6ccCb2aD1LbY/LWQnkcIgNo6IdpzvuM+qRVbBuA6IZP2SdqQI8Lu6RL2P8EFBQUA=="],
 

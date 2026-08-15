@@ -1,3 +1,5 @@
+import { trackEvent } from './analytics';
+
 export const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || '';
 
 export type CoverLetterStatus = 'draft' | 'active' | 'archived';
@@ -93,19 +95,5 @@ export function getCoverLetterShareUrl(slug: string, origin?: string): string {
 }
 
 export function trackAdminEvent(eventName: string, props?: Record<string, string | number | boolean>) {
-  const formattedProps: Record<string, string> = {};
-  if (props) {
-    Object.entries(props).forEach(([key, val]) => {
-      formattedProps[key] = String(val);
-    });
-  }
-
-  if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
-    console.log(`[Analytics Dev] Event: ${eventName}`, formattedProps);
-    return;
-  }
-
-  if (typeof window !== 'undefined' && window.plausible) {
-    window.plausible(eventName, { props: formattedProps });
-  }
+  trackEvent(eventName, props);
 }

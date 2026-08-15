@@ -80,4 +80,4 @@ Test files live in `__tests__/` directories co-located with the code under test.
 
 ### Analytics
 
-Plausible analytics is initialized in `PlausibleProvider` and only runs outside of localhost. Do not add ad-hoc tracking calls.
+OpenPanel analytics is initialized in `OpenPanelProvider` and only runs outside of localhost. Do not add ad-hoc tracking calls.

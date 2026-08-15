@@ -1,5 +1,4 @@
 import { OpenPanelProvider } from '@/components/openpanel-provider';
-import { PlausibleProvider } from '@/components/plausible-provider';
 import { WebVitals } from '@/components/web-vitals';
 import { ThemeProvider, Toaster } from '@gv-tech/ui-web';
 import type { Metadata } from 'next';
@@ -31,7 +30,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>
         <ThemeProvider disableTransitionOnChange>
-          <PlausibleProvider />
           <OpenPanelProvider />
           <WebVitals />
           {children}

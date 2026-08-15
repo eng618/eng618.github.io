@@ -1,6 +1,5 @@
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import { PlausibleOptOutToggle } from '@/components/plausible-opt-out-toggle';
 
 export default function PrivacyPage() {
   return (
@@ -22,42 +21,27 @@ export default function PrivacyPage() {
             </p>
             <h2>Cookies and tracking</h2>
             <p>
-              This site uses Plausible Analytics, a privacy-friendly analytics service that does not use cookies or
-              collect personal data. Plausible collects only aggregated, anonymized data about:
+              This site uses OpenPanel, a privacy-friendly, open-source analytics service that does not use cookies or
+              collect personal data. OpenPanel collects only aggregated, anonymized data about:
             </p>
             <ul>
-              <li>Page views</li>
-              <li>Form submissions</li>
+              <li>Page views and screen transitions</li>
               <li>Outbound link clicks</li>
-              <li>File downloads (PDFs, documents, etc.)</li>
+              <li>Interactive features and performance metrics (e.g. Web Vitals)</li>
             </ul>
             <p>
-              Custom properties such as page titles are also tracked to help understand content engagement. No
-              personally identifiable information is collected or stored. For more details, see the{' '}
+              No personally identifiable information or cross-site tracking data is collected or stored. For more
+              details, see the{' '}
               <a
-                href="https://plausible.io/privacy"
+                href="https://openpanel.dev/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:underline"
               >
-                Plausible Privacy Policy
+                OpenPanel Privacy Policy
               </a>
               .
             </p>
-            <h2>Opting out of analytics</h2>
-            <p>
-              If you prefer not to be included in analytics, you can opt out using your browser's developer tools or by
-              visiting this page and using the opt-out button (if available). When you opt out, Plausible will not
-              collect any data about your visits. To opt out, run this command in your browser's console:
-            </p>
-            <code className="bg-muted block rounded p-2">localStorage.plausible_ignore = "true"</code>
-            <p>To opt back in, you can remove this setting or use:</p>
-            <code className="bg-muted block rounded p-2">localStorage.removeItem("plausible_ignore")</code>
-          </div>
-          <div className="mt-8">
-            <PlausibleOptOutToggle />
-          </div>
-          <div className="prose text-muted-foreground mt-8 max-w-none">
             <h2>External links</h2>
             <p>
               Links to other websites are provided for convenience. I am not responsible for the content or privacy

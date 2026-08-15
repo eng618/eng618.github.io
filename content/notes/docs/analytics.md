@@ -6,12 +6,11 @@ This document provides a comprehensive reference of all analytics tracking, inst
 
 ## 1. Core Analytics Engine
 
-The site is currently in a transition phase running **Plausible Analytics** and **OpenPanel** in parallel via a unified analytics abstraction (`src/lib/analytics.ts`).
+The site uses **OpenPanel** as its privacy-first, cookieless analytics engine via an analytics abstraction (`src/lib/analytics.ts`).
 
-- **Unified Layer**: `src/lib/analytics.ts` (`trackEvent`) dispatches custom metrics, user interactions, and Web Vitals to both analytics services simultaneously while suppressing telemetry in `localhost`.
-- **OpenPanel**: Integrated via `@openpanel/nextjs` (`src/components/openpanel-provider.tsx`), configured with `NEXT_PUBLIC_OPENPANEL_CLIENT_ID` and `NEXT_PUBLIC_OPENPANEL_API_URL`.
-- **Plausible**: Integrated via `@plausible-analytics/tracker` (`src/components/plausible-provider.tsx`), configured with proxy endpoint `stats.garciaericn.com/api/event`.
-- **Opt-Out Control**: Honors visitor privacy opt-out actions managed through `/privacy` or setting `localStorage.plausible_ignore = "true"`.
+- **Unified Layer**: `src/lib/analytics.ts` (`trackEvent`) dispatches custom metrics, user interactions, and Web Vitals to OpenPanel while suppressing telemetry in `localhost`.
+- **OpenPanel**: Integrated via `@openpanel/nextjs` (`src/components/openpanel-provider.tsx`), configured with `NEXT_PUBLIC_OPENPANEL_CLIENT_ID`, `NEXT_PUBLIC_OPENPANEL_API_URL`, and `NEXT_PUBLIC_OPENPANEL_SCRIPT_URL`.
+- **Privacy & Anonymization**: No cookies or personal data are collected or tracked across sites.
 
 ---
 
