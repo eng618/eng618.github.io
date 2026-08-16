@@ -1,5 +1,6 @@
 'use client';
 
+import { trackEvent } from '@/lib/analytics';
 import { useForm as useFormspree } from '@formspree/react';
 import {
   Button,
@@ -15,6 +16,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Send } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import { useForm, type ControllerRenderProps } from 'react-hook-form';
 import * as z from 'zod';
 
@@ -29,6 +31,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export function ContactForm() {
   const [state, handleSubmitFormspree] = useFormspree('meezlzyn');
+  const hasStartedRef = useRef(false);
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,7 +47,32 @@ export function ContactForm() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const uiForm = form as any;
 
+  const handleFieldFocus = () => {
+    if (!hasStartedRef.current) {
+      hasStartedRef.current = true;
+      trackEvent('Contact Form Started');
+    }
+  };
+
+  useEffect(() => {
+    if (state.succeeded) {
+      trackEvent('Contact Form Success');
+    }
+  }, [state.succeeded]);
+
+  useEffect(() => {
+    if (state.errors && Object.keys(state.errors).length > 0) {
+      trackEvent('Contact Form Error', {
+        error_count: Object.keys(state.errors).length,
+      });
+    }
+  }, [state.errors]);
+
   async function onSubmit(values: FormValues) {
+    trackEvent('Contact Form Submitted', {
+      subject_length: values.subject.length,
+      message_length: values.message.length,
+    });
     await handleSubmitFormspree(values);
   }
 
@@ -79,7 +107,7 @@ export function ContactForm() {
       </div>
 
       <Form {...uiForm}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} onFocusCapture={handleFieldFocus} className="space-y-6">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <FormField
               control={uiControl}

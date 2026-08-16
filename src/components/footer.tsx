@@ -2,6 +2,7 @@
 
 import { siteConfig } from '@/config/site';
 import footerLinksData from '@/data/footer-links.json';
+import { trackEvent } from '@/lib/analytics';
 import Link from 'next/link';
 
 function SocialIcon({ icon, url, label }: { icon: string; url: string; label: string }) {
@@ -33,6 +34,7 @@ function SocialIcon({ icon, url, label }: { icon: string; url: string; label: st
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
+      onClick={() => trackEvent('Footer Social Click', { platform: icon, label })}
       className="text-muted-foreground hover:text-foreground transition-colors duration-200"
       title={label}
     >

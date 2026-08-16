@@ -1,6 +1,7 @@
 'use client';
 
 import { MarkdownContent } from '@/components/markdown-content';
+import { trackEvent } from '@/lib/analytics';
 import { supabase } from '@/lib/supabase';
 import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { AlertTriangle, ArrowLeft, Printer } from 'lucide-react';
@@ -49,10 +50,18 @@ function CoverLetterLoader() {
 
     if (dbError) {
       setError(dbError.message);
+      trackEvent('Cover Letter Error', { slug: targetSlug, reason: 'database_error' });
     } else if (!data) {
       setError('Cover letter not found. Please double-check the URL.');
+      trackEvent('Cover Letter Error', { slug: targetSlug, reason: 'not_found' });
     } else {
       setLetter(data);
+      trackEvent('Cover Letter View', {
+        slug: data.slug,
+        company: data.company || 'unspecified',
+        role_title: data.role_title || 'unspecified',
+        has_subject: Boolean(data.subject),
+      });
     }
     setLoading(false);
   };
@@ -178,6 +187,7 @@ function CoverLetterHeader() {
               <span className="text-muted-foreground">|</span>
               <Link
                 href={`/resume?cl=${slug}`}
+                onClick={() => trackEvent('Cover Letter Resume Click', { slug })}
                 className="text-primary flex items-center text-sm font-semibold hover:underline"
               >
                 View resume
@@ -191,7 +201,13 @@ function CoverLetterHeader() {
           ) : (
             <div className="h-9 w-9" />
           )}
-          <Button onClick={() => window.print()} className="flex items-center gap-2 font-semibold">
+          <Button
+            onClick={() => {
+              trackEvent('Cover Letter Print', { slug: slug || 'unspecified' });
+              window.print();
+            }}
+            className="flex items-center gap-2 font-semibold"
+          >
             <Printer className="h-4 w-4" />
             Print cover letter
           </Button>

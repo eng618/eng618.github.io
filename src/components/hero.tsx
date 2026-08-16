@@ -1,5 +1,6 @@
 'use client';
 
+import { trackEvent } from '@/lib/analytics';
 import { Button } from '@gv-tech/ui-web';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
@@ -57,15 +58,22 @@ export function Hero() {
               className="flex flex-wrap items-center gap-4"
             >
               <Button size="lg" asChild>
-                <Link href="/portfolio">
+                <Link href="/portfolio" onClick={() => trackEvent('Hero CTA Click', { target: 'portfolio' })}>
                   View selected work <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/contact">Get in touch</Link>
+                <Link href="/contact" onClick={() => trackEvent('Hero CTA Click', { target: 'contact' })}>
+                  Get in touch
+                </Link>
               </Button>
               <Button size="lg" variant="link" className="px-0" asChild>
-                <a href="/resume" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="/resume"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent('Hero CTA Click', { target: 'resume' })}
+                >
                   Resume
                 </a>
               </Button>

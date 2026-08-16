@@ -1,3 +1,6 @@
+'use client';
+
+import { trackEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 import { Button } from '@gv-tech/ui-web';
 import { Edit2 } from 'lucide-react';
@@ -21,7 +24,12 @@ export function EditOnGithub({ relativePath, className }: EditOnGithubProps) {
         className,
       )}
     >
-      <a href={url} target="_blank" rel="noopener noreferrer">
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackEvent('Edit on GitHub Click', { relative_path: relativePath })}
+      >
         <Edit2 className="h-3.5 w-3.5 transition-transform group-hover:scale-110" />
         <span>Edit this page on GitHub</span>
       </a>

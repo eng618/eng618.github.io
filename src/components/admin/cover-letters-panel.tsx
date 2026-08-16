@@ -13,6 +13,7 @@ import {
   getCoverLetterShareUrl,
   sanitizeSlug,
   stripMarkdown,
+  trackAdminEvent,
   type CoverLetter,
   type CoverLetterStatus,
 } from '@/lib/admin';
@@ -199,6 +200,7 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
       content,
     });
     setDirty(true);
+    trackAdminEvent('Admin Template Applied', { template: template.id });
     toast({ title: 'Template applied', description: template.name });
   };
 
@@ -212,6 +214,7 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
     setSaving(true);
     setFormError(null);
 
+    const isNew = !editing.id;
     const payload = {
       slug: sanitizeSlug(editing.slug),
       recipient: editing.recipient || '',
@@ -261,6 +264,12 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
       return;
     }
 
+    trackAdminEvent('Admin Cover Letter Saved', {
+      is_new: isNew,
+      has_company: Boolean(payload.company),
+      status: payload.status,
+    });
+
     setDirty(false);
     setEditing(null);
     toast({ title: 'Cover letter saved' });
@@ -276,6 +285,7 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
       toast({ title: 'Delete failed', description: error.message, variant: 'destructive' });
       return;
     }
+    trackAdminEvent('Admin Cover Letter Deleted', { id });
     toast({ title: 'Cover letter deleted' });
     if (editing?.id === id) {
       setEditing(null);
@@ -287,6 +297,7 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
     try {
       await navigator.clipboard.writeText(getCoverLetterShareUrl(slug));
       setCopiedId(slug);
+      trackAdminEvent('Admin Cover Letter Link Copied', { slug });
       toast({ title: 'Share link copied' });
       setTimeout(() => setCopiedId(null), 2000);
     } catch {

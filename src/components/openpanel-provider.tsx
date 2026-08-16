@@ -19,6 +19,7 @@ export function OpenPanelProvider() {
       trackScreenViews={true}
       trackOutgoingLinks={true}
       trackAttributes={true}
+      trackHashChanges={true}
       disabled={typeof window !== 'undefined' && window.location.hostname === 'localhost'}
     />
   );

@@ -1,5 +1,6 @@
 'use client';
 
+import { trackEvent } from '@/lib/analytics';
 import { Badge, Button, Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@gv-tech/ui-web';
 import { ChevronLeft, ChevronRight, ExternalLink, FileText } from 'lucide-react';
 import Image from 'next/image';
@@ -42,6 +43,16 @@ export function CertLightbox({ items, currentIndex, onClose, onSelectIndex }: Ce
     const nextIndex = (currentIndex + 1) % items.length;
     onSelectIndex(nextIndex);
   }, [currentIndex, items.length, onSelectIndex]);
+
+  useEffect(() => {
+    if (isOpen && currentItem) {
+      trackEvent('Credential Lightbox Opened', {
+        title: currentItem.title,
+        authority: currentItem.authority,
+        type: currentItem.type || 'credential',
+      });
+    }
+  }, [isOpen, currentItem]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -157,7 +168,18 @@ export function CertLightbox({ items, currentIndex, onClose, onSelectIndex }: Ce
             <div className="border-border mt-6 flex flex-col gap-3 border-t pt-4">
               {isPdf && (
                 <Button asChild variant="default" className="w-full font-medium">
-                  <Link href={currentItem.url} target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href={currentItem.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() =>
+                      trackEvent('Credential External Verify Click', {
+                        title: currentItem.title,
+                        authority: currentItem.authority,
+                        action: 'open_pdf',
+                      })
+                    }
+                  >
                     <FileText className="mr-2 h-4 w-4" />
                     Open PDF Certificate
                   </Link>
@@ -165,7 +187,18 @@ export function CertLightbox({ items, currentIndex, onClose, onSelectIndex }: Ce
               )}
 
               <Button asChild variant={isPdf ? 'outline' : 'default'} className="w-full font-medium">
-                <Link href={verifyUrl} target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={verifyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() =>
+                    trackEvent('Credential External Verify Click', {
+                      title: currentItem.title,
+                      authority: currentItem.authority,
+                      action: 'verify_url',
+                    })
+                  }
+                >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   Verify Credential
                 </Link>

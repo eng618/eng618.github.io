@@ -1,7 +1,7 @@
 'use client';
 
 import { MarkdownEditor } from '@/components/admin/markdown-editor';
-import { formatDate, stripMarkdown, type PrivateNote } from '@/lib/admin';
+import { formatDate, stripMarkdown, trackAdminEvent, type PrivateNote } from '@/lib/admin';
 import { supabase } from '@/lib/supabase';
 import {
   Badge,
@@ -225,6 +225,12 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
       return;
     }
 
+    trackAdminEvent('Admin Private Note Saved', {
+      is_new: !editing.id,
+      category: payload.category,
+      tag_count: tags.length,
+    });
+
     setDirty(false);
     setEditing(null);
     toast({ title: 'Note saved' });
@@ -240,6 +246,7 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
       toast({ title: 'Delete failed', description: error.message, variant: 'destructive' });
       return;
     }
+    trackAdminEvent('Admin Private Note Deleted', { id });
     toast({ title: 'Note deleted' });
     if (editing?.id === id) {
       setEditing(null);
@@ -265,6 +272,9 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
       toast({ title: 'Failed to update pin', description: error.message, variant: 'destructive' });
       return;
     }
+    trackAdminEvent('Admin Private Note Pin Toggled', {
+      pinned: !currentPinned,
+    });
     fetchNotes();
   };
 
@@ -279,6 +289,7 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+    trackAdminEvent('Admin Private Note Exported', { category: note.category });
   };
 
   useEffect(() => {

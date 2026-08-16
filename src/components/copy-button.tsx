@@ -1,5 +1,6 @@
 'use client';
 
+import { trackEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 import { Button } from '@gv-tech/ui-web';
 import { Check, Copy } from 'lucide-react';
@@ -17,6 +18,11 @@ export function CopyButton({ text, className }: CopyButtonProps) {
     try {
       await navigator.clipboard.writeText(text);
       setIsCopied(true);
+      trackEvent('Code Snippet Copied', {
+        char_count: text.length,
+        line_count: text.split('\n').length,
+        pathname: typeof window !== 'undefined' ? window.location.pathname : '',
+      });
       setTimeout(() => setIsCopied(false), 2000);
     } catch (err) {
       console.error('Failed to copy text: ', err);

@@ -1,6 +1,7 @@
 'use client';
 
 import { ADMIN_EMAIL } from '@/lib/admin';
+import { trackEvent } from '@/lib/analytics';
 import type { NoteMetadata } from '@/lib/notes';
 import { supabase } from '@/lib/supabase';
 import { cn } from '@/lib/utils';
@@ -213,6 +214,23 @@ export function NotesSidebar({ notes, basePath }: NotesSidebarProps) {
   }, [isPrivateNotes]);
 
   const activeNotes = isPrivateNotes ? privateNotes : notes;
+
+  useEffect(() => {
+    const trimmed = searchQuery.trim();
+    if (trimmed.length < 2) {
+      return;
+    }
+
+    const handler = setTimeout(() => {
+      trackEvent('Notes Search', {
+        query_length: trimmed.length,
+        query_term: trimmed.toLowerCase(),
+        base_path: basePath,
+      });
+    }, 600);
+
+    return () => clearTimeout(handler);
+  }, [searchQuery, basePath]);
 
   const filteredTree = useMemo(() => {
     const tree = buildTree(activeNotes);

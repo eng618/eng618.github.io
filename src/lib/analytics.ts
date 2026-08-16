@@ -1,4 +1,32 @@
-export function trackEvent(eventName: string, props?: Record<string, string | number | boolean>) {
+export type AnalyticsEventName =
+  | 'Contact Form Started'
+  | 'Contact Form Submitted'
+  | 'Contact Form Success'
+  | 'Contact Form Error'
+  | 'Cover Letter View'
+  | 'Cover Letter Print'
+  | 'Cover Letter Resume Click'
+  | 'Cover Letter Error'
+  | 'Code Snippet Copied'
+  | 'Notes Search'
+  | 'Edit on GitHub Click'
+  | 'Credential Lightbox Opened'
+  | 'Credential External Verify Click'
+  | 'Hero CTA Click'
+  | 'Footer Social Click'
+  | '404 Page View'
+  | 'Game Launch'
+  | 'Game Reboot'
+  | 'First Shot'
+  | 'Game Over'
+  | 'Clean Build Milestone'
+  | '404 Exit'
+  | 'Resume Tab Toggle'
+  | 'Resume Print'
+  | 'Resume Contact Click'
+  | (string & {});
+
+export function trackEvent(eventName: AnalyticsEventName, props?: Record<string, string | number | boolean>) {
   if (typeof window === 'undefined') {
     return;
   }
