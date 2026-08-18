@@ -128,6 +128,24 @@ export const caseStudies: CaseStudy[] = [
     featured: false,
   },
   {
+    name: 'Tally Ho',
+    role: 'Author & Lead Developer',
+    company: 'Garcia Ventures',
+    problem:
+      'Existing board game score trackers are either cluttered with ads, overly complex, or require cloud accounts for simple local game nights.',
+    whatIDid:
+      'Architected and built a tactile, offline-first scorekeeping and tally tracking app with React Native, Expo, and TypeScript, featuring custom rapid keypads, player libraries, and cross-platform web/Android distribution.',
+    results: [
+      'Shipped on Google Play Store and Web',
+      'Frictionless offline-first experience with zero account requirement',
+    ],
+    stack: ['React Native', 'Expo', 'TypeScript', 'Tailwind CSS / NativeWind'],
+    takeaway:
+      'Utility apps succeed on speed and tactile feedback — reducing the friction to record a round makes the app an invisible extension of game night.',
+    url: 'https://tallyho.gventureshq.com/',
+    featured: false,
+  },
+  {
     name: 'eng (Go CLI)',
     role: 'Author',
     problem: 'Personal and system workflows (dotfiles, process management) needed a single, extensible CLI.',

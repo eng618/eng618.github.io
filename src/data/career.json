@@ -365,6 +365,14 @@
       "showOnResume": false
     },
     {
+      "name": "Tally Ho",
+      "role": "Author & Lead Developer",
+      "description": "Cross-platform Game Night scorekeeper and tally tracker built with React Native, Expo, and TypeScript — available on Google Play and Web.",
+      "category": "featured",
+      "url": "https://tallyho.gventureshq.com/",
+      "showOnResume": false
+    },
+    {
       "name": "ENG CLI",
       "role": "Author",
       "description": "Cobra-based Go CLI for daily workflow automation — dotfiles, process management, and practical system commands.",
