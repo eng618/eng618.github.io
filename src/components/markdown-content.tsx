@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import DOMPurify from 'isomorphic-dompurify';
 import { marked } from 'marked';
 import { useMemo } from 'react';
 
@@ -45,6 +46,8 @@ export function MarkdownContent({ content, className, headingIds = false }: Mark
     return <p className="text-muted-foreground text-sm italic">Nothing to preview yet.</p>;
   }
 
+  const sanitizedHtml = DOMPurify.sanitize(html);
+
   return (
     <div
       className={cn(
@@ -52,7 +55,7 @@ export function MarkdownContent({ content, className, headingIds = false }: Mark
         'prose-headings:font-outfit prose-a:text-primary',
         className,
       )}
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
     />
   );
 }
