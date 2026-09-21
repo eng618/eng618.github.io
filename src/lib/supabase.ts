@@ -10,4 +10,9 @@ if (!supabaseUrl || !supabaseAnonKey || supabaseUrl.includes('your-project')) {
   }
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// createClient will throw if url/key are missing. During builds without .env variables,
+// we provide dummy ones to allow the build to succeed.
+const safeUrl = supabaseUrl || 'http://localhost:8000';
+const safeKey = supabaseAnonKey || 'placeholder';
+
+export const supabase = createClient(safeUrl, safeKey);
