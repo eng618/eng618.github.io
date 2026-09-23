@@ -1,7 +1,8 @@
 'use client';
 
-import { trackEvent } from '@/lib/analytics';
 import { useReportWebVitals } from 'next/web-vitals';
+
+import { trackEvent } from '@/lib/analytics';
 
 export function WebVitals() {
   useReportWebVitals((metric) => {

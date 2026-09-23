@@ -1,8 +1,9 @@
+import Link from 'next/link';
+
 import { ContactForm } from '@/components/contact-form';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { siteConfig } from '@/config/site';
-import Link from 'next/link';
 
 export default function ContactPage() {
   return (

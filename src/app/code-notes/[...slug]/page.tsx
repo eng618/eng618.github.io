@@ -1,16 +1,16 @@
-import { Breadcrumb } from '@/components/breadcrumb';
-import { EditOnGithub } from '@/components/edit-on-github';
-import { mdxComponents } from '@/components/mdx-components';
-import { MobileTOC } from '@/components/mobile-sub-header';
-import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
-import { getAllContent, getContentBySlug } from '@/lib/notes';
+import { SidebarTrigger } from '@gv-tech/ui-web';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { notFound } from 'next/navigation';
 import { rehypePrettyCode } from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
-import { SidebarTrigger } from '@gv-tech/ui-web';
+import { Breadcrumb } from '@/components/breadcrumb';
+import { EditOnGithub } from '@/components/edit-on-github';
+import { mdxComponents } from '@/components/mdx-components';
+import { MobileTOC } from '@/components/mobile-sub-header';
+import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
+import { getAllContent, getContentBySlug } from '@/lib/notes';
 
 interface CodeNotePageProps {
   params: Promise<{

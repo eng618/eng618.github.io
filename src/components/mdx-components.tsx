@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils';
 import {
   Accordion,
   AccordionContent,
@@ -13,6 +12,9 @@ import {
 } from '@gv-tech/ui-web';
 import NextLink from 'next/link';
 import type { ComponentProps, ReactNode } from 'react';
+
+import { cn } from '@/lib/utils';
+
 import { CodeBlock } from './code-block';
 
 export const mdxComponents = {

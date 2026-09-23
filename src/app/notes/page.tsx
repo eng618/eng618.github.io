@@ -1,7 +1,8 @@
-import { Breadcrumb } from '@/components/breadcrumb';
-import { getAllContent } from '@/lib/notes';
 import { Card, CardContent, CardHeader, CardTitle, SidebarTrigger } from '@gv-tech/ui-web';
 import { BookOpen, Map, Sparkles } from 'lucide-react';
+
+import { Breadcrumb } from '@/components/breadcrumb';
+import { getAllContent } from '@/lib/notes';
 
 export default function NotesIndexPage() {
   const notes = getAllContent('notes');

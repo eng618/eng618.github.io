@@ -1,10 +1,11 @@
 'use client';
 
+import { Suspense, useState } from 'react';
+
 import { BadgeCard } from '@/components/badge-card';
 import { BadgeSkeleton } from '@/components/badge-skeleton';
 import { CertLightbox } from '@/components/cert-lightbox';
 import badgesData from '@/data/badges.json';
-import { Suspense, useState } from 'react';
 
 function BadgesGrid() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);

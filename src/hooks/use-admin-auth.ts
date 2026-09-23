@@ -1,9 +1,10 @@
 'use client';
 
+import type { Session } from '@supabase/supabase-js';
+import { useEffect, useRef, useState } from 'react';
+
 import { ADMIN_EMAIL, trackAdminEvent } from '@/lib/admin';
 import { supabase } from '@/lib/supabase';
-import { Session } from '@supabase/supabase-js';
-import { useEffect, useRef, useState } from 'react';
 
 export type AdminAuthState = {
   session: Session | null;

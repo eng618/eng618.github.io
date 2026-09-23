@@ -1,11 +1,12 @@
 'use client';
 
-import { trackEvent } from '@/lib/analytics';
 import { Badge, Button, Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@gv-tech/ui-web';
 import { ChevronLeft, ChevronRight, ExternalLink, FileText } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect } from 'react';
+
+import { trackEvent } from '@/lib/analytics';
 
 export interface CredentialItem {
   title: string;

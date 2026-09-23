@@ -1,9 +1,10 @@
 'use client';
 
-import { MarkdownContent } from '@/components/markdown-content';
-import { cn } from '@/lib/utils';
 import { Textarea } from '@gv-tech/ui-web';
 import { useEffect, useRef, useState } from 'react';
+
+import { MarkdownContent } from '@/components/markdown-content';
+import { cn } from '@/lib/utils';
 
 export type EditorMode = 'edit' | 'preview' | 'split';
 

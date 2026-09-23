@@ -1,10 +1,5 @@
 'use client';
 
-import { CoverLettersPanel } from '@/components/admin/cover-letters-panel';
-import { PrivateNotesPanel } from '@/components/admin/private-notes-panel';
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
-import { useAdminAuth } from '@/hooks/use-admin-auth';
 import {
   Button,
   Card,
@@ -23,6 +18,12 @@ import { Key, Lock, LogOut, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useCallback, useEffect, useState } from 'react';
+
+import { CoverLettersPanel } from '@/components/admin/cover-letters-panel';
+import { PrivateNotesPanel } from '@/components/admin/private-notes-panel';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { useAdminAuth } from '@/hooks/use-admin-auth';
 
 function AdminDashboard() {
   const { session, loading, isAdmin, email, login, logout } = useAdminAuth();

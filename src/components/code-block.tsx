@@ -1,10 +1,12 @@
 'use client';
 
-import { useCodeTheme } from '@/hooks/use-code-theme';
-import { cn } from '@/lib/utils';
 import { ThemeToggle } from '@gv-tech/ui-web';
 import type { ComponentProps, ReactNode } from 'react';
 import { isValidElement } from 'react';
+
+import { useCodeTheme } from '@/hooks/use-code-theme';
+import { cn } from '@/lib/utils';
+
 import { CopyButton } from './copy-button';
 
 export function CodeBlock({ className, children, ...props }: ComponentProps<'pre'>) {

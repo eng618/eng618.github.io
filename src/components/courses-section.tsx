@@ -1,6 +1,7 @@
-import coursesData from '@/data/courses.json';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, Badge } from '@gv-tech/ui-web';
 import { Calendar, Clock, ExternalLink } from 'lucide-react';
+
+import coursesData from '@/data/courses.json';
 
 interface Course {
   category: string;

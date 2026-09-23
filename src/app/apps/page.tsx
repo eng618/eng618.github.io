@@ -1,9 +1,10 @@
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
-import { getAllContent } from '@/lib/notes';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web/card';
 import { ArrowRight, Smartphone } from 'lucide-react';
 import Link from 'next/link';
+
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { getAllContent } from '@/lib/notes';
 
 export default function AppsIndexPage() {
   const apps = getAllContent('apps');

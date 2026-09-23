@@ -1,9 +1,10 @@
 'use client';
 
+import { Suspense, useState } from 'react';
+
 import { CertCard } from '@/components/cert-card';
 import { CertLightbox } from '@/components/cert-lightbox';
 import certsData from '@/data/certs.json';
-import { Suspense, useState } from 'react';
 
 function CertsGrid() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);

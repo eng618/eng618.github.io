@@ -1,6 +1,21 @@
 'use client';
 
 import {
+  Badge,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  Input,
+  toast,
+} from '@gv-tech/ui-web';
+import { Check, Copy, Edit2, ExternalLink, Plus, RefreshCw, Search, Trash2 } from 'lucide-react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+
+import {
   applyTemplate,
   COVER_LETTER_TEMPLATES,
   type CoverLetterTemplate,
@@ -18,20 +33,6 @@ import {
   type CoverLetterStatus,
 } from '@/lib/admin';
 import { supabase } from '@/lib/supabase';
-import {
-  Badge,
-  Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-  Input,
-  toast,
-} from '@gv-tech/ui-web';
-import { Check, Copy, Edit2, ExternalLink, Plus, RefreshCw, Search, Trash2 } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
 
 type CoverLettersPanelProps = {
   initialEditId?: string | null;

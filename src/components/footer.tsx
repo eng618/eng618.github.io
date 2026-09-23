@@ -1,9 +1,10 @@
 'use client';
 
+import Link from 'next/link';
+
 import { siteConfig } from '@/config/site';
 import footerLinksData from '@/data/footer-links.json';
 import { trackEvent } from '@/lib/analytics';
-import Link from 'next/link';
 
 function SocialIcon({ icon, url, label }: { icon: string; url: string; label: string }) {
   const iconMap: { [key: string]: React.ReactNode } = {

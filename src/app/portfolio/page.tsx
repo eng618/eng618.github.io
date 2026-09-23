@@ -1,5 +1,9 @@
 'use client';
 
+import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
 import { BadgesSection } from '@/components/badges-section';
 import { CertsSection } from '@/components/certs-section';
 import { CoursesSection } from '@/components/courses-section';
@@ -7,9 +11,6 @@ import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import careerData from '@/data/career.json';
 import { caseStudies } from '@/data/case-studies';
-import { Badge, Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from '@gv-tech/ui-web';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
 
 const featuredCaseStudies = caseStudies.filter((study) => study.featured);
 const additionalCaseStudies = caseStudies.filter((study) => !study.featured);

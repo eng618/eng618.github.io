@@ -3,6 +3,7 @@ import { ExternalLink, Terminal } from 'lucide-react';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import { FaGithub } from 'react-icons/fa';
+
 import { ProjectCardSkeleton } from './project-card-skeleton';
 
 const goProjects = [

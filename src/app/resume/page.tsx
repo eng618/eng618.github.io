@@ -1,13 +1,14 @@
 'use client';
 
-import careerData from '@/data/career.json';
-import { trackEvent } from '@/lib/analytics';
-import { cn } from '@/lib/utils';
 import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { ArrowLeft, Printer } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
+
+import careerData from '@/data/career.json';
+import { trackEvent } from '@/lib/analytics';
+import { cn } from '@/lib/utils';
 
 interface ResumeHeaderProps {
   activeTab: 'resume' | 'cv';
@@ -388,7 +389,7 @@ export default function ResumePage() {
                             'absolute top-1.5 -left-1.5 h-3 w-3 rounded-full',
                             idx === 0 ? 'bg-brand-blue-light dark:bg-brand-blue-dark' : 'bg-gray-300 dark:bg-gray-700',
                           )}
-                        ></div>
+                        />
                         <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                           <div>
                             <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">
@@ -577,7 +578,7 @@ export default function ResumePage() {
                           'dark:border-brand-gray900 absolute top-1.5 -left-[31px] h-4 w-4 rounded-full border-4 border-white',
                           isMainRole ? 'bg-brand-blue-light dark:bg-brand-blue-dark' : 'bg-gray-300 dark:bg-gray-700',
                         )}
-                      ></div>
+                      />
                       <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                         <div>
                           <h3 className="text-brand-oxford print-text-dark text-lg font-bold dark:text-white print:text-black">

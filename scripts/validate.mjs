@@ -1,5 +1,5 @@
-import { spawn } from 'child_process';
-import process from 'process';
+import { spawn } from 'node:child_process';
+import process from 'node:process';
 
 const args = process.argv.slice(2);
 const fix = args.includes('--fix');

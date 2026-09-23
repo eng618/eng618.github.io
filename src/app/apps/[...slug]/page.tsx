@@ -1,15 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { notFound } from 'next/navigation';
+import { rehypePrettyCode } from 'rehype-pretty-code';
+import remarkGfm from 'remark-gfm';
+
 import { Breadcrumb } from '@/components/breadcrumb';
 import { EditOnGithub } from '@/components/edit-on-github';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { mdxComponents } from '@/components/mdx-components';
 import { getContentBySlug } from '@/lib/notes';
-import fs from 'fs';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { notFound } from 'next/navigation';
-import path from 'path';
-import { rehypePrettyCode } from 'rehype-pretty-code';
-import remarkGfm from 'remark-gfm';
 
 interface AppPageProps {
   params: Promise<{

@@ -1,9 +1,10 @@
 'use client';
 
-import { trackEvent } from '@/lib/analytics';
-import { cn } from '@/lib/utils';
 import { Button } from '@gv-tech/ui-web';
 import { Edit2 } from 'lucide-react';
+
+import { trackEvent } from '@/lib/analytics';
+import { cn } from '@/lib/utils';
 
 interface EditOnGithubProps {
   relativePath: string;

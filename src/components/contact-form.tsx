@@ -1,6 +1,5 @@
 'use client';
 
-import { trackEvent } from '@/lib/analytics';
 import { useForm as useFormspree } from '@formspree/react';
 import {
   Button,
@@ -19,6 +18,8 @@ import { CheckCircle2, Send } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import { useForm, type ControllerRenderProps } from 'react-hook-form';
 import * as z from 'zod';
+
+import { trackEvent } from '@/lib/analytics';
 
 const formSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),

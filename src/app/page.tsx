@@ -1,10 +1,11 @@
+import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from '@gv-tech/ui-web';
+import { ArrowRight, BookOpen, Briefcase, User } from 'lucide-react';
+import Link from 'next/link';
+
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
 import { caseStudies, proofMetrics, skillGroups } from '@/data/case-studies';
-import { Badge, Button, Card, CardContent, CardHeader, CardTitle } from '@gv-tech/ui-web';
-import { ArrowRight, BookOpen, Briefcase, User } from 'lucide-react';
-import Link from 'next/link';
 
 const featuredCaseStudies = caseStudies.filter((study) => study.featured).slice(0, 3);
 

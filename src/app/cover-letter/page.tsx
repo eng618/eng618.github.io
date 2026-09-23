@@ -1,13 +1,14 @@
 'use client';
 
-import { MarkdownContent } from '@/components/markdown-content';
-import { trackEvent } from '@/lib/analytics';
-import { supabase } from '@/lib/supabase';
 import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { AlertTriangle, ArrowLeft, Printer } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
+
+import { MarkdownContent } from '@/components/markdown-content';
+import { trackEvent } from '@/lib/analytics';
+import { supabase } from '@/lib/supabase';
 
 interface CoverLetter {
   id: string;

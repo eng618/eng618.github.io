@@ -79,9 +79,7 @@
       "role": "Mobile Applications Developer",
       "period": "Mar 2015",
       "showOnResume": false,
-      "bullets": [
-        "Updated and improved the UI/UX of an existing native iOS application."
-      ]
+      "bullets": ["Updated and improved the UI/UX of an existing native iOS application."]
     },
     {
       "company": "Florida Hospital",
@@ -312,40 +310,10 @@
     }
   ],
   "skills": {
-    "languages": [
-      "TypeScript",
-      "JavaScript",
-      "Go",
-      "Swift",
-      "Java",
-      "Kotlin",
-      "Objective-C",
-      "English"
-    ],
-    "frameworks": [
-      "React (DOM)",
-      "React Native",
-      "Next.js",
-      "Gatsby",
-      "Storybook",
-      "Radix UI",
-      "NativeWind"
-    ],
-    "tooling": [
-      "Monorepos (Nx)",
-      "GraphQL",
-      "REST APIs",
-      "Kubernetes",
-      "Docker",
-      "CI/CD"
-    ],
-    "standards": [
-      "WCAG / a11y",
-      "Design Tokens",
-      "UX/UI Patterns",
-      "TIG Welding",
-      "Metal Fabrication"
-    ]
+    "languages": ["TypeScript", "JavaScript", "Go", "Swift", "Java", "Kotlin", "Objective-C", "English"],
+    "frameworks": ["React (DOM)", "React Native", "Next.js", "Gatsby", "Storybook", "Radix UI", "NativeWind"],
+    "tooling": ["Monorepos (Nx)", "GraphQL", "REST APIs", "Kubernetes", "Docker", "CI/CD"],
+    "standards": ["WCAG / a11y", "Design Tokens", "UX/UI Patterns", "TIG Welding", "Metal Fabrication"]
   },
   "projects": [
     {

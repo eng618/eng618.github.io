@@ -1,8 +1,10 @@
 'use client';
 
-import { useActiveHeading } from '@/hooks/use-active-heading';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, ScrollArea } from '@gv-tech/ui-web';
 import { useState } from 'react';
+
+import { useActiveHeading } from '@/hooks/use-active-heading';
+
 import { TableOfContentsList } from './table-of-contents';
 
 export function MobileTOC() {

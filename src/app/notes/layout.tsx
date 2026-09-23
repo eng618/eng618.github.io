@@ -1,9 +1,11 @@
+import { SidebarInset, SidebarProvider } from '@gv-tech/ui-web';
+import type { ReactNode } from 'react';
+import { Suspense } from 'react';
+
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { NotesSidebar } from '@/components/notes-sidebar';
 import { getAllContent } from '@/lib/notes';
-import { SidebarInset, SidebarProvider } from '@gv-tech/ui-web';
-import { ReactNode, Suspense } from 'react';
 
 export default function NotesLayout({ children }: { children: ReactNode }) {
   const notes = getAllContent('notes');

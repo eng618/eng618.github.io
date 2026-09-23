@@ -1,5 +1,6 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+
 import { z } from 'zod';
 
 const DATA_DIR = path.join(process.cwd(), 'src/data');

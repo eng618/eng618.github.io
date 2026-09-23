@@ -1,11 +1,12 @@
 'use client';
 
-import { trackEvent } from '@/lib/analytics';
 import { Button } from '@gv-tech/ui-web';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { trackEvent } from '@/lib/analytics';
 
 export function Hero() {
   return (

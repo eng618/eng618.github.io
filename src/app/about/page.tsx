@@ -1,9 +1,10 @@
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
-import { skillGroups } from '@/data/case-studies';
 import { AspectRatio, Badge, Button } from '@gv-tech/ui-web';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { skillGroups } from '@/data/case-studies';
 
 export default function AboutPage() {
   return (

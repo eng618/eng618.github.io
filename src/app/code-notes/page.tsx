@@ -1,7 +1,8 @@
-import { Breadcrumb } from '@/components/breadcrumb';
-import { getAllContent } from '@/lib/notes';
 import { Card, CardContent, CardHeader, CardTitle, SidebarTrigger } from '@gv-tech/ui-web';
 import { Code2, Cpu, Terminal } from 'lucide-react';
+
+import { Breadcrumb } from '@/components/breadcrumb';
+import { getAllContent } from '@/lib/notes';
 
 export default function CodeNotesIndexPage() {
   const notes = getAllContent('code-notes');

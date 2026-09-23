@@ -1,12 +1,13 @@
 'use client';
 
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
-import { trackEvent } from '@/lib/analytics';
 import { Button, Card, CardContent, CardHeader, CardTitle, Label, Separator } from '@gv-tech/ui-web';
 import { Terminal } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
+import { trackEvent } from '@/lib/analytics';
 
 class SoundSynth {
   private ctx: AudioContext | null = null;

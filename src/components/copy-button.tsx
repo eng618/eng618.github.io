@@ -1,10 +1,11 @@
 'use client';
 
-import { trackEvent } from '@/lib/analytics';
-import { cn } from '@/lib/utils';
 import { Button } from '@gv-tech/ui-web';
 import { Check, Copy } from 'lucide-react';
 import { useState } from 'react';
+
+import { trackEvent } from '@/lib/analytics';
+import { cn } from '@/lib/utils';
 
 export interface CopyButtonProps {
   text: string;

@@ -1,8 +1,5 @@
 'use client';
 
-import { MarkdownEditor } from '@/components/admin/markdown-editor';
-import { formatDate, stripMarkdown, trackAdminEvent, type PrivateNote } from '@/lib/admin';
-import { supabase } from '@/lib/supabase';
 import {
   Badge,
   Button,
@@ -18,6 +15,10 @@ import {
 import { Download, Edit2, ExternalLink, Pin, PinOff, Plus, Search, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+
+import { MarkdownEditor } from '@/components/admin/markdown-editor';
+import { formatDate, stripMarkdown, trackAdminEvent, type PrivateNote } from '@/lib/admin';
+import { supabase } from '@/lib/supabase';
 
 type PrivateNotesPanelProps = {
   initialEditId?: string | null;

@@ -1,12 +1,5 @@
 'use client';
 
-import { Breadcrumb } from '@/components/breadcrumb';
-import { MarkdownContent } from '@/components/markdown-content';
-import { MobileTOC } from '@/components/mobile-sub-header';
-import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
-import { useAdminAuth } from '@/hooks/use-admin-auth';
-import { formatDate, stripMarkdown, type PrivateNote } from '@/lib/admin';
-import { supabase } from '@/lib/supabase';
 import {
   Button,
   Card,
@@ -21,6 +14,14 @@ import { Calendar, Edit2, Folder, Lock, Plus, Search } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Suspense, useEffect, useMemo, useState } from 'react';
+
+import { Breadcrumb } from '@/components/breadcrumb';
+import { MarkdownContent } from '@/components/markdown-content';
+import { MobileTOC } from '@/components/mobile-sub-header';
+import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
+import { useAdminAuth } from '@/hooks/use-admin-auth';
+import { formatDate, stripMarkdown, type PrivateNote } from '@/lib/admin';
+import { supabase } from '@/lib/supabase';
 
 function PrivateNotesContent() {
   const { session, loading: authLoading, isAdmin } = useAdminAuth();

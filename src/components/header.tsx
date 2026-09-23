@@ -1,7 +1,5 @@
 'use client';
 
-import { siteConfig } from '@/config/site';
-import { cn } from '@/lib/utils';
 import {
   Button,
   NavigationMenu,
@@ -20,6 +18,9 @@ import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
+
+import { siteConfig } from '@/config/site';
+import { cn } from '@/lib/utils';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,7 +1,8 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
-import fs from 'fs';
-import path from 'path';
 
 export default function LicensePage() {
   const licensePath = path.resolve(process.cwd(), 'LICENSE');

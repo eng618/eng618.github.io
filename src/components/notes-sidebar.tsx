@@ -1,10 +1,5 @@
 'use client';
 
-import { ADMIN_EMAIL } from '@/lib/admin';
-import { trackEvent } from '@/lib/analytics';
-import type { NoteMetadata } from '@/lib/notes';
-import { supabase } from '@/lib/supabase';
-import { cn } from '@/lib/utils';
 import {
   Collapsible,
   CollapsibleContent,
@@ -16,11 +11,17 @@ import {
   SidebarGroupContent,
   SidebarHeader,
 } from '@gv-tech/ui-web';
-import { Session } from '@supabase/supabase-js';
+import type { Session } from '@supabase/supabase-js';
 import { ChevronDown, ChevronRight, FileText, Folder } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
+
+import { ADMIN_EMAIL } from '@/lib/admin';
+import { trackEvent } from '@/lib/analytics';
+import type { NoteMetadata } from '@/lib/notes';
+import { supabase } from '@/lib/supabase';
+import { cn } from '@/lib/utils';
 
 type TreeNode = {
   name: string;
