@@ -115,19 +115,23 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    let items = [...notes];
 
-    if (categoryFilter !== 'all') {
-      items = items.filter((n) => n.category === categoryFilter);
-    }
-
-    if (q) {
-      items = items.filter((n) => {
-        const tagText = (n.tags || []).join(' ');
-        const haystack = [n.title, n.category, n.content, tagText].join(' ').toLowerCase();
-        return haystack.includes(q);
-      });
-    }
+    const items =
+      !q && categoryFilter === 'all'
+        ? [...notes]
+        : notes.filter((n) => {
+            if (categoryFilter !== 'all' && n.category !== categoryFilter) {
+              return false;
+            }
+            if (q) {
+              const tagText = (n.tags || []).join(' ');
+              const haystack = [n.title, n.category, n.content, tagText].join(' ').toLowerCase();
+              if (!haystack.includes(q)) {
+                return false;
+              }
+            }
+            return true;
+          });
 
     items.sort((a, b) => {
       if (a.pinned && !b.pinned) {
