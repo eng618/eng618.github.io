@@ -23,5 +23,7 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".next/dev/types/**/*.ts", "**/*.mts"],
-  "exclude": ["node_modules"]
+  // Tool configs are validated at runtime by their own CLIs (oxlint/oxfmt); their
+  // shared-package types lag the installed CLIs, so keep that skew out of the gate.
+  "exclude": ["node_modules", "oxfmt.config.mts", "oxlint.config.mts"]
 }
