@@ -74,6 +74,9 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
   }, []);
 
   useEffect(() => {
+    // Mount fetch: `loading` already starts true, so this resolves pending state instead of
+    // cascading — the canonical data-fetch effect.
+    // oxlint-disable-next-line react/set-state-in-effect
     fetchLetters();
   }, [fetchLetters]);
 
@@ -83,6 +86,9 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
     }
     const match = letters.find((l) => l.id === initialEditId);
     if (match) {
+      // Deep-link sync: populate the editor once the list loads. Runs only when
+      // `initialEditId`/`letters` change, and clears the id so it never loops.
+      // oxlint-disable-next-line react/set-state-in-effect
       setEditing(match);
       setDirty(false);
       onClearEditId?.();

@@ -54,6 +54,9 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
   }, []);
 
   useEffect(() => {
+    // Mount fetch: `loading` already starts true, so this resolves pending state instead of
+    // cascading — the canonical data-fetch effect.
+    // oxlint-disable-next-line react/set-state-in-effect
     fetchNotes();
   }, [fetchNotes]);
 
@@ -63,6 +66,9 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
     }
     const match = notes.find((n) => n.id === initialEditId);
     if (match) {
+      // Deep-link sync: populate the editor once the list loads. Runs only when
+      // `initialEditId`/`notes` change, and clears the id so it never loops.
+      // oxlint-disable-next-line react/set-state-in-effect
       setEditing(match);
       setTagsInput((match.tags || []).join(', '));
       setDirty(false);
@@ -364,13 +370,15 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
                 />
                 <datalist id="note-categories">
                   {categories.map((cat) => (
-                    <option key={cat} value={cat} />
+                    <option key={cat} value={cat}>
+                      {cat}
+                    </option>
                   ))}
-                  <option value="General" />
-                  <option value="Verizon" />
-                  <option value="IBM" />
-                  <option value="Personal" />
-                  <option value="Career" />
+                  <option value="General">General</option>
+                  <option value="Verizon">Verizon</option>
+                  <option value="IBM">IBM</option>
+                  <option value="Personal">Personal</option>
+                  <option value="Career">Career</option>
                 </datalist>
               </div>
             </div>

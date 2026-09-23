@@ -149,7 +149,13 @@ class SoundSynth {
 
 export default function NotFoundPage() {
   const [gameActive, setGameActive] = useState(false);
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(() => {
+    if (typeof window === 'undefined') {
+      return 0;
+    }
+    const saved = localStorage.getItem('linter_invaders_high_score');
+    return saved ? parseInt(saved, 10) || 0 : 0;
+  });
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const soundSynth = useRef<SoundSynth | null>(null);
 
@@ -180,13 +186,17 @@ export default function NotFoundPage() {
     }
 
     soundSynth.current = new SoundSynth();
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('linter_invaders_high_score');
-      if (saved) {
-        setHighScore(parseInt(saved, 10) || 0);
-      }
-    }
   }, []);
+
+  const launchGame = (triggerType: 'spacebar' | 'click') => {
+    if (soundSynth.current) {
+      soundSynth.current.init();
+      soundSynth.current.playReboot();
+    }
+    setGameActive(true);
+    gameStartTimeRef.current = Date.now();
+    trackEvent('Game Launch', { trigger: triggerType });
+  };
 
   // Listen to Spacebar to launch game
   useEffect(() => {
@@ -202,16 +212,6 @@ export default function NotFoundPage() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [gameActive]);
-
-  const launchGame = (triggerType: 'spacebar' | 'click') => {
-    if (soundSynth.current) {
-      soundSynth.current.init();
-      soundSynth.current.playReboot();
-    }
-    setGameActive(true);
-    gameStartTimeRef.current = Date.now();
-    trackEvent('Game Launch', { trigger: triggerType });
-  };
 
   const handleExitClick = (destination: string) => {
     trackEvent('404 Exit', {
@@ -778,12 +778,13 @@ Build failed with 1 error and 0 regrets.
 // P.S. If you got here on purpose,
 // we should probably work together.
 `}
-                      <span
+                      <button
+                        type="button"
                         onClick={() => launchGame('click')}
-                        className="terminal-blink mt-4 block cursor-pointer font-bold text-green-400 hover:underline"
+                        className="terminal-blink mt-4 block cursor-pointer text-left font-bold text-green-400 hover:underline"
                       >
                         {`// Press SPACE (or click here) to launch Debugger Protocol...`}
-                      </span>
+                      </button>
                     </pre>
                   </div>
 

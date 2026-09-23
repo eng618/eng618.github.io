@@ -27,7 +27,6 @@ export async function generateStaticParams() {
 
 export default async function NotePage({ params }: NotePageProps) {
   const resolvedParams = await params;
-  const notes = getAllContent('notes');
   const note = getContentBySlug('notes', resolvedParams.slug);
 
   if (!note) {

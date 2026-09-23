@@ -33,17 +33,6 @@ function PrivateNotesContent() {
   const searchParams = useSearchParams();
   const activeId = searchParams?.get('id') || null;
 
-  useEffect(() => {
-    if (authLoading) {
-      return;
-    }
-    if (session && isAdmin) {
-      fetchNotes();
-    } else {
-      setLoading(false);
-    }
-  }, [session, isAdmin, authLoading]);
-
   const fetchNotes = async () => {
     setLoading(true);
     setFetchError(null);
@@ -57,6 +46,23 @@ function PrivateNotesContent() {
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (authLoading) {
+      return;
+    }
+    if (session && isAdmin) {
+      // Auth-gated fetch: `loading` already starts true, so this resolves pending state
+      // instead of cascading. Runs only when auth status changes.
+      // oxlint-disable-next-line react/set-state-in-effect
+      fetchNotes();
+    } else {
+      // Unauthenticated branch must resolve the pending loading state; runs only when
+      // auth status changes.
+      // oxlint-disable-next-line react/set-state-in-effect
+      setLoading(false);
+    }
+  }, [session, isAdmin, authLoading]);
 
   const categories = useMemo(() => {
     const set = new Set<string>();

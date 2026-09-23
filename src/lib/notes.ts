@@ -77,7 +77,6 @@ export function getContentBySlug(type: ContentType, slugArray: string[]) {
 
       // Pre-process relative links inside MDX content to resolve relative to the current parent slug.
       // For example, if slug is ['eng618'], a link like `[Privacy Policy](./privacy)` becomes `[Privacy Policy](/apps/eng618/privacy)`
-      const parentRoute = `/apps/${slugArray.slice(0, -1).join('/') || slugArray[0]}`;
 
       // Matches markdown links: [text](./relative) or [text](../relative) or [text](relative) where relative is not a URL
       content = content.replace(/\]\((?!\w+:)([^)]+)\)/g, (match, p1) => {

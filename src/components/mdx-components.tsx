@@ -19,32 +19,40 @@ import { CodeBlock } from './code-block';
 
 export const mdxComponents = {
   // Typography
-  h1: ({ className, ...props }: ComponentProps<'h1'>) => (
+  h1: ({ className, children, ...props }: ComponentProps<'h1'>) => (
     <h1
       className={cn('font-outfit text-foreground mt-12 mb-6 text-3xl font-bold tracking-tight lg:text-4xl', className)}
       {...props}
-    />
+    >
+      {children}
+    </h1>
   ),
-  h2: ({ className, ...props }: ComponentProps<'h2'>) => (
+  h2: ({ className, children, ...props }: ComponentProps<'h2'>) => (
     <h2
       className={cn(
         'border-border font-outfit text-foreground mt-10 mb-4 border-b pb-2 text-2xl font-semibold tracking-tight first:mt-0',
         className,
       )}
       {...props}
-    />
+    >
+      {children}
+    </h2>
   ),
-  h3: ({ className, ...props }: ComponentProps<'h3'>) => (
+  h3: ({ className, children, ...props }: ComponentProps<'h3'>) => (
     <h3
       className={cn('font-outfit text-foreground/90 mt-8 mb-4 text-xl font-semibold tracking-tight', className)}
       {...props}
-    />
+    >
+      {children}
+    </h3>
   ),
-  h4: ({ className, ...props }: ComponentProps<'h4'>) => (
+  h4: ({ className, children, ...props }: ComponentProps<'h4'>) => (
     <h4
       className={cn('font-outfit text-foreground/80 mt-6 mb-4 text-lg font-semibold tracking-tight', className)}
       {...props}
-    />
+    >
+      {children}
+    </h4>
   ),
   p: ({ className, ...props }: ComponentProps<'p'>) => (
     <p className={cn('text-muted-foreground leading-7 [&:not(:first-child)]:mt-6', className)} {...props} />
@@ -83,7 +91,7 @@ export const mdxComponents = {
   },
 
   // Links
-  a: ({ className, href, ...props }: ComponentProps<'a'>) => {
+  a: ({ className, href, children, ...props }: ComponentProps<'a'>) => {
     const isInternal = href && (href.startsWith('/') || href.startsWith('.') || href.startsWith('#'));
     if (isInternal) {
       return (
@@ -99,7 +107,9 @@ export const mdxComponents = {
         href={href}
         className={cn('text-primary hover:text-primary/80 font-medium underline underline-offset-4', className)}
         {...props}
-      />
+      >
+        {children}
+      </a>
     );
   },
 

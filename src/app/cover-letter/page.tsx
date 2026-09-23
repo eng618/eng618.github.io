@@ -4,7 +4,7 @@ import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { AlertTriangle, ArrowLeft, Printer } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect, useState, useSyncExternalStore } from 'react';
 
 import { MarkdownContent } from '@/components/markdown-content';
 import { trackEvent } from '@/lib/analytics';
@@ -29,17 +29,12 @@ function CoverLetterLoader() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (!slug) {
+  const fetchCoverLetter = async (targetSlug: string | null) => {
+    if (!targetSlug) {
       setError('No cover letter slug was specified in the URL.');
       setLoading(false);
       return;
     }
-
-    fetchCoverLetter(slug);
-  }, [slug]);
-
-  const fetchCoverLetter = async (targetSlug: string) => {
     setLoading(true);
     setError(null);
 
@@ -66,6 +61,13 @@ function CoverLetterLoader() {
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    // Fetch-on-mount: `loading` already starts true, so this resolves pending state
+    // instead of cascading.
+    // oxlint-disable-next-line react/set-state-in-effect
+    fetchCoverLetter(slug);
+  }, [slug]);
 
   if (loading) {
     return (
@@ -169,11 +171,12 @@ function CoverLetterLoader() {
 function CoverLetterHeader() {
   const searchParams = useSearchParams();
   const slug = searchParams ? searchParams.get('slug') : null;
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Hydration guard: render the theme-dependent toggle only on the client.
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   return (
     <div className="border-border/50 bg-background/80 sticky top-0 z-50 border-b py-3 shadow-sm backdrop-blur-md print:hidden">

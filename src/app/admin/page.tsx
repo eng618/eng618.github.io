@@ -41,7 +41,10 @@ function AdminDashboard() {
   const [editNoteId, setEditNoteId] = useState<string | null>(null);
 
   useEffect(() => {
+    // URL sync: initial state already covers first render; this handles back/forward
+    // navigation. Runs only when the tab param changes.
     if (tabParam === 'private-notes' || tabParam === 'cover-letters') {
+      // oxlint-disable-next-line react/set-state-in-effect
       setActiveTab(tabParam);
     }
   }, [tabParam]);
@@ -51,8 +54,12 @@ function AdminDashboard() {
       return;
     }
     if (activeTab === 'private-notes') {
+      // URL sync: open the deep-linked record for editing once its tab is active.
+      // oxlint-disable-next-line react/set-state-in-effect
       setEditNoteId(editId);
     } else {
+      // Same deep-link sync for the cover-letters tab.
+      // oxlint-disable-next-line react/set-state-in-effect
       setEditLetterId(editId);
     }
   }, [editId, activeTab]);

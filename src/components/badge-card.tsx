@@ -21,8 +21,10 @@ interface BadgeCardProps {
 export function BadgeCard({ badge, onOpenLightbox }: BadgeCardProps) {
   return (
     <Card className="hover:bg-accent/30 group h-full cursor-pointer transition-all hover:shadow-lg">
-      <div
+      <button
+        type="button"
         onClick={onOpenLightbox}
+        aria-label={`Open ${badge.title} in lightbox`}
         className="bg-muted/20 relative flex aspect-square items-center justify-center overflow-hidden p-6"
       >
         <Image
@@ -41,18 +43,19 @@ export function BadgeCard({ badge, onOpenLightbox }: BadgeCardProps) {
           </span>
         </div>
 
-        <div className="absolute top-4 right-4 z-10" onClick={(e) => e.stopPropagation()}>
+        <div className="absolute top-4 right-4 z-10">
           <Link
             href={badge.url}
             target="_blank"
             rel="noopener noreferrer"
             title="View Credly Badge"
+            onClick={(e) => e.stopPropagation()}
             className="bg-background/80 hover:bg-background border-border text-muted-foreground hover:text-primary flex h-8 w-8 items-center justify-center rounded-full border backdrop-blur-sm transition-colors"
           >
             <ExternalLink className="h-4 w-4" />
           </Link>
         </div>
-      </div>
+      </button>
       <CardHeader className="pb-2" onClick={onOpenLightbox}>
         <CardTitle className="font-outfit group-hover:text-primary line-clamp-2 text-lg font-bold transition-colors">
           {badge.title}

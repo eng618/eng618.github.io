@@ -1,7 +1,7 @@
 'use client';
 
 import { Textarea } from '@gv-tech/ui-web';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { MarkdownContent } from '@/components/markdown-content';
 import { cn } from '@/lib/utils';
@@ -30,19 +30,19 @@ export function MarkdownEditor({
   const [mode, setMode] = useState<EditorMode>('edit');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const adjustHeight = () => {
+  const adjustHeight = useCallback(() => {
     const textarea = textareaRef.current;
     if (!textarea || mode === 'preview') {
       return;
     }
     textarea.style.height = 'auto';
     textarea.style.height = `${Math.max(textarea.scrollHeight, 320)}px`;
-  };
+  }, [mode]);
 
   useEffect(() => {
     const timer = setTimeout(adjustHeight, 0);
     return () => clearTimeout(timer);
-  }, [value, mode]);
+  }, [value, mode, adjustHeight]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === 'Tab') {

@@ -4,10 +4,10 @@ import { vi } from 'vitest';
 // Mock Next.js router
 vi.mock('next/navigation', () => ({
   useRouter: () => ({
-    push: vi.fn(),
-    replace: vi.fn(),
-    prefetch: vi.fn(),
-    back: vi.fn(),
+    push: vi.fn<() => void>(),
+    replace: vi.fn<() => void>(),
+    prefetch: vi.fn<() => void>(),
+    back: vi.fn<() => void>(),
   }),
   usePathname: () => '',
   useSearchParams: () => new URLSearchParams(),

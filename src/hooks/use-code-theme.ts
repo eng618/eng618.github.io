@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useSyncExternalStore } from 'react';
 
 type CodeTheme = 'light' | 'dark';
 
@@ -12,16 +12,20 @@ interface ThemeChangeEvent extends CustomEvent {
 }
 
 export function useCodeTheme() {
-  const [theme, setTheme] = useState<CodeTheme>('dark');
-  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<CodeTheme>(() => {
+    if (typeof window === 'undefined') {
+      return 'dark';
+    }
+    return (localStorage.getItem(THEME_KEY) as CodeTheme) || 'dark';
+  });
+  // Hydration guard: consumers render theme-dependent UI only on the client.
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem(THEME_KEY) as CodeTheme;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-    setMounted(true);
-
     const handleSync = (e: Event) => {
       if (e instanceof StorageEvent) {
         if (e.key === THEME_KEY) {

@@ -29,6 +29,9 @@ export function MobileTOC() {
 
           <AccordionContent className="border-border bg-background/95 absolute top-full right-0 z-50 w-64 rounded-b-md border-r border-b border-l shadow-lg backdrop-blur">
             <ScrollArea className="max-h-[60vh]">
+              {/* Delegation container, not itself interactive: closes the menu when an
+                  inner link is activated. Inner links remain keyboard-accessible. */}
+              {/* oxlint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
               <div onClick={handleContentClick} className="p-4 pt-2">
                 <div className="[&>div]:hidden [&>nav]:!block">
                   <TableOfContentsList className="text-sm" />

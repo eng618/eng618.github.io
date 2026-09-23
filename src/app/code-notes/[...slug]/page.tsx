@@ -27,7 +27,6 @@ export async function generateStaticParams() {
 
 export default async function CodeNotePage({ params }: CodeNotePageProps) {
   const resolvedParams = await params;
-  const notes = getAllContent('code-notes');
   const note = getContentBySlug('code-notes', resolvedParams.slug);
 
   if (!note) {

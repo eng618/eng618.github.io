@@ -4,7 +4,7 @@ import { Button, ThemeToggle } from '@gv-tech/ui-web';
 import { ArrowLeft, Printer } from 'lucide-react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useState, useSyncExternalStore } from 'react';
 
 import careerData from '@/data/career.json';
 import { trackEvent } from '@/lib/analytics';
@@ -18,11 +18,12 @@ interface ResumeHeaderProps {
 function ResumeHeader({ activeTab, setActiveTab }: ResumeHeaderProps) {
   const searchParams = useSearchParams();
   const clSlug = searchParams ? searchParams.get('cl') : null;
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // Hydration guard: render the theme-dependent toggle only on the client.
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
   return (
     <div className="no-print dark:bg-brand-gray900 sticky top-0 z-50 border-b border-gray-200 bg-white py-3 shadow-sm dark:border-gray-800 print:hidden">

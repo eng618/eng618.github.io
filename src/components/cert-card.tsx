@@ -30,8 +30,10 @@ export function CertCard({ cert, onOpenLightbox }: CertCardProps) {
 
   return (
     <Card className="hover:bg-accent/30 group h-full cursor-pointer transition-all hover:shadow-lg">
-      <div
+      <button
+        type="button"
         onClick={onOpenLightbox}
+        aria-label={`Open ${cert.title} in lightbox`}
         className="bg-muted/20 relative flex aspect-[4/3] items-center justify-center overflow-hidden p-6"
       >
         <Image
@@ -51,12 +53,13 @@ export function CertCard({ cert, onOpenLightbox }: CertCardProps) {
         </div>
 
         {/* Quick External Actions */}
-        <div className="absolute top-4 right-4 z-10 flex gap-2" onClick={(e) => e.stopPropagation()}>
+        <div className="absolute top-4 right-4 z-10 flex gap-2">
           <Link
             href={cert.url}
             target="_blank"
             rel="noopener noreferrer"
             title="View PDF Certificate"
+            onClick={(e) => e.stopPropagation()}
             className="bg-background/80 hover:bg-background border-border text-muted-foreground hover:text-primary flex h-8 w-8 items-center justify-center rounded-full border backdrop-blur-sm transition-colors"
           >
             <FileText className="h-4 w-4" />
@@ -66,12 +69,13 @@ export function CertCard({ cert, onOpenLightbox }: CertCardProps) {
             target="_blank"
             rel="noopener noreferrer"
             title="Verify Certificate"
+            onClick={(e) => e.stopPropagation()}
             className="bg-background/80 hover:bg-background border-border text-muted-foreground hover:text-primary flex h-8 w-8 items-center justify-center rounded-full border backdrop-blur-sm transition-colors"
           >
             <ExternalLink className="h-4 w-4" />
           </Link>
         </div>
-      </div>
+      </button>
       <CardHeader className="pb-2" onClick={onOpenLightbox}>
         <div className="flex items-start justify-between gap-2">
           <div>
