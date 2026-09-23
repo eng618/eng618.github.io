@@ -3,18 +3,24 @@
 import { useEffect, useRef, type RefObject } from 'react';
 
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from '@/lib/game/constants';
-import { createGameState, resetGameState, tryShoot, updateGame } from '@/lib/game/engine';
+import { createGameState, detonateBomb, resetGameState, tryShoot, updateGame } from '@/lib/game/engine';
 import { attachGameInput } from '@/lib/game/input';
 import { drawGame } from '@/lib/game/renderer';
 import type { SoundSynth } from '@/lib/game/sound';
-import type { RebootTrigger } from '@/lib/game/types';
+import type { PowerUpKind, RebootTrigger } from '@/lib/game/types';
 
 interface GameCanvasProps {
   soundRef: RefObject<SoundSynth | null>;
+  /** Counter incremented by UI to request a bomb detonation in the loop. */
+  detonateRef: RefObject<number>;
   scoreRef: RefObject<number>;
   isGameOverRef: RefObject<boolean>;
   highScoreRef: RefObject<number>;
   onKill: (score: number) => void;
+  onLevelClear: (level: number, bonus: number, score: number) => void;
+  onLifeLost: (livesLeft: number) => void;
+  onPowerUp: (kind: PowerUpKind) => void;
+  onBomb: (remaining: number, score: number) => void;
   onFirstShot: (usingMouse: boolean) => void;
   onGameOver: () => void;
   onReboot: (trigger: RebootTrigger) => void;
@@ -26,20 +32,34 @@ interface GameCanvasProps {
  */
 export function GameCanvas({
   soundRef,
+  detonateRef,
   scoreRef,
   isGameOverRef,
   highScoreRef,
   onKill,
+  onLevelClear,
+  onLifeLost,
+  onPowerUp,
+  onBomb,
   onFirstShot,
   onGameOver,
   onReboot,
 }: GameCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const callbacksRef = useRef({ onKill, onFirstShot, onGameOver, onReboot });
+  const callbacksRef = useRef({
+    onKill,
+    onLevelClear,
+    onLifeLost,
+    onPowerUp,
+    onBomb,
+    onFirstShot,
+    onGameOver,
+    onReboot,
+  });
 
   useEffect(() => {
-    callbacksRef.current = { onKill, onFirstShot, onGameOver, onReboot };
-  }, [onKill, onFirstShot, onGameOver, onReboot]);
+    callbacksRef.current = { onKill, onLevelClear, onLifeLost, onPowerUp, onBomb, onFirstShot, onGameOver, onReboot };
+  }, [onKill, onLevelClear, onLifeLost, onPowerUp, onBomb, onFirstShot, onGameOver, onReboot]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -52,8 +72,30 @@ export function GameCanvas({
     }
 
     const state = createGameState();
+    let lastDetonateSeen = detonateRef.current ?? 0;
     scoreRef.current = 0;
     isGameOverRef.current = false;
+
+    const detonate = () => {
+      const spent = detonateBomb(
+        state,
+        {
+          onBomb: (remaining, score) => {
+            scoreRef.current = score;
+            callbacksRef.current.onBomb(remaining, score);
+          },
+          onLevelClear: (level, bonus, score) => {
+            scoreRef.current = score;
+            soundRef.current?.playLevelClear();
+            callbacksRef.current.onLevelClear(level, bonus, score);
+          },
+        },
+        Date.now(),
+      );
+      if (spent) {
+        soundRef.current?.playExplosion();
+      }
+    };
 
     const { input, detach } = attachGameInput(canvas, {
       onAim: (x) => {
@@ -65,8 +107,13 @@ export function GameCanvas({
           callbacksRef.current.onFirstShot(usingMouse);
         }
       },
+      onBomb: () => {
+        soundRef.current?.init();
+        detonate();
+      },
       onReboot: (trigger) => {
         resetGameState(state);
+        lastDetonateSeen = detonateRef.current ?? 0;
         scoreRef.current = 0;
         isGameOverRef.current = false;
         callbacksRef.current.onReboot(trigger);
@@ -81,6 +128,12 @@ export function GameCanvas({
     let animationFrameId = 0;
 
     const tick = () => {
+      // Touch/mouse bomb button requests funnel through the same path as KeyB.
+      if ((detonateRef.current ?? 0) !== lastDetonateSeen) {
+        lastDetonateSeen = detonateRef.current ?? 0;
+        detonate();
+      }
+
       const projectilesBefore = state.projectiles.length;
       updateGame(
         state,
@@ -90,6 +143,20 @@ export function GameCanvas({
             scoreRef.current = score;
             soundRef.current?.playExplosion();
             callbacksRef.current.onKill(score);
+          },
+          onLevelClear: (level, bonus, score) => {
+            scoreRef.current = score;
+            soundRef.current?.playLevelClear();
+            callbacksRef.current.onLevelClear(level, bonus, score);
+          },
+          onLifeLost: (livesLeft) => {
+            isGameOverRef.current = state.isGameOver;
+            soundRef.current?.playLifeLost();
+            callbacksRef.current.onLifeLost(livesLeft);
+          },
+          onPowerUp: (kind) => {
+            soundRef.current?.playPowerUp();
+            callbacksRef.current.onPowerUp(kind);
           },
           onGameOver: () => {
             isGameOverRef.current = true;
@@ -120,7 +187,7 @@ export function GameCanvas({
       cancelAnimationFrame(animationFrameId);
       detach();
     };
-  }, [soundRef, scoreRef, isGameOverRef, highScoreRef]);
+  }, [soundRef, detonateRef, scoreRef, isGameOverRef, highScoreRef]);
 
   return (
     <canvas

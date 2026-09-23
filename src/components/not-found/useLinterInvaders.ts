@@ -5,17 +5,22 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { trackEvent } from '@/lib/analytics';
 import { MILESTONE_SCORE } from '@/lib/game/constants';
 import { SoundSynth } from '@/lib/game/sound';
-import { loadHighScore, saveHighScore } from '@/lib/game/storage';
-import type { LaunchTrigger, RebootTrigger } from '@/lib/game/types';
+import { loadBestLevel, loadHighScore, saveBestLevel, saveHighScore } from '@/lib/game/storage';
+import type { LaunchTrigger, PowerUpKind, RebootTrigger } from '@/lib/game/types';
 
 export function useLinterInvaders() {
   const [gameActive, setGameActive] = useState(false);
   const [highScore, setHighScore] = useState(() => loadHighScore());
+  const [bestLevel, setBestLevel] = useState(() => loadBestLevel());
   const soundRef = useRef<SoundSynth | null>(null);
+  /** Incremented by UI (bomb button) to request a detonation in the game loop. */
+  const detonateRef = useRef(0);
 
   const scoreRef = useRef(0);
   const isGameOverRef = useRef(false);
   const highScoreRef = useRef(highScore);
+  const bestLevelRef = useRef(bestLevel);
+  const levelRef = useRef(1);
 
   const hasTrackedViewRef = useRef(false);
   const gameStartTimeRef = useRef(0);
@@ -26,6 +31,10 @@ export function useLinterInvaders() {
   useEffect(() => {
     highScoreRef.current = highScore;
   }, [highScore]);
+
+  useEffect(() => {
+    bestLevelRef.current = bestLevel;
+  }, [bestLevel]);
 
   useEffect(() => {
     if (!hasTrackedViewRef.current) {
@@ -75,7 +84,7 @@ export function useLinterInvaders() {
     [gameActive],
   );
 
-  const handleKill = useCallback((score: number) => {
+  const commitScore = useCallback((score: number) => {
     if (score >= MILESTONE_SCORE && !hasTrackedMilestoneRef.current) {
       trackEvent('Clean Build Milestone', {
         score,
@@ -89,6 +98,58 @@ export function useLinterInvaders() {
     }
   }, []);
 
+  const handleKill = useCallback(
+    (score: number) => {
+      commitScore(score);
+    },
+    [commitScore],
+  );
+
+  const handleLevelClear = useCallback(
+    (level: number, bonus: number, score: number) => {
+      levelRef.current = level + 1;
+      commitScore(score);
+      if (level > bestLevelRef.current) {
+        setBestLevel(level);
+        saveBestLevel(level);
+      }
+      trackEvent('Level Clear', {
+        level,
+        bonus,
+        score,
+        high_score: highScoreRef.current,
+      });
+    },
+    [commitScore],
+  );
+
+  const handleLifeLost = useCallback((livesLeft: number) => {
+    trackEvent('Life Lost', {
+      lives_left: livesLeft,
+      level: levelRef.current,
+      score: scoreRef.current,
+    });
+  }, []);
+
+  const handlePowerUp = useCallback((kind: PowerUpKind) => {
+    trackEvent('Power-Up Collected', {
+      kind,
+      level: levelRef.current,
+    });
+  }, []);
+
+  const handleBomb = useCallback(
+    (remaining: number, score: number) => {
+      commitScore(score);
+      trackEvent('Bomb Used', {
+        remaining,
+        level: levelRef.current,
+        score,
+      });
+    },
+    [commitScore],
+  );
+
   const handleFirstShot = useCallback((usingMouse: boolean) => {
     if (!hasFiredShotRef.current) {
       trackEvent('First Shot', { trigger: usingMouse ? 'click' : 'spacebar' });
@@ -101,6 +162,8 @@ export function useLinterInvaders() {
     trackEvent('Game Over', {
       score: scoreRef.current,
       high_score: highScoreRef.current,
+      level_reached: levelRef.current,
+      best_level: bestLevelRef.current,
       duration_seconds: duration,
       reboot_count: rebootCountRef.current,
     });
@@ -111,13 +174,16 @@ export function useLinterInvaders() {
     gameStartTimeRef.current = Date.now();
     hasFiredShotRef.current = false;
     hasTrackedMilestoneRef.current = false;
+    levelRef.current = 1;
     trackEvent('Game Reboot', { trigger });
   }, []);
 
   return {
     gameActive,
     highScore,
+    bestLevel,
     soundRef,
+    detonateRef,
     scoreRef,
     isGameOverRef,
     highScoreRef,
@@ -125,6 +191,10 @@ export function useLinterInvaders() {
     collapseGame,
     handleExitClick,
     handleKill,
+    handleLevelClear,
+    handleLifeLost,
+    handlePowerUp,
+    handleBomb,
     handleFirstShot,
     handleGameOver,
     handleReboot,

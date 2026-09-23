@@ -136,4 +136,52 @@ export class SoundSynth {
       console.warn('Audio error:', e);
     }
   }
+
+  playPowerUp() {
+    if (!this.ready || !this.ctx) {
+      return;
+    }
+    try {
+      const now = this.ctx.currentTime;
+      const tones = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+      const duration = 0.07;
+      tones.forEach((freq, idx) => {
+        this.playTone('triangle', freq, now + idx * duration, duration, 0.07);
+      });
+    } catch (e) {
+      console.warn('Audio error:', e);
+    }
+  }
+
+  playLevelClear() {
+    if (!this.ready || !this.ctx) {
+      return;
+    }
+    try {
+      const now = this.ctx.currentTime;
+      const tones = [392.0, 523.25, 659.25, 783.99]; // G4, C5, E5, G5
+      const duration = 0.12;
+      tones.forEach((freq, idx) => {
+        this.playTone('sine', freq, now + idx * duration, duration, 0.07);
+      });
+    } catch (e) {
+      console.warn('Audio error:', e);
+    }
+  }
+
+  playLifeLost() {
+    if (!this.ready || !this.ctx) {
+      return;
+    }
+    try {
+      const now = this.ctx.currentTime;
+      const tones = [400, 300, 200];
+      const duration = 0.12;
+      tones.forEach((freq, idx) => {
+        this.playTone('sawtooth', freq, now + idx * duration, duration, 0.07);
+      });
+    } catch (e) {
+      console.warn('Audio error:', e);
+    }
+  }
 }

@@ -6,6 +6,7 @@ interface GameViewportProps {
   active: boolean;
   highScore: number;
   onCollapse: () => void;
+  onDetonate: () => void;
   children: ReactNode;
 }
 
@@ -13,7 +14,7 @@ interface GameViewportProps {
  * Retro arcade cabinet wrapper. Idle = compact 450px preview inside the 404 card; active = expands to dominate the
  * viewport (~70vh) with bezel glow, scanlines, and an ESC/minimize affordance.
  */
-export function GameViewport({ active, highScore, onCollapse, children }: GameViewportProps) {
+export function GameViewport({ active, highScore, onCollapse, onDetonate, children }: GameViewportProps) {
   useEffect(() => {
     if (!active) {
       return;
@@ -51,6 +52,17 @@ export function GameViewport({ active, highScore, onCollapse, children }: GameVi
       )}
 
       {children}
+
+      {active && (
+        <button
+          type="button"
+          onClick={onDetonate}
+          title="Detonate rm -rf bomb (B)"
+          className="absolute right-4 bottom-4 z-20 cursor-pointer rounded border border-fuchsia-400/40 bg-black/70 px-3 py-2 font-mono text-xs font-bold text-fuchsia-300 transition-colors hover:bg-fuchsia-500/20"
+        >
+          ✸ BOMB [B]
+        </button>
+      )}
 
       {/* CRT scanlines + vignette */}
       <div

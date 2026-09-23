@@ -15,6 +15,7 @@ export default function NotFoundPage() {
     gameActive,
     highScore,
     soundRef,
+    detonateRef,
     scoreRef,
     isGameOverRef,
     highScoreRef,
@@ -22,6 +23,10 @@ export default function NotFoundPage() {
     collapseGame,
     handleExitClick,
     handleKill,
+    handleLevelClear,
+    handleLifeLost,
+    handlePowerUp,
+    handleBomb,
     handleFirstShot,
     handleGameOver,
     handleReboot,
@@ -52,18 +57,30 @@ export default function NotFoundPage() {
               <CardContent className={gameActive ? 'p-0' : ''}>
                 {gameActive && (
                   <p className="mb-3 text-center font-mono text-sm text-green-400/80">
-                    Debugger Protocol engaged — defend the terminal. ESC to minimize.
+                    Debugger Protocol engaged — defend the terminal. B to detonate, ESC to minimize.
                   </p>
                 )}
-                <GameViewport active={gameActive} highScore={highScore} onCollapse={collapseGame}>
+                <GameViewport
+                  active={gameActive}
+                  highScore={highScore}
+                  onCollapse={collapseGame}
+                  onDetonate={() => {
+                    detonateRef.current += 1;
+                  }}
+                >
                   <TerminalOverlay visible={!gameActive} onLaunch={() => launchGame('click')} />
                   {gameActive && (
                     <GameCanvas
                       soundRef={soundRef}
+                      detonateRef={detonateRef}
                       scoreRef={scoreRef}
                       isGameOverRef={isGameOverRef}
                       highScoreRef={highScoreRef}
                       onKill={handleKill}
+                      onLevelClear={handleLevelClear}
+                      onLifeLost={handleLifeLost}
+                      onPowerUp={handlePowerUp}
+                      onBomb={handleBomb}
                       onFirstShot={handleFirstShot}
                       onGameOver={handleGameOver}
                       onReboot={handleReboot}

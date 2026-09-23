@@ -14,12 +14,14 @@ export interface GameInputCallbacks {
   onAim: (x: number) => void;
   /** Pointer/tap fired a shot (mouse aiming implied). */
   onShoot: (usingMouse: boolean) => void;
+  /** Player pressed the bomb key (B). */
+  onBomb: () => void;
   onReboot: (trigger: RebootTrigger) => void;
   onFirstInteraction: () => void;
   isGameOver: () => boolean;
 }
 
-const GAME_KEYS = ['ArrowLeft', 'ArrowRight', 'KeyA', 'KeyD', 'Space'] as const;
+const GAME_KEYS = ['ArrowLeft', 'ArrowRight', 'KeyA', 'KeyD', 'Space', 'KeyB'] as const;
 
 function canvasPos(canvas: HTMLCanvasElement, clientX: number, clientY: number) {
   const rect = canvas.getBoundingClientRect();
@@ -53,6 +55,9 @@ export function attachGameInput(canvas: HTMLCanvasElement, callbacks: GameInputC
     }
     if (e.code === 'Space') {
       input.firing = true;
+    }
+    if (e.code === 'KeyB' && !e.repeat && !callbacks.isGameOver()) {
+      callbacks.onBomb();
     }
     if (callbacks.isGameOver() && e.code === 'Enter') {
       e.preventDefault();
