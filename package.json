@@ -20,6 +20,7 @@
   "dependencies": {
     "@formspree/react": "^3.0.0",
     "@gv-tech/design-tokens": "^2.29.0",
+    "@gv-tech/ui-core": "^2.29.0",
     "@gv-tech/ui-web": "^2.29.0",
     "@hookform/resolvers": "^5.9.2",
     "@openpanel/nextjs": "^1.5.2",
