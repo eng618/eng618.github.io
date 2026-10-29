@@ -4,7 +4,7 @@ import path from 'node:path';
 import react from '@vitejs/plugin-react';
 import { defineConfig, type Plugin } from 'vitest/config';
 
-const GV_TECH_ROOT = path.resolve(__dirname, 'node_modules/@gv-tech');
+const GV_TECH_ROOT = path.resolve(import.meta.dirname, 'node_modules/@gv-tech');
 const GV_TECH_PACKAGES = ['ui-web', 'ui-core', 'design-tokens'];
 
 /**
@@ -52,7 +52,7 @@ const resolvePackageAwareAtAlias: Plugin = {
   async resolveId(id, importer, options) {
     if (typeof id !== 'string' || !id.startsWith('@/')) return null;
 
-    const root = gvTechSrcRoot(importer) ?? path.resolve(__dirname, 'src');
+    const root = gvTechSrcRoot(importer) ?? path.resolve(import.meta.dirname, 'src');
     // Strip the leading '@/' and resolve relative to the package/project src root.
     const candidate = path.resolve(root, id.slice(2));
 
@@ -80,9 +80,9 @@ export default defineConfig({
     alias: {
       // Point at the shipped src/ to bypass the dist bundles, which contain
       // rolldown's require() shims that break vitest's ESM-only jsdom env.
-      '@gv-tech/ui-web': path.resolve(__dirname, 'node_modules/@gv-tech/ui-web/src/index.ts'),
-      '@gv-tech/ui-core': path.resolve(__dirname, 'node_modules/@gv-tech/ui-core/src/index.ts'),
-      '@gv-tech/design-tokens': path.resolve(__dirname, 'node_modules/@gv-tech/design-tokens/src/index.ts'),
+      '@gv-tech/ui-web': path.resolve(import.meta.dirname, 'node_modules/@gv-tech/ui-web/src/index.ts'),
+      '@gv-tech/ui-core': path.resolve(import.meta.dirname, 'node_modules/@gv-tech/ui-core/src/index.ts'),
+      '@gv-tech/design-tokens': path.resolve(import.meta.dirname, 'node_modules/@gv-tech/design-tokens/src/index.ts'),
     },
   },
 });
