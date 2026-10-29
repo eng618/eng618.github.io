@@ -10,6 +10,8 @@ import { MarkdownContent } from '@/components/markdown-content';
 import { trackEvent } from '@/lib/analytics';
 import { supabase } from '@/lib/supabase';
 
+const currentYear = new Date().getFullYear();
+
 interface CoverLetter {
   id: string;
   slug: string;
@@ -256,7 +258,7 @@ export default function CoverLetterPage() {
 
       <footer className="border-border/50 bg-background text-muted-foreground border-t py-8 text-center text-xs print:hidden">
         <div className="mx-auto max-w-5xl px-4">
-          <p>© {new Date().getFullYear()} Eric Garcia. All rights reserved.</p>
+          <p>© {currentYear} Eric Garcia. All rights reserved.</p>
         </div>
       </footer>
     </div>

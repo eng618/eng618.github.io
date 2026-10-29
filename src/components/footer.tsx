@@ -46,9 +46,9 @@ function SocialIcon({ icon, url, label }: { icon: string; url: string; label: st
 
 import { cn } from '@/lib/utils';
 
-export function Footer({ className }: { className?: string } = {}) {
-  const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 
+export function Footer({ className }: { className?: string } = {}) {
   return (
     <footer className={cn('border-border bg-background border-t', className)}>
       <div className="container mx-auto px-4 py-12 lg:px-8">

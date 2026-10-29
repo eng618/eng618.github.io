@@ -25,6 +25,15 @@ type PrivateNotesPanelProps = {
   onClearEditId?: () => void;
 };
 
+/**
+ * Module-level helper so the `new Date()` timestamp is computed outside render
+ * (only when the pin toggle is invoked), satisfying `react(purity)`.
+ */
+const updatePrivateNotePin = async (supabaseClient: typeof supabase, id: string, pinned: boolean) => {
+  const updated_at = new Date().toISOString();
+  return supabaseClient.from('private_notes').update({ pinned, updated_at }).eq('id', id);
+};
+
 export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotesPanelProps) {
   const [notes, setNotes] = useState<PrivateNote[]>([]);
   const [loading, setLoading] = useState(true);
@@ -271,10 +280,7 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
   };
 
   const togglePin = async (id: string, currentPinned: boolean) => {
-    const { error } = await supabase
-      .from('private_notes')
-      .update({ pinned: !currentPinned, updated_at: new Date().toISOString() })
-      .eq('id', id);
+    const { error } = await updatePrivateNotePin(supabase, id, !currentPinned);
     if (error) {
       toast({ title: 'Failed to update pin', description: error.message, variant: 'destructive' });
       return;
