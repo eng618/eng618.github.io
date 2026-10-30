@@ -10,4 +10,8 @@ if (!supabaseUrl || !supabaseAnonKey || supabaseUrl.includes('your-project')) {
   }
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Provide dummy values for server side rendering if env vars are missing so the build does not fail
+export const supabase = createClient(
+  supabaseUrl || 'https://dummy-url-for-build.supabase.co',
+  supabaseAnonKey || 'dummy-anon-key',
+);
