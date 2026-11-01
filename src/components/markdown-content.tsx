@@ -10,6 +10,26 @@ marked.setOptions({
   breaks: true,
 });
 
+/**
+ * Drop a leading YAML frontmatter block. With `breaks: true`, marked treats the
+ * closing `---` as a setext underline and turns the whole block into one heading.
+ * Only a simple `key: value` block is removed, so a horizontal rule stays put.
+ */
+export function stripMarkdownFrontmatter(content: string): string {
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?/);
+  if (!match?.[1]) {
+    return content;
+  }
+
+  const lines = match[1].split(/\r?\n/).filter((line) => line.trim() !== '');
+  const isMapping = lines.length > 0 && lines.every((line) => /^[A-Za-z0-9_-]+\s*:/.test(line));
+  if (!isMapping) {
+    return content;
+  }
+
+  return content.slice(match[0].length);
+}
+
 type MarkdownContentProps = {
   content: string;
   className?: string;
@@ -34,7 +54,7 @@ export function MarkdownContent({ content, className, headingIds = false }: Mark
       return '';
     }
     try {
-      const parsed = marked.parse(content) as string;
+      const parsed = marked.parse(stripMarkdownFrontmatter(content)) as string;
       return headingIds ? addHeadingIds(parsed) : parsed;
     } catch (error) {
       console.error('Markdown parse failed', error);
