@@ -13,7 +13,7 @@ import {
   toast,
 } from '@gv-tech/ui-web';
 import { Check, Copy, Edit2, ExternalLink, Plus, RefreshCw, Search, Trash2 } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import {
   applyTemplate,
@@ -21,6 +21,7 @@ import {
   type CoverLetterTemplate,
 } from '@/components/admin/cover-letter-templates';
 import { MarkdownEditor } from '@/components/admin/markdown-editor';
+import { useCrudPanel, type CrudConfig } from '@/hooks/use-crud-panel';
 import {
   COVER_LETTER_STATUSES,
   formatDate,
@@ -32,7 +33,6 @@ import {
   type CoverLetter,
   type CoverLetterStatus,
 } from '@/lib/admin';
-import { supabase } from '@/lib/supabase';
 
 type CoverLettersPanelProps = {
   initialEditId?: string | null;
@@ -46,261 +46,126 @@ const STATUS_STYLES: Record<CoverLetterStatus, string> = {
 };
 
 export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLettersPanelProps) {
-  const [letters, setLetters] = useState<CoverLetter[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [listError, setListError] = useState<string | null>(null);
-  const [editing, setEditing] = useState<Partial<CoverLetter> | null>(null);
-  const [formError, setFormError] = useState<string | null>(null);
-  const [saving, setSaving] = useState(false);
-  const [dirty, setDirty] = useState(false);
-  const [search, setSearch] = useState('');
-  const [statusFilter, setStatusFilter] = useState<'all' | CoverLetterStatus>('all');
-  const [sortBy, setSortBy] = useState<'updated' | 'created' | 'recipient'>('updated');
   const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
 
-  const fetchLetters = useCallback(async () => {
-    setLoading(true);
-    setListError(null);
-    const { data, error } = await supabase.from('cover_letters').select('*').order('created_at', { ascending: false });
-
-    if (error) {
-      setListError(error.message);
-      setLetters([]);
-    } else {
-      setLetters((data as CoverLetter[]) || []);
-    }
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    // Mount fetch: `loading` already starts true, so this resolves pending state instead of
-    // cascading — the canonical data-fetch effect.
-    // oxlint-disable-next-line react/set-state-in-effect
-    fetchLetters();
-  }, [fetchLetters]);
-
-  useEffect(() => {
-    if (!initialEditId || letters.length === 0) {
-      return;
-    }
-    const match = letters.find((l) => l.id === initialEditId);
-    if (match) {
-      // Deep-link sync: populate the editor once the list loads. Runs only when
-      // `initialEditId`/`letters` change, and clears the id so it never loops.
-      // oxlint-disable-next-line react/set-state-in-effect
-      setEditing(match);
-      setDirty(false);
-      onClearEditId?.();
-    }
-  }, [initialEditId, letters, onClearEditId]);
-
-  useEffect(() => {
-    if (!dirty) {
-      return;
-    }
-    const onBeforeUnload = (e: BeforeUnloadEvent) => {
-      e.preventDefault();
-      e.returnValue = '';
-    };
-    window.addEventListener('beforeunload', onBeforeUnload);
-    return () => window.removeEventListener('beforeunload', onBeforeUnload);
-  }, [dirty]);
-
-  useEffect(() => {
-    if (!editing) {
-      return;
-    }
-    const onKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 's') {
-        e.preventDefault();
-        const form = document.getElementById('cover-letter-form') as HTMLFormElement | null;
-        form?.requestSubmit();
-      }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [editing]);
-
-  const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    let items = [...letters];
-
-    if (statusFilter !== 'all') {
-      items = items.filter((l) => (l.status || 'active') === statusFilter);
-    }
-
-    if (q) {
-      items = items.filter((l) => {
-        const haystack = [l.recipient, l.subject, l.slug, l.company, l.role_title, l.content]
-          .filter(Boolean)
-          .join(' ')
-          .toLowerCase();
-        return haystack.includes(q);
-      });
-    }
-
-    items.sort((a, b) => {
-      if (sortBy === 'recipient') {
-        return (a.recipient || '').localeCompare(b.recipient || '');
-      }
-      const aDate = sortBy === 'created' ? a.created_at : a.updated_at || a.created_at;
-      const bDate = sortBy === 'created' ? b.created_at : b.updated_at || b.created_at;
-      return new Date(bDate || 0).getTime() - new Date(aDate || 0).getTime();
-    });
-
-    return items;
-  }, [letters, search, statusFilter, sortBy]);
-
-  const updateField = <K extends keyof CoverLetter>(key: K, value: CoverLetter[K]) => {
-    setEditing((prev) => (prev ? { ...prev, [key]: value } : null));
-    setDirty(true);
-  };
-
-  const startCreate = () => {
-    setEditing({
-      slug: generateSlug('cl'),
-      recipient: '',
-      subject: '',
-      content: '',
-      company: '',
-      role_title: '',
-      status: 'draft',
-      applied_at: '',
-    });
-    setFormError(null);
-    setDirty(false);
-  };
-
-  const startEdit = (letter: CoverLetter) => {
-    setEditing({ ...letter });
-    setFormError(null);
-    setDirty(false);
-  };
-
-  const duplicateLetter = (letter: CoverLetter) => {
-    setEditing({
-      ...letter,
-      id: undefined,
-      slug: generateSlug(letter.company || letter.recipient || 'cl'),
-      status: 'draft',
-      subject: letter.subject ? `${letter.subject} (copy)` : '',
-      created_at: undefined,
-      updated_at: undefined,
-    });
-    setFormError(null);
-    setDirty(true);
-    toast({ title: 'Duplicated', description: 'Review the slug and details, then save.' });
-  };
-
-  const applyTemplateToEditor = (template: CoverLetterTemplate) => {
-    if (!editing) {
-      return;
-    }
-    const { subject, content } = applyTemplate(template, {
-      company: editing.company || editing.recipient || undefined,
-      role: editing.role_title || undefined,
-    });
-    setEditing({
-      ...editing,
-      subject: subject || editing.subject,
-      content,
-    });
-    setDirty(true);
-    trackAdminEvent('Admin Template Applied', { template: template.id });
-    toast({ title: 'Template applied', description: template.name });
-  };
-
-  const saveLetter = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!editing?.slug || !editing?.content) {
-      setFormError('Slug and content are required.');
-      return;
-    }
-
-    setSaving(true);
-    setFormError(null);
-
-    const isNew = !editing.id;
-    const payload = {
-      slug: sanitizeSlug(editing.slug),
-      recipient: editing.recipient || '',
-      subject: editing.subject || '',
-      content: editing.content,
-      company: editing.company || null,
-      role_title: editing.role_title || null,
-      status: editing.status || 'active',
-      applied_at: editing.applied_at || null,
-      updated_at: new Date().toISOString(),
-    };
-
-    let result;
-    if (editing.id) {
-      result = await supabase.from('cover_letters').update(payload).eq('id', editing.id);
-    } else {
-      result = await supabase.from('cover_letters').insert([payload]);
-    }
-
-    // Fallback if optional columns are not migrated yet
-    if (result.error && /column|schema cache/i.test(result.error.message)) {
-      const basePayload = {
-        slug: payload.slug,
-        recipient: payload.recipient,
-        subject: payload.subject,
-        content: payload.content,
-        updated_at: payload.updated_at,
-      };
-      if (editing.id) {
-        result = await supabase.from('cover_letters').update(basePayload).eq('id', editing.id);
-      } else {
-        result = await supabase.from('cover_letters').insert([basePayload]);
-      }
-      if (!result.error) {
-        toast({
-          title: 'Saved (core fields)',
-          description: 'Optional columns missing — run the Supabase migration for status/company fields.',
+  const config = useMemo<CrudConfig<CoverLetter, CoverLetterStatus | 'all'>>(
+    () => ({
+      table: 'cover_letters',
+      emptyItem: () => ({
+        slug: generateSlug('cl'),
+        recipient: '',
+        subject: '',
+        content: '',
+        company: '',
+        role_title: '',
+        status: 'draft' as CoverLetterStatus,
+        applied_at: '',
+      }),
+      toPayload: (editing) => ({
+        slug: sanitizeSlug(editing.slug || ''),
+        recipient: editing.recipient || '',
+        subject: editing.subject || '',
+        content: editing.content,
+        company: editing.company || null,
+        role_title: editing.role_title || null,
+        status: editing.status || 'active',
+        applied_at: editing.applied_at || null,
+        updated_at: new Date().toISOString(),
+      }),
+      validate: (editing) => {
+        if (!editing.slug || !editing.content) {
+          return 'Slug and content are required.';
+        }
+        return null;
+      },
+      deleteMessage: () => 'Delete this cover letter? This cannot be undone.',
+      savedMessage: 'Cover letter saved',
+      deletedMessage: 'Cover letter deleted',
+      trackSave: ({ isNew, payload }) => {
+        trackAdminEvent('Admin Cover Letter Saved', {
+          is_new: isNew,
+          has_company: Boolean(payload.company),
+          status: typeof payload.status === 'string' ? payload.status : 'active',
         });
+      },
+      trackDelete: ({ id }) => {
+        trackAdminEvent('Admin Cover Letter Deleted', { id });
+      },
+      allFilterValue: 'all',
+      filterMatches: (letter, filterValue) => filterValue === 'all' || (letter.status || 'active') === filterValue,
+      sortText: (letter, sortBy) => (sortBy === 'recipient' ? letter.recipient || '' : null),
+    }),
+    [],
+  );
+
+  const {
+    items: letters,
+    loading,
+    listError,
+    editing,
+    formError,
+    saving,
+    dirty,
+    search,
+    setSearch,
+    filter: statusFilter,
+    setFilter: setStatusFilter,
+    sortBy,
+    setSortBy,
+    filtered,
+    selectedIndex,
+    fetchItems: fetchLetters,
+    startCreate,
+    startEdit,
+    cancelEdit,
+    saveItem: saveLetter,
+    deleteItem: deleteLetter,
+    updateField,
+    setEditing,
+    setDirty,
+    setFormError,
+  } = useCrudPanel<CoverLetter, CoverLetterStatus | 'all'>(config, initialEditId, onClearEditId);
+
+  const duplicateLetter = useCallback(
+    (letter: CoverLetter) => {
+      setEditing({
+        ...letter,
+        id: undefined,
+        slug: generateSlug(letter.company || letter.recipient || 'cl'),
+        status: 'draft',
+        subject: letter.subject ? `${letter.subject} (copy)` : '',
+        created_at: undefined,
+        updated_at: undefined,
+      });
+      setFormError(null);
+      setDirty(true);
+      toast({ title: 'Duplicated', description: 'Review the slug and details, then save.' });
+    },
+    [setEditing, setFormError, setDirty],
+  );
+
+  const applyTemplateToEditor = useCallback(
+    (template: CoverLetterTemplate) => {
+      if (!editing) {
+        return;
       }
-    }
+      const { subject, content } = applyTemplate(template, {
+        company: editing.company || editing.recipient || undefined,
+        role: editing.role_title || undefined,
+      });
+      setEditing({
+        ...editing,
+        subject: subject || editing.subject,
+        content,
+      });
+      setDirty(true);
+      trackAdminEvent('Admin Template Applied', { template: template.id });
+      toast({ title: 'Template applied', description: template.name });
+    },
+    [editing, setEditing, setDirty],
+  );
 
-    setSaving(false);
-
-    if (result.error) {
-      setFormError(result.error.message);
-      toast({ title: 'Save failed', description: result.error.message, variant: 'destructive' });
-      return;
-    }
-
-    trackAdminEvent('Admin Cover Letter Saved', {
-      is_new: isNew,
-      has_company: Boolean(payload.company),
-      status: payload.status,
-    });
-
-    setDirty(false);
-    setEditing(null);
-    toast({ title: 'Cover letter saved' });
-    fetchLetters();
-  };
-
-  const deleteLetter = async (id: string) => {
-    if (!confirm('Delete this cover letter? This cannot be undone.')) {
-      return;
-    }
-    const { error } = await supabase.from('cover_letters').delete().eq('id', id);
-    if (error) {
-      toast({ title: 'Delete failed', description: error.message, variant: 'destructive' });
-      return;
-    }
-    trackAdminEvent('Admin Cover Letter Deleted', { id });
-    toast({ title: 'Cover letter deleted' });
-    if (editing?.id === id) {
-      setEditing(null);
-    }
-    fetchLetters();
-  };
-
-  const copyLink = async (slug: string) => {
+  const copyLink = useCallback(async (slug: string) => {
     try {
       await navigator.clipboard.writeText(getCoverLetterShareUrl(slug));
       setCopiedId(slug);
@@ -310,42 +175,7 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
     } catch {
       toast({ title: 'Could not copy link', variant: 'destructive' });
     }
-  };
-
-  const cancelEdit = () => {
-    if (dirty && !confirm('Discard unsaved changes?')) {
-      return;
-    }
-    setEditing(null);
-    setFormError(null);
-    setDirty(false);
-  };
-
-  useEffect(() => {
-    if (editing || loading || filtered.length === 0) {
-      return;
-    }
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        return;
-      }
-
-      if (e.key === 'j' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        setSelectedIndex((prev) => Math.min(prev + 1, filtered.length - 1));
-      } else if (e.key === 'k' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        setSelectedIndex((prev) => Math.max(prev - 1, 0));
-      } else if (e.key === 'Enter' && selectedIndex >= 0) {
-        e.preventDefault();
-        startEdit(filtered[selectedIndex]);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [editing, loading, filtered, selectedIndex]);
+  }, []);
 
   if (editing) {
     return (
@@ -376,7 +206,7 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
           </div>
         </CardHeader>
         <CardContent>
-          <form id="cover-letter-form" onSubmit={saveLetter} className="space-y-4">
+          <form id="cover_letters-form" onSubmit={saveLetter} className="space-y-4">
             {formError && (
               <div className="bg-destructive/10 text-destructive border-destructive/20 rounded-lg border p-3 text-sm">
                 {formError}
@@ -544,7 +374,7 @@ export function CoverLettersPanel({ initialEditId, onClearEditId }: CoverLetters
           <select
             className="border-input bg-background h-9 rounded-md border px-3 text-sm"
             value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value as 'all' | CoverLetterStatus)}
+            onChange={(e) => setStatusFilter(e.target.value as CoverLetterStatus | 'all')}
           >
             <option value="all">All statuses</option>
             {COVER_LETTER_STATUSES.map((s) => (

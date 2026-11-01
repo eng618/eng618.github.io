@@ -17,7 +17,7 @@ import {
 import { Key, Lock, LogOut, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Suspense, useCallback, useEffect, useState } from 'react';
+import { Suspense, useCallback, useEffect, useState, type SubmitEvent } from 'react';
 
 import { CoverLettersPanel } from '@/components/admin/cover-letters-panel';
 import { PrivateNotesPanel } from '@/components/admin/private-notes-panel';
@@ -79,7 +79,7 @@ function AdminDashboard() {
     router.replace(`/admin?${params.toString()}`, { scroll: false });
   };
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: SubmitEvent) => {
     e.preventDefault();
     if (!loginEmail) {
       return;

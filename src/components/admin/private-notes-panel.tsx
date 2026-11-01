@@ -10,288 +10,113 @@ import {
   CardHeader,
   CardTitle,
   Input,
-  toast,
 } from '@gv-tech/ui-web';
 import { Download, Edit2, ExternalLink, Pin, PinOff, Plus, Search, Trash2 } from 'lucide-react';
 import Link from 'next/link';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
 import { MarkdownEditor } from '@/components/admin/markdown-editor';
+import { useCrudPanel, type CrudConfig } from '@/hooks/use-crud-panel';
 import { formatDate, stripMarkdown, trackAdminEvent, type PrivateNote } from '@/lib/admin';
-import { supabase } from '@/lib/supabase';
 
 type PrivateNotesPanelProps = {
   initialEditId?: string | null;
   onClearEditId?: () => void;
 };
 
-/**
- * Module-level helper so the `new Date()` timestamp is computed outside render
- * (only when the pin toggle is invoked), satisfying `react(purity)`.
- */
-const updatePrivateNotePin = async (supabaseClient: typeof supabase, id: string, pinned: boolean) => {
-  const updated_at = new Date().toISOString();
-  return supabaseClient.from('private_notes').update({ pinned, updated_at }).eq('id', id);
-};
+function parseTags(value: string): string[] {
+  return value
+    .split(',')
+    .map((tag) => tag.trim())
+    .filter(Boolean);
+}
 
 export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotesPanelProps) {
-  const [notes, setNotes] = useState<PrivateNote[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [listError, setListError] = useState<string | null>(null);
-  const [editing, setEditing] = useState<Partial<PrivateNote> | null>(null);
-  const [formError, setFormError] = useState<string | null>(null);
-  const [saving, setSaving] = useState(false);
-  const [dirty, setDirty] = useState(false);
-  const [search, setSearch] = useState('');
-  const [categoryFilter, setCategoryFilter] = useState('all');
-  const [sortBy, setSortBy] = useState<'updated' | 'created' | 'title'>('updated');
   const [tagsInput, setTagsInput] = useState('');
-  const [selectedIndex, setSelectedIndex] = useState(-1);
 
-  const fetchNotes = useCallback(async () => {
-    setLoading(true);
-    setListError(null);
-    const { data, error } = await supabase.from('private_notes').select('*').order('created_at', { ascending: false });
-
-    if (error) {
-      setListError(error.message);
-      setNotes([]);
-    } else {
-      setNotes((data as PrivateNote[]) || []);
-    }
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
-    // Mount fetch: `loading` already starts true, so this resolves pending state instead of
-    // cascading — the canonical data-fetch effect.
-    // oxlint-disable-next-line react/set-state-in-effect
-    fetchNotes();
-  }, [fetchNotes]);
-
-  useEffect(() => {
-    if (!initialEditId || notes.length === 0) {
-      return;
-    }
-    const match = notes.find((n) => n.id === initialEditId);
-    if (match) {
-      // Deep-link sync: populate the editor once the list loads. Runs only when
-      // `initialEditId`/`notes` change, and clears the id so it never loops.
-      // oxlint-disable-next-line react/set-state-in-effect
-      setEditing(match);
-      setTagsInput((match.tags || []).join(', '));
-      setDirty(false);
-      onClearEditId?.();
-    }
-  }, [initialEditId, notes, onClearEditId]);
-
-  useEffect(() => {
-    if (!dirty) {
-      return;
-    }
-    const onBeforeUnload = (e: BeforeUnloadEvent) => {
-      e.preventDefault();
-      e.returnValue = '';
-    };
-    window.addEventListener('beforeunload', onBeforeUnload);
-    return () => window.removeEventListener('beforeunload', onBeforeUnload);
-  }, [dirty]);
-
-  useEffect(() => {
-    if (!editing) {
-      return;
-    }
-    const onKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === 's') {
-        e.preventDefault();
-        const form = document.getElementById('private-note-form') as HTMLFormElement | null;
-        form?.requestSubmit();
-      }
-    };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, [editing]);
-
-  const categories = useMemo(() => {
-    const set = new Set<string>();
-    notes.forEach((n) => {
-      if (n.category?.trim()) {
-        set.add(n.category.trim());
-      }
-    });
-    return Array.from(set).sort((a, b) => a.localeCompare(b));
-  }, [notes]);
-
-  const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
-    let items = [...notes];
-
-    if (categoryFilter !== 'all') {
-      items = items.filter((n) => n.category === categoryFilter);
-    }
-
-    if (q) {
-      items = items.filter((n) => {
-        const tagText = (n.tags || []).join(' ');
-        const haystack = [n.title, n.category, n.content, tagText].join(' ').toLowerCase();
-        return haystack.includes(q);
-      });
-    }
-
-    items.sort((a, b) => {
-      if (a.pinned && !b.pinned) {
-        return -1;
-      }
-      if (!a.pinned && b.pinned) {
-        return 1;
-      }
-
-      if (sortBy === 'title') {
-        return (a.title || '').localeCompare(b.title || '');
-      }
-      const aDate = sortBy === 'created' ? a.created_at : a.updated_at || a.created_at;
-      const bDate = sortBy === 'created' ? b.created_at : b.updated_at || b.created_at;
-      return new Date(bDate || 0).getTime() - new Date(aDate || 0).getTime();
-    });
-
-    return items;
-  }, [notes, search, categoryFilter, sortBy]);
-
-  const updateField = <K extends keyof PrivateNote>(key: K, value: PrivateNote[K]) => {
-    setEditing((prev) => (prev ? { ...prev, [key]: value } : null));
-    setDirty(true);
-  };
-
-  const startCreate = () => {
-    setEditing({
-      title: '',
-      category: categories[0] || 'General',
-      content: '',
-      tags: [],
-    });
-    setTagsInput('');
-    setFormError(null);
-    setDirty(false);
-  };
-
-  const startEdit = (note: PrivateNote) => {
-    setEditing({ ...note });
-    setTagsInput((note.tags || []).join(', '));
-    setFormError(null);
-    setDirty(false);
-  };
-
-  const parseTags = (value: string): string[] =>
-    value
-      .split(',')
-      .map((t) => t.trim())
-      .filter(Boolean);
-
-  const saveNote = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!editing?.title || !editing?.content) {
-      setFormError('Title and content are required.');
-      return;
-    }
-
-    setSaving(true);
-    setFormError(null);
-
-    const tags = parseTags(tagsInput);
-    const payload = {
-      title: editing.title,
-      category: editing.category?.trim() || 'General',
-      content: editing.content,
-      tags,
-      updated_at: new Date().toISOString(),
-    };
-
-    let result;
-    if (editing.id) {
-      result = await supabase.from('private_notes').update(payload).eq('id', editing.id);
-    } else {
-      result = await supabase.from('private_notes').insert([payload]);
-    }
-
-    if (result.error && /column|schema cache/i.test(result.error.message)) {
-      const basePayload = {
-        title: payload.title,
-        category: payload.category,
-        content: payload.content,
-        updated_at: payload.updated_at,
-      };
-      if (editing.id) {
-        result = await supabase.from('private_notes').update(basePayload).eq('id', editing.id);
-      } else {
-        result = await supabase.from('private_notes').insert([basePayload]);
-      }
-      if (!result.error) {
-        toast({
-          title: 'Saved (core fields)',
-          description: 'Optional tags column missing — run the Supabase migration to enable tags.',
+  const config = useMemo<CrudConfig<PrivateNote, string>>(
+    () => ({
+      table: 'private_notes',
+      emptyItem: () => ({
+        title: '',
+        category: 'General',
+        content: '',
+        tags: [],
+        pinned: false,
+      }),
+      toPayload: (editing) => ({
+        title: editing.title,
+        category: editing.category?.trim() || 'General',
+        content: editing.content,
+        tags: Array.isArray(editing.tags) ? editing.tags : [],
+        updated_at: new Date().toISOString(),
+      }),
+      validate: (editing) => {
+        if (!editing.title || !editing.content) {
+          return 'Title and content are required.';
+        }
+        return null;
+      },
+      deleteMessage: () => 'Delete this note? This cannot be undone.',
+      savedMessage: 'Note saved',
+      deletedMessage: 'Note deleted',
+      trackSave: ({ isNew, payload }) => {
+        trackAdminEvent('Admin Private Note Saved', {
+          is_new: isNew,
+          category: typeof payload.category === 'string' ? payload.category : 'General',
+          tag_count: Array.isArray(payload.tags) ? payload.tags.length : 0,
         });
-      }
-    }
+      },
+      trackDelete: ({ id }) => {
+        trackAdminEvent('Admin Private Note Deleted', { id });
+      },
+      trackPin: ({ pinned }) => {
+        trackAdminEvent('Admin Private Note Pin Toggled', { pinned });
+      },
+      allFilterValue: 'all',
+      filterMatches: (note, filterValue) => filterValue === 'all' || note.category === filterValue,
+      sortText: (note, sortBy) => (sortBy === 'title' ? note.title || '' : null),
+    }),
+    [],
+  );
 
-    setSaving(false);
+  const {
+    items: notes,
+    loading,
+    listError,
+    editing,
+    formError,
+    saving,
+    dirty,
+    search,
+    setSearch,
+    filter: categoryFilter,
+    setFilter: setCategoryFilter,
+    sortBy,
+    setSortBy,
+    categories,
+    filtered,
+    selectedIndex,
+    fetchItems: fetchNotes,
+    startCreate,
+    startEdit,
+    cancelEdit,
+    saveItem: saveNote,
+    deleteItem: deleteNote,
+    togglePin,
+    updateField,
+  } = useCrudPanel<PrivateNote, string>(config, initialEditId, onClearEditId);
 
-    if (result.error) {
-      setFormError(result.error.message);
-      toast({ title: 'Save failed', description: result.error.message, variant: 'destructive' });
-      return;
-    }
+  // Fill the tags box when the edited record changes. Later keystrokes stay in
+  // local state so joining the parsed tags does not rewrite the input.
+  const editSession = editing ? (editing.id ?? '__new__') : null;
+  const [syncedSession, setSyncedSession] = useState<string | null>(null);
+  if (editSession !== syncedSession) {
+    setSyncedSession(editSession);
+    setTagsInput((editing?.tags ?? []).join(', '));
+  }
 
-    trackAdminEvent('Admin Private Note Saved', {
-      is_new: !editing.id,
-      category: payload.category,
-      tag_count: tags.length,
-    });
-
-    setDirty(false);
-    setEditing(null);
-    toast({ title: 'Note saved' });
-    fetchNotes();
-  };
-
-  const deleteNote = async (id: string) => {
-    if (!confirm('Delete this note? This cannot be undone.')) {
-      return;
-    }
-    const { error } = await supabase.from('private_notes').delete().eq('id', id);
-    if (error) {
-      toast({ title: 'Delete failed', description: error.message, variant: 'destructive' });
-      return;
-    }
-    trackAdminEvent('Admin Private Note Deleted', { id });
-    toast({ title: 'Note deleted' });
-    if (editing?.id === id) {
-      setEditing(null);
-    }
-    fetchNotes();
-  };
-
-  const cancelEdit = () => {
-    if (dirty && !confirm('Discard unsaved changes?')) {
-      return;
-    }
-    setEditing(null);
-    setFormError(null);
-    setDirty(false);
-  };
-
-  const togglePin = async (id: string, currentPinned: boolean) => {
-    const { error } = await updatePrivateNotePin(supabase, id, !currentPinned);
-    if (error) {
-      toast({ title: 'Failed to update pin', description: error.message, variant: 'destructive' });
-      return;
-    }
-    trackAdminEvent('Admin Private Note Pin Toggled', {
-      pinned: !currentPinned,
-    });
-    fetchNotes();
-  };
-
-  const exportNote = (note: PrivateNote) => {
+  const exportNote = useCallback((note: PrivateNote) => {
     const content = `# ${note.title}\n\nCategory: ${note.category}\nTags: ${(note.tags || []).join(', ')}\nDate: ${formatDate(note.updated_at || note.created_at)}\n\n---\n\n${note.content}`;
     const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
     const url = URL.createObjectURL(blob);
@@ -303,34 +128,7 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
     trackAdminEvent('Admin Private Note Exported', { category: note.category });
-  };
-
-  useEffect(() => {
-    if (editing || loading || filtered.length === 0) {
-      return;
-    }
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Ignore if typing in an input
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
-        return;
-      }
-
-      if (e.key === 'j' || e.key === 'ArrowDown') {
-        e.preventDefault();
-        setSelectedIndex((prev) => Math.min(prev + 1, filtered.length - 1));
-      } else if (e.key === 'k' || e.key === 'ArrowUp') {
-        e.preventDefault();
-        setSelectedIndex((prev) => Math.max(prev - 1, 0));
-      } else if (e.key === 'Enter' && selectedIndex >= 0) {
-        e.preventDefault();
-        startEdit(filtered[selectedIndex]);
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [editing, loading, filtered, selectedIndex]);
+  }, []);
 
   if (editing) {
     return (
@@ -343,7 +141,7 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form id="private-note-form" onSubmit={saveNote} className="space-y-4">
+          <form id="private_notes-form" onSubmit={saveNote} className="space-y-4">
             {formError && (
               <div className="bg-destructive/10 text-destructive border-destructive/20 rounded-lg border p-3 text-sm">
                 {formError}
@@ -399,7 +197,7 @@ export function PrivateNotesPanel({ initialEditId, onClearEditId }: PrivateNotes
                 value={tagsInput}
                 onChange={(e) => {
                   setTagsInput(e.target.value);
-                  setDirty(true);
+                  updateField('tags', parseTags(e.target.value));
                 }}
               />
             </div>
