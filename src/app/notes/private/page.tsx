@@ -18,7 +18,8 @@ import { Suspense, useEffect, useMemo, useState } from 'react';
 import { Breadcrumb } from '@/components/breadcrumb';
 import { MarkdownContent } from '@/components/markdown-content';
 import { MobileTOC } from '@/components/mobile-sub-header';
-import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
+import { OnThisPage } from '@/components/on-this-page';
+import { TableOfContents, TableOfContentsContent } from '@/components/table-of-contents';
 import { useAdminAuth } from '@/hooks/use-admin-auth';
 import { formatDate, stripMarkdown, type PrivateNote } from '@/lib/admin';
 import { supabase } from '@/lib/supabase';
@@ -180,12 +181,7 @@ function PrivateNotesContent() {
               </TableOfContentsContent>
             </article>
 
-            <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-60 shrink-0 py-12 lg:block xl:w-64">
-              <div className="flex flex-col gap-4">
-                <h2 className="font-outfit text-sm font-semibold tracking-wider uppercase">On this page</h2>
-                <TableOfContentsList className="text-sm" />
-              </div>
-            </aside>
+            <OnThisPage />
           </div>
         </div>
       </TableOfContents>

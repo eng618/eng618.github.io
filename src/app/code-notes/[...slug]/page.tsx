@@ -9,7 +9,8 @@ import { Breadcrumb } from '@/components/breadcrumb';
 import { EditOnGithub } from '@/components/edit-on-github';
 import { mdxComponents } from '@/components/mdx-components';
 import { MobileTOC } from '@/components/mobile-sub-header';
-import { TableOfContents, TableOfContentsContent, TableOfContentsList } from '@/components/table-of-contents';
+import { OnThisPage } from '@/components/on-this-page';
+import { TableOfContents, TableOfContentsContent } from '@/components/table-of-contents';
 import { getAllContent, getContentBySlug } from '@/lib/notes';
 
 interface CodeNotePageProps {
@@ -96,12 +97,7 @@ export default async function CodeNotePage({ params }: CodeNotePageProps) {
             </div>
           </article>
 
-          <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-60 shrink-0 py-12 lg:block xl:w-64">
-            <div className="flex flex-col gap-4">
-              <h2 className="font-outfit text-sm font-semibold tracking-wider uppercase">On this page</h2>
-              <TableOfContentsList className="text-sm" />
-            </div>
-          </aside>
+          <OnThisPage />
         </div>
       </div>
     </TableOfContents>
